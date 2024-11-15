@@ -34,7 +34,7 @@ class Customer(models.Model):
     address = models.CharField(max_length=255)
     phone_no = models.PositiveIntegerField(unique=True)
     credit_card_no = models.BigIntegerField(unique=True)
-    AirportUser = models.ForeignKey('AirportUser', on_delete=models.CASCADE, related_name='customers')
+    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='customers')
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -42,13 +42,11 @@ class Customer(models.Model):
 class Admin(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    AirportUser = models.ForeignKey('AirportUser', on_delete=models.CASCADE, related_name='admins')
+    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'I am admin {self.first_name} {self.last_name}'
     
-
-
 class Country(models.Model):
     name = models.CharField(max_length=100, unique=True)
     image = models.ImageField(upload_to='country_images/')
@@ -60,8 +58,8 @@ class Country(models.Model):
 class Airline(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
-    Country = models.ForeignKey('Country', on_delete=models.CASCADE, related_name='airlines')
-    AirportUser = models.ForeignKey('AirportUser', on_delete=models.CASCADE, related_name='airlines')
+    country_id = models.OneToOneField('Country', on_delete=models.CASCADE, related_name='airlines')
+    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='airlines')
 
     def __str__(self):
         return self.name
@@ -82,8 +80,8 @@ class Flight(models.Model):
     
 class Ticket(models.Model):
     id = models.BigAutoField(primary_key=True)
-    flight_id = models.ForeignKey('Flight', on_delete=models.CASCADE, related_name='tickets')
-    customer_id = models.ForeignKey('Customer', on_delete=models.CASCADE, related_name='tickets')
+    flight_id = models.OneToOneField('Flight', on_delete=models.CASCADE, related_name='tickets')
+    customer_id = models.OneToOneField('Customer', on_delete=models.CASCADE, related_name='tickets')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
