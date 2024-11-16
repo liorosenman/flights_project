@@ -1,6 +1,7 @@
-from requests import request
+from requests import Response, request
 from base.serializer import CreateAirportUserSerializer
 from rest_framework.exceptions import ValidationError
+from rest_framework import status
 
 def create_airport_user(data):
     details = {
@@ -20,8 +21,12 @@ def create_default_airport_user():
         'username': "adminp",  
         'password': "123",
         'email': "ad@ad.com",
-        'user_role': "administrator"
+        'role_name': "administrator"
         }
     serializer = CreateAirportUserSerializer(data = details)
-    airport_user = serializer.save()
+    if serializer.is_valid():
+        airport_user = serializer.save()
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
     

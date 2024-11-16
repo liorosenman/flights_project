@@ -10,7 +10,7 @@ class UpdateEmailSerializer(serializers.ModelSerializer):
 class CreateAirportUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = AirportUser
-        fields = ['username', 'password', 'email', 'user_role']
+        fields = ['username', 'password', 'email', 'role_name']
 
     def create(self, validated_data):
         validated_data['password'] = make_password(validated_data['password'])

@@ -7,12 +7,14 @@ from base.serializer import CreateAirportUserSerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
 from base import utils
+from rest_framework.decorators import api_view
 
 def index(req):
     return JsonResponse('hello', safe=False)
 
-@action(detail=False, methods=['post'], url_path='create_prime_user')
-def admin_register():
+# @action(detail=False, methods=['post'], url_path='create_prime_user')
+@api_view(['POST'])
+def admin_register(request):
     print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
     utils.create_default_airport_user()
     # airport_user = utils.create_airport_user(request)
