@@ -24,7 +24,6 @@ class AirportUser(models.Model):
     role_name = models.ForeignKey(UserRole, on_delete=models.CASCADE, to_field='role_name')
     is_active = models.BooleanField(default=True)
 
-
     def __str__(self):
         return self.username
     
@@ -63,7 +62,7 @@ class Airline(models.Model):
 
     def __str__(self):
         return self.name
-
+    
 
 class Flight(models.Model):
     id = models.BigAutoField(primary_key=True)

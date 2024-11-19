@@ -4,9 +4,9 @@
     ## Understand and finish with the "related_name"
 
 # Building create methods, all based on AirportUser: (15.11.24)
-    ## AirportUser
-    ## Admin
-    ## Create first admin "manually"
+    ## AirportUser - Working followed by Admin creation.
+    ## Admin - Creation working.
+    ## Create first admin "manually" -DONE-
     ## Permission for admin-only method
     ## Customer
     ## Airline
@@ -27,4 +27,10 @@
 
 # When makemigrations - "it is impossible to add a non-nullable field..." - SOLVED - base table
 # and its "son" must be created together.
+
+# ------------19/11/2024------------------------
+# AirportUser table - 'role_name' has to be an Integer 1-3. --- Meanwhile seems working.
+## Creation method of AirportUser.
+    ## Admin creation view. -DONE-
+
 

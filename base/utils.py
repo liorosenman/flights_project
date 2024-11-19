@@ -1,5 +1,5 @@
 from requests import request
-from base.models import RolesEnum, UserRole, Admin
+from base.models import AirportUser, RolesEnum, UserRole, Admin
 from base.serializer import CreateAirportUserSerializer
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
@@ -50,5 +50,11 @@ def create_prime_admin():
     )
     return Response({"message": "Prime admin created!!!"}, status=status.HTTP_201_CREATED)
 
+def change_user_role_to_num():
+    user = AirportUser.objects.get(id=1)
+    new_role = UserRole.objects.get(id=1)
+    user.role_name = new_role
+    user.save()
+    return Response({"message": "User role changes to num!!!"}, status=status.HTTP_201_CREATED)
 
 
