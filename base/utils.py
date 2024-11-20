@@ -15,8 +15,12 @@ def create_airport_user(data):
         }
       
     serializer = CreateAirportUserSerializer(data = details)
-    airport_user = serializer.save()
-    return airport_user
+    if serializer.is_valid():
+        airport_user = serializer.save()
+        return Response({"message": "Admin prime was created successfully."}, status=status.HTTP_201_CREATED)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 
 def create_default_airport_user():
     details = {

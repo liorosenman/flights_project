@@ -16,6 +16,8 @@ def index(req):
 
 @api_view(['POST'])
 def admin_register(request):
+    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+    print(request.data['email'])
     role = UserRole.objects.get(role_name=request.data['role_name'])
     airport_user = AirportUser.objects.create(
             username=request.data['username'],
