@@ -33,4 +33,11 @@
 ## Creation method of AirportUser.
     ## Admin creation view. -DONE-
 
+# ------------21/11/2024------------------------
 
+
+
+# For the end:
+    1. Input validity methods
+    2. Moving to serializer to shorten the code
+    3. Divide the views into folders

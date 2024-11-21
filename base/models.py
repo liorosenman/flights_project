@@ -1,5 +1,25 @@
 import enum
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.db import models
+
+class AirportUserManager(BaseUserManager):
+    # def create_user(self, username, password=None, **extra_fields):
+    #     if not username:
+    #         raise ValueError('The Username field must be set.')
+    #     user = self.model(username=username, **extra_fields)
+    #     user.set_password(password)
+    #     user.save(using=self._db)
+    #     return user
+
+    # def create_superuser(self, username, password=None, **extra_fields):
+    #     extra_fields.setdefault('is_staff', True)
+    #     extra_fields.setdefault('is_superuser', True)
+    #     return self.create_user(username, password, **extra_fields)
+
+    def get_by_natural_key(self, username):
+        return self.get(username=username)
+
 
 class RolesEnum(enum.Enum):
      ADMINISTRATOR = "administrator"
@@ -16,13 +36,19 @@ class UserRole(models.Model):
     id = models.AutoField(primary_key=True)
     role_name = models.CharField(max_length=20, choices=USER_ROLE_CHOICES, unique=True)
 
-class AirportUser(models.Model):
+class AirportUser(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
     username = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=128)
     email = models.EmailField(unique=True)
     role_name = models.ForeignKey(UserRole, on_delete=models.CASCADE, to_field='role_name')
     is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    last_login = models.DateTimeField(null=True, blank=True)
+    is_superuser = models.BooleanField(default=False)
+
+    objects = AirportUserManager()
+    USERNAME_FIELD = 'username'
 
     def __str__(self):
         return self.username
@@ -33,7 +59,7 @@ class Customer(models.Model):
     address = models.CharField(max_length=255)
     phone_no = models.PositiveIntegerField(unique=True)
     credit_card_no = models.BigIntegerField(unique=True)
-    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='customers')
+    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='customers', default=2)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -42,7 +68,7 @@ class Admin(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE)
-
+    
     def __str__(self):
         return f'I am admin {self.first_name} {self.last_name}'
     
@@ -58,7 +84,7 @@ class Airline(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
     country_id = models.OneToOneField('Country', on_delete=models.CASCADE, related_name='airlines')
-    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='airlines')
+    airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='airlines', default=2)
 
     def __str__(self):
         return self.name
