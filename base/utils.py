@@ -1,4 +1,3 @@
-from requests import request
 from base.models import AirportUser, RolesEnum, UserRole, Admin
 from base.serializer import CreateAirportUserSerializer
 from rest_framework.exceptions import ValidationError
@@ -60,5 +59,8 @@ def change_user_role_to_num():
     user.role_name = new_role
     user.save()
     return Response({"message": "User role changes to num!!!"}, status=status.HTTP_201_CREATED)
+
+def change_rolename_to_2():
+    AirportUser.objects.all().update(role_name_id=2)
 
 

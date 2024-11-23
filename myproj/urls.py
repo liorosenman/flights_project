@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from base import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
+    path('login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]

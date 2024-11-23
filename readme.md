@@ -12,7 +12,7 @@
     ## Airline
 
 # Validate creation details for AirportUser, admin, customer and airline
-    ## Customer can be created by everyone
+    ## Customer can be created by admin and an anonymous user.
     ## Admin and airline can be created by admin alone.
 
 # ------------16/11/2024------------------------
@@ -33,9 +33,15 @@
 ## Creation method of AirportUser.
     ## Admin creation view. -DONE-
 
-# ------------21/11/2024------------------------
+# ------------22/11/2024------------------------
+    ## Error when executing every api_view: Foreign key is violated / Integrity error.
+       
 
-
+# ------------23/11/2024------------------------
+    ## role_name should have been represnted as an integer and not by the title (as a foreign key).
+    ## Creation, login, and logout of an admin works.
+    ## Creation, login, and logout of a customer works.
+    
 
 # For the end:
     1. Input validity methods
