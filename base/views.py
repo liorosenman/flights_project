@@ -93,10 +93,10 @@ def change_rolename_to_admin(request):
 #############################################################################################################
 
 
-# @api_view(['POST'])
-# def create_all_user_roles(request):
-#     response = utils.create_all_user_roles()
-#     return response
+@api_view(['POST'])
+def create_all_user_roles(request):
+    response = utils.create_all_user_roles()
+    return response
 
 # @api_view(['POST'])
 # def create_prime_admin(request):
