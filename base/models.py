@@ -91,7 +91,7 @@ class Country(models.Model):
 class Airline(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
-    country_id = models.OneToOneField('Country', on_delete=models.CASCADE, related_name='airlines')
+    country_id = models.ForeignKey('Country', on_delete=models.CASCADE, related_name='airlines')
     airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='airlines', default=2)
 
     def __str__(self):

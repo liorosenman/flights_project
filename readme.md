@@ -38,12 +38,23 @@
        
 
 # ------------23/11/2024------------------------
-    ## role_name should have been represnted as an integer and not by the title (as a foreign key).
-    ## Creation, login, and logout of an admin works.
-    ## Creation, login, and logout of a customer works.
-    
+    ## role_name should have been represnted as an integer and not by the title (as a foreign key). - DONE
+    ## Creation, login, and logout of an admin works. - DONE
+    ## Creation, login, and logout of a customer works. - DONE
+
+# ------------25/11/2024------------------------
+    ## Create, read and retrieve for Country - DONE
+    ## Filling the countries table instances.
+    ## Filling the airlines table instances.
+
+# ------------26/11/2024------------------------
+    ## Create, read and retrieve for airline - 
+    ## 
 
 # For the end:
     1. Input validity methods
     2. Moving to serializer to shorten the code
     3. Divide the views into folders
+    4. Authorization
+    5. Logger for each execution of view
+    5. More attractive login

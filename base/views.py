@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole
+from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole, Airline, Country
 from base.serializer import CreateAirportUserSerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
@@ -38,12 +38,12 @@ def admin_register(request): #Create a new admin
 
 @api_view(['POST']) #Create a new customer
 def customer_register(request):
-    customer_role = UserRole.objects.get(id=2)
+    role = UserRole.objects.get(id=2)
     airport_user = AirportUser.objects.create(
             username=request.data['username'],
             password=make_password(request.data['password']),
             email=request.data['email'],
-            role_name= customer_role
+            role_name= role
         )
     airport_user.save()
     first_name = request.data['first_name']
@@ -56,16 +56,29 @@ def customer_register(request):
     customer.save()
     return Response({"message": "Customer registered successfully."}, status=status.HTTP_201_CREATED)
 
+@api_view(['POST']) #Create a new airline
+def airline_register(request):
+    customer_role = UserRole.objects.get(id=3)
+    airport_user = AirportUser.objects.create(
+        username=request.data['username'],
+        password=make_password(request.data['password']),
+        email=request.data['email'],
+        role_name= customer_role
+        )
+    airport_user.save()
+    country = Country.objects.get(id = request.data['country_id'])
+    name = request.data['name']
+    airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)
+    airline.save()
+    return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
+    
+
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, airport_user):
-        print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-        print(airport_user.role_name.role_name)
         if not airport_user.role_name:
             raise ValueError("Role name is missing for the user.")
-        print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
         token = super().get_token(airport_user)
-        # print("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
         token['username'] = airport_user.username
         token['id'] = airport_user.id
         token['role_name'] = airport_user.role_name.id
@@ -85,18 +98,19 @@ def logout_user(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
-@api_view(['PUT'])
-def change_rolename_to_admin(request):
-    utils.change_rolename_to_2()
+
 
 
 #############################################################################################################
 
+# @api_view(['PUT'])
+# def change_rolename_to_admin(request):
+#     utils.change_rolename_to_2()
 
-@api_view(['POST'])
-def create_all_user_roles(request):
-    response = utils.create_all_user_roles()
-    return response
+# @api_view(['POST'])
+# def create_all_user_roles(request):
+#     response = utils.create_all_user_roles()
+#     return response
 
 # @api_view(['POST'])
 # def create_prime_admin(request):
