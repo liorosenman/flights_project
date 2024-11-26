@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole, Airline, Country
-from base.serializer import CreateAirportUserSerializer
+from base.serializer import AirportUserSerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
 from base import utils
@@ -98,6 +98,14 @@ def logout_user(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
+api_view(['POST'])
+def sign_up(request):
+    serializer = AirportUserSerializer(data=request.data)
+    if serializer.is_valid():
+        airport_user = serializer.save()
+    role_id = request.data.role_id
+    if role_id == 1:
+        serializer = 
 
 
 
