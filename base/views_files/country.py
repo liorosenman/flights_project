@@ -13,19 +13,4 @@ def create_country(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
-def get_all_countries(request):
-    countries = Country.objects.all()
-    serializer = CountrySerializer(countries, many=True)
-    return Response(serializer.data)
 
-
-@api_view(['GET'])
-def get_country_by_id(request, id):
-    try:
-        country = Country.objects.get(id=id)
-    except Country.DoesNotExist:
-        return Response({"error": "Country not found."}, status=status.HTTP_404_NOT_FOUND)
-    
-    serializer = CountrySerializer(country)
-    return Response(serializer.data)

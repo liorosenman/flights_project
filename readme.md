@@ -44,12 +44,15 @@
 
 # ------------25/11/2024------------------------
     ## Create, read and retrieve for Country - DONE
-    ## Filling the countries table instances.
+    ## Filling the countries table instances. - DONE
     ## Filling the airlines table instances.
 
 # ------------26/11/2024------------------------
-    ## Create, read and retrieve for airline - 
-    ## 
+    ## Create, read and retrieve for airline - DONE
+
+# ------------27/11/2024------------------------
+    ## Flight - First object was created, but with is_active = F, although set for default T.
+    ## Following flights are with is_active = F, as well.
 
 # For the end:
     1. Input validity methods

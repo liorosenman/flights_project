@@ -1,4 +1,4 @@
-from base.models import Admin, AirportUser, Country, Customer
+from base.models import Admin, Airline, AirportUser, Country, Customer, Flight
 from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 
@@ -35,15 +35,35 @@ class AirportUserSerializer(serializers.ModelSerializer):
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
-        fields = ['id', 'name', 'image']
+        fields = '__all__'
 
 class AdminSerializer(serializers.ModelSerializer):
     class Meta:
         model = Admin
-        fields = ['first_name', 'last_name']
+        fields = '__all__'
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['first_name', 'last_name', 'address', 'phone_no', 'credit_card_no', 'airport_user']
+        fields = '__all__'
+
+class AirlineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Airline
+        fields = '__all__'
+
+
+class FlightSerializer(serializers.ModelSerializer):
+    departure_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
+    landing_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
+
+    class Meta:
+        model = Flight
+        # fields = ['airline_company_id', 'origin_country_id', 'destination_country_id', 'landing_time', 'departure_time', 'remaining_tickets', 'is_active']
+        fields = '__all__'
+
+    
+
+
+
 

@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole, Airline, Country
-from base.serializer import AirportUserSerializer
+from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
 from base import utils
@@ -105,8 +105,41 @@ def sign_up(request):
         airport_user = serializer.save()
     role_id = request.data.role_id
     if role_id == 1:
-        serializer = 
+        pass
 
+@api_view(['GET'])
+def get_all_airlines(request):
+    airlines = Airline.objects.all()
+    serializer = AirlineSerializer(airlines, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def get_airline_by_id(request, id):
+    try:
+        airline = Airline.objects.get(id=id)
+    except Airline.DoesNotExist:
+        return Response({"error": "Airline not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = AirlineSerializer(airline)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_all_countries(request):
+    countries = Country.objects.all()
+    serializer = CountrySerializer(countries, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def get_country_by_id(request, id):
+    try:
+        country = Country.objects.get(id=id)
+    except Country.DoesNotExist:
+        return Response({"error": "Country not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = CountrySerializer(country)
+    return Response(serializer.data)
 
 
 #############################################################################################################

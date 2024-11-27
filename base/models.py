@@ -2,7 +2,7 @@ import enum
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-
+from datetime import datetime
 from django.contrib.auth.models import BaseUserManager
 
 class AirportUserManager(BaseUserManager):
@@ -103,8 +103,8 @@ class Flight(models.Model):
     airline_company_id = models.ForeignKey('Airline', on_delete=models.CASCADE, related_name='flights')
     origin_country_id = models.ForeignKey('Country', on_delete=models.CASCADE, related_name='origin_flights')
     destination_country_id = models.ForeignKey('Country', on_delete=models.CASCADE, related_name='destination_flights')
-    departure_time = models.DateTimeField()
     landing_time = models.DateTimeField()
+    departure_time = models.DateTimeField()
     remaining_tickets = models.IntegerField()
     is_active = models.BooleanField(default=True)
     

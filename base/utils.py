@@ -1,5 +1,6 @@
+from base import serializer
 from base.models import AirportUser, RolesEnum, UserRole, Admin
-from base.serializer import CreateAirportUserSerializer
+from base.serializer import AirportUserSerializer
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework import status
@@ -13,7 +14,7 @@ def create_airport_user(data):
         'user_role': data['user_role']
         }
       
-    serializer = CreateAirportUserSerializer(data = details)
+    serializer(data = details)
     if serializer.is_valid():
         airport_user = serializer.save()
         return Response({"message": "Admin prime was created successfully."}, status=status.HTTP_201_CREATED)
@@ -28,7 +29,7 @@ def create_default_airport_user():
         'email': "ad@ad.com",
         'role_name': "administrator"
         }
-    serializer = CreateAirportUserSerializer(data = details)
+    serializer = AirportUserSerializer(data = details)
     if serializer.is_valid():
         airport_user = serializer.save()
         return Response({"message": "Admin prime was created successfully."}, status=status.HTTP_201_CREATED)
