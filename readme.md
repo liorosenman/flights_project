@@ -51,8 +51,11 @@
     ## Create, read and retrieve for airline - DONE
 
 # ------------27/11/2024------------------------
-    ## Flight - First object was created, but with is_active = F, although set for default T.
-    ## Following flights are with is_active = F, as well.
+    ## Flight - First object was created, but with is_active = F, although set for default T. - Solved
+    ## Following flights are with is_active = F, as well. - Solved
+
+# ------------28/11/2024------------------------
+    ## DB connected with Postgres and pgadmin using docker containers.
 
 # For the end:
     1. Input validity methods

@@ -141,6 +141,14 @@ def get_country_by_id(request, id):
     serializer = CountrySerializer(country)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def get_airline_by_username(request):
+    pass
+
+@api_view(['GET'])
+def get_flights_by_parameters():
+    pass
+
 
 #############################################################################################################
 
