@@ -7,6 +7,7 @@ from ..serializer import AirlineSerializer, FlightSerializer
 @api_view(['POST'])
 def add_flight(request):
      serializer = FlightSerializer(data=request.data)
+     print(serializer)
      if serializer.is_valid():
         flight = serializer.save() 
         return Response(serializer.data, status=status.HTTP_201_CREATED)

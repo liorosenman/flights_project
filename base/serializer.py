@@ -56,11 +56,21 @@ class AirlineSerializer(serializers.ModelSerializer):
 class FlightSerializer(serializers.ModelSerializer):
     departure_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
     landing_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
+    is_active = serializers.BooleanField(default = True)
 
     class Meta:
         model = Flight
         # fields = ['airline_company_id', 'origin_country_id', 'destination_country_id', 'landing_time', 'departure_time', 'remaining_tickets', 'is_active']
         fields = '__all__'
+        # fields = ['is_active']
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['is_active'].default = True
+    # def validate(self, attrs):
+    # If 'is_active' is not provided in the data, use the default value
+        # if 'is_active' not in attrs:
+        #     attrs['is_active'] = True
+        # return attrs
 
     
 
