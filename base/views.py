@@ -1,3 +1,4 @@
+from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import render
 from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole, Airline, Country
@@ -142,8 +143,23 @@ def get_country_by_id(request, id):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def get_airline_by_username(request):
-    pass
+def get_airline_by_username(request, username):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_airline_details_by_username(%s)", [username])
+            result = cursor.fetchone()
+            if result:
+                airline_details = {
+                    "airline_id": result[0],
+                    "airline_name": result[1],
+                    "country_id": result[2],
+                    "airport_user_id": result[3],
+                }
+                return Response({"status": "success", "data": airline_details}, status=200)
+            else:
+                return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
 
 @api_view(['GET'])
 def get_flights_by_parameters():
@@ -156,10 +172,10 @@ def get_flights_by_parameters():
 # def change_rolename_to_admin(request):
 #     utils.change_rolename_to_2()
 
-# @api_view(['POST'])
-# def create_all_user_roles(request):
-#     response = utils.create_all_user_roles()
-#     return response
+@api_view(['POST'])
+def create_all_user_roles(request):
+    response = utils.create_all_user_roles()
+    return response
 
 # @api_view(['POST'])
 # def create_prime_admin(request):
