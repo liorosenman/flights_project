@@ -57,10 +57,24 @@
 # ------------28/11/2024------------------------
     ## DB connected with Postgres and pgadmin using docker containers.
 
-# For the end:
+# FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
     3. Divide the views into folders
     4. Authorization
     5. Logger for each execution of view
     5. More attractive login
+    6. Is AirportUserManager neccessary?
+
+# When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
+    1. Create administator // DONE
+    2. Create airline //DONE
+    3. Create Flight //DONE
+    4. Create customer //DONE
+    5. Buying a ticket:
+        a. Check if the customer is active
+        a. Check if the flight is active
+        b. Check the number of avaiable tickets 
+        e. Check that the same user has already a ticket for this flight.
+    6. Reduce 1 from the relevant flight's tickets number.
+    7. Create a new row in Tickets.

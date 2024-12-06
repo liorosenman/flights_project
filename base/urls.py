@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from base.views_files import airline, country
+from base.views_files import airline, country, customer
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.decorators import api_view
@@ -22,6 +22,7 @@ urlpatterns = [
     path('get_airline_by_id/<int:id>/', views.get_airline_by_id),
     path('create_flight/', airline.add_flight),
     path('get_airline_by_username/<str:username>/', views.get_airline_by_username, name='get_airline_by_username'),
+    path('create_ticket/', customer.add_ticket)
 
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),
