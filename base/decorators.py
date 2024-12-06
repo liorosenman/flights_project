@@ -26,13 +26,14 @@ def conditions_for_booking_a_flight():
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             customer = get_object_or_404(Customer, airport_user_id = request.user.id)
-            if not customer.is_active:
+            if not request.user.is_active:
                 return Response({"Error":"This client is not active."})
             flight_id = request.data.get('flight_id')
             flight = get_object_or_404(Flight, id= flight_id)
             if not flight.is_active:
                 return Response({"Error":"This flight is not active."})
-            ticket = Ticket.objects.get(flight_id=flight_id, customer_id=customer.id, is_active=True)
+            # ticket = get_object_or_404(Ticket, flight_id=flight_id, customer_id=customer.id, is_active=True)
+            ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, is_active=True).first()
             if ticket:
                 return Response({"This customer has already a ticket for this flight."})
             if flight.remaining_tickets <= 0:

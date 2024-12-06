@@ -69,6 +69,7 @@ class Customer(models.Model):
     credit_card_no = models.BigIntegerField(unique=True)
     airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='customers')
 
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     
