@@ -22,3 +22,18 @@ BEGIN
         u.username = input_username;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION deactivate_expired_flights()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.departure_time <= CURRENT_TIMESTAMP THEN
+        NEW.is_active = FALSE;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_flight_status
+BEFORE INSERT OR UPDATE ON flight
+FOR EACH ROW
+EXECUTE FUNCTION deactivate_expired_flights();

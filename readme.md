@@ -78,3 +78,8 @@
         e. Check that the same user has already a ticket for this flight.
     6. Reduce 1 from the relevant flight's tickets number.
     7. Create a new row in Tickets.
+
+# When removing a ticket:
+    1. Check if the customer has a ticket to that flight.
+    2. Check if the flight is active.
+    3. 

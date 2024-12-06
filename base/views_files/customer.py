@@ -23,3 +23,8 @@ def add_ticket(request):
         {"message": "Ticket successfully created", "remaining_tickets": flight.remaining_tickets},
         status=status.HTTP_200_OK
         )
+
+@api_view(['POST'])
+def remove_ticket(request):
+    
+    pass
