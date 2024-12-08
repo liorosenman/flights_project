@@ -114,8 +114,8 @@ class Flight(models.Model):
     
 class Ticket(models.Model):
     id = models.BigAutoField(primary_key=True)
-    flight_id = models.OneToOneField('Flight', on_delete=models.CASCADE, related_name='tickets', unique=True)
-    customer_id = models.OneToOneField('Customer', on_delete=models.CASCADE, related_name='tickets', unique=True)
+    flight_id = models.OneToOneField('Flight', on_delete=models.CASCADE, related_name='tickets')
+    customer_id = models.OneToOneField('Customer', on_delete=models.CASCADE, related_name='tickets')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

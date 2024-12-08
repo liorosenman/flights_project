@@ -72,14 +72,15 @@
     3. Create Flight //DONE
     4. Create customer //DONE
     5. Buying a ticket:
-        a. Check if the customer is active
-        a. Check if the flight is active
-        b. Check the number of avaiable tickets 
-        e. Check that the same user has already a ticket for this flight.
+        a. Check if the customer is active //DONE
+        a. Check if the flight is active //DONE
+        b. Check the number of avaiable tickets //DONE
+        e. Check that the same user has already a ticket for this flight. //DONE
     6. Reduce 1 from the relevant flight's tickets number.
     7. Create a new row in Tickets.
 
 # When removing a ticket:
     1. Check if the customer has a ticket to that flight.
-    2. Check if the flight is active.
-    3. 
+    2. Check if the flight is active. Inactive flight means that all its tickets are inactive.
+    TO BE TESTED (8/12/24).
+    

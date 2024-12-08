@@ -22,7 +22,8 @@ urlpatterns = [
     path('get_airline_by_id/<int:id>/', views.get_airline_by_id),
     path('create_flight/', airline.add_flight),
     path('get_airline_by_username/<str:username>/', views.get_airline_by_username, name='get_airline_by_username'),
-    path('create_ticket/', customer.add_ticket)
+    path('create_ticket/', customer.add_ticket),
+    path('remove_ticket/', customer.remove_ticket)
 
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),

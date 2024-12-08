@@ -10,7 +10,9 @@ from base import decorators
 @decorators.role_required(2)
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
-    flight = Flight.objects.get(id = request.data.flight_id)
+    flight_id = request.data.get('flight_id')
+    flight = Flight.objects.get(id=flight_id)
+    # flight = Flight.objects.get(id = request.data.flight_id)
     flight.remaining_tickets -= 1
     flight.save()
     customer = Customer.objects.get(airport_user_id = request.user.id)
@@ -24,7 +26,11 @@ def add_ticket(request):
         status=status.HTTP_200_OK
         )
 
-@api_view(['POST'])
+
+@api_view(['PUT'])
+@decorators.conditions_for_cancel_a_ticket
 def remove_ticket(request):
-    
-    pass
+    ticket_id = request.data.get('ticket_id')
+    ticket = Ticket.objects.get(id = ticket_id)
+    ticket.is_active = False
+    ticket.save()

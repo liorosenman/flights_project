@@ -10,6 +10,7 @@ def role_required(role_id):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             if not request.user.is_authenticated:
+                print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
                 return Response({"error": "Authentication required."}, status=status.HTTP_401_UNAUTHORIZED)
             
             if request.user.role_name_id != role_id:
@@ -38,6 +39,22 @@ def conditions_for_booking_a_flight():
                 return Response({"This customer has already a ticket for this flight."})
             if flight.remaining_tickets <= 0:
                 return Response({"Sold-Out!"})
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
+
+def conditions_for_cancel_a_ticket():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            flight_id = request.data.get('flight_id')
+            flight = Flight.objects.get(id=flight_id)
+            if not flight.is_active:
+                return Response({"message":"The flight is already inactive"})
+            ticket_id = request.data.get('ticket_id')
+            ticket = Ticket.objects.get(id = ticket_id)
+            if not ticket.is_active:
+                return Response({"message":"The ticket is already inactive"})
             return func(request, *args, **kwargs)
         return wrapper
     return decorator

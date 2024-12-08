@@ -33,7 +33,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER check_flight_status
+CREATE TRIGGER IF NOT EXISTS check_flight_status
 BEFORE INSERT OR UPDATE ON flight
 FOR EACH ROW
 EXECUTE FUNCTION deactivate_expired_flights();
