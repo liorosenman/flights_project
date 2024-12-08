@@ -43,18 +43,22 @@ def conditions_for_booking_a_flight():
         return wrapper
     return decorator
 
-def conditions_for_cancel_a_ticket():
-    def decorator(func):
-        @wraps(func)
-        def wrapper(request, *args, **kwargs):
-            flight_id = request.data.get('flight_id')
-            flight = Flight.objects.get(id=flight_id)
-            if not flight.is_active:
-                return Response({"message":"The flight is already inactive"})
-            ticket_id = request.data.get('ticket_id')
-            ticket = Ticket.objects.get(id = ticket_id)
-            if not ticket.is_active:
-                return Response({"message":"The ticket is already inactive"})
-            return func(request, *args, **kwargs)
-        return wrapper
-    return decorator
+def conditions_for_cancel_a_ticket(func):
+    @wraps(func)
+    def wrapper(request, *args, **kwargs):
+        ticket_id = request.data.get('ticket_id')
+        ticket = Ticket.objects.get(id = ticket_id)
+        if not ticket.is_active:
+            return Response({"message":"The ticket is already inactive"})
+            #     return Response({"message":"The ticket is already inactive"})
+            # flight_id = request.data.get('flight_id')
+            # flight = Flight.objects.get(id=flight_id)
+            # if not flight.is_active:
+            #     return Response({"message":"The flight is already inactive"})
+            # ticket_id = request.data.get('ticket_id')
+            # ticket = Ticket.objects.get(id = ticket_id)
+            # if not ticket.is_active:
+            #     return Response({"message":"The ticket is already inactive"})
+        return func(request, *args, **kwargs)
+    return wrapper
+    

@@ -28,9 +28,16 @@ def add_ticket(request):
 
 
 @api_view(['PUT'])
+@decorators.role_required(2)
 @decorators.conditions_for_cancel_a_ticket
 def remove_ticket(request):
     ticket_id = request.data.get('ticket_id')
     ticket = Ticket.objects.get(id = ticket_id)
     ticket.is_active = False
     ticket.save()
+    return Response({"msg":"Ticket removed"}, status=status.HTTP_200_OK)
+
+@api_view(['PUT'])
+def get_my_tickets(request):
+    pass
+    

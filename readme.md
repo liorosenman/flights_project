@@ -57,6 +57,10 @@
 # ------------28/11/2024------------------------
     ## DB connected with Postgres and pgadmin using docker containers.
 
+# ------------08/12/2024------------------------
+    ## To create Ticket serializer.
+    ## To continue with get_my_tickets
+    
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
@@ -65,6 +69,7 @@
     5. Logger for each execution of view
     5. More attractive login
     6. Is AirportUserManager neccessary?
+    7. A entity is limited to its own actions.
 
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
