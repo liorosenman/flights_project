@@ -1,4 +1,4 @@
-from base.models import Admin, Airline, AirportUser, Country, Customer, Flight
+from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, Ticket
 from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 
@@ -60,6 +60,11 @@ class FlightSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Flight
+        fields = '__all__'
+
+class TicketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
         fields = '__all__'
 
 

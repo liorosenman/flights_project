@@ -1,15 +1,27 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from base.views_files import airline, country, customer, administrator
+from base.viewsets.viewsets import AirlineViewSet, FlightViewSet
+from base.viewsets.viewsets import CountryViewSet
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.decorators import api_view
 from base import views
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'airline', AirlineViewSet, basename='airline')
+router.register(r'country', CountryViewSet, basename='country')
+router.register(r'flight', FlightViewSet, basename='flight')
+
+
+
 
 urlpatterns = [
-    path('', views.index),
+    path('', include(router.urls)),
+    # path('', views.index),
     path('create_new_admin/', views.admin_register),
     path('create_new_customer/', views.customer_register),
     path('create_new_airline/', views.airline_register),

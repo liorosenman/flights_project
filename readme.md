@@ -60,6 +60,17 @@
 # ------------08/12/2024------------------------
     ## To create Ticket serializer.
     ## To continue with get_my_tickets
+
+# ------------09/12/2024------------------------   
+    ## Creating all serializers.
+    ## Creating viewsets:
+        Flight
+        Airline
+        Customer
+        Administrator
+        User
+        Country
+        Ticket
     
 # FOR THE END:
     1. Input validity methods
@@ -70,7 +81,8 @@
     5. More attractive login
     6. Is AirportUserManager neccessary?
     7. A entity is limited to its own actions.
-
+    8. kwargs - desposible?
+    
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
     2. Create airline //DONE

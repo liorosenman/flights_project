@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from functools import wraps
-
+from django.core.exceptions import ObjectDoesNotExist
 from base.models import Customer, Flight, Ticket, UserRole
 
 def role_required(role_id):
@@ -48,17 +48,16 @@ def conditions_for_cancel_a_ticket(func):
     def wrapper(request, *args, **kwargs):
         ticket_id = request.data.get('ticket_id')
         ticket = Ticket.objects.get(id = ticket_id)
+        if not ticket_id:
+            return Response({"error": "Ticket ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            ticket = Ticket.objects.get(id=ticket_id)
+        except ObjectDoesNotExist:
+            return Response({"error": "Ticket not found"}, status=status.HTTP_404_NOT_FOUND)
+
         if not ticket.is_active:
-            return Response({"message":"The ticket is already inactive"})
-            #     return Response({"message":"The ticket is already inactive"})
-            # flight_id = request.data.get('flight_id')
-            # flight = Flight.objects.get(id=flight_id)
-            # if not flight.is_active:
-            #     return Response({"message":"The flight is already inactive"})
-            # ticket_id = request.data.get('ticket_id')
-            # ticket = Ticket.objects.get(id = ticket_id)
-            # if not ticket.is_active:
-            #     return Response({"message":"The ticket is already inactive"})
+            return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
+
         return func(request, *args, **kwargs)
     return wrapper
     
