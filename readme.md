@@ -100,4 +100,7 @@
     1. Check if the customer has a ticket to that flight.
     2. Check if the flight is active. Inactive flight means that all its tickets are inactive.
     TO BE TESTED (8/12/24).
+
+# A clearer sign-up method
+    ## In each role - create first the airportuser instance.
     

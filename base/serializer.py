@@ -1,6 +1,7 @@
 from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, Ticket
 from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
+from rest_framework.decorators import api_view, action
 
 class UpdateEmailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,12 +12,14 @@ class AirportUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = AirportUser
         fields = ['username', 'password', 'email', 'role_name']
-
-    def create(self, data):
-        if self.is_valid():
-            user_role_id = data.role_name
-        else:
-            pass
+        extra_kwargs = {
+        'password': {'write_only': True},  # Hide password in responses
+        }
+        
+    @action(detail=False, methods=['POST'])
+    def create(self, validated_data):
+        validated_data['password'] = make_password(validated_data['password'])
+        return super().create(validated_data)
 
     def validate_email(self, value):
         if '@' not in value:
@@ -26,10 +29,6 @@ class AirportUserSerializer(serializers.ModelSerializer):
     def is_valid(self, raise_exception=False):
         valid = super().is_valid(raise_exception=raise_exception)
         return valid
-
-    def create(self, validated_data):
-        validated_data['password'] = make_password(validated_data['password'])
-        return super().create(validated_data)
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -41,6 +40,13 @@ class AdminSerializer(serializers.ModelSerializer):
     class Meta:
         model = Admin
         fields = '__all__'
+
+    # @action(detail=False, methods=['POST'])
+    # def create(self, validated_data):
+    #     airport_user_data = validated_data.pop('airport_user')
+    #     airport_user = AirportUser.objects.create(**airport_user_data)
+    #     admin = Admin.objects.create(airport_user=airport_user, **validated_data)
+    #     return admin
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:

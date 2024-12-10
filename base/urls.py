@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from base.views_files import airline, country, customer, administrator
-from base.viewsets.viewsets import AirlineViewSet, FlightViewSet
+from base.viewsets.viewsets import AdminViewSet, AirlineViewSet, AirportUserViewSet, CustomerViewSet, FlightViewSet
 from base.viewsets.viewsets import CountryViewSet
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -15,9 +15,9 @@ router = DefaultRouter()
 router.register(r'airline', AirlineViewSet, basename='airline')
 router.register(r'country', CountryViewSet, basename='country')
 router.register(r'flight', FlightViewSet, basename='flight')
-
-
-
+router.register(r'customer', CustomerViewSet, basename='customer')
+router.register(r'airportuser', AirportUserViewSet, basename='airportuser')
+router.register(r'admin', AdminViewSet, basename='admin')
 
 urlpatterns = [
     path('', include(router.urls)),
