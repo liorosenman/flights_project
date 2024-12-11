@@ -11,15 +11,15 @@ class UpdateEmailSerializer(serializers.ModelSerializer):
 class AirportUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = AirportUser
-        fields = ['username', 'password', 'email', 'role_name']
+        fields = '__all__'
         extra_kwargs = {
         'password': {'write_only': True},  # Hide password in responses
         }
         
-    @action(detail=False, methods=['POST'])
-    def create(self, validated_data):
-        validated_data['password'] = make_password(validated_data['password'])
-        return super().create(validated_data)
+    # @action(detail=False, methods=['POST'])
+    # def create(self, validated_data):
+    #     validated_data['password'] = make_password(validated_data['password'])
+    #     return super().create(validated_data)
 
     def validate_email(self, value):
         if '@' not in value:

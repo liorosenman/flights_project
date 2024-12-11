@@ -103,4 +103,5 @@
 
 # A clearer sign-up method
     ## In each role - create first the airportuser instance.
+## Unsuccessful sign-up should erase the airport_user too.
     
