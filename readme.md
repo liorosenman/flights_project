@@ -74,6 +74,8 @@
 # ------------10/12/2024-------------------------
     ## Admin and customer are created through the view set in customized create func. //DONE
     ## The same should be done with airline.
+    ## The func can be shortened by decorator - @create_airport_user in the utils.py.
+       When the airport_user is created, it can be called as the last one to proceed.
 
 
     
