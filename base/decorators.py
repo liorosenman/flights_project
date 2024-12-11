@@ -60,4 +60,8 @@ def conditions_for_cancel_a_ticket(func):
 
         return func(request, *args, **kwargs)
     return wrapper
-    
+
+def create_airport_user(func):
+    @wraps(func)
+    def wrapper(request, *args, **kwargs):
+        pass

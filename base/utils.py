@@ -64,4 +64,8 @@ def change_user_role_to_num():
 def change_rolename_to_2():
     AirportUser.objects.all().update(role_name_id=2)
 
+def create_airport_user(data):
+    pass
+
+
 

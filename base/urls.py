@@ -22,6 +22,7 @@ router.register(r'admin', AdminViewSet, basename='admin')
 urlpatterns = [
     path('', include(router.urls)),
     # path('', views.index),
+    path('admin/', admin.site.urls),
     path('create_new_admin/', views.admin_register),
     path('create_new_customer/', views.customer_register),
     path('create_new_airline/', views.airline_register),

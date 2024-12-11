@@ -1,6 +1,9 @@
 from django.http import JsonResponse
 from requests import Response, request
 from rest_framework import viewsets
+from rest_framework.response import Response
+
+from base.decorators import role_required
 from ..models import Admin, Airline, AirportUser, Country, Customer, Flight, Ticket
 from ..serializer import AdminSerializer, AirlineSerializer, AirportUserSerializer, CountrySerializer, CustomerSerializer, FlightSerializer, TicketSerializer
 from rest_framework.decorators import api_view, action
@@ -9,6 +12,11 @@ from rest_framework import status
 class AirlineViewSet(viewsets.ModelViewSet):
     queryset = Airline.objects.all()
     serializer_class = AirlineSerializer
+
+    def create(self, request, *args, **kwargs):
+        pass
+
+
 
 class CountryViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
@@ -52,14 +60,24 @@ class AdminViewSet(viewsets.ModelViewSet):
     serializer_class = AdminSerializer
 
     def create(self, request, *args, **kwargs):
-        user_serializer = AirportUserSerializer(data=request.data.get('airport_user'))
+        airport_user_data = request.data.get('airport_user')
+        if not airport_user_data:
+            return JsonResponse({"error": "Airport user data is required."}, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = AirportUserSerializer(data=airport_user_data)
         if not user_serializer.is_valid():
-             return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         airport_user = user_serializer.save()
-        admin_data = request.data.get('admin', {})
-        admin = Admin.objects.create(airport_user=airport_user, **admin_data)
-        admin_serializer = AdminSerializer(admin)
-        return Response(admin_serializer.data, status=status.HTTP_201_CREATED)
+        request.data['airport_user'] = airport_user.id
+        admin_serializer = self.get_serializer(data=request.data)
+        if not admin_serializer.is_valid():
+            airport_user.delete()
+            return JsonResponse(admin_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        admin = admin_serializer.save()
+        return JsonResponse(admin_serializer.data, status=status.HTTP_201_CREATED)
+
+
+
+
 
 
         

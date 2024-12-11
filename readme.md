@@ -70,7 +70,12 @@
         Administrator
         User
         Country
-        Ticket
+        
+# ------------10/12/2024-------------------------
+    ## Admin and customer are created through the view set in customized create func. //DONE
+    ## The same should be done with airline.
+
+
     
 # FOR THE END:
     1. Input validity methods
