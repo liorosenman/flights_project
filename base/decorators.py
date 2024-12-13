@@ -1,9 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from functools import wraps
 from django.core.exceptions import ObjectDoesNotExist
 from base.models import Customer, Flight, Ticket, UserRole
+from base.serializer import AirportUserSerializer
 
 def role_required(role_id):
     def decorator(func):
@@ -64,4 +66,10 @@ def conditions_for_cancel_a_ticket(func):
 def create_airport_user(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
-        pass
+        airport_user_data = request.data.get('airport_user')
+        if not airport_user_data:
+            return JsonResponse({"error": "Airport user data is required."}, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = AirportUserSerializer(data=airport_user_data)
+        if not user_serializer.is_valid():
+            return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        airport_user = user_serializer.save()

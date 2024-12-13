@@ -14,7 +14,21 @@ class AirlineViewSet(viewsets.ModelViewSet):
     serializer_class = AirlineSerializer
 
     def create(self, request, *args, **kwargs):
-        pass
+        airport_user_data = request.data.get('airport_user')
+        if not airport_user_data:
+            return JsonResponse({"error": "Airport user data is required."}, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = AirportUserSerializer(data=airport_user_data)
+        if not user_serializer.is_valid():
+            return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        airport_user = user_serializer.save()
+        request.data['airport_user'] = airport_user.id
+        request.data['airport_user'] = AirportUser.objects
+        airline_serializer = self.get_serializer(data=request.data)
+        if not airline_serializer.is_valid():
+            airport_user.delete()
+            return JsonResponse(airline_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        airline = airline_serializer.save()
+        return JsonResponse(airline_serializer.data, status=status.HTTP_201_CREATED)
 
 
 
