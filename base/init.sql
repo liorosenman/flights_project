@@ -23,6 +23,38 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- ####################################################################################
+
+CREATE OR REPLACE FUNCTION get_customer_by_username(input_username TEXT)
+RETURNS TABLE (
+customer_id BIGINT,
+first_name TEXT,
+last_name TEXT,
+address TEXT,
+phone_no TEXT,
+credit_card_no TEXT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        c.id as ID,
+        c.first_name as first_name,
+        c.last_name as last_name,
+        c.address as address,
+        c.phone_no as phone_number,
+        c.credit_card_no as credit_card
+    FROM
+        base_customer as c JOIN base_airportuser as u ON
+        c.airport_user_id = u.id
+    WHERE
+        u.username = input_username;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+-- ####################################################################################
+
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
 RETURNS TRIGGER AS $$
 BEGIN

@@ -160,6 +160,35 @@ def get_airline_by_username(request, username):
                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
+    
+@api_view(['GET'])
+def get_customer_by_username(request, username):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
+            result = cursor.fetchone()
+            print(result)
+            if result:
+                customer_details = {
+                    "ID":result[0],
+                    "first_name": result[1],
+                    "last_name":result[2],
+                    "address":result[3],
+                    "phone_no":result[4],
+                    "credit_card_no":result[5],
+                    }
+                return Response({"status": "success", "data": customer_details}, status=200)
+            else:
+                return Response({"status": "error", "message": "No customer found for the given username."}, status=404)
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
+
+
+
+
+
+
+
 
 @api_view(['GET'])
 def get_flights_by_parameters():
