@@ -167,6 +167,7 @@ def get_customer_by_username(request, username):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
             result = cursor.fetchone()
+            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             print(result)
             if result:
                 customer_details = {
