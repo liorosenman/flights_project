@@ -115,4 +115,5 @@
 
 # BUGS:
     1. get_customer_by_username // structure of query does not match function result
-    
+# ADDITIONS:
+    1. In create a ticket - check if tickets left. // DONE
