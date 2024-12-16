@@ -165,9 +165,10 @@ def get_airline_by_username(request, username):
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
-            result = cursor.fetchone()
             print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
+            print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+            result = cursor.fetchone()
             print(result)
             if result:
                 customer_details = {

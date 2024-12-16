@@ -33,16 +33,20 @@ last_name TEXT,
 address TEXT,
 phone_number BIGINT,
 credit_card BIGINT
+username TEXT
 ) AS $$
 BEGIN
     RETURN QUERY
     SELECT
-        c.id AS ID,
-        c.first_name AS first_name,
-        c.last_name AS last_name,
-        c.address AS address,
-        c.phone_no AS phone_number,
-        c.credit_card_no AS credit_card
+        c.id AS ID::BIGINT,
+        c.first_name::TEXT AS first_name,
+        c.last_name::TEXT AS last_name,
+        c.address::TEXT AS address,
+        -- CAST(c.phone_no AS BIGINT) AS phone_number,
+        -- CAST(c.credit_card_no AS BIGINT) AS credit_card
+        c.phone_no::BIGINT AS phone_number,
+        c.credit_card_no::BIGINT AS credit_card
+        u.username
     FROM
         base_customer AS c JOIN base_airportuser AS u ON
         c.airport_user_id = u.id
