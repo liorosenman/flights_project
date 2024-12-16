@@ -77,7 +77,8 @@
     ## The func can be shortened by decorator - @create_airport_user in the utils.py.
        When the airport_user is created, it can be called as the last one to proceed.
 
-
+# ------------16/12/2024-------------------------
+    ## remove_airline should be tested.
     
 # FOR THE END:
     1. Input validity methods
@@ -111,4 +112,7 @@
 # A clearer sign-up method
     ## In each role - create first the airportuser instance.
 ## Unsuccessful sign-up should erase the airport_user too.
+
+# BUGS:
+    1. get_customer_by_username // structure of query does not match function result
     

@@ -1,7 +1,7 @@
 from django.db import connection
 from django.http import JsonResponse
-from django.shortcuts import render
-from base.models import Admin, AirportUser, Customer, RolesEnum, UserRole, Airline, Country
+from django.shortcuts import get_object_or_404, render
+from base.models import Admin, AirportUser, Customer, RolesEnum, Ticket, UserRole, Airline, Country, Flight
 from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
@@ -184,7 +184,18 @@ def get_customer_by_username(request, username):
                 return Response({"status": "error", "message": "No customer found for the given username."}, status=404)
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
-
+    
+@api_view(['PUT'])
+def remove_airline(request, id):
+    airline = get_object_or_404(Airline, id = id)
+    active_flights = Flight.objects.filter(airline_company_id = id, is_active=True)
+    for flight in active_flights:
+        ticket = Ticket.objects.filter(flight_id = flight.id, is_active = False )
+        if ticket:
+            return Response({"msg":"There is a passenger in this flight"})
+    airline.is_active = False
+    airline.save()
+    return Response({"msg":"Airline deactivated"})
 
 
 

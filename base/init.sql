@@ -58,6 +58,24 @@ $$ LANGUAGE plpgsql;
 
 
 -- ####################################################################################
+CREATE OR REPLACE FUNCTION get_active_tickets_of_an_airline(id BIGINT)
+RETURNS TABLE (
+ticket_id BIGINT,
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        t.id AS ticket_id
+    FROM
+        ticket
+
+
+
+
+
+-- ####################################################################################
+
+
 
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
 RETURNS TRIGGER AS $$

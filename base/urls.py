@@ -38,7 +38,8 @@ urlpatterns = [
     path('create_ticket/', customer.add_ticket),
     path('remove_ticket/', customer.remove_ticket),
     path('get_all_customers/', customer.get_my_tickets),
-    path('get_customer_by_username/<str:username>/', views.get_customer_by_username)
+    path('get_customer_by_username/<str:username>/', views.get_customer_by_username),
+    path('remove_airline/<int:id>/', views.remove_airline)
 
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),
