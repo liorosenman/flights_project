@@ -35,7 +35,7 @@ def remove_ticket(request):
     ticket_id = request.data.get('ticket_id')
     print(ticket_id)
     ticket = Ticket.objects.get(id = ticket_id)
-    ticket.is_active = True
+    ticket.is_active = False
     flight = Flight.objects.get(id = ticket.flight_id_id)
     flight.remaining_tickets += 1
     flight.save()

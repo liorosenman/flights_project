@@ -117,3 +117,52 @@
     1. get_customer_by_username // structure of query does not match function result
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
+    2. Create airport_user before the 3 roles.
+
+# Facade Base:
+    1. get_all_flights()
+    2. get_flight_by_id(id)
+    3. get_flights_by_parameters()
+    4. get_all_airlines() //DONE
+    5. get_airline_by_id(id) // DONE
+    6. get_airline_by_parameters()
+    7. get_all_contries() // DONE
+    8. get_country_by_id(id) // DONE
+    9. create_new_user() // DONE
+
+# Customer facade:
+    1. update_customer(customer)
+    2. add_ticket(ticket) // DONE
+    3. remove_ticket(ticket) //DONE
+    4. get_my_tickets()
+
+# Airline Facade:
+    1. update_airline(airline)
+    2. add_flight(flight) // DONE
+    3. update_flight(flight)
+    4. remove_flight(flight)
+    5. get_my_flights()
+
+# Anonymous facade:
+    1. login(username, password) // DONE
+    2. add_customer() //DONE
+
+# Administrator facade:
+    1. get_all_customers()
+    2. add_airline() // DONE
+    3. add_customer() // DONE
+    4. add Administrator() // DONE
+    5. remove_airline(airline)
+    6. remove_customer(customer)
+    7. remove_administrator(administator)
+
+# Stored procedures:
+    1. get_airline_by_username (username) // DONE
+    2. get_customer_by_username (username) // BUG
+    3. get_user_by_username (username)
+    4. get_flight_by_parameters (origin, dest, date)
+    5. get_flights_by_airline_id (airline_id bigint)
+    6. get_arrival_flights (country_id)
+    7. get_deparure_flights (country_id)
+
+
