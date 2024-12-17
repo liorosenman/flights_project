@@ -5,7 +5,7 @@ from base.models import Admin, AirportUser, Customer, RolesEnum, Ticket, UserRol
 from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
-from base import utils
+from base import decorators, utils
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
@@ -186,16 +186,51 @@ def get_customer_by_username(request, username):
         return Response({"status": "error", "message": str(e)}, status=400)
     
 @api_view(['PUT'])
+@decorators.role_required(1)
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
+    airport_user = AirportUser.objects.get(id = airline.airport_user_id)
+    if not airport_user.is_active:
+        return Response({"msg":"This airline is already inactive"})
     active_flights = Flight.objects.filter(airline_company_id = id, is_active=True)
     for flight in active_flights:
-        ticket = Ticket.objects.filter(flight_id = flight.id, is_active = False )
+        ticket = Ticket.objects.filter(flight_id = flight.id, is_active = True)
         if ticket:
             return Response({"msg":"There is a passenger in this flight"})
-    airline.is_active = False
-    airline.save()
+    # airline.is_active = False
+    # airline.save()
     return Response({"msg":"Airline deactivated"})
+
+@api_view(['PUT'])
+@decorators.role_required(1)
+def remove_customer(request, id):
+    customer = get_object_or_404(Customer, id = id)
+    airport_user = AirportUser.objects.get(id = customer.airport_user_id)
+    if not airport_user.is_active:
+        return Response({"msg":"This customer is already inactive"})
+    active_customer_tickets = Ticket.objects.filter(customer_id = id, is_active = True)
+    for ticket in active_customer_tickets:
+        flight_id = ticket.flight_id
+        flight = Flight.objects.get(id = flight_id, is_active = True)
+        if flight:
+            return Response({"msg":"The customer has future flights"})
+    return Response({"msg":"The customer is deactivated"})
+        
+@api_view(['PUT'])
+@decorators.role_required(1)
+def remove_admin(request, id):
+    if (id == 1):
+        return Response({"msg":"Prime admin must not be removed!"})
+    admin = get_object_or_404(Admin, id = id)
+    airport_user = AirportUser.objects.get(id = admin.airport_user_id)
+    if not admin.is_active:
+        return Response({"msg":"This admin is already inactive"})
+    return Response({"msg":"The admin is deactivated"})
+    
+        
+
+            
+    
 
 
 

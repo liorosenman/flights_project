@@ -118,6 +118,9 @@
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
     2. Create airport_user before the 3 roles.
+    3. Automatic modification of activity of a flight that took off.
+    4. get-delete-put = Add ID as a seperate argument.
+    4. Login method should consider activity/inactivity.
 
 # Facade Base:
     1. get_all_flights()

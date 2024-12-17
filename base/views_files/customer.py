@@ -31,7 +31,7 @@ def add_ticket(request):
 @api_view(['PUT'])
 @decorators.role_required(2)
 @decorators.conditions_for_cancel_a_ticket()
-def remove_ticket(request):
+def remove_ticket(request, id):
     ticket_id = request.data.get('ticket_id')
     print(ticket_id)
     ticket = Ticket.objects.get(id = ticket_id)
