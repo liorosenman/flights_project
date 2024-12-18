@@ -48,20 +48,12 @@ def conditions_for_booking_a_flight():
 def conditions_for_cancel_a_ticket():
     def decorator(func):
         @wraps(func)
-        def wrapper(request, *args, **kwargs):
-            ticket_id = request.data.get('ticket_id')
-            ticket = Ticket.objects.get(id = ticket_id)
-            if not ticket_id:
-                return Response({"error": "Ticket ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-            try:
-                ticket = Ticket.objects.get(id=ticket_id)
-            except ObjectDoesNotExist:
-                return Response({"error": "Ticket not found"}, status=status.HTTP_404_NOT_FOUND)
-
+        def wrapper(request, id, *args, **kwargs):
+            # ticket_id = request.data.get('ticket_id')
+            ticket = get_object_or_404(Ticket, id = id)
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
-
-            return func(request, *args, **kwargs)
+            return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
 

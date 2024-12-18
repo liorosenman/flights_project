@@ -196,7 +196,7 @@ def remove_airline(request, id):
     for flight in active_flights:
         ticket = Ticket.objects.filter(flight_id = flight.id, is_active = True)
         if ticket:
-            return Response({"msg":"There is a passenger in this flight"})
+            return Response({"msg":"There is a passenger in one of the airline's flights"})
     # airline.is_active = False
     # airline.save()
     return Response({"msg":"Airline deactivated"})

@@ -121,6 +121,7 @@
     3. Automatic modification of activity of a flight that took off.
     4. get-delete-put = Add ID as a seperate argument.
     4. Login method should consider activity/inactivity.
+    5. In get methods - Showing name and not id.
 
 # Facade Base:
     1. get_all_flights()
@@ -155,7 +156,7 @@
     2. add_airline() // DONE
     3. add_customer() // DONE
     4. add Administrator() // DONE
-    5. remove_airline(airline)
+    5. remove_airline(airline) // DONE & TESTED
     6. remove_customer(customer)
     7. remove_administrator(administator)
 
