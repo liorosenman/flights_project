@@ -135,7 +135,7 @@
     9. create_new_user() // DONE
 
 # Customer facade:
-    1. update_customer(customer)
+    1. update_customer(customer) // DONE
     2. add_ticket(ticket) // DONE
     3. remove_ticket(ticket) //DONE
     4. get_my_tickets()

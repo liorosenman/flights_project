@@ -1,8 +1,7 @@
 from django.contrib import admin
+from django.db import router
 from django.urls import include, path
 from base.views_files import airline, country, customer, administrator
-from base.viewsets.viewsets import AdminViewSet, AirlineViewSet, AirportUserViewSet, CustomerViewSet, FlightViewSet
-from base.viewsets.viewsets import CountryViewSet
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.decorators import api_view
@@ -12,20 +11,14 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'airline', AirlineViewSet, basename='airline')
-router.register(r'country', CountryViewSet, basename='country')
-router.register(r'flight', FlightViewSet, basename='flight')
-router.register(r'customer', CustomerViewSet, basename='customer')
-router.register(r'airportuser', AirportUserViewSet, basename='airportuser')
-router.register(r'admin', AdminViewSet, basename='admin')
 
 urlpatterns = [
     path('', include(router.urls)),
     # path('', views.index),
     path('admin/', admin.site.urls),
-    path('create_new_admin/', views.admin_register),
+    path('create_new_admin/', administrator.admin_register),
     path('create_new_customer/', views.customer_register),
-    path('create_new_airline/', views.airline_register),
+    path('create_new_airline/', administrator.airline_register),
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('logout/', views.logout_user, name='logout'),
     path('create_country/', country.create_country),
@@ -41,7 +34,8 @@ urlpatterns = [
     path('get_customer_by_username/<str:username>/', views.get_customer_by_username),
     path('remove_airline/<int:id>/', views.remove_airline),
     path('remove_customer/<int:id>/', views.remove_customer),
-    path('remove_admin/<int:id>/', views.remove_admin)
+    path('remove_admin/<int:id>/', views.remove_admin),
+    path('update_customer/<int:id>/', customer.update_customer)
 
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),

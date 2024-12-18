@@ -27,33 +27,35 @@ $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION get_customer_by_username(input_username TEXT)
 RETURNS TABLE (
-ID BIGINT,
-first_name TEXT,
-last_name TEXT,
-address TEXT,
-phone_number BIGINT,
-credit_card BIGINT
-username TEXT
+    ID BIGINT,
+    first_name TEXT,
+    last_name TEXT,
+    address TEXT,
+    phone_number INTEGER,
+    credit_card BIGINT,
+    username TEXT
 ) AS $$
 BEGIN
     RETURN QUERY
     SELECT
-        c.id AS ID::BIGINT,
+        c.id::BIGINT AS ID,
         c.first_name::TEXT AS first_name,
         c.last_name::TEXT AS last_name,
         c.address::TEXT AS address,
-        -- CAST(c.phone_no AS BIGINT) AS phone_number,
-        -- CAST(c.credit_card_no AS BIGINT) AS credit_card
-        c.phone_no::BIGINT AS phone_number,
-        c.credit_card_no::BIGINT AS credit_card
-        u.username
+        c.phone_no::INTEGER AS phone_number,
+        c.credit_card_no::BIGINT AS credit_card,
+        u.username::TEXT AS username
     FROM
-        base_customer AS c JOIN base_airportuser AS u ON
+        base_customer AS c
+    JOIN
+        base_airportuser AS u
+    ON
         c.airport_user_id = u.id
     WHERE
         u.username = input_username;
 END;
 $$ LANGUAGE plpgsql;
+
 
 
 

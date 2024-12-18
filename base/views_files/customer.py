@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from ..models import Airline, Customer, Flight, Ticket
-from ..serializer import AirlineSerializer, FlightSerializer
+from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
 from base import decorators
 
 
@@ -43,6 +43,19 @@ def remove_ticket(request, id):
     ticket.save()
     # flight = Flight.objects.get(id = ticket.flight_id)
     return Response({"msg": "Ticket removed", "ticket_id": id, "remaining_tickets" : flight.remaining_tickets}, status=status.HTTP_200_OK)
+
+
+@api_view(['PUT'])
+def update_customer(request, id):
+    customer = get_object_or_404(Customer, id = id)
+    print("AAAAAAAAAAAAAAAAAAAAAAAAA")
+    serializer = CustomerSerializer(customer, data=request.data, partial=True)
+    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 @api_view(['PUT'])
