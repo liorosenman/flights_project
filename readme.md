@@ -79,7 +79,13 @@
 
 # ------------16/12/2024-------------------------
     ## remove_airline should be tested.
-    
+    ## remove_airline should be tested.
+
+# ------------20/12/2024-------------------------
+    ## Working on update_flight - done
+    ## Working on get_flights_by_airline - done
+    ## Working on get_tickets_by_customer - done
+
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
@@ -122,6 +128,7 @@
     4. get-delete-put = Add ID as a seperate argument.
     4. Login method should consider activity/inactivity.
     5. In get methods - Showing name and not id.
+    6. Decorators
 
 # Facade Base:
     1. get_all_flights()
@@ -137,15 +144,15 @@
 # Customer facade:
     1. update_customer(customer) // DONE
     2. add_ticket(ticket) // DONE
-    3. remove_ticket(ticket) //DONE
-    4. get_my_tickets()
+    3. remove_ticket(ticket) //DONE --- Check if ticket is already inactive.
+    4. get_my_tickets() //DONE 
 
 # Airline Facade:
-    1. update_airline(airline)
-    2. add_flight(flight) // DONE
-    3. update_flight(flight)
-    4. remove_flight(flight)
-    5. get_my_flights()
+    1. update_airline(airline) // NO SIGNIFICANCE
+    2. add_flight(flight) // DONE & TESTED
+    3. update_flight(flight) // DONE & TESTED
+    4. remove_flight(flight) // DONE & TESTED
+    5. get_my_flights() // DONE & TESTED
 
 # Anonymous facade:
     1. login(username, password) // DONE
@@ -156,9 +163,9 @@
     2. add_airline() // DONE
     3. add_customer() // DONE
     4. add Administrator() // DONE
-    5. remove_airline(airline) // DONE & TESTED
-    6. remove_customer(customer)
-    7. remove_administrator(administator)
+    5. remove_airline(airline) // DONE & TESTED --- All of its flights and tickets should be deactivated.
+    6. remove_customer(customer) //DONE
+    7. remove_administrator(administator)//DONE
 
 # Stored procedures:
     1. get_airline_by_username (username) // DONE

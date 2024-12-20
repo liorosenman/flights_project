@@ -1,3 +1,4 @@
+from django.db import connection
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -12,7 +13,7 @@ from base import decorators
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
     flight_id = request.data.get('flight_id')
-    flight = Flight.objects.get(id=flight_id)
+    flight = Flight.objects.get(id = flight_id)
     # flight = Flight.objects.get(id = request.data.flight_id)
     flight.remaining_tickets -= 1
     flight.save()
@@ -56,9 +57,26 @@ def update_customer(request, id):
         return Response(serializer.data, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-@api_view(['PUT'])
-def get_my_tickets(request):
-    pass
+@api_view([('GET')])
+def get_my_tickets(request, id):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_tickets_by_customer_id(%s)", [id])
+            results = cursor.fetchall()
+            if results:
+                my_tickets = []
+                for result in results:
+                    ticket_details = {
+                        "Ticket-ID": result[0],
+                        "Flight-ID": result[1],
+                        "From:": result[2],
+                        "To": result[3],
+                        "Leaves in:":result[4],
+                         }
+                    my_tickets.append(ticket_details)
+                return Response({"My Tickets:":my_tickets})
+            else:
+                return Response({"status": "error", "message": "No customer found for the given ID."}, status=404)
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
     

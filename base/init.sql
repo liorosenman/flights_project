@@ -50,7 +50,7 @@ BEGIN
     JOIN
         base_airportuser AS u
     ON
-        c.airport_user_id = u.id
+        c.airport_user_id_id = u.id
     WHERE
         u.username = input_username;
 END;
@@ -76,10 +76,63 @@ BEGIN
 
 
 -- ####################################################################################
-CREATE OR REPLACE FUNCTION count_customer_()
+CREATE OR REPLACE FUNCTION get_flights_by_airline_id(airline_id BIGINT)
+RETURNS TABLE (
+airline_name TEXT,
+origin_country_name TEXT,
+destination_country_name TEXT,
+departure_time TIMESTAMP,
+landing_time TIMESTAMP,
+remaining_tickets INTEGER
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+    a.name::TEXT AS airline_name,
+    co.name::TEXT AS origin_country_name,
+    cd.name::TEXT AS destination_country_name,
+    f.departure_time::TIMESTAMP AS departure_time,
+    f.landing_time::TIMESTAMP AS landing_time,
+    f.remaining_tickets::INTEGER AS remaining_tickets
+
+    FROM base_flight AS f
+    JOIN base_country AS co
+    ON f.origin_country_id_id = co.id
+    JOIN base_country AS cd
+    ON f.destination_country_id_id = cd.id
+    JOIN base_airline AS a
+    ON f.airline_company_id = a.id
+    WHERE f.airline_company_id_id = airline_id
+
+END;
+$$ LANGUAGE plpgsql;
+-- ####################################################################################
+CREATE OR REPLACE FUNCTION get_tickets_by_customer_id(customer_id BIGINT)
+RETURNS TABLE (
+ticket_id BIGINT,
+flight_id BIGINT,
+origin_country TEXT,
+destination_country TEXT,
+departure_time TIMESTAMP
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+    t.id::BIGINT AS ticket_id,
+    f.id::BIGINT AS flight_id,
+    co.name::TEXT AS origin_country,
+    cd.name::TEXT AS destination_country,
+    f.departure_time::TIMESTAMP as departure_time
+    FROM base_ticket AS t    
+    JOIN base_flight AS f ON t.flight_id_id = f.id
+    JOIN base_country AS co ON f.origin_country_id_id = co.id
+    JOIN base_country AS cd ON f.destination_country_id_id = cd.id
+    WHERE t.customer_id_id = customer_id;
+END;
+$$ LANGUAGE plpgsql;
+
 
 -- ####################################################################################
-
 
 
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
