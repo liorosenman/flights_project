@@ -86,6 +86,9 @@
     ## Working on get_flights_by_airline - done
     ## Working on get_tickets_by_customer - done
 
+# ------------21/12/2024-------------------------
+    ## Working on get_flights_by_parameters
+    
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code

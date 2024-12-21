@@ -50,7 +50,7 @@ BEGIN
     JOIN
         base_airportuser AS u
     ON
-        c.airport_user_id_id = u.id
+        c.airport_user_id = u.id
     WHERE
         u.username = input_username;
 END;
@@ -130,6 +130,50 @@ BEGIN
     WHERE t.customer_id_id = customer_id;
 END;
 $$ LANGUAGE plpgsql;
+
+
+-- ####################################################################################
+CREATE OR REPLACE FUNCTION get_flights_by_parameters(
+    origin_country INT,
+    destination_country INT,
+    departure TIMESTAMP
+)
+RETURNS TABLE (
+    flight_id BIGINT,
+    airline_company_name TEXT,
+    origin_country_name TEXT,
+    destination_country_name TEXT,
+    landing_time TIMESTAMP,
+    departure_time TIMESTAMP,
+    remaining_tickets INT,
+    is_active BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        f.id::BIGINT AS flight_id,
+        a.name::TEXT AS airline_company_name,
+        co.name::TEXT AS origin_country_name,
+        cd.name::TEXT AS destination_country_name,
+        f.landing_time::TIMESTAMP AS landing_time,
+        f.departure_time::TIMESTAMP AS departure_time,
+        f.remaining_tickets::INT AS remaining_tickets,
+        f.is_active::BOOLEAN AS is_active
+    FROM
+        base_flight AS f
+    JOIN
+        base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN
+        base_country AS co ON f.origin_country_id_id = co.id
+    JOIN
+        base_country AS cd ON f.destination_country_id_id = cd.id
+    WHERE
+        f.origin_country_id_id = origin_country
+        AND f.destination_country_id_id = destination_country
+        AND DATE(f.departure_time) = DATE(departure);
+END;
+$$ LANGUAGE plpgsql;
+
 
 
 -- ####################################################################################

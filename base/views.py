@@ -190,20 +190,35 @@ def remove_admin(request, id):
         return Response({"msg":"This admin is already inactive"})
     return Response({"msg":"The admin is deactivated"})
     
-        
-
-            
-    
-
-
-
-
-
-
 
 @api_view(['GET'])
-def get_flights_by_parameters():
-    pass
+def get_flights_by_parameters(request):
+    origin_country_id = request.data.get('origin_country_id')
+    dest_country_id = request.data.get('dest_country_id')
+    date = request.data.get('dep_date')
+    print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc")
+    try:
+        with connection.cursor() as cursor:
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", [origin_country_id, dest_country_id, date])
+            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            results = cursor.fetchall()
+            if results:
+                flights = []
+                for result in results:
+                    flight_details = {
+                        "Airline": result[0],
+                        "Origin": result[1],
+                        "Destination": result[2],
+                        "Take-Off": result[3],
+                        "Landing":result[4],
+                        "Tickets left:":result[5] }
+                    flights.append(flight_details)
+                return Response({"Relevant flights are:":flights})
+            else:
+                return Response({"status": "error", "message": "No flight matches the parameters"}, status=404)
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
 
 
 #############################################################################################################
