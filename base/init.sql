@@ -45,14 +45,10 @@ BEGIN
         c.phone_no::INTEGER AS phone_number,
         c.credit_card_no::BIGINT AS credit_card,
         u.username::TEXT AS username
-    FROM
-        base_customer AS c
-    JOIN
-        base_airportuser AS u
-    ON
-        c.airport_user_id = u.id
-    WHERE
-        u.username = input_username;
+    FROM base_customer AS c
+    JOIN base_airportuser AS u
+    ON c.airport_user_id = u.id
+    WHERE u.username = input_username;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -140,33 +136,29 @@ CREATE OR REPLACE FUNCTION get_flights_by_parameters(
 )
 RETURNS TABLE (
     flight_id BIGINT,
-    airline_company_name TEXT,
-    origin_country_name TEXT,
-    destination_country_name TEXT,
-    landing_time TIMESTAMP,
+    airline_name VARCHAR,
+    origin_country_name VARCHAR,
+    destination_country_name VARCHAR,
     departure_time TIMESTAMP,
-    remaining_tickets INT,
+    landing_time TIMESTAMP,
+    remaining_tickets INTEGER,
     is_active BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
     SELECT
         f.id::BIGINT AS flight_id,
-        a.name::TEXT AS airline_company_name,
-        co.name::TEXT AS origin_country_name,
-        cd.name::TEXT AS destination_country_name,
-        f.landing_time::TIMESTAMP AS landing_time,
+        a.name::VARCHAR AS airline_name,
+        co.name::VARCHAR AS origin_country_name,
+        cd.name::VARCHAR AS destination_country_name,
         f.departure_time::TIMESTAMP AS departure_time,
-        f.remaining_tickets::INT AS remaining_tickets,
+        f.landing_time::TIMESTAMP AS landing_time,
+        f.remaining_tickets::INTEGER AS remaining_tickets,
         f.is_active::BOOLEAN AS is_active
-    FROM
-        base_flight AS f
-    JOIN
-        base_airline AS a ON f.airline_company_id_id = a.id
-    JOIN
-        base_country AS co ON f.origin_country_id_id = co.id
-    JOIN
-        base_country AS cd ON f.destination_country_id_id = cd.id
+    FROM base_flight AS f
+    JOIN base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN base_country AS co ON f.origin_country_id_id = co.id
+    JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE
         f.origin_country_id_id = origin_country
         AND f.destination_country_id_id = destination_country
@@ -178,7 +170,7 @@ $$ LANGUAGE plpgsql;
 
 -- ####################################################################################
 
-
+-- ###################################################################################
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
 RETURNS TRIGGER AS $$
 BEGIN

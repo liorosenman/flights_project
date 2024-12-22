@@ -207,12 +207,14 @@ def get_flights_by_parameters(request):
                 flights = []
                 for result in results:
                     flight_details = {
-                        "Airline": result[0],
-                        "Origin": result[1],
-                        "Destination": result[2],
-                        "Take-Off": result[3],
+                        "flight_number": result[0],
+                        "Airline": result[1],
+                        "From": result[2],
+                        "To": result[3],
                         "Landing":result[4],
-                        "Tickets left:":result[5] }
+                        "Take-Off":result[5],
+                        "Remaining_tickets":result[6],
+                        "is_active":result[7]}
                     flights.append(flight_details)
                 return Response({"Relevant flights are:":flights})
             else:
