@@ -110,14 +110,10 @@ def get_airline_by_username(request, username):
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_airline_details_by_username(%s)", [username])
+            columns = [col[0] for col in cursor.description]
             result = cursor.fetchone()
             if result:
-                airline_details = {
-                    "airline_id": result[0],
-                    "airline_name": result[1],
-                    "country_id": result[2],
-                    "airport_user_id": result[3],
-                }
+                airline_details = dict(zip(columns,result))
                 return Response({"status": "success", "data": airline_details}, status=200)
             else:
                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
@@ -128,20 +124,11 @@ def get_airline_by_username(request, username):
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:
-            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
-            print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+            columns = [col[0] for col in cursor.description]
             result = cursor.fetchone()
-            print(result)
             if result:
-                customer_details = {
-                    "ID":result[0],
-                    "first_name": result[1],
-                    "last_name":result[2],
-                    "address":result[3],
-                    "phone_no":result[4],
-                    "credit_card_no":result[5],
-                    }
+                customer_details = dict(zip(columns,result))
                 return Response({"status": "success", "data": customer_details}, status=200)
             else:
                 return Response({"status": "error", "message": "No customer found for the given username."}, status=404)
@@ -196,35 +183,43 @@ def get_flights_by_parameters(request):
     origin_country_id = request.data.get('origin_country_id')
     dest_country_id = request.data.get('dest_country_id')
     date = request.data.get('dep_date')
-    print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc")
     try:
         with connection.cursor() as cursor:
-            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", [origin_country_id, dest_country_id, date])
-            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             results = cursor.fetchall()
             if results:
+                columns = [col[0] for col in cursor.description]
                 flights = []
                 for result in results:
-                    flight_details = {
-                        "flight_number": result[0],
-                        "Airline": result[1],
-                        "From": result[2],
-                        "To": result[3],
-                        "Landing":result[4],
-                        "Take-Off":result[5],
-                        "Remaining_tickets":result[6],
-                        "is_active":result[7]}
+                    flight_details = dict(zip(columns, result))
                     flights.append(flight_details)
                 return Response({"Relevant flights are:":flights})
             else:
                 return Response({"status": "error", "message": "No flight matches the parameters"}, status=404)
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
+    
+@api_view(['GET'])
+def get_arrival_flights(request, id):
+    try:
+        with connection.cursor() as cursor:
+             cursor.execute("SELECT * FROM get_arrival_flights_by_country(%s)", [id])
+             results = cursor.fetchall()
+             if results:
+                columns = [col[0] for col in cursor.description]
+                flights = []
+                for result in results:
+                    flight_details = dict(zip(columns, result))
+                    flights.append(flight_details)
+                return Response({"Relevant flights are:":flights})
+             else:
+                return Response({"status": "error", "message": "No flight found"}, status=404)
+    except Exception as e:
+         return Response({"status": "error", "message": str(e)}, status=400)
 
+# -- #############################################################################################################
 
-#############################################################################################################
-
+# -- #############################################################################################################
 # @api_view(['PUT'])
 # def change_rolename_to_admin(request):
 #     utils.change_rolename_to_2()

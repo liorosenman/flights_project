@@ -39,3 +39,5 @@ def airline_register(request):
     airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)
     airline.save()
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
+
+

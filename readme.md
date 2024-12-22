@@ -88,6 +88,7 @@
 
 # ------------21/12/2024-------------------------
     ## Working on get_flights_by_parameters
+
     
 # FOR THE END:
     1. Input validity methods
@@ -176,7 +177,7 @@
     3. get_user_by_username (username)
     4. get_flight_by_parameters (origin, dest, date) //DONE
     5. get_flights_by_airline_id (airline_id bigint) //DONE
-    6. get_arrival_flights (country_id)
+    6. get_arrival_flights (country_id) //DONE & TESTED
     7. get_deparure_flights (country_id)
 
 

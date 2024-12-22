@@ -59,17 +59,19 @@ def get_my_flights(request, id):
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [id])
             results = cursor.fetchall()
             if results:
-                my_flights = []
+                columns = [col[0] for col in cursor.description]
+                flights = []
                 for result in results:
-                    flight_details = {
-                        "Airline": result[0],
-                        "Origin": result[1],
-                        "Destination": result[2],
-                        "Take-Off": result[3],
-                        "Landing":result[4],
-                        "Tickets left:":result[5] }
-                    my_flights.append(flight_details)
-                return Response({"My flights:":my_flights})
+                    flight_details = dict(zip(columns, result))
+
+                        # "Airline": result[0],
+                        # "Origin": result[1],
+                        # "Destination": result[2],
+                        # "Take-Off": result[3],
+                        # "Landing":result[4],
+                        # "Tickets left:":result[5] }
+                    flights.append(flight_details)
+                return Response({"My flights:": flights})
             else:
                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
     except Exception as e:
