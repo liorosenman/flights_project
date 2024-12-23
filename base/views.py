@@ -216,10 +216,26 @@ def get_arrival_flights(request, id):
                 return Response({"status": "error", "message": "No flight found"}, status=404)
     except Exception as e:
          return Response({"status": "error", "message": str(e)}, status=400)
-
+    
+@api_view(['GET'])
+def get_departure_flights(request, id):
+    try:
+        with connection.cursor() as cursor:
+             cursor.execute("SELECT * FROM get_departure_flights_by_country(%s)", [id])
+             results = cursor.fetchall()
+             if results:
+                columns = [col[0] for col in cursor.description]
+                flights = []
+                for result in results:
+                    flight_details = dict(zip(columns, result))
+                    flights.append(flight_details)
+                return Response({"Relevant flights are:":flights})
+             else:
+                return Response({"status": "error", "message": "No flight found"}, status=404)
+    except Exception as e:
+         return Response({"status": "error", "message": str(e)}, status=400)
 # -- #############################################################################################################
 
-# -- #############################################################################################################
 # @api_view(['PUT'])
 # def change_rolename_to_admin(request):
 #     utils.change_rolename_to_2()

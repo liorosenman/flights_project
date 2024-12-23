@@ -1,4 +1,5 @@
-from flask import Response
+from django.db import connection
+from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from base.models import Admin, Airline, AirportUser, Country, Customer, UserRole
 from django.core.exceptions import ObjectDoesNotExist
@@ -40,4 +41,18 @@ def airline_register(request):
     airline.save()
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
 
+@api_view(['GET'])
+def get_user_by_username(request, username):
+    try:
+        with connection.cursor() as cursor:
+             cursor.execute("SELECT * FROM get_user_by_username(%s)", [username])
+             result = cursor.fetchone()
+             if result:
+                columns = [col[0] for col in cursor.description]
+                user = dict(zip(columns,result))
+                return Response({"The user is:":user}, status=200)
+             else:
+                return Response({"status": "error", "message": "No user found"}, status=404)
+    except Exception as e:
+         return Response({"status": "error", "message": str(e)}, status=400)
 

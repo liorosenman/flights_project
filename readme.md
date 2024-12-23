@@ -133,6 +133,7 @@
     4. Login method should consider activity/inactivity.
     5. In get methods - Showing name and not id.
     6. Decorators
+    7. Exclude inactive flights in the stored procedures.
 
 # Facade Base:
     1. get_all_flights()
@@ -174,10 +175,10 @@
 # Stored procedures:
     1. get_airline_by_username (username) // DONE
     2. get_customer_by_username (username) // BUG
-    3. get_user_by_username (username)
+    3. get_user_by_username (username) //DONE
     4. get_flight_by_parameters (origin, dest, date) //DONE
     5. get_flights_by_airline_id (airline_id bigint) //DONE
     6. get_arrival_flights (country_id) //DONE & TESTED
-    7. get_deparure_flights (country_id)
+    7. get_deparure_flights (country_id) //DONE
 
 

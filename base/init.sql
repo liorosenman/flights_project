@@ -200,6 +200,68 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 -- ###################################################################################
+CREATE OR REPLACE FUNCTION get_departure_flights_by_country(country_id BIGINT)
+RETURNS TABLE (
+    flight_id BIGINT,
+    airline_name VARCHAR,
+    origin_country_name VARCHAR,
+    destination_country_name VARCHAR,
+    departure_time TIMESTAMP,
+    landing_time TIMESTAMP,
+    remaining_tickets INTEGER,
+    is_active BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+    f.id::BIGINT AS flight_id,
+    a.name::VARCHAR AS airline_name,
+    co.name::VARCHAR AS origin_country_name,
+    cd.name::VARCHAR AS destination_country_name,
+    f.departure_time::TIMESTAMP AS departure_time,
+    f.landing_time::TIMESTAMP AS landing_time,
+    f.remaining_tickets::INTEGER AS remaining_tickets,
+    f.is_active::BOOLEAN AS is_active
+    FROM base_flight AS f
+    JOIN base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN base_country AS co ON f.origin_country_id_id = co.id
+    JOIN base_country AS cd ON f.destination_country_id_id = cd.id
+    WHERE f.origin_country_id_id = country_id
+        AND f.departure_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours';
+END;
+$$ LANGUAGE plpgsql;
+-- ####################################################################################
+CREATE OR REPLACE FUNCTION get_user_by_username(input_username VARCHAR)
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    password VARCHAR,
+    email VARCHAR,
+    role_name VARCHAR,
+    is_active BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        a.id AS ID,
+        a.username AS username,
+        a.password AS password,
+        a.email AS email,
+        r.role_name AS role_name,
+        a.is_active AS is_active
+    FROM base_airportuser AS a
+    JOIN base_userrole as r ON a.role_name_id = r.id
+    WHERE a.username = input_username;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+
+-- ####################################################################################
+
+
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
 RETURNS TRIGGER AS $$
 BEGIN
