@@ -11,8 +11,11 @@ from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from django.core.exceptions import ObjectDoesNotExist
+from .models import UserRole
+from rest_framework.permissions import IsAuthenticated
+
 
 def index(req):
     return JsonResponse('hello', safe=False)
@@ -45,12 +48,12 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(airport_user)
         token['username'] = airport_user.username
         token['id'] = airport_user.id
-        token['role_name'] = airport_user.role_name.id
-        print(token)
+        token['role_name'] = airport_user.role_name.role_name
         return token
 
 class MyTokenObtainPairView(TokenObtainPairView): 
     serializer_class = MyTokenObtainPairSerializer
+   
 
 @api_view(['POST'])
 def logout_user(request):
@@ -71,7 +74,9 @@ def sign_up(request):
     if role_id == 1:
         pass
 
+
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def get_all_airlines(request):
     airlines = Airline.objects.all()
     serializer = AirlineSerializer(airlines, many=True)

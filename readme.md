@@ -89,7 +89,8 @@
 # ------------21/12/2024-------------------------
     ## Working on get_flights_by_parameters
 
-    
+# ------------25/12/2024-------------------------
+    ## Permission method was created for authorization of admin, customer and airline.
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
@@ -124,7 +125,7 @@
 ## Unsuccessful sign-up should erase the airport_user too.
 
 # BUGS:
-    1. get_customer_by_username // structure of query does not match function result
+    1. get_customer_by_username // structure of query does not match function result // FIXED
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
     2. Create airport_user before the 3 roles.
@@ -134,6 +135,7 @@
     5. In get methods - Showing name and not id.
     6. Decorators
     7. Exclude inactive flights in the stored procedures.
+    8. get_user_by_username --- Show everything except for the password
 
 # Facade Base:
     1. get_all_flights()

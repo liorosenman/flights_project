@@ -1,10 +1,13 @@
 from django.db import connection
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from base.models import Admin, Airline, AirportUser, Country, Customer, UserRole
+from rest_framework.decorators import api_view, permission_classes
+from base.decorators import role_required
+from base.models import Admin, Airline, AirportUser, Country, Customer, RolesEnum, UserRole
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
+from rest_framework.permissions import IsAuthenticated
+from ..permission import role_required
 
 @api_view(['POST'])
 def admin_register(request): #Create a new admin
@@ -42,6 +45,7 @@ def airline_register(request):
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
+@role_required(RolesEnum.ADMINISTRATOR.value)
 def get_user_by_username(request, username):
     try:
         with connection.cursor() as cursor:
