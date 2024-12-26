@@ -77,8 +77,11 @@ def conditions_for_cancel_a_ticket():
     def decorator(func):
         @wraps(func)
         def wrapper(request, id, *args, **kwargs):
-            # ticket_id = request.data.get('ticket_id')
             ticket = get_object_or_404(Ticket, id = id)
+            current_customer = request.user.customers
+            current_customer_id = current_customer.id
+            if ticket.customer_id != current_customer_id:
+                return Response({'msg':'This is a ticket of another customer'})
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
             return func(request, id, *args, **kwargs)

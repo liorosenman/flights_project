@@ -91,6 +91,7 @@
 
 # ------------25/12/2024-------------------------
     ## Permission method was created for authorization of admin, customer and airline.
+    
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
@@ -136,6 +137,7 @@
     6. Decorators
     7. Exclude inactive flights in the stored procedures.
     8. get_user_by_username --- Show everything except for the password
+    9. Don't allow one user to use method on an object that belongs to another user.
 
 # Facade Base:
     1. get_all_flights()
