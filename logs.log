@@ -229,3 +229,9 @@ TypeError: 'int' object is not callable
 2024-12-30 16:38:23,279 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
 2024-12-30 16:38:24,474 - DEBUG - Test DEBUG log message
 2024-12-30 16:38:35,285 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:54:21,570 - DEBUG - Test DEBUG log message
+2024-12-30 16:57:40,836 - DEBUG - Test DEBUG log message
+2024-12-30 16:58:16,158 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 17:03:57,869 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 17:03:58,971 - DEBUG - Test DEBUG log message
+2024-12-30 17:04:01,766 - WARNING - User 2 tried to remove a ticket of another user

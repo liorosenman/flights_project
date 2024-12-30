@@ -9,7 +9,7 @@ from ..models import Airline, Customer, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
 from base import decorators
 
-logging.basicConfig(filename="./logs.log",
+logging.basicConfig(filename="../logs.log",
                     level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     filemode='a')
