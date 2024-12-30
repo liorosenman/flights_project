@@ -1,0 +1,231 @@
+2024-12-30 15:45:27,658 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\permission.py", line 21, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\decorators.py", line 73, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\views_files\customer.py", line 17, in add_ticket
+    flight = get_my_tickets(Flight, id = flight_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 391, in initialize_request
+    return Request(
+           ^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\request.py", line 154, in __init__
+    assert isinstance(request, HttpRequest), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The `request` argument must be an instance of `django.http.HttpRequest`, not `django.db.models.base.ModelBase`.
+2024-12-30 15:48:24,596 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:48:26,923 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:50:10,776 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:50:14,212 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:50:16,804 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:50:58,689 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:01,376 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:04,096 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:07,976 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:11,679 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:14,105 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:51:16,736 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 15:54:08,643 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:54:47,520 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:54:51,194 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:54:54,861 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:55:21,871 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:55:49,208 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:55:51,818 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:02,183 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:10,289 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:12,869 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:16,587 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:24,474 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:57:31,685 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 15:58:57,858 - WARNING - User 2 tried to remove a ticket of user 3
+2024-12-30 16:02:21,678 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:03:10,077 - WARNING - User 3 tried to remove a ticket of another user
+2024-12-30 16:03:18,006 - WARNING - User 3 tried to remove a ticket of another user
+2024-12-30 16:06:57,595 - WARNING - Not Found: /remove_ticket/9/
+2024-12-30 16:07:43,085 - WARNING - User 3 tried to remove a ticket of another user
+2024-12-30 16:08:33,846 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:09:24,213 - WARNING - User 3 tried to remove a ticket of another user
+2024-12-30 16:10:26,686 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:10:30,269 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:10:51,646 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:11:05,333 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:13:04,744 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:13:09,433 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:13:13,102 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:13:16,927 - ERROR - Internal Server Error: /remove_ticket/7/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\decorators.py", line 100, in wrapper
+    logging.WARNING(f"User {current_customer_id} tried to remove a ticket of another user")
+TypeError: 'int' object is not callable
+2024-12-30 16:13:34,783 - ERROR - Internal Server Error: /remove_ticket/7
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/remove_ticket/7/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-12-30 16:13:46,446 - ERROR - Internal Server Error: /remove_ticket/7/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\decorators.py", line 100, in wrapper
+    logging.WARNING(f"User {current_customer_id} tried to remove a ticket of another user")
+TypeError: 'int' object is not callable
+2024-12-30 16:17:07,652 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:17:10,258 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:17:13,242 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:18:10,384 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:18:12,915 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:19:27,396 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:19:30,850 - WARNING - Unauthorized: /remove_ticket/7/
+2024-12-30 16:19:50,170 - ERROR - Internal Server Error: /remove_ticket/7/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\base\decorators.py", line 100, in wrapper
+    logging.WARNING(f"User {current_customer_id} tried to remove a ticket of another user")
+TypeError: 'int' object is not callable
+2024-12-30 16:22:15,604 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:22:22,412 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:24:44,351 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:25:03,725 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:25:08,519 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:26:19,597 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:27:04,770 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:27:11,154 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:28:29,566 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 16:28:35,000 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 16:28:40,706 - INFO - C:\LIOR\python\final_project\base\views_files\customer.py changed, reloading.
+2024-12-30 16:28:47,589 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:33:43,306 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:34:15,862 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:35:34,656 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:35:42,481 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:35:53,321 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:35:58,156 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:36:25,546 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:36:41,804 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:36:44,435 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:36:49,338 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:36:51,995 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:36:54,551 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:37:14,814 - WARNING - User 2 tried to remove a ticket of another user
+2024-12-30 16:38:23,279 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2024-12-30 16:38:24,474 - DEBUG - Test DEBUG log message
+2024-12-30 16:38:35,285 - WARNING - User 2 tried to remove a ticket of another user

@@ -65,18 +65,8 @@ def logout_user(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
-api_view(['POST'])
-def sign_up(request):
-    serializer = AirportUserSerializer(data=request.data)
-    if serializer.is_valid():
-        airport_user = serializer.save()
-    role_id = request.data.role_id
-    if role_id == 1:
-        pass
-
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def get_all_airlines(request):
     airlines = Airline.objects.all()
     serializer = AirlineSerializer(airlines, many=True)
@@ -141,7 +131,6 @@ def get_customer_by_username(request, username):
         return Response({"status": "error", "message": str(e)}, status=400)
     
 @api_view(['PUT'])
-@decorators.role_required(1)
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
     airport_user = AirportUser.objects.get(id = airline.airport_user_id)
@@ -157,7 +146,6 @@ def remove_airline(request, id):
     return Response({"msg":"Airline deactivated"})
 
 @api_view(['PUT'])
-@decorators.role_required(1)
 def remove_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
@@ -172,7 +160,6 @@ def remove_customer(request, id):
     return Response({"msg":"The customer is deactivated"})
         
 @api_view(['PUT'])
-@decorators.role_required(1)
 def remove_admin(request, id):
     if (id == 1):
         return Response({"msg":"Prime admin must not be removed!"})

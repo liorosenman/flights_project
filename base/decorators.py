@@ -1,3 +1,4 @@
+import logging
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
@@ -7,7 +8,16 @@ from django.core.exceptions import ObjectDoesNotExist
 from base.models import Customer, Flight, Ticket, UserRole
 from base.serializer import AirportUserSerializer
 from rest_framework_simplejwt.tokens import AccessToken
+from django.utils.timezone import now
 
+
+logging.basicConfig(filename="logs.log",
+                    level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    filemode='a')
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logging.debug("Test DEBUG log message")
 # def role_required(role_name):
 #     def decorator(func):
 #         @wraps(func)
@@ -25,6 +35,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 #             return func(request, *args, **kwargs)
 #         return wrapper
 #     return decorator
+
 
 def role_required(role_name):
     def decorator(func):
@@ -73,6 +84,16 @@ def conditions_for_booking_a_flight():
         return wrapper
     return decorator
 
+def deactivate_flights():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            flights = Flight.objects.filter(is_active=True, departure_time__lte=now())
+            flights.update(is_active = False)
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
+
 def conditions_for_cancel_a_ticket():
     def decorator(func):
         @wraps(func)
@@ -81,6 +102,7 @@ def conditions_for_cancel_a_ticket():
             current_customer = request.user.customers
             current_customer_id = current_customer.id
             if ticket.customer_id != current_customer_id:
+                logging.warning(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response({'msg':'This is a ticket of another customer'})
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)

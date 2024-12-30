@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import logging
 from django.db import connection
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
@@ -7,6 +8,10 @@ from rest_framework import status
 from ..models import Airline, Flight, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
 from django.utils.timezone import now, make_aware
+
+logging.basicConfig(filename="./logs.log",
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    filemode='a')
 
 @api_view(['POST'])
 def add_flight(request):

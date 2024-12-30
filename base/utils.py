@@ -1,9 +1,10 @@
 from base import serializer
-from base.models import AirportUser, RolesEnum, UserRole, Admin
+from base.models import AirportUser, Flight, RolesEnum, UserRole, Admin
 from base.serializer import AirportUserSerializer
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework import status
+from django.utils.timezone import now
 
 
 def create_airport_user(data):
@@ -35,6 +36,8 @@ def create_default_airport_user():
         return Response({"message": "Admin prime was created successfully."}, status=status.HTTP_201_CREATED)
     else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
         
 def create_all_user_roles():
     roles_to_create = [

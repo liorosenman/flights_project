@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-# @permission_classes([IsAuthenticated]) 
 def role_required(required_role):
     def decorator(func):
         @wraps(func)

@@ -91,6 +91,10 @@
 
 # ------------25/12/2024-------------------------
     ## Permission method was created for authorization of admin, customer and airline.
+
+# ------------25/12/2024-------------------------
+    ## Modification in add_ticket method --- exclude inactive flight.
+    ## Decorators --- Adding method "deactivate flights"
     
 # FOR THE END:
     1. Input validity methods
@@ -129,8 +133,13 @@
     1. get_customer_by_username // structure of query does not match function result // FIXED
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
-    2. Create airport_user before the 3 roles.
-    3. Automatic modification of activity of a flight that took off.
+    2. Create Countries --> User_roles --> airportuser
+    3. Automatic modification of activity of a flight that took off:
+        a. Add a ticket
+        b. get all flights
+        c. get flights by id
+        d. get my flights 
+        e. update flight
     4. get-delete-put = Add ID as a seperate argument.
     4. Login method should consider activity/inactivity.
     5. In get methods - Showing name and not id.
@@ -138,6 +147,7 @@
     7. Exclude inactive flights in the stored procedures.
     8. get_user_by_username --- Show everything except for the password
     9. Don't allow one user to use method on an object that belongs to another user.
+    10. Adjust id to name in GET methods.
 
 # Facade Base:
     1. get_all_flights()
