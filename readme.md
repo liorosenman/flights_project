@@ -98,6 +98,7 @@
 
 # ------------31/12/2024-------------------------
     # Customized logger produces the logs in another file.
+    
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code

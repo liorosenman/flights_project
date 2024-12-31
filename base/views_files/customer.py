@@ -9,12 +9,14 @@ from ..models import Airline, Customer, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
 from base import decorators
 
-logging.basicConfig(filename="../logs.log",
-                    level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s',
-                    filemode='a')
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+
+logger = logging.getLogger('report_actions')
+# logging.basicConfig(filename="../logs.log",
+#                     level=logging.DEBUG,
+#                     format='%(asctime)s - %(levelname)s - %(message)s',
+#                     filemode='a')
+# logger = logging.getLogger()
+# logger.setLevel(logging.DEBUG)
 
 @api_view(['POST'])
 # @role_required(RolesEnum.CUSTOMER.value)

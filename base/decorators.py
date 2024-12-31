@@ -10,17 +10,7 @@ from base.serializer import AirportUserSerializer
 from rest_framework_simplejwt.tokens import AccessToken
 from django.utils.timezone import now
 
-
-# logging.basicConfig(filename="../../myproj/logs.log",
-#                     level=logging.DEBUG,
-#                     format='%(asctime)s - %(levelname)s - %(message)s',
-#                     filemode='a')
-# logger = logging.getLogger()
-# logger.setLevel(logging.DEBUG)
-# logging.debug("Test DEBUG log message")
-
 logger = logging.getLogger('report_actions')
-logger.debug("This is a debug message.")
 
 def conditions_for_booking_a_flight():
     def decorator(func):
@@ -61,7 +51,8 @@ def conditions_for_cancel_a_ticket():
             current_customer = request.user.customers
             current_customer_id = current_customer.id
             if ticket.customer_id != current_customer_id:
-                logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
+                # logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
+                logger.warning(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response({'msg':'This is a ticket of another customer'})
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
