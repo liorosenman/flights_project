@@ -16,7 +16,16 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+MYPROJ_DIR = BASE_DIR / 'myproj'
+LOGS_DIR = MYPROJ_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
+# LOGS_DIR = BASE_DIR / 'logs'
+# LOGS_DIR.mkdir(exist_ok=True)
+# LOGS_DIR = os.path.join(BASE_DIR, 'logs')
+# if not os.path.exists(LOGS_DIR):
+#     os.makedirs(LOGS_DIR)
 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -197,6 +206,33 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTH_USER_MODEL = 'base.AirportUser'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename' : str(LOGS_DIR / 'report_actions.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{asctime} - {levelname} - {message}',
+            'style': '{',
+        },
+    },
+    'loggers': {
+        'report_actions': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
 
 
 

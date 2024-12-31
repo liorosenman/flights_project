@@ -11,57 +11,16 @@ from rest_framework_simplejwt.tokens import AccessToken
 from django.utils.timezone import now
 
 
-logging.basicConfig(filename="logs.log",
-                    level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s',
-                    filemode='a')
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-logging.debug("Test DEBUG log message")
-# def role_required(role_name):
-#     def decorator(func):
-#         @wraps(func)
-#         def wrapper(request, *args, **kwargs):
-#             if not request.user.is_authenticated:
-#                 print(request.user)
-#                 print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-#                 return JsonResponse({"error": "Authentication required."}, status=status.HTTP_401_UNAUTHORIZED)
-            
-#             if request.user.role_name != role_name:
-#                 # permitted_role = UserRole.objects.get(id=role_id).role_name
-#                 return JsonResponse({"error": f"Permission denied. Only {role_name}s are permitted."}, 
-#                                 status=status.HTTP_403_FORBIDDEN)
-                        
-#             return func(request, *args, **kwargs)
-#         return wrapper
-#     return decorator
+# logging.basicConfig(filename="../../myproj/logs.log",
+#                     level=logging.DEBUG,
+#                     format='%(asctime)s - %(levelname)s - %(message)s',
+#                     filemode='a')
+# logger = logging.getLogger()
+# logger.setLevel(logging.DEBUG)
+# logging.debug("Test DEBUG log message")
 
-
-def role_required(role_name):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(request, *args, **kwargs):
-            auth_header = request.headers.get('Authorization')
-            # if not auth_header:
-            #     return Response({'error': 'Authorization header is missing'}, status=401)
-            try:
-                token_str = auth_header.split(' ')[1]
-                token = AccessToken(token_str)
-                print(token)
-            except IndexError:
-                return Response({'error': 'Invalid token format'}, status=401)
-            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-            print(token_str)
-            print(token)
-            current_role_name = token['role_name']
-            print(current_role_name)
-            if current_role_name != role_name:
-                return Response({"error": f"Permission denied. Only {role_name}s are permitted."}, 
-                                status=status.HTTP_403_FORBIDDEN)
-            return func(request, *args, **kwargs)
-        return wrapper
-    return decorator
-
+logger = logging.getLogger('report_actions')
+logger.debug("This is a debug message.")
 
 def conditions_for_booking_a_flight():
     def decorator(func):
@@ -102,7 +61,7 @@ def conditions_for_cancel_a_ticket():
             current_customer = request.user.customers
             current_customer_id = current_customer.id
             if ticket.customer_id != current_customer_id:
-                logging.warning(f"User {current_customer_id} tried to remove a ticket of another user")
+                logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response({'msg':'This is a ticket of another customer'})
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)

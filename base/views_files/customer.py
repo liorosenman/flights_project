@@ -13,9 +13,11 @@ logging.basicConfig(filename="../logs.log",
                     level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     filemode='a')
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
 @api_view(['POST'])
-@role_required(RolesEnum.CUSTOMER.value)
+# @role_required(RolesEnum.CUSTOMER.value)
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
     flight_id = request.data.get('flight_id')

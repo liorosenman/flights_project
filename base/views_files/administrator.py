@@ -1,7 +1,7 @@
 from django.db import connection
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from base.decorators import role_required
+# from base.decorators import role_required
 from base.models import Admin, Airline, AirportUser, Country, Customer, RolesEnum, UserRole
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
