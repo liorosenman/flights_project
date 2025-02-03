@@ -987,3 +987,9 @@
 2024-12-31 15:18:56,796 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
 2024-12-31 15:19:19,520 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
 2024-12-31 15:19:22,133 - INFO - C:\LIOR\python\final_project\base\decorators.py changed, reloading.
+2025-02-03 16:41:29,546 - INFO - C:\LIOR\python\final_project\base\views_files\administrator.py changed, reloading.
+2025-02-03 16:45:00,322 - WARNING - Forbidden (CSRF token missing.): /admin/
+2025-02-03 16:45:57,357 - WARNING - Bad Request: /create_new_admin/
+2025-02-03 17:01:05,032 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.
+2025-02-03 17:01:09,728 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.
+2025-02-03 17:14:26,921 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.

@@ -98,6 +98,19 @@
 
 # ------------31/12/2024-------------------------
     # Customized logger produces the logs in another file.
+
+# ------------02/02/2024-------------------------
+    # Country facade should be deleted
+    # Clear --- make aware function
+    # get_my_flights --- revised (not tested).
+    # get_flight_by_parameters --- revised (not tested).
+    # remove_ticket addressed again.
+    # get_my_tickets --- to be shortened.
+
+# ------------03/02/2024-------------------------
+    # Move all remove methods to administator view
+    # 
+
     
 # FOR THE END:
     1. Input validity methods
@@ -134,6 +147,7 @@
 
 # BUGS:
     1. get_customer_by_username // structure of query does not match function result // FIXED
+
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
     2. Create Countries --> User_roles --> airportuser

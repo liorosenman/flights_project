@@ -177,17 +177,13 @@ def get_flights_by_parameters(request):
     date = request.data.get('dep_date')
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", [origin_country_id, dest_country_id, date])
-            results = cursor.fetchall()
-            if results:
-                columns = [col[0] for col in cursor.description]
-                flights = []
-                for result in results:
-                    flight_details = dict(zip(columns, result))
-                    flights.append(flight_details)
-                return Response({"Relevant flights are:":flights})
-            else:
-                return Response({"status": "error", "message": "No flight matches the parameters"}, status=404)
+            cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", 
+                           [origin_country_id, dest_country_id, date])
+            columns = [col[0] for col in cursor.description]  # Extract column names
+            flights = [dict(zip(columns, row)) for row in cursor.fetchall()]
+            if not flights:
+                return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+            return Response({"relevant_flights": flights})
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
     

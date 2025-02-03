@@ -4,7 +4,8 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import BaseUserManager
-
+from django.dispatch import receiver
+from django.db.models.signals import post_migrate
 
 class AirportUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
@@ -121,5 +122,11 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f"Ticket {self.id} for {self.customer.first_name} {self.customer.last_name} on Flight {self.flight.id}"
+    
 
+@receiver(post_migrate)
+def create_default_roles(sender, **kwargs):
+    if sender.name == "base":  # Replace with your actual Django app name
+        for role in RolesEnum:
+            UserRole.objects.get_or_create(role_name=role.value)
 

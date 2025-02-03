@@ -7,6 +7,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
+from base.serializer import CustomerSerializer
 from ..permission import role_required
 
 @api_view(['POST'])
@@ -59,4 +60,14 @@ def get_user_by_username(request, username):
                 return Response({"status": "error", "message": "No user found"}, status=404)
     except Exception as e:
          return Response({"status": "error", "message": str(e)}, status=400)
+    
+@api_view(['GET'])
+@role_required(RolesEnum.ADMINISTRATOR.value)
+def get_all_customers():
+        customers = Customer.objects.all()
+        if not customers.exists():
+            return Response({"message": "There are no customers"}, status=status.HTTP_200_OK)
+        serializer = CustomerSerializer(customers, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
 

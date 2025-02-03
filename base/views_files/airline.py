@@ -57,30 +57,50 @@ def remove_flight(request, id):
    flight.save()
    return Response({"msg":"Flight removed successfully"})
 
-@api_view([('GET')])
+from django.db import connection
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+@api_view(['GET'])
 def get_my_flights(request, id):
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [id])
-            results = cursor.fetchall()
-            if results:
-                columns = [col[0] for col in cursor.description]
-                flights = []
-                for result in results:
-                    flight_details = dict(zip(columns, result))
+            columns = [col[0] for col in cursor.description]  # Extract column names
+            flights = [dict(zip(columns, row)) for row in cursor.fetchall()]  # Create list of dicts
 
-                        # "Airline": result[0],
-                        # "Origin": result[1],
-                        # "Destination": result[2],
-                        # "Take-Off": result[3],
-                        # "Landing":result[4],
-                        # "Tickets left:":result[5] }
-                    flights.append(flight_details)
-                return Response({"My flights:": flights})
-            else:
-                return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
+        if not flights:
+            return Response({"status": "error", "message": "No airline found for the given ID."}, status=404)
+
+        return Response({"my_flights": flights})
+
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
+
+# @api_view([('GET')])
+# def get_my_flights(request, id):
+#     try:
+#         with connection.cursor() as cursor:
+#             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [id])
+#             results = cursor.fetchall()
+#             if results:
+#                 columns = [col[0] for col in cursor.description]
+#                 flights = []
+#                 for result in results:
+#                     flight_details = dict(zip(columns, result))
+
+#                         # "Airline": result[0],
+#                         # "Origin": result[1],
+#                         # "Destination": result[2],
+#                         # "Take-Off": result[3],
+#                         # "Landing":result[4],
+#                         # "Tickets left:":result[5] }
+#                     flights.append(flight_details)
+#                 return Response({"My flights:": flights})
+#             else:
+#                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
+#     except Exception as e:
+#         return Response({"status": "error", "message": str(e)}, status=400)
     
 
 
