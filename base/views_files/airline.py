@@ -5,7 +5,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from ..models import Airline, Flight, Ticket
+from base.permission import role_required
+from ..models import Airline, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
 from django.utils.timezone import now, make_aware
 
@@ -14,6 +15,7 @@ logging.basicConfig(filename="./logs.log",
                     filemode='a')
 
 @api_view(['POST'])
+@role_required(RolesEnum.AIRLINE.value)
 def add_flight(request):
      serializer = FlightSerializer(data=request.data)
      if serializer.is_valid():
@@ -22,6 +24,7 @@ def add_flight(request):
      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PUT'])
+@role_required(RolesEnum.AIRLINE.value)
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
     if not flight.is_active:
@@ -46,6 +49,7 @@ def update_flight(request, id):
     return Response({"msg":"The flight has been updated"})
 
 @api_view([('PUT')])
+@role_required(RolesEnum.AIRLINE.value)
 def remove_flight(request, id):
    flight = get_object_or_404(Flight, id = id)
    if not flight.is_active:
@@ -62,6 +66,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 @api_view(['GET'])
+@role_required(RolesEnum.AIRLINE.value)
 def get_my_flights(request, id):
     try:
         with connection.cursor() as cursor:

@@ -115,13 +115,15 @@
 # FOR THE END:
     1. Input validity methods
     2. Moving to serializer to shorten the code
-    3. Divide the views into folders
-    4. Authorization
+    3. Divide the views into folders //DONE
+    4. Authorization //DONE
+    4a. Customer is permitted to perform actions only his
+    4b. Airline is permitted to perform actions only his
     5. Logger for each execution of view
     5. More attractive login
     6. Is AirportUserManager neccessary?
-    7. A entity is limited to its own actions.
     8. kwargs - desposible?
+    9. get_my_tickets --- redesign
     
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
@@ -211,5 +213,14 @@
     5. get_flights_by_airline_id (airline_id bigint) //DONE
     6. get_arrival_flights (country_id) //DONE & TESTED
     7. get_deparure_flights (country_id) //DONE
+
+# Input validity for methods:
+    1. Create new airport user.
+    2. Create new administator.
+    3. Create new customer. --- using decorator
+    4. Create new airline.
+    5. Update customer --- as creating customer. --- using decorator
+    6. 
+
 
 

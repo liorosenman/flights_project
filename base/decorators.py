@@ -61,6 +61,10 @@ def conditions_for_cancel_a_ticket():
     return decorator
 
 
+
+
+
+
 def create_airport_user(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
@@ -71,3 +75,5 @@ def create_airport_user(func):
         if not user_serializer.is_valid():
             return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         airport_user = user_serializer.save()
+
+

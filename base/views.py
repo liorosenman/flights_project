@@ -114,61 +114,7 @@ def get_airline_by_username(request, username):
                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
-    
-@api_view(['GET'])
-def get_customer_by_username(request, username):
-    try:
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
-            columns = [col[0] for col in cursor.description]
-            result = cursor.fetchone()
-            if result:
-                customer_details = dict(zip(columns,result))
-                return Response({"status": "success", "data": customer_details}, status=200)
-            else:
-                return Response({"status": "error", "message": "No customer found for the given username."}, status=404)
-    except Exception as e:
-        return Response({"status": "error", "message": str(e)}, status=400)
-    
-@api_view(['PUT'])
-def remove_airline(request, id):
-    airline = get_object_or_404(Airline, id = id)
-    airport_user = AirportUser.objects.get(id = airline.airport_user_id)
-    if not airport_user.is_active:
-        return Response({"msg":"This airline is already inactive"})
-    active_flights = Flight.objects.filter(airline_company_id = id, is_active=True)
-    for flight in active_flights:
-        ticket = Ticket.objects.filter(flight_id = flight.id, is_active = True)
-        if ticket:
-            return Response({"msg":"There is a passenger in one of the airline's flights"})
-    # airline.is_active = False
-    # airline.save()
-    return Response({"msg":"Airline deactivated"})
-
-@api_view(['PUT'])
-def remove_customer(request, id):
-    customer = get_object_or_404(Customer, id = id)
-    airport_user = AirportUser.objects.get(id = customer.airport_user_id)
-    if not airport_user.is_active:
-        return Response({"msg":"This customer is already inactive"})
-    active_customer_tickets = Ticket.objects.filter(customer_id = id, is_active = True)
-    for ticket in active_customer_tickets:
-        flight_id = ticket.flight_id
-        flight = Flight.objects.get(id = flight_id, is_active = True)
-        if flight:
-            return Response({"msg":"The customer has future flights"})
-    return Response({"msg":"The customer is deactivated"})
         
-@api_view(['PUT'])
-def remove_admin(request, id):
-    if (id == 1):
-        return Response({"msg":"Prime admin must not be removed!"})
-    admin = get_object_or_404(Admin, id = id)
-    airport_user = AirportUser.objects.get(id = admin.airport_user_id)
-    if not admin.is_active:
-        return Response({"msg":"This admin is already inactive"})
-    return Response({"msg":"The admin is deactivated"})
-    
 
 @api_view(['GET'])
 def get_flights_by_parameters(request):

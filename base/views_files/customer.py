@@ -19,7 +19,7 @@ logger = logging.getLogger('report_actions')
 # logger.setLevel(logging.DEBUG)
 
 @api_view(['POST'])
-# @role_required(RolesEnum.CUSTOMER.value)
+@role_required(RolesEnum.CUSTOMER.value)
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
     flight_id = request.data.get('flight_id')
@@ -42,6 +42,7 @@ def add_ticket(request):
 
 
 @api_view(['PUT'])
+@role_required(RolesEnum.CUSTOMER.value)
 @decorators.conditions_for_cancel_a_ticket()
 def remove_ticket(request, id):
     ticket = Ticket.objects.get(id = id)
@@ -54,6 +55,7 @@ def remove_ticket(request, id):
 
 
 @api_view(['PUT'])
+@role_required(RolesEnum.CUSTOMER.value)
 def update_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
@@ -63,6 +65,7 @@ def update_customer(request, id):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view([('GET')])
+@role_required(RolesEnum.CUSTOMER.value)
 def get_my_tickets(request, id):
     try:
         with connection.cursor() as cursor:
