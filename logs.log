@@ -993,3 +993,12 @@
 2025-02-03 17:01:05,032 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.
 2025-02-03 17:01:09,728 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.
 2025-02-03 17:14:26,921 - INFO - C:\LIOR\python\final_project\base\models.py changed, reloading.
+2025-02-04 18:14:46,262 - WARNING - Bad Request: /create_new_customer/
+2025-02-04 18:24:26,993 - WARNING - Bad Request: /create_new_customer/
+2025-02-04 18:24:37,004 - WARNING - Bad Request: /create_new_customer/
+2025-02-04 18:29:06,499 - WARNING - Bad Request: /create_new_customer/
+2025-02-04 18:35:38,865 - INFO - C:\LIOR\python\final_project\base\views.py changed, reloading.
+2025-02-04 18:35:48,831 - INFO - C:\LIOR\python\final_project\base\views.py changed, reloading.
+2025-02-04 18:35:59,889 - INFO - C:\LIOR\python\final_project\base\views.py changed, reloading.
+2025-02-04 18:36:06,675 - INFO - C:\LIOR\python\final_project\base\views.py changed, reloading.
+2025-02-04 18:38:09,481 - INFO - C:\LIOR\python\final_project\base\views_files\administrator.py changed, reloading.

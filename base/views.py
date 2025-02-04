@@ -2,7 +2,7 @@ from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from base.models import Admin, AirportUser, Customer, RolesEnum, Ticket, UserRole, Airline, Country, Flight
-from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer
+from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer, CustomerSerializer
 from rest_framework.decorators import action
 from rest_framework import status, viewsets
 from base import decorators, utils
@@ -19,6 +19,14 @@ from rest_framework.permissions import IsAuthenticated
 
 def index(req):
     return JsonResponse('hello', safe=False)
+
+# @api_view(['POST']) #Create a new customer
+# def customer_register(request):
+#     serializer = CustomerSerializer(data=request.data)
+#     if serializer.is_valid():
+#         customer = serializer.save()  
+#         return Response(CustomerSerializer(customer).data, status=status.HTTP_201_CREATED)
+#     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST']) #Create a new customer
 def customer_register(request):

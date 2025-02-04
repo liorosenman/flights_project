@@ -15,6 +15,13 @@ class AirportUserSerializer(serializers.ModelSerializer):
         extra_kwargs = {
         'password': {'write_only': True},  # Hide password in responses
         }
+
+    def create(self, validated_data):
+        password = validated_data.pop('password')
+        user = AirportUser.objects.create(**validated_data)
+        user.set_password(password) # Hash the password
+        user.save()
+        return user
         
     # @action(detail=False, methods=['POST'])
     # def create(self, validated_data):
@@ -26,9 +33,9 @@ class AirportUserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Email must include an '@' symbol.")
         return value
     
-    def is_valid(self, raise_exception=False):
-        valid = super().is_valid(raise_exception=raise_exception)
-        return valid
+    # def is_valid(self, raise_exception=False):
+    #     valid = super().is_valid(raise_exception=raise_exception)
+    #     return valid
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -52,6 +59,12 @@ class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = '__all__'
+        
+    def create(self, validated_data):
+        airport_user_data = validated_data.pop('airport_user')
+        airport_user = AirportUserSerializer.create(AirportUserSerializer(), validated_data=airport_user_data) # use nested serializer create method
+        customer = Customer.objects.create(airport_user=airport_user, **validated_data)
+        return customer
 
 class AirlineSerializer(serializers.ModelSerializer):
     class Meta:
