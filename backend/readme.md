@@ -113,6 +113,7 @@
 
 # ------------11/02/2024-------------------------
     # Create a flight --- Flight's airline id is the logged in airline id
+    #Input validation method for creating an airport_user
     
 # FOR THE END:
     1. Input validity methods

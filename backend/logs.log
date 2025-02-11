@@ -2048,3 +2048,55 @@ AttributeError: 'Request' object has no attribute 'airport_user'
 2025-02-11 12:46:18,938 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-02-11 12:48:22,838 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-02-11 12:54:48,794 - WARNING - Method Not Allowed: /get_all_flights/
+2025-02-11 16:18:47,928 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'function'>`
+2025-02-11 16:22:58,524 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-11 16:25:05,132 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'function'>`
+2025-02-11 16:33:17,288 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-11 16:34:13,180 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:34:45,075 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:34:58,637 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:35:48,241 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:36:00,392 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:37:16,287 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:37:31,487 - WARNING - Bad Request: /create_new_customer/
+2025-02-11 16:37:41,154 - WARNING - Bad Request: /create_new_customer/

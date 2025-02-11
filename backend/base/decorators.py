@@ -1,11 +1,12 @@
 import logging
+import re
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from functools import wraps
 from django.core.exceptions import ObjectDoesNotExist
-from base.models import Customer, Flight, Ticket, UserRole
+from base.models import AirportUser, Customer, Flight, Ticket, UserRole
 from base.serializer import AirportUserSerializer
 from rest_framework_simplejwt.tokens import AccessToken
 from django.utils.timezone import now
@@ -59,6 +60,29 @@ def conditions_for_cancel_a_ticket():
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
+
+def user_creation_input_validation(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            data = request.data
+            username = data.get('username', '')
+            if AirportUser.objects.filter(username=username).exists():
+                return Response({'error': 'Username is already taken'}, status=status.HTTP_400_BAD_REQUEST)
+            if not re.match(r'^[a-zA-Z0-9]*$', username) or not any(char.isdigit() for char in username):
+                return Response({'error': 'Username must be unique, contain at least one digit, and have no special characters'}, status=status.HTTP_400_BAD_REQUEST)
+            password = data.get('password', '')
+            if not re.match(r'^[a-zA-Z0-9]*$', password) or len(password) < 4 or not any(char.isdigit() for char in password):
+                return Response({'error': 'Password must include at least one digit, at least four characters, and have no special characters'})
+            email = data.get('email', '')
+            email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+            if not re.match(email_pattern, email):
+                return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
+            return func(request, *args, **kwargs)
+        return wrapper
+    # return decorator
+            
+
+
 
 
 

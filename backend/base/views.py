@@ -1,6 +1,7 @@
 from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
+from base.decorators import user_creation_input_validation
 from base.models import Admin, AirportUser, Customer, RolesEnum, Ticket, UserRole, Airline, Country, Flight
 from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer, CustomerSerializer, FlightSerializer
 from rest_framework.decorators import action
@@ -29,7 +30,7 @@ def index(req):
 #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST']) #Create a new customer
-# No need for role declaration
+@user_creation_input_validation
 def customer_register(request):
     role = UserRole.objects.get(id=2)
     airport_user = AirportUser.objects.create(
