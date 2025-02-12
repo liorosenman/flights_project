@@ -61,7 +61,7 @@ def conditions_for_cancel_a_ticket():
         return wrapper
     return decorator
 
-def user_creation_input_validation(func):
+def user_details_input_validation(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             data = request.data
@@ -79,7 +79,14 @@ def user_creation_input_validation(func):
                 return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
             return func(request, *args, **kwargs)
         return wrapper
-    # return decorator
+
+def customer_details_input_validation(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            data = request.data
+            
+            return func(request, *args, **kwargs)
+        return wrapper
             
 
 
