@@ -2100,3 +2100,10 @@ AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse`
 2025-02-11 16:37:16,287 - WARNING - Bad Request: /create_new_customer/
 2025-02-11 16:37:31,487 - WARNING - Bad Request: /create_new_customer/
 2025-02-11 16:37:41,154 - WARNING - Bad Request: /create_new_customer/
+2025-02-13 12:45:16,747 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-02-13 12:45:54,570 - WARNING - Bad Request: /create_new_customer/
+2025-02-13 12:52:18,613 - WARNING - Unauthorized: /get_my_tickets/1/
+2025-02-13 12:52:49,995 - WARNING - Method Not Allowed: /logout/
+2025-02-13 13:02:47,210 - WARNING - Unauthorized: /create_flight/
+2025-02-13 13:03:04,014 - WARNING - Unauthorized: /create_flight/
+2025-02-13 13:11:12,800 - WARNING - Forbidden: /get_my_flights/4/

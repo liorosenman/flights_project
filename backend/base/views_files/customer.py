@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from base.decorators import authorize_customer
 from base.permission import role_required
 from ..models import Airline, Customer, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
@@ -57,6 +58,7 @@ def remove_ticket(request, id):
 
 @api_view(['PUT'])
 @role_required(RolesEnum.CUSTOMER.value)
+@authorize_customer()
 def update_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
@@ -68,6 +70,7 @@ def update_customer(request, id):
 
 @api_view([('GET')])
 @role_required(RolesEnum.CUSTOMER.value)
+@authorize_customer()
 def get_my_tickets(request, id):
     try:
         with connection.cursor() as cursor:

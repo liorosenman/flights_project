@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from base.decorators import airline_flight_auth, authorize_airline
 from base.permission import role_required
 from ..models import Airline, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
@@ -51,6 +52,7 @@ def add_flight(request):
 
 @api_view(['PUT'])
 @role_required(RolesEnum.AIRLINE.value)
+@airline_flight_auth()
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
     if not flight.is_active:
@@ -76,6 +78,7 @@ def update_flight(request, id):
 
 @api_view([('PUT')])
 @role_required(RolesEnum.AIRLINE.value)
+@airline_flight_auth()
 def remove_flight(request, id):
    flight = get_object_or_404(Flight, id = id)
    if not flight.is_active:
@@ -93,6 +96,7 @@ from rest_framework.response import Response
 
 @api_view(['GET'])
 @role_required(RolesEnum.AIRLINE.value)
+@authorize_airline()
 def get_my_flights(request, id):
     try:
         with connection.cursor() as cursor:

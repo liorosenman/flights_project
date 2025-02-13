@@ -87,6 +87,46 @@ def customer_details_input_validation(func):
             
             return func(request, *args, **kwargs)
         return wrapper
+
+
+def authorize_customer():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, id, *args, **kwargs):
+            logged_customer = request.user.customers
+            logged_customer_id = logged_customer.id
+            if id != logged_customer_id:
+                return Response({"error" : "Customer cannot update the details of another customer"})
+            return func(request, id, *args, **kwargs)
+        return wrapper
+    return decorator
+
+
+def authorize_airline():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, id, *args, **kwargs):
+            logged_airline = request.user.airlines
+            logged_airline_id = logged_airline.id
+            if id != logged_airline_id:
+                return Response({"error" : "Airline cannot update the details of another airline"})
+            return func(request, id, *args, **kwargs)
+        return wrapper
+    return decorator
+
+def airline_flight_auth():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, id, *args, **kwargs):
+            flight = get_object_or_404(Flight, id = id)
+            flight_airline_id = flight.airline_company_id_id
+            logged_airline = request.user.airlines
+            logged_airline_id = logged_airline.id
+            if flight_airline_id != logged_airline_id:
+                return Response({"error" : "Airline cannot update the details of another airline"})
+            return func(request, id, *args, **kwargs)
+        return wrapper
+    return decorator
             
 
 

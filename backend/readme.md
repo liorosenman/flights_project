@@ -120,8 +120,8 @@
     2. Moving to serializer to shorten the code
     3. Divide the views into folders //DONE
     4. Authorization //DONE
-    4a. Customer is permitted to perform actions only his
-    4b. Airline is permitted to perform actions only his
+    4a. Customer is permitted to perform actions only his //DONE & TESTED
+    4b. Airline is permitted to perform actions only his //DONE & TESTED
     5. Logger for each execution of view
     5. More attractive login
     6. Is AirportUserManager neccessary?
@@ -229,13 +229,15 @@
     5. Update customer --- as creating customer. --- using decorator
     6. 
 
-# Methods to assure safe access of a user:
-    1. update_customer
-    2. remove_ticket
-    3. get_my_tickets
-    4. update_airline
-    5. Update-flight
-    6. remove_flight
+# Methods to assure every user is authorized to modify his objects alone
+    1. update_customer //DONE & TESTED
+    2. remove_ticket //DONE & TESTED
+    3. get_my_tickets //DONE & TESTED    
+    4. update_airline // X
+    5. Update-flight //DONE & TESTED
+    6. remove_flight //DONE & TESTED
+    7. get_my_flights//DONE & TESTED
+
 
 
 
