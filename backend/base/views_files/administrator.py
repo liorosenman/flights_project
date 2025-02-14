@@ -74,7 +74,7 @@ def get_all_customers():
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+# @role_required(RolesEnum.ADMINISTRATOR.value)
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:

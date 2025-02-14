@@ -46,6 +46,8 @@ urlpatterns = [
     path('get_departure_flights/<int:id>/', views.get_departure_flights),
     path('get_user_by_username/<str:username>/', administrator.get_user_by_username),
     path('get_all_customers/', administrator.get_all_customers),
+    path('get_flight_by_id/<int:id>/', views.get_flight_by_id),
+    path('get_flights_by_airline_id/<int:id>/', views.get_flights_by_airline_id)
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),
     # path('create_countries/', views.)

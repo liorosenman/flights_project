@@ -131,6 +131,8 @@
     11. get_all_flights
     12. Stored procedures --- 
     13. Display fields, not ids
+    14. Remove ticket --- If the flight was full, it will be active again.
+    15. Status of a response.
     
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
@@ -144,6 +146,7 @@
         e. Check that the same user has already a ticket for this flight. //DONE
     6. Reduce 1 from the relevant flight's tickets number.
     7. Create a new row in Tickets.
+    8. Return the role authorization to view points.
 
 # When removing a ticket:
     1. Check if the customer has a ticket to that flight.
@@ -222,7 +225,7 @@
     7. get_deparure_flights (country_id) //DONE
 
 # Input validity for methods:
-    1. Create new airport user.
+    1. Create new airport user. //DONE & TESTED
     2. Create new administator.
     3. Create new customer. --- using decorator
     4. Create new airline.
@@ -237,6 +240,13 @@
     5. Update-flight //DONE & TESTED
     6. remove_flight //DONE & TESTED
     7. get_my_flights//DONE & TESTED
+
+# Presentation of data, showing names and not ids
+    1. get_all_flights() // DONE & TESTED
+    2. get_flight_by_id() // DONE & TESTED
+    3. get_flights_by_airline_id() // DONE & TESTED
+    4. ---GET_AIRLINES
+    5. ---GET_COUNTRIES
 
 
 

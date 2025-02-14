@@ -13,11 +13,11 @@ BEGIN
         c.name AS country_name,
         u.username
     FROM 
-        airline AS a
+        base_airline AS a
     JOIN 
-        country AS c ON a.country_id_id = c.id
+        base_country AS c ON a.country_id_id = c.id
     JOIN 
-        airport_user AS u ON a.airport_user_id = u.id
+        base_airportuser AS u ON a.airport_user_id = u.id
     WHERE 
         u.username = input_username;
 END;
@@ -98,7 +98,7 @@ BEGIN
     ON f.destination_country_id_id = cd.id
     JOIN base_airline AS a
     ON f.airline_company_id = a.id
-    WHERE f.airline_company_id_id = airline_id
+    WHERE f.airline_company_id_id = airline_id;
 
 END;
 $$ LANGUAGE plpgsql;
@@ -256,9 +256,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-
-
-
 -- ####################################################################################
 
 
@@ -276,3 +273,70 @@ CREATE TRIGGER IF NOT EXISTS check_flight_status
 BEFORE INSERT OR UPDATE ON flight
 FOR EACH ROW
 EXECUTE FUNCTION deactivate_expired_flights();
+
+-- ####################################################################################
+
+CREATE OR REPLACE FUNCTION get_all_flights()
+RETURNS TABLE (
+    flight_id BIGINT,
+    airline_name VARCHAR,
+    origin_country_name VARCHAR,
+    destination_country_name VARCHAR,
+    departure_time TIMESTAMP,
+    landing_time TIMESTAMP,
+    remaining_tickets INTEGER,
+    is_active BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+    f.id::BIGINT AS flight_id,
+    a.name::VARCHAR AS airline_name,
+    co.name::VARCHAR AS origin_country_name,
+    cd.name::VARCHAR AS destination_country_name,
+    f.departure_time::TIMESTAMP AS departure_time,
+    f.landing_time::TIMESTAMP AS landing_time,
+    f.remaining_tickets::INTEGER AS remaining_tickets,
+    f.is_active::BOOLEAN AS is_active
+    FROM base_flight AS f
+    JOIN base_airline as a ON f.airline_company_id_id = a.id
+    JOIN base_country as co ON f.origin_country_id_id = co.id
+    JOIN base_country as cd ON f.destination_country_id_id = cd.id
+    WHERE f.is_active = true;
+
+    END;
+$$ LANGUAGE plpgsql;
+
+-- ####################################################################################
+
+CREATE OR REPLACE FUNCTION get_flights_by_airline_id(airline_id BIGINT)
+RETURNS TABLE (
+    flight_id BIGINT,
+    airline_name VARCHAR,
+    origin_country_name VARCHAR,
+    destination_country_name VARCHAR,
+    departure_time TIMESTAMP,
+    landing_time TIMESTAMP,
+    remaining_tickets INTEGER,
+    is_active BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+    f.id::BIGINT AS flight_id,
+    a.name::VARCHAR AS airline_name,
+    co.name::VARCHAR AS origin_country_name,
+    cd.name::VARCHAR AS destination_country_name,
+    f.departure_time::TIMESTAMP AS departure_time,
+    f.landing_time::TIMESTAMP AS landing_time,
+    f.remaining_tickets::INTEGER AS remaining_tickets,
+    f.is_active::BOOLEAN AS is_active
+    FROM base_flight AS f
+    JOIN base_airline as a ON f.airline_company_id_id = a.id
+    JOIN base_country as co ON f.origin_country_id_id = co.id
+    JOIN base_country as cd ON f.destination_country_id_id = cd.id
+    WHERE f.airline_company_id_id = airline_id
+
+    END;
+$$ LANGUAGE plpgsql;   
+

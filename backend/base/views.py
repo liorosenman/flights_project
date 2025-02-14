@@ -114,7 +114,7 @@ def get_country_by_id(request, id):
 def get_airline_by_username(request, username):
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_airline_details_by_username(%s)", [username])
+            cursor.execute("SELECT * FROM get_airline_data_by_username(%s)", [username])
             columns = [col[0] for col in cursor.description]
             result = cursor.fetchone()
             if result:
@@ -127,9 +127,67 @@ def get_airline_by_username(request, username):
     
 @api_view(['GET'])
 def get_all_flights(request):
-    flights = Flight.objects.filter(is_active=True) 
-    serializer = FlightSerializer(flights, many=True)
-    return Response(serializer.data)
+    # flights = Flight.objects.filter(is_active=True) 
+    # serializer = FlightSerializer(flights, many=True)
+    # return Response(serializer.data)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_all_flights() as f WHERE f.is_active = true")
+            rows = cursor.fetchall()
+            if not rows:
+                return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+            columns = [col[0] for col in cursor.description]
+            flights = [dict(zip(columns, row)) for row in rows]
+            return Response({"relevant_flights": flights})
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=500)
+    
+@api_view(['GET'])
+def get_flight_by_id(request, id):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_all_flights() AS f WHERE f.flight_id=(%s)",[id])
+            row = cursor.fetchone()
+            if row is None:
+                return Response({"Error": "Flight does not exist"}, status=404)
+            columns = [col[0] for col in cursor.description]
+            flight = dict(zip(columns, row))
+            return Response({"relevant_flight": flight})
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
+    
+@api_view(['GET'])
+def get_flights_by_airline_id(request, id):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)",[id])
+            rows = cursor.fetchall()
+            if not rows:
+                return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+            columns = [col[0] for col in cursor.description]
+            flights = [dict(zip(columns, row)) for row in rows]
+            return Response({"relevant_flights": flights})
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
+    
+    # 
+
+# @api_view(['GET'])
+# def get_flights_by_parameters(request):
+#     origin_country_id = request.data.get('origin_country_id')
+#     dest_country_id = request.data.get('dest_country_id')
+#     date = request.data.get('dep_date')
+#     try:
+#         with connection.cursor() as cursor:
+#             cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", 
+#                            [origin_country_id, dest_country_id, date])
+#             columns = [col[0] for col in cursor.description]  # Extract column names
+#             flights = [dict(zip(columns, row)) for row in cursor.fetchall()]
+#             if not flights:
+#                 return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+#             return Response({"relevant_flights": flights})
+#     except Exception as e:
+#         return Response({"status": "error", "message": str(e)}, status=400)
 
 @api_view(['GET'])
 def get_flights_by_parameters(request):
@@ -140,8 +198,8 @@ def get_flights_by_parameters(request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", 
                            [origin_country_id, dest_country_id, date])
-            columns = [col[0] for col in cursor.description]  # Extract column names
-            flights = [dict(zip(columns, row)) for row in cursor.fetchall()]
+            # columns = [col[0] for col in cursor.description]
+            flights = cursor.fetchall()
             if not flights:
                 return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
             return Response({"relevant_flights": flights})
