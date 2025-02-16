@@ -160,7 +160,7 @@ def get_flight_by_id(request, id):
 def get_flights_by_airline_id(request, id):
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)",[id])
+            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s) AS f WHERE f.is_active = true",[id])
             rows = cursor.fetchall()
             if not rows:
                 return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
@@ -198,10 +198,11 @@ def get_flights_by_parameters(request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_parameters(%s, %s, %s)", 
                            [origin_country_id, dest_country_id, date])
-            # columns = [col[0] for col in cursor.description]
-            flights = cursor.fetchall()
-            if not flights:
+            rows = cursor.fetchall()
+            if not rows:
                 return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+            columns = [col[0] for col in cursor.description]
+            flights = [dict(zip(columns, row)) for row in rows]
             return Response({"relevant_flights": flights})
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)

@@ -114,6 +114,9 @@
 # ------------11/02/2024-------------------------
     # Create a flight --- Flight's airline id is the logged in airline id
     #Input validation method for creating an airport_user
+
+# ------------16/02/2024-------------------------
+    # get_arrival_flights_by_country --- Present countries that have at least one active ticket.
     
 # FOR THE END:
     1. Input validity methods
@@ -132,7 +135,9 @@
     12. Stored procedures --- 
     13. Display fields, not ids
     14. Remove ticket --- If the flight was full, it will be active again.
+    15. Automatic deactivation of a flight.
     15. Status of a response.
+    16. get_flights_by_parameters --- Only date, without hour
     
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
@@ -242,11 +247,15 @@
     7. get_my_flights//DONE & TESTED
 
 # Presentation of data, showing names and not ids
+# Automatic deactivation of a flight 
     1. get_all_flights() // DONE & TESTED
     2. get_flight_by_id() // DONE & TESTED
     3. get_flights_by_airline_id() // DONE & TESTED
-    4. ---GET_AIRLINES
+    4. get_flight_by_parameters() // DONE & TESTED
+    5. get_arrival_flights() //
+    6. get_deparure_flights()
     5. ---GET_COUNTRIES
+
 
 
 
