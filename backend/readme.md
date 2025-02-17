@@ -129,15 +129,18 @@
     5. More attractive login
     6. Is AirportUserManager neccessary?
     8. kwargs - desposible?
-    9. get_my_tickets --- redesign
-    10. Conditions for buying a ticket --- checking again if flight is active is unneccessary.
-    11. get_all_flights
+    9. get_my_tickets --- redesign // DONE
+    10. Conditions for buying a ticket --- checking again if flight is active is unneccessary. //DONE
+    11. get_all_flights //DONE
     12. Stored procedures --- 
     13. Display fields, not ids
-    14. Remove ticket --- If the flight was full, it will be active again.
+    14. Remove ticket --- If the flight is full, is_active doesn't change
     15. Automatic deactivation of a flight.
     15. Status of a response.
     16. get_flights_by_parameters --- Only date, without hour
+    17. Remove users --- Check again
+    18. Creation of the countries with a file.
+
     
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24
     1. Create administator // DONE
@@ -180,7 +183,7 @@
     6. Decorators
     7. Exclude inactive flights in the stored procedures.
     8. get_user_by_username --- Show everything except for the password
-    9. Don't allow one user to use method on an object that belongs to another user.
+    9. Don't allow one user to use method on an object that belongs to another user. //DONE
     10. Adjust id to name in GET methods.
 
 # Facade Base:

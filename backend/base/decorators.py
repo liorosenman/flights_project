@@ -25,6 +25,7 @@ def conditions_for_booking_a_flight():
             if not flight.is_active:
                 return Response({"Error":"This flight is not active."})
             # ticket = get_object_or_404(Ticket, flight_id=flight_id, customer_id=customer.id, is_active=True)
+
             ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, is_active=True).first()
             if ticket:
                 return Response({"This customer has already a ticket for this flight."})
@@ -57,6 +58,9 @@ def conditions_for_cancel_a_ticket():
                 return Response({'msg':'This is a ticket of another customer'})
             if not ticket.is_active:
                 return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
+            flight = Flight.objects.get(id = ticket.flight_id)
+            if not flight.is_active:
+                return Response({'msg':'The flight is inactive'})
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator

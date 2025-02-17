@@ -33,7 +33,7 @@ def index(req):
 @user_details_input_validation
 def customer_register(request):
     role = UserRole.objects.get(id=2)
-    airport_user = AirportUser.objects.create(
+    airport_user = AirportUser.objects.create_user(
             username=request.data['username'],
             password=make_password(request.data['password']),
             email=request.data['email'],
@@ -126,10 +126,7 @@ def get_airline_by_username(request, username):
         return Response({"status": "error", "message": str(e)}, status=400)
     
 @api_view(['GET'])
-def get_all_flights(request):
-    # flights = Flight.objects.filter(is_active=True) 
-    # serializer = FlightSerializer(flights, many=True)
-    # return Response(serializer.data)
+def get_all_flights(request): # Showing all flights, excluding canceled and already took-off flights
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_all_flights() as f WHERE f.is_active = true")
@@ -142,7 +139,7 @@ def get_all_flights(request):
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=500)
     
-@api_view(['GET'])
+@api_view(['GET']) # Picking a flight, can be both active and inactive
 def get_flight_by_id(request, id):
     try:
         with connection.cursor() as cursor:
@@ -156,7 +153,7 @@ def get_flight_by_id(request, id):
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
     
-@api_view(['GET'])
+@api_view(['GET']) # All active flights from a specific airline, that are before takeoff.
 def get_flights_by_airline_id(request, id):
     try:
         with connection.cursor() as cursor:

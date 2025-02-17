@@ -10,6 +10,9 @@ from base.permission import role_required
 from ..models import Airline, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
 from django.utils.timezone import now, make_aware
+from django.db import connection
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 logging.basicConfig(filename="./logs.log",
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -79,7 +82,7 @@ def update_flight(request, id):
 @api_view([('PUT')])
 @role_required(RolesEnum.AIRLINE.value)
 @airline_flight_auth()
-def remove_flight(request, id):
+def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
    flight = get_object_or_404(Flight, id = id)
    if not flight.is_active:
       return Response({"msg":"This flight is already inactive"})
@@ -90,9 +93,7 @@ def remove_flight(request, id):
    flight.save()
    return Response({"msg":"Flight removed successfully"})
 
-from django.db import connection
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+
 
 @api_view(['GET'])
 @role_required(RolesEnum.AIRLINE.value)

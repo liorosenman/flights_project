@@ -24,11 +24,9 @@ logger = logging.getLogger('report_actions')
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
     flight_id = request.data.get('flight_id')
-    # flight = get_my_tickets(Flight, id = flight_id)
-    #
     flight = get_object_or_404(Flight, id = flight_id)
-    if not flight.is_active:
-        return Response({"msg": "Chosen flight is not active"})
+    # if not flight.is_active:
+    #     return Response({"msg": "Chosen flight is not active"})
     flight.remaining_tickets -= 1
     flight.save()
     customer = Customer.objects.get(airport_user_id = request.user.id)
@@ -75,10 +73,11 @@ def get_my_tickets(request, id):
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_tickets_by_customer_id(%s)", [id])
-            columns = [col[0] for col in cursor.description]
-            my_tickets = [dict(zip(columns, row)) for row in cursor.fetchall()]
-            if not my_tickets:
+            rows = cursor.fetchall()
+            if not rows:
                 return Response({"message": "There are no tickets for this customer"}, status=404)
+            columns = [col[0] for col in cursor.description]
+            my_tickets = [dict(zip(columns, row)) for row in rows]
             return Response({"My tickets": my_tickets})
     except Exception as e:
         return Response({"status": "error", "message": str(e)}, status=400)
