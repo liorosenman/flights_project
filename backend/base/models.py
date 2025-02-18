@@ -16,9 +16,9 @@ class AirportUserManager(BaseUserManager):
             raise ValueError("The Username field must be set")
         extra_fields.setdefault("is_active", True)
         extra_fields.setdefault("is_staff", False)
-        extra_fields.setdefault("is_superuser", None)
-        extra_fields.setdefault("last_login", None)
-        extra_fields.setdefault("date_joined", None)
+        extra_fields.setdefault("is_superuser", False)
+        extra_fields.setdefault("last_login", now().isoformat())
+        extra_fields.setdefault("date_joined", now().isoformat())
         user = self.model(username=username, **extra_fields)
         user.set_password(password)  # Hash the password
         user.save(using=self._db)
@@ -32,61 +32,6 @@ class AirportUserManager(BaseUserManager):
         if extra_fields.get("is_superuser") is not True:
             raise ValueError("Superuser must have is_superuser=True.")
         return self.create_user(username, password, **extra_fields)
-
-# class AirportUserManager(BaseUserManager):
-#     def create_user(self, username, email, password=None, role_name=None, **extra_fields):
-#         if not username:
-#             raise ValueError("The Username field must be set")
-#         if not email:
-#             raise ValueError("The Email field must be set")
-        
-#         email = self.normalize_email(email)
-#         extra_fields.setdefault("is_active", True)
-        
-#         user = self.model(username=username, email=email, role_name=role_name, **extra_fields)
-#         if password:
-#             user.set_password(password)
-#         user.save(using=self._db)
-#         return user
-
-#     def create_superuser(self, username, email, password=None, role_name=None, **extra_fields):
-#         extra_fields.setdefault("is_active", True)
-        
-#         user = self.create_user(username, email, password, role_name, **extra_fields)
-#         user.save(using=self._db)
-#         return user
-
-# class AirportUserManager(BaseUserManager):
-#     def create_user(self, username, email, password=None, **extra_fields):
-#         extra_fields.pop('is_staff', None)  # Ignore is_staff
-#         return super().create_user(username, email, password, **extra_fields)
-
-#     def create_superuser(self, username, email, password=None, **extra_fields):
-#         extra_fields.pop('is_staff', None)  # Ignore is_staff
-#         return super().create_superuser(username, email, password, **extra_fields)
-
-# class AirportUserManager(BaseUserManager):
-#     def create_user(self, username, email, password=None, **extra_fields):
-#         if not username:
-#             raise ValueError("The Username field must be set")
-#         if not email:
-#             raise ValueError("The Email field must be set")
-#         email = self.normalize_email(email)
-#         user = self.model(username=username, email=email, **extra_fields)
-#         user.set_password(password)
-#         user.save(using=self._db)
-#         return user
-
-#     def create_superuser(self, username, email, password=None, **extra_fields):
-#         extra_fields.setdefault('is_admin', True)
-#         return self.create_user(username, email, password, **extra_fields)
-        # extra_fields.setdefault('is_staff', True)
-        # extra_fields.setdefault('is_superuser', True)
-        # if extra_fields.get('is_staff') is not True:
-        #     raise ValueError('Superuser must have is_staff=True.')
-        # if extra_fields.get('is_superuser') is not True:
-        #     raise ValueError('Superuser must have is_superuser=True.')
-        
 
 
 class RolesEnum(enum.Enum):
@@ -120,16 +65,7 @@ class UserRole(models.Model):
 # class AirportUser(AbstractBaseUser):
 class AirportUser(AbstractUser):
     role_name = models.ForeignKey(UserRole, on_delete=models.CASCADE)
-    first_name = None
-    last_name = None
-    date_joined = None
-    is_active = models.BooleanField(default=True)
-    # last_login = models.DateTimeField(null=True, blank=True, default=None)
-    is_staff = None
-    is_superuser = None
-    last_login = None
-    # is_superuser = models.BooleanField(default=None)
-    # is_staff = models.BooleanField(default=False)
+   
     objects = AirportUserManager()
     USERNAME_FIELD = 'username'
 
@@ -139,26 +75,6 @@ class AirportUser(AbstractUser):
     def has_perm(self, perm, obj=None):
         """Return True if user has a specific permission (for Django admin)."""
         return self.is_superuser
-
-    # id = models.BigAutoField(primary_key=True)
-    # username = models.CharField(max_length=150, unique=True)
-    # password = models.CharField(max_length=128)
-    # email = models.EmailField(unique=True)
-    # last_login = None
-
-    # last_login = models.DateTimeField(default=now, blank=True, null=True)
-    # is_superuser = models.BooleanField(default=False)
-    # first_name = models.CharField(("first name"), max_length=150, blank=True, default="first_name")
-    
-    # last_name = models.CharField(("last name"), max_length=150, blank=True, default="last_name")
-    # date_joined = models.DateTimeField(auto_now_add=True)
-    
-    # is_staff = models.BooleanField(default=False)
-    
-    # is_staff = None
-    # is_superuser = None
-    # is_staff = models.BooleanField(default=False)
-
 
     
     # @property

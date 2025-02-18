@@ -39,9 +39,6 @@ def customer_register(request):
             # password=make_password(request.data['password']),
             email=request.data['email'],
             role_name= role,
-            is_staff=False,
-            is_active = True,
-            is_superuser = None,
         )
     print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     airport_user.save()
