@@ -16,7 +16,9 @@ class AirportUserManager(BaseUserManager):
             raise ValueError("The Username field must be set")
         extra_fields.setdefault("is_active", True)
         extra_fields.setdefault("is_staff", False)
-        extra_fields.setdefault("is_superuser", False)
+        extra_fields.setdefault("is_superuser", None)
+        extra_fields.setdefault("last_login", None)
+        extra_fields.setdefault("date_joined", None)
         user = self.model(username=username, **extra_fields)
         user.set_password(password)  # Hash the password
         user.save(using=self._db)
@@ -122,9 +124,12 @@ class AirportUser(AbstractUser):
     last_name = None
     date_joined = None
     is_active = models.BooleanField(default=True)
+    # last_login = models.DateTimeField(null=True, blank=True, default=None)
+    is_staff = None
+    is_superuser = None
     last_login = None
-    is_superuser = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
+    # is_superuser = models.BooleanField(default=None)
+    # is_staff = models.BooleanField(default=False)
     objects = AirportUserManager()
     USERNAME_FIELD = 'username'
 

@@ -35,10 +35,15 @@ def customer_register(request):
     role = UserRole.objects.get(id=2)
     airport_user = AirportUser.objects.create_user(
             username=request.data['username'],
-            password=make_password(request.data['password']),
+            password=request.data['password'],
+            # password=make_password(request.data['password']),
             email=request.data['email'],
-            role_name= role
+            role_name= role,
+            is_staff=False,
+            is_active = True,
+            is_superuser = None,
         )
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     airport_user.save()
     first_name = request.data['first_name']
     last_name = request.data['last_name']
