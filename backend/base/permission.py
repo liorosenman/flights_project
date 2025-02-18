@@ -15,10 +15,11 @@ def role_required(required_role):
             if not hasattr(request.user, 'role_name'):
                 return Response({'msg':'No attribute role_name provided'})
             current_role_name = request.user.role_name.role_name
+            print(current_role_name)
+            print(required_role)
             if (required_role != current_role_name):
                 return Response({"msg": f"Permission denied. Only {required_role}s are permitted."}, 
                                 status=status.HTTP_403_FORBIDDEN)
-            
             return func(request, *args, **kwargs)
         return wrapper
     return decorator

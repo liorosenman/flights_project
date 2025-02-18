@@ -23,17 +23,25 @@ logging.basicConfig(filename="./logs.log",
 @role_required(RolesEnum.AIRLINE.value)
 def add_flight(request):
     # Get the logged-in user's airline company
+    if not request.user or request.user.is_anonymous:
+        return Response({'error': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
+    
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
         print("AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     except Airline.DoesNotExist:
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
-
-    # Add the airline company ID to the request data
+    
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
-
+    # Add the airline company ID to the request data
+    # flight_data = request.data.copy()
+    
+    # flight_data['airline_company_id'] = airline_company.id
+    
     # Serialize and save the flight
+    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+    print(airline_company.id)
     serializer = FlightSerializer(data=flight_data)
     if serializer.is_valid():
         flight = serializer.save() 

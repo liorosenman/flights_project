@@ -73,13 +73,46 @@ class AirlineSerializer(serializers.ModelSerializer):
 
 
 class FlightSerializer(serializers.ModelSerializer):
+    # airline_company_id = serializers.PrimaryKeyRelatedField(
+    #     queryset=Airline.objects.all(),  
+    #     source="airline_company",      
+    #     write_only=True                   
+    # )
     departure_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
     landing_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M", input_formats=["%d-%m-%Y %H:%M"])
-    is_active = serializers.BooleanField(default = True)
 
+    # is_active = serializers.BooleanField(default = True)
     class Meta:
         model = Flight
         fields = '__all__'
+    def create(self, validated_data):
+        print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
+        print(validated_data)
+        print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+        airline_company_id = validated_data.pop('airline_company_id', None)
+        print(airline_company_id)
+        if airline_company_id:
+            try:
+                airline_company = Airline.objects.get(id=airline_company_id)
+                print("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+                print(airline_company)
+                validated_data['airline_company'] = airline_company
+            except Airline.DoesNotExist:
+                raise serializers.ValidationError({'airline_company_id': 'Invalid Airline ID'})
+        return super().create(validated_data)
+        # print("DDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+        # print(validated_data)
+        # airline_company_id = validated_data.pop('airline_company_id', None).id
+        # print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+        # print(airline_company_id)
+        # if airline_company_id:
+        #     try:
+        #         airline_company = Airline.objects.get(id=airline_company_id)
+        #         validated_data['airline_company_id'] = airline_company.id
+        #     except Airline.DoesNotExist:
+        #         raise serializers.ValidationError({'airline_company_id': 'Invalid Airline ID'})
+        # return super().create(validated_data)
+    
 
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:

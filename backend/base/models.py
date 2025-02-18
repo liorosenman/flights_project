@@ -1,4 +1,5 @@
 import enum
+import os
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import AbstractUser
@@ -9,6 +10,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.dispatch import receiver
 from django.db.models.signals import post_migrate
 from django.utils.timezone import now
+from myproj import settings
 
 class AirportUserManager(BaseUserManager):
     def create_user(self, username, password=None, **extra_fields):
@@ -141,7 +143,7 @@ class Flight(models.Model):
     landing_time = models.DateTimeField()
     departure_time = models.DateTimeField()
     remaining_tickets = models.IntegerField()
-    status = models.CharField(default=FlightStatus.ACTIVE, choices=FLIGHT_STATUS_CHOICES)
+    status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)
     # is_active = models.BooleanField(default=True)
     
     def __str__(self):
@@ -152,7 +154,7 @@ class Ticket(models.Model):
     flight_id = models.OneToOneField('Flight', on_delete=models.CASCADE, related_name='tickets')
     customer_id = models.OneToOneField('Customer', on_delete=models.CASCADE, related_name='tickets')
     is_active = models.BooleanField(default=True)
-    status = models.CharField(default=FlightStatus.ACTIVE, choices=FLIGHT_STATUS_CHOICES)
+    status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)
 
     def __str__(self):
         return f"Ticket {self.id} for {self.customer.first_name} {self.customer.last_name} on Flight {self.flight.id}"
@@ -163,4 +165,9 @@ def create_default_roles(sender, **kwargs):
     if sender.name == "base":  # Replace with your actual Django app name
         for role in RolesEnum:
             UserRole.objects.get_or_create(role_name=role.value)
+
+
+
+
+    
 
