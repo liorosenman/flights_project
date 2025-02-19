@@ -28,20 +28,12 @@ def add_flight(request):
     
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
-        print("AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     except Airline.DoesNotExist:
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
     
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
-    # Add the airline company ID to the request data
-    # flight_data = request.data.copy()
     
-    # flight_data['airline_company_id'] = airline_company.id
-    
-    # Serialize and save the flight
-    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-    print(airline_company.id)
     serializer = FlightSerializer(data=flight_data)
     if serializer.is_valid():
         flight = serializer.save() 

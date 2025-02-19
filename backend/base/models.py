@@ -53,11 +53,18 @@ class FlightStatus(enum.Enum):
     TOOKOFF = "tookoff"
     LANDED = "landed"
 
+# FLIGHT_STATUS_CHOICES = [
+#     (FlightStatus.ACTIVE, 'active'),
+#     (FlightStatus.CANCELED, 'canceled'),
+#     (FlightStatus.TOOKOFF, 'tookoff'),
+#     (FlightStatus.LANDED, 'landed')
+# ]
+
 FLIGHT_STATUS_CHOICES = [
-    (FlightStatus.ACTIVE, 'active'),
-    (FlightStatus.CANCELED, 'canceled'),
-    (FlightStatus.TOOKOFF, 'tookoff'),
-    (FlightStatus.LANDED, 'landed')
+    ('active', 'active'),      
+    ('canceled', 'canceled'),  
+    ('tookoff', 'tookoff'),  
+    ('landed', 'landed')       
 ]
 
 class UserRole(models.Model):
