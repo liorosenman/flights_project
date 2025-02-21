@@ -10,6 +10,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
 from base.serializer import CustomerSerializer
 from ..permission import role_required
+from django.db.models import Q
 
 @api_view(['POST'])
 # @role_required(RolesEnum.ADMINISTRATOR.value)
@@ -96,14 +97,25 @@ def remove_airline(request, id):
     airport_user = AirportUser.objects.get(id = airline.airport_user_id)
     if not airport_user.is_active:
         return Response({"msg":"This airline is already inactive"})
-    active_flights = Flight.objects.filter(airline_company_id = id, is_active=True)
-    for flight in active_flights:
-        ticket = Ticket.objects.filter(flight_id = flight.id, is_active = True)
-        if ticket:
-            return Response({"msg":"There is a passenger in one of the airline's flights"})
-    # airline.is_active = False
-    # airline.save()
-    return Response({"msg":"Airline deactivated"})
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_active_airline_tickets(%s)", [id])
+            results = cursor.fetchall()
+            if not results:
+                # airline = Airline.objects.get(id=id)
+                AirportUser.objects.filter(id = airline.airport_user_id).update(is_active = False)
+                return Response({"msg":"Airline was removed successfully"})
+            return Response({"Error":"There are active tickets, erasion forbidden"})
+    except Exception as e:
+        return Response({"status": "error", "message": str(e)}, status=400)
+    # active_flights = Flight.objects.filter(airline_company_id = id, status = 'active', status = '')
+    # for flight in active_flights:
+    #     ticket = Ticket.objects.filter(flight_id = flight.id, is_active = True)
+    #     if ticket:
+    #         return Response({"msg":"There is a passenger in one of the airline's flights"})
+    # # airline.is_active = False
+    # # airline.save()
+    # return Response({"msg":"Airline deactivated"})
 
 @api_view(['PUT'])
 @role_required(RolesEnum.ADMINISTRATOR.value)
@@ -112,13 +124,30 @@ def remove_customer(request, id):
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
     if not airport_user.is_active:
         return Response({"msg":"This customer is already inactive"})
-    active_customer_tickets = Ticket.objects.filter(customer_id = id, is_active = True)
-    for ticket in active_customer_tickets:
-        flight_id = ticket.flight_id
-        flight = Flight.objects.get(id = flight_id, is_active = True)
-        if flight:
-            return Response({"msg":"The customer has future flights"})
-    return Response({"msg":"The customer is deactivated"})
+    tickets = Ticket.objects.filter(customer_id_id = id, status__in=["active", "tookoff"])
+    if not tickets:
+        airport_user.is_active = False
+        airport_user.save()
+        return Response({"msg":"The customer was removed successfully"})
+    return Response({"Error":"There are active tickets, erasion forbidden"})
+
+    #     with connection.cursor() as cursor:
+    #         cursor.execute("SELECT * FROM get_active_customer_tickets(%s)", [id])
+    #         results = cursor.fetchall()
+    #         if not results:
+    #             AirportUser.objects.filter(id = customer.airport_user_id).update(is_active = False)
+    #             return Response({"msg":"Customer was removed successfully"})
+    #         return Response({"Error":"There are active tickets, erasion forbidden"})
+    # except Exception as e:
+    #     return Response({"status": "error", "message": str(e)}, status=400)
+    # active_customer_tickets = Ticket.objects.filter(customer_id = id, status = 'active', status = 'tookoff')
+    # active_customer_tickets = (Q(flight_id=flight.flight_id) & Q(status='active'))
+    # for ticket in active_customer_tickets:
+    #     flight_id = ticket.flight_id
+    #     flight = Flight.objects.get(id = flight_id, is_active = True)
+    #     if flight:
+    #         return Response({"msg":"The customer has future flights"})
+    # return Response({"msg":"The customer is deactivated"})
 
 @api_view(['PUT'])
 @role_required(RolesEnum.ADMINISTRATOR.value)
@@ -129,6 +158,8 @@ def remove_admin(request, id):
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
     if not admin.is_active:
         return Response({"msg":"This admin is already inactive"})
-    return Response({"msg":"The admin is deactivated"})
+    airport_user.is_active = False
+    airport_user.save()
+    return Response({"msg":"The admin was deactivated"})
     
 

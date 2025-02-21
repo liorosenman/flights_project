@@ -40,7 +40,6 @@ def customer_register(request):
             email=request.data['email'],
             role_name= role,
         )
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     airport_user.save()
     first_name = request.data['first_name']
     last_name = request.data['last_name']
@@ -131,10 +130,10 @@ def get_airline_by_username(request, username):
 def get_all_flights(request): # Showing all flights, excluding canceled and already took-off flights
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_all_flights() as f WHERE f.is_active = true")
+            cursor.execute("SELECT * FROM get_all_flights()")
             rows = cursor.fetchall()
             if not rows:
-                return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+                return Response({"status": "error", "message": "No flights in the list."}, status=404)
             columns = [col[0] for col in cursor.description]
             flights = [dict(zip(columns, row)) for row in rows]
             return Response({"relevant_flights": flights})
@@ -159,10 +158,10 @@ def get_flight_by_id(request, id):
 def get_flights_by_airline_id(request, id):
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s) AS f WHERE f.is_active = true",[id])
+            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)",[id])
             rows = cursor.fetchall()
             if not rows:
-                return Response({"status": "error", "message": "No flights match the given parameters."}, status=404)
+                return Response({"status": "error", "message": "No flights for this airline"}, status=404)
             columns = [col[0] for col in cursor.description]
             flights = [dict(zip(columns, row)) for row in rows]
             return Response({"relevant_flights": flights})

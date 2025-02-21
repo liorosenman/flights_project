@@ -10,6 +10,7 @@ from base.models import AirportUser, Customer, Flight, Ticket, UserRole
 from base.serializer import AirportUserSerializer
 from rest_framework_simplejwt.tokens import AccessToken
 from django.utils.timezone import now
+from django.db.models import Q
 
 logger = logging.getLogger('report_actions')
 
@@ -113,7 +114,7 @@ def authorize_airline():
             logged_airline = request.user.airlines
             logged_airline_id = logged_airline.id
             if id != logged_airline_id:
-                return Response({"error" : "Airline cannot update the details of another airline"})
+                return Response({"error" : "Airline cannot have access to the details of another airline's flight"})
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
@@ -131,6 +132,26 @@ def airline_flight_auth():
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
+
+def update_flights_status(func):
+    # Update the flights board
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed', 'active'])
+        for flight in flights_to_update:
+            current_time = now()
+            if flight.departure_time <= current_time:
+                possible_active_tickets = Ticket.objects.get(flight_id = flight.id)
+                if not possible_active_tickets:
+                    flight.status = 'canceled'
+            if flight.departure_time < current_time < flight.landing_time:
+                flight.status = 'tookoff'
+                Ticket.objects.filter(Q(flight_id=flight.flight_id) & Q(status='active')).update(status='tookoff')
+            else:
+                flight.status = 'landed'
+                Ticket.objects.filter(Q(flight_id=flight.flight_id) & ~Q(status = 'canceled')).update(status='landed')
+            flight.save(update_fields=['status'])
+
             
 
 
