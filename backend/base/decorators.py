@@ -23,11 +23,12 @@ def conditions_for_booking_a_flight():
                 return Response({"Error":"This client is not active."})
             flight_id = request.data.get('flight_id')
             flight = get_object_or_404(Flight, id= flight_id)
-            if not flight.is_active:
-                return Response({"Error":"This flight is not active."})
+            # if not flight.is_active:
+            if not flight.status == 'active':
+                return Response({"Error":"Canceled or already tookoff flight"})
             # ticket = get_object_or_404(Ticket, flight_id=flight_id, customer_id=customer.id, is_active=True)
 
-            ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, is_active=True).first()
+            ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, status='active').first()
             if ticket:
                 return Response({"This customer has already a ticket for this flight."})
             if flight.remaining_tickets <= 0:
@@ -57,11 +58,11 @@ def conditions_for_cancel_a_ticket():
                 # logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
                 logger.warning(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response({'msg':'This is a ticket of another customer'})
-            if not ticket.is_active:
-                return Response({"msg": "Ticket is already inactive"}, status=status.HTTP_200_OK)
-            flight = Flight.objects.get(id = ticket.flight_id)
-            if not flight.is_active:
-                return Response({'msg':'The flight is inactive'})
+            if not ticket.status == 'active':
+                return Response({"msg": "Canceled ticket or already tookoff flight"}, status=status.HTTP_200_OK)
+            # flight = Flight.objects.get(id = ticket.flight_id)
+            # if not flight.is_active:
+            #     return Response({'msg':'The flight is inactive'})
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
@@ -101,7 +102,7 @@ def authorize_customer():
             logged_customer = request.user.customers
             logged_customer_id = logged_customer.id
             if id != logged_customer_id:
-                return Response({"error" : "Customer cannot update the details of another customer"})
+                return Response({"error" : "Customer cannot update or access the details of another customer"})
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator

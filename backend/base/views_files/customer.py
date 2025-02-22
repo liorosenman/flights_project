@@ -33,7 +33,7 @@ def add_ticket(request):
     ticket = Ticket.objects.create(
             flight_id=flight,
             customer_id=customer,
-            is_active=True
+            # is_active=True
     )
     return Response(
         {"message": "Ticket successfully created", "remaining_tickets": flight.remaining_tickets},
@@ -45,8 +45,9 @@ def add_ticket(request):
 @role_required(RolesEnum.CUSTOMER.value)
 @decorators.conditions_for_cancel_a_ticket()
 def remove_ticket(request, id):
-    ticket = Ticket.objects.get(id = id)
-    ticket.is_active = False
+    # ticket = Ticket.objects.get(id = id)
+    ticket = get_object_or_404(Ticket, id = id)
+    ticket.status = 'canceled'
     flight = Flight.objects.get(id = ticket.flight_id_id)
     flight.remaining_tickets += 1
     flight.save()

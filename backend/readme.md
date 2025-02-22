@@ -126,13 +126,16 @@
         ## 3. get_flights_by_airline -> Show every flight, no filtering.
               No rows --> different msg.
         ## 4. remove_airline --> New logic in the method, using sql
-        ## 5. remove customer --> filtering relevant tickets with status
-
+        
+# ------------22/02/2024-------------------------
+    Changes regarding flight status filed.
+    ## Conditions for booking a flight.
+    ## Customer - add_flight --- status = 'active' should be default.
 
 # FOR THE END:
     *** Prime admin
     *** A "tookoff" flight with no active tickets will be considered as canceled.
-    *** Update methods that are influenced by changing flight\ticket is_active to status.
+    *** Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets
     1. Input validity methods
     2. Moving to serializer to shorten the code
     3. Divide the views into folders //DONE

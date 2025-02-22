@@ -58,7 +58,8 @@ def add_flight(request):
 @airline_flight_auth()
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
-    if not flight.is_active:
+    # if not flight.is_active:
+    if flight.status is not 'active':
         return Response({"msg":"This flight is inactive"})
     new_dep_time_str = request.data.get('new_dep_time')
     new_dep_time = datetime.fromisoformat(new_dep_time_str)
@@ -84,12 +85,13 @@ def update_flight(request, id):
 @airline_flight_auth()
 def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
    flight = get_object_or_404(Flight, id = id)
-   if not flight.is_active:
-      return Response({"msg":"This flight is already inactive"})
-   active_tickets = Ticket.objects.filter(flight_id = id, is_active = True)
+#    if not flight.is_active:
+   if flight.status is not 'active':
+      return Response({"msg":"This flight cannot be deactivated."})
+   active_tickets = Ticket.objects.filter(flight_id=id, status__in=['active', 'tookoff'])
    if active_tickets: # If there are active ticket in this to-be-deleted flight.
       return Response({"msg":"There are active tickets in this flight"})
-   flight.is_active = False
+   flight.status = 'canceled'
    flight.save()
    return Response({"msg":"Flight removed successfully"})
 

@@ -342,7 +342,7 @@ $$ LANGUAGE plpgsql;
 -- ####################################################################################
 
 CREATE OR REPLACE FUNCTION get_active_airline_tickets(airline_id BIGINT)
-RETURNS TABLE
+RETURNS TABLE(
 ticket_id BIGINT
 
 ) AS $$
@@ -353,7 +353,7 @@ BEGIN
     FROM base_ticket as t
     JOIN base_flight as f ON t.flight_id_id = f.id
     JOIN base_airline as a ON f.airline_company_id_id = a.id
-    WHERE a.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'))
+    WHERE a.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
 
     END;
 $$ LANGUAGE plpgsql;   
