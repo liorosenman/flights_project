@@ -128,9 +128,13 @@
         ## 4. remove_airline --> New logic in the method, using sql
         
 # ------------22/02/2024-------------------------
-    Changes regarding flight status filed.
-    ## Conditions for booking a flight.
-    ## Customer - add_flight --- status = 'active' should be default.
+    1. Changes regarding flight status filed.
+     ## Conditions for booking a flight.
+     ## Customer - add_flight --- status = 'active' should be default.
+    Scanning methods that should be updated by flights_update
+    2. Changes of init.sql , status field of flight and ticket. (status = VARCHAR)
+     ## update_flight_status doesn't work -- Tickets table mismatch
+
 
 # FOR THE END:
     *** Prime admin
@@ -150,7 +154,7 @@
     10. Conditions for buying a ticket --- checking again if flight is active is unneccessary. //DONE
     11. get_all_flights //DONE
     12. Stored procedures --- 
-    13. Display fields, not ids
+    13. Display fields, not ids --- when creating a flight, id is presented
     14. Remove ticket --- If the flight is full, is_active doesn't change
     15. Automatic deactivation of a flight.
     15. Status of a response.

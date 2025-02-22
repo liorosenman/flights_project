@@ -127,6 +127,7 @@ def get_airline_by_username(request, username):
         return Response({"status": "error", "message": str(e)}, status=400)
     
 @api_view(['GET'])
+@decorators.update_flights_status()
 def get_all_flights(request): # Showing all flights, excluding canceled and already took-off flights
     try:
         with connection.cursor() as cursor:

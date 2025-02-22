@@ -11,6 +11,9 @@ from base.serializer import AirportUserSerializer
 from rest_framework_simplejwt.tokens import AccessToken
 from django.utils.timezone import now
 from django.db.models import Q
+from django.utils import timezone
+from django.utils.timezone import localtime, now
+
 
 logger = logging.getLogger('report_actions')
 
@@ -134,24 +137,31 @@ def airline_flight_auth():
         return wrapper
     return decorator
 
-def update_flights_status(func):
-    # Update the flights board
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed', 'active'])
-        for flight in flights_to_update:
-            current_time = now()
-            if flight.departure_time <= current_time:
-                possible_active_tickets = Ticket.objects.get(flight_id = flight.id)
-                if not possible_active_tickets:
-                    flight.status = 'canceled'
-            if flight.departure_time < current_time < flight.landing_time:
-                flight.status = 'tookoff'
-                Ticket.objects.filter(Q(flight_id=flight.flight_id) & Q(status='active')).update(status='tookoff')
-            else:
-                flight.status = 'landed'
-                Ticket.objects.filter(Q(flight_id=flight.flight_id) & ~Q(status = 'canceled')).update(status='landed')
-            flight.save(update_fields=['status'])
+def update_flights_status():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed'])
+            for flight in flights_to_update:
+                current_time = timezone.localtime(timezone.now())
+                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                print(flight.landing_time)
+                print(current_time)
+                if flight.departure_time <= current_time:
+                    possible_active_tickets = Ticket.objects.get(flight_id = flight.id, status = 'active')
+                    if not possible_active_tickets:
+                        flight.status = 'canceled'
+                if flight.departure_time < current_time < flight.landing_time:
+                    flight.status = 'tookoff'
+                    Ticket.objects.filter(Q(flight_id=flight.id) & Q(status='active')).update(status='tookoff')
+                if current_time >= flight.landing_time:
+                    flight.status = 'landed'
+                    Ticket.objects.filter(Q(flight_id=flight.id) & ~Q(status = 'canceled')).update(status='landed')
+                flight.save(update_fields=['status'])
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
             
 
