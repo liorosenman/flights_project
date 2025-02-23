@@ -74,6 +74,7 @@ BEGIN
 -- ####################################################################################
 CREATE OR REPLACE FUNCTION get_flights_by_airline_id(airline_id BIGINT)
 RETURNS TABLE (
+flight_id BIGINT,
 airline_name TEXT,
 origin_country_name TEXT,
 destination_country_name TEXT,
@@ -84,6 +85,7 @@ remaining_tickets INTEGER
 BEGIN
     RETURN QUERY
     SELECT
+    f.id::BIGINT AS flight_id,
     a.name::TEXT AS airline_name,
     co.name::TEXT AS origin_country_name,
     cd.name::TEXT AS destination_country_name,
@@ -97,7 +99,7 @@ BEGIN
     JOIN base_country AS cd
     ON f.destination_country_id_id = cd.id
     JOIN base_airline AS a
-    ON f.airline_company_id = a.id
+    ON f.airline_company_id_id = a.id
     WHERE f.airline_company_id_id = airline_id;
 
 END;

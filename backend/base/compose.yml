@@ -6,6 +6,7 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: airport
+      POSTGRES_TZ: Asia/Jerusalem
     volumes: 
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # how to get to the init.sql file
     ports:

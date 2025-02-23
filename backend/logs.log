@@ -9579,3 +9579,194 @@ base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
 2025-02-23 12:27:09,416 - WARNING - Bad Request: /get_airline_by_username/elal/
 2025-02-23 12:35:34,840 - WARNING - Bad Request: /get_airline_by_username/elal/
 2025-02-23 12:48:17,030 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 13:55:12,995 - WARNING - Bad Request: /get_flights_by_airline_id/3/
+2025-02-23 13:55:43,697 - WARNING - Bad Request: /get_flights_by_airline_id/1/
+2025-02-23 13:58:56,786 - WARNING - Not Found: /get_flights_by_airline_id/7/
+2025-02-23 14:11:39,025 - WARNING - Not Found: /get_arrival_flights/8/
+2025-02-23 14:15:12,743 - WARNING - Method Not Allowed: /create_flight/
+2025-02-23 14:19:02,183 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 14:33:44,181 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 14:38:05,260 - WARNING - Method Not Allowed: /get_all_flights/
+2025-02-23 14:38:08,659 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 149, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-23 14:41:10,161 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:41:12,980 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:41:16,711 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:41:35,809 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 150, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-23 14:49:05,567 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:49:12,473 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:49:34,316 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:49:57,055 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:50:16,566 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 14:50:34,938 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 152, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-23 15:01:15,982 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 15:01:58,641 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 15:02:20,145 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 15:04:12,747 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 15:11:11,438 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-02-23 15:11:14,019 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-02-23 15:11:18,699 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-02-23 15:11:32,418 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 152, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-23 15:14:11,412 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 15:15:11,265 - WARNING - Not Found: /get_arrival_flights/6/
+2025-02-23 16:10:27,410 - WARNING - Method Not Allowed: /get_all_flights/
+2025-02-23 16:10:30,613 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 152, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.

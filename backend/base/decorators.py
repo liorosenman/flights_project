@@ -1,3 +1,4 @@
+import datetime
 import logging
 import re
 from django.http import JsonResponse
@@ -13,7 +14,7 @@ from django.utils.timezone import now
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.timezone import localtime, now
-
+from datetime import datetime
 
 logger = logging.getLogger('report_actions')
 
@@ -141,8 +142,10 @@ def update_flights_status():
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            current_time = timezone.localtime(timezone.now())
+            # current_time = timezone.localtime(timezone.now())
+            current_time = datetime.now()
             print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            print(current_time)
             flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
                  .filter(departure_time__lt=timezone.now())
             for flight in flights_to_update:

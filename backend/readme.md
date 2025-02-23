@@ -136,9 +136,13 @@
     
 # ------------23/02/2024-------------------------
     1. Changing get_all_airlines --- no serializer.
+    2. Tests on views.py api points //DONE
+        get_flights_by_airline_id --- adding flight id to the querty fields. //DONE
+    3. Setting the timezone in postgres.
 
 # FOR THE END:
     *** Prime admin
+    *** Creation of an object should not return the details of the object.
     *** A "tookoff" flight with no active tickets will be considered as canceled.
     *** Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets
     1. Input validity methods
