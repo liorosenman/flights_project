@@ -141,18 +141,15 @@ def update_flights_status():
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
+            current_time = timezone.localtime(timezone.now())
             print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-            flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed'])
+            flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
+                 .filter(departure_time__lt=timezone.now())
             for flight in flights_to_update:
-                current_time = timezone.localtime(timezone.now())
-                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                print(flight.landing_time)
-                print(current_time)
-                if flight.departure_time <= current_time:
-                    possible_active_tickets = Ticket.objects.get(flight_id = flight.id, status = 'active')
-                    if not possible_active_tickets:
-                        flight.status = 'canceled'
-                if flight.departure_time < current_time < flight.landing_time:
+                possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                if not possible_active_ticket:
+                    flight.status = 'canceled'
+                if flight.departure_time <= current_time < flight.landing_time:
                     flight.status = 'tookoff'
                     Ticket.objects.filter(Q(flight_id=flight.id) & Q(status='active')).update(status='tookoff')
                 if current_time >= flight.landing_time:

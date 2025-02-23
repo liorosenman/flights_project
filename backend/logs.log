@@ -9554,3 +9554,28 @@ Traceback (most recent call last):
     raise self.model.DoesNotExist(
 base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
 2025-02-22 17:24:52,048 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-23 12:13:26,353 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:13:28,970 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:14:19,619 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:14:22,171 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:14:24,798 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:14:42,185 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:14:45,837 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:16:44,578 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:16:47,184 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:17:04,730 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-02-23 12:17:18,020 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:17:21,595 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:17:51,728 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:20:37,179 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:20:41,852 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:20:47,672 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:20:50,186 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:21:23,879 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:21:40,239 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:22:05,304 - WARNING - Not Found: /get_airline_by_id/3/
+2025-02-23 12:22:28,886 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:22:50,567 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-23 12:27:09,416 - WARNING - Bad Request: /get_airline_by_username/elal/
+2025-02-23 12:35:34,840 - WARNING - Bad Request: /get_airline_by_username/elal/
+2025-02-23 12:48:17,030 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.

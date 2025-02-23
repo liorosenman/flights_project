@@ -132,9 +132,10 @@
      ## Conditions for booking a flight.
      ## Customer - add_flight --- status = 'active' should be default.
     Scanning methods that should be updated by flights_update
-    2. Changes of init.sql , status field of flight and ticket. (status = VARCHAR)
-     ## update_flight_status doesn't work -- Tickets table mismatch
-
+    2. Changes of init.sql , status field of flight and ticket. (status 
+    
+# ------------23/02/2024-------------------------
+    1. Changing get_all_airlines --- no serializer.
 
 # FOR THE END:
     *** Prime admin
@@ -188,6 +189,7 @@
 
 # BUGS:
     1. get_customer_by_username // structure of query does not match function result // FIXED
+    2. get_airline_by_username --- structure of query does not match function result
 
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE

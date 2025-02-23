@@ -8,10 +8,10 @@ RETURNS TABLE (
 BEGIN
     RETURN QUERY
     SELECT 
-        a.id AS airline_id,
-        a.name AS airline_name,
-        c.name AS country_name,
-        u.username
+        a.id::BIGINT AS airline_id,
+        a.name::TEXT AS airline_name,
+        c.name::TEXT AS country_name,
+        u.username::TEXT AS username
     FROM 
         base_airline AS a
     JOIN 

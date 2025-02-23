@@ -16,6 +16,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from django.core.exceptions import ObjectDoesNotExist
 from .models import UserRole
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import F
 
 
 def index(req):
@@ -79,20 +80,35 @@ def logout_user(request):
 
 @api_view(['GET'])
 def get_all_airlines(request):
-    airlines = Airline.objects.all()
-    serializer = AirlineSerializer(airlines, many=True)
-    return Response(serializer.data)
+    airlines = Airline.objects.select_related('country_id', 'airport_user').annotate(
+        country=F('country_id__name'),
+        email=F('airport_user__email')
+    ).values(
+        'id', 
+        'name', 
+        'country',  
+        'email'     
+    )
+    
+    data = list(airlines)
+    return JsonResponse(data, safe=False)
 
 
 @api_view(['GET'])
 def get_airline_by_id(request, id):
-    try:
-        airline = Airline.objects.get(id=id)
-    except Airline.DoesNotExist:
-        return Response({"error": "Airline not found."}, status=status.HTTP_404_NOT_FOUND)
-    
-    serializer = AirlineSerializer(airline)
-    return Response(serializer.data)
+    airline = get_object_or_404(
+        Airline.objects.select_related('country_id', 'airport_user').annotate(
+            country=F('country_id__name'),
+            email=F('airport_user__email')
+        ).values(
+            'id', 
+            'name', 
+            'country',  
+            'email'
+        ),
+        id=id
+    )
+    return JsonResponse(airline)
 
 @api_view(['GET'])
 def get_all_countries(request):
