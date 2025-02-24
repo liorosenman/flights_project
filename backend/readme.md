@@ -140,6 +140,10 @@
         get_flights_by_airline_id --- adding flight id to the querty fields. //DONE
     3. Setting the timezone in postgres.
 
+# ------------24/02/2024-------------------------
+    1. Input validity methods, for airportuser and airline.
+
+
 # FOR THE END:
     *** Prime admin
     *** Finish the time zone problem. //DONE --- Both postgres and django were set to UTC timezone.s

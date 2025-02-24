@@ -1,6 +1,7 @@
 import datetime
 import logging
 import re
+from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
@@ -78,18 +79,20 @@ def user_details_input_validation(func):
             data = request.data
             username = data.get('username', '')
             if AirportUser.objects.filter(username=username).exists():
-                return Response({'error': 'Username is already taken'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Username is already taken'})
             if not re.match(r'^[a-zA-Z0-9]*$', username) or not any(char.isdigit() for char in username):
-                return Response({'error': 'Username must be unique, contain at least one digit, and have no special characters'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Username must be unique, contain at least one digit, and have no special characters'})
             password = data.get('password', '')
             if not re.match(r'^[a-zA-Z0-9]*$', password) or len(password) < 4 or not any(char.isdigit() for char in password):
                 return Response({'error': 'Password must include at least one digit, at least four characters, and have no special characters'})
             email = data.get('email', '')
             email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             if not re.match(email_pattern, email):
-                return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Invalid email format'})
             return func(request, *args, **kwargs)
         return wrapper
+    
 
 def customer_details_input_validation(func):
     def decorator(func):
@@ -130,19 +133,37 @@ def admin_details_input_validation(func):
         return wrapper
     return decorator
 
+def create_airport_user(func):
+    @wraps(func)
+    def wrapper(request, *args, **kwargs):
+        data = request.data
+        default_role = UserRole.objects.get(id=1)
+        try:
+            airport_user = AirportUser.objects.create_user(
+            username=data['username'],
+            password=data['password'],
+            email=data['email'],
+            role_name = default_role)
+
+            airport_user.save()
+        except IntegrityError as e:
+            return Response({"msg":"Username already exists. Please choose a different username."})
+        return func(request, *args, **kwargs)
+    return wrapper
+    
 
 
 def airline_details_input_validation(func):
-    def decorator(func):
+    # def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
+            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             data = request.data
             name = data.get('name', '')
             if not name or len(name) > 100 or not name.isalpha():
-                ValidationError("Airline name is required, letter only, 100 characters max.")
+                return Response({"Error":"Airline name is required, letters only, 100 characters max."})
             return func(request, *args, **kwargs)
         return wrapper
-    return decorator
 
 
 def authorize_customer():
