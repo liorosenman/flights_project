@@ -15,6 +15,7 @@ from django.db.models import Q
 from django.utils import timezone
 from django.utils.timezone import localtime, now
 from datetime import datetime
+from django.core.exceptions import ValidationError
 
 logger = logging.getLogger('report_actions')
 
@@ -91,12 +92,57 @@ def user_details_input_validation(func):
         return wrapper
 
 def customer_details_input_validation(func):
+    def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             data = request.data
-            
+            first_name = data.get('first_name', '')
+            if not first_name or not first_name.isalpha() or len(first_name) > 50:
+                ValidationError("First name is required, only letters, 50 characters max.")
+            last_name = data.get('last_name', '')
+            if not last_name or not last_name.isalpha() or len(last_name) > 50:
+                ValidationError("Last name is required, only letters, 50 characters max.")
+            address = data.get('address', '')
+            if not address or len(address) > 255 or not re.fullmatch(r'[A-Za-z0-9]+', address) or len(re.findall(r'[A-Za-z]', address)) < 2:
+                ValidationError("Address is required, 255 characters max, only letter and numbers.")
+            phone_no = data.get('phone_no', '')
+            if not phone_no or not re.fullmatch(r'\d{6}', phone_no):
+                ValidationError("Phone number must be 6 characters, digits only")
+            credit_card_no = data.get['credit_card_no']
+            if not credit_card_no or not re.fullmatch(r'\d{6}', credit_card_no):
+                ValidationError("Credit card number must be 8 characters, digits only")
             return func(request, *args, **kwargs)
         return wrapper
+    return decorator
+
+def admin_details_input_validation(func):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            data = request.data
+            first_name = data.get('first_name', '')
+            if not first_name or not first_name.isalpha() or len(first_name) > 50:
+                ValidationError("First name is required, only letters, 50 characters max.")
+            last_name = data.get('last_name', '')
+            if not last_name or not last_name.isalpha() or len(last_name) > 50:
+                ValidationError("Last name is required, only letters, 50 characters max.")
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
+
+
+
+def airline_details_input_validation(func):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            data = request.data
+            name = data.get('name', '')
+            if not name or len(name) > 100 or not name.isalpha():
+                ValidationError("Airline name is required, letter only, 100 characters max.")
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
 
 
 def authorize_customer():

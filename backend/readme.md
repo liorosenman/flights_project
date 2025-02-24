@@ -142,6 +142,7 @@
 
 # FOR THE END:
     *** Prime admin
+    *** Finish the time zone problem. //DONE --- Both postgres and django were set to UTC timezone.s
     *** Creation of an object should not return the details of the object.
     *** A "tookoff" flight with no active tickets will be considered as canceled.
     *** Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets
@@ -153,19 +154,19 @@
     4b. Airline is permitted to perform actions only his //DONE & TESTED
     5. Logger for each execution of view
     5. More attractive login
-    6. Is AirportUserManager neccessary?
-    8. kwargs - desposible?
+    6. Is AirportUserManager neccessary? // DONE
+    8. kwargs - desposible? // DONE
     9. get_my_tickets --- redesign // DONE
     10. Conditions for buying a ticket --- checking again if flight is active is unneccessary. //DONE
     11. get_all_flights //DONE
     12. Stored procedures --- 
     13. Display fields, not ids --- when creating a flight, id is presented
-    14. Remove ticket --- If the flight is full, is_active doesn't change
+    14. Remove ticket --- If the flight is full, is_active doesn't change //DONE
     15. Automatic deactivation of a flight.
     15. Status of a response.
     16. get_flights_by_parameters --- Only date, without hour
     17. Remove users --- Check again
-    18. Creation of the countries with a file.
+    18. Creation of the countries with a file. // DONE
 
     
 # When buying a ticket to a flight (Country and UserRoles exist): *6.12.24

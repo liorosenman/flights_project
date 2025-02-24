@@ -9770,3 +9770,138 @@ Traceback (most recent call last):
   File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
     raise self.model.DoesNotExist(
 base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-24 11:04:01,301 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 152, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-24 11:04:32,728 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-24 12:10:51,355 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-24 12:38:32,233 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:38:44,322 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:39:40,975 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:39:45,720 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:39:56,055 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:39:58,699 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:01,260 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:04,826 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:10,626 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:23,796 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:28,543 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:31,062 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:34,644 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:37,134 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:40:41,779 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:05,632 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:08,234 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:17,210 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:19,826 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:33,142 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:42,014 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:44,646 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:41:49,293 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:47:18,608 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:51:18,094 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:55:29,365 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:55:31,939 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:55:38,672 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:56:21,381 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:57:06,541 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:57:09,060 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 12:57:24,283 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:00:39,546 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:02:57,726 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:03:18,277 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:04:46,210 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:04:49,871 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:05:58,450 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:06:44,780 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:07:12,832 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:07:54,598 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:07:58,144 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:08:02,765 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:08:06,313 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:08:18,333 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:08:22,944 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:10:03,079 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:10:40,154 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:11:09,119 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:11:17,975 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:11:34,319 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:11:51,637 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:12:12,255 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:12:37,286 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:12:44,032 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:12:49,756 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:12:54,400 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:13:00,127 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:13:24,888 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:13:28,518 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:13:50,590 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:13:56,267 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:15:30,965 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:15:34,599 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:16:02,838 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:16:05,522 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:16:09,050 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:16:46,522 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:17:53,795 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:02,662 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:20,213 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:23,784 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:32,708 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:47,016 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:56,934 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:18:59,524 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:09,491 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:12,024 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:25,138 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:35,093 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:47,206 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:52,900 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:19:55,380 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:20:09,529 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:03,915 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:13,927 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:17,650 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:22,366 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:28,061 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:38,025 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:53,232 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:22:55,742 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:21,511 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:28,306 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:32,039 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:44,105 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:55,048 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:23:59,651 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:24:39,230 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-24 13:24:54,462 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
