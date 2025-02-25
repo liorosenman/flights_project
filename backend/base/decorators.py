@@ -95,61 +95,77 @@ def user_details_input_validation(func):
     
 
 def customer_details_input_validation(func):
-    def decorator(func):
+    # def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             data = request.data
             first_name = data.get('first_name', '')
             if not first_name or not first_name.isalpha() or len(first_name) > 50:
-                ValidationError("First name is required, only letters, 50 characters max.")
+                return Response("First name is required, only letters, 50 characters max.")
             last_name = data.get('last_name', '')
             if not last_name or not last_name.isalpha() or len(last_name) > 50:
-                ValidationError("Last name is required, only letters, 50 characters max.")
+                return Response("Last name is required, only letters, 50 characters max.")
             address = data.get('address', '')
             if not address or len(address) > 255 or not re.fullmatch(r'[A-Za-z0-9]+', address) or len(re.findall(r'[A-Za-z]', address)) < 2:
-                ValidationError("Address is required, 255 characters max, only letter and numbers.")
+                return Response("Address is required, 255 characters max, only letter and numbers.")
             phone_no = data.get('phone_no', '')
             if not phone_no or not re.fullmatch(r'\d{6}', phone_no):
-                ValidationError("Phone number must be 6 characters, digits only")
-            credit_card_no = data.get['credit_card_no']
-            if not credit_card_no or not re.fullmatch(r'\d{6}', credit_card_no):
-                ValidationError("Credit card number must be 8 characters, digits only")
+                return Response("Phone number must be 6 characters, digits only")
+            credit_card_no = data.get('credit_card_no', '')
+            if not credit_card_no or not re.fullmatch(r'\d{8}', credit_card_no):
+                return Response("Credit card number must be 8 characters, digits only")
             return func(request, *args, **kwargs)
         return wrapper
-    return decorator
+    # return decorator
 
 def admin_details_input_validation(func):
-    def decorator(func):
+    # def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             data = request.data
             first_name = data.get('first_name', '')
             if not first_name or not first_name.isalpha() or len(first_name) > 50:
-                ValidationError("First name is required, only letters, 50 characters max.")
+                return Response("First name is required, only letters, 50 characters max.")
             last_name = data.get('last_name', '')
             if not last_name or not last_name.isalpha() or len(last_name) > 50:
-                ValidationError("Last name is required, only letters, 50 characters max.")
+                return Response("Last name is required, only letters, 50 characters max.")
+            return func(request, *args, **kwargs)
+        return wrapper
+    # return decorator
+
+def flight_details_input_validation(func):
+    @wraps(func)
+    def wrapper(request, *args, **kwargs):
+        try:
+            dep_time = request.data.get('dep_time', '')
+        except:
+            return Response("Wrong format of date and time.")
+        return func(request, *args, **kwargs)
+    return wrapper
+        
+
+
+def create_airport_user(user_role_id):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            data = request.data
+            user_role = UserRole.objects.get(id=user_role_id)
+            try:
+                airport_user = AirportUser.objects.create_user(
+                username=data['username'],
+                password=data['password'],
+                email=data['email'],
+                role_name = user_role)
+
+                airport_user.save()
+            except IntegrityError as e:
+                return Response({"msg":"Username already exists. Please choose a different username."})
             return func(request, *args, **kwargs)
         return wrapper
     return decorator
 
-def create_airport_user(func):
-    @wraps(func)
-    def wrapper(request, *args, **kwargs):
-        data = request.data
-        default_role = UserRole.objects.get(id=1)
-        try:
-            airport_user = AirportUser.objects.create_user(
-            username=data['username'],
-            password=data['password'],
-            email=data['email'],
-            role_name = default_role)
 
-            airport_user.save()
-        except IntegrityError as e:
-            return Response({"msg":"Username already exists. Please choose a different username."})
-        return func(request, *args, **kwargs)
-    return wrapper
     
 
 

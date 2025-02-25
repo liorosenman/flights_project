@@ -10959,3 +10959,352 @@ AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse`
 2025-02-24 16:45:14,008 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-02-24 16:45:53,952 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-02-24 16:45:56,470 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:02:39,560 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:02:42,232 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:06:56,185 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:06:59,709 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:07:12,049 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:07:28,719 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:07:53,605 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:00,425 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:08,267 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:11,901 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:15,509 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:29,704 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:32,382 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:08:39,155 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:10:41,177 - ERROR - Internal Server Error: /create_new_airline/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 93, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 166, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2025-02-25 14:11:14,505 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:11:38,897 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:11:46,376 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:12:04,474 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:12:08,854 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:13:35,135 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:01,037 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:06,762 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:12,490 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:22,461 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:34,612 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:14:36,864 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:01,652 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:04,268 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:15,299 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:21,086 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:23,683 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:32,324 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:15:34,939 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:16:08,226 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:16:16,063 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:16:22,816 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:16:59,317 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:17:02,896 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:20:17,823 - ERROR - Internal Server Error: /create_new_admin/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'function'>`
+2025-02-25 14:21:01,548 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:04,244 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:08,978 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:13,659 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:17,355 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:24,102 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:21:40,408 - ERROR - Internal Server Error: /create_new_admin/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'function'>`
+2025-02-25 14:22:25,530 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:22:39,708 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:24:00,654 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:25:23,848 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:25:29,625 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:25:34,338 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:26:23,564 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:26:42,030 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:29:17,677 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:30:50,169 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:32:37,744 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:32:42,475 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:33:04,143 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:35:26,844 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:35:36,888 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:35:41,716 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:35:45,381 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:35:49,030 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:35:51,567 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:36:00,480 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:37:02,603 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:37:08,327 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:37:56,561 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 93, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 114, in wrapper
+    credit_card_no = data.get['credit_card_no']
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'method' object is not subscriptable
+2025-02-25 14:45:37,147 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:45:44,749 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 93, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 114, in wrapper
+    credit_card_no = data.get['credit_card_no']
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'method' object is not subscriptable
+2025-02-25 14:48:05,108 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:48:07,648 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:48:14,429 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:48:17,050 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:52:24,221 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:52:27,816 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 14:53:49,469 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:53:53,884 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:53:59,641 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:05,439 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:31,266 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:37,037 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:40,716 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:43,228 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-02-25 14:54:59,737 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:55:16,115 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:55:29,367 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:55:51,019 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 14:55:56,777 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-02-25 15:08:07,476 - WARNING - Unauthorized: /create_flight/
+2025-02-25 15:34:24,592 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-02-25 15:34:43,499 - WARNING - Unauthorized: /create_flight/
+2025-02-25 15:40:26,250 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 221, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-25 15:40:41,988 - WARNING - Method Not Allowed: /login/
+2025-02-25 15:41:53,610 - WARNING - Unauthorized: /login/
+2025-02-25 15:42:23,316 - WARNING - Forbidden: /create_flight/
+2025-02-25 15:42:36,494 - WARNING - Forbidden: /create_flight/
+2025-02-25 15:47:09,110 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 15:50:59,095 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 15:58:12,496 - WARNING - Method Not Allowed: /get_all_flights/
+2025-02-25 15:58:16,471 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 226, in wrapper
+    possible_active_ticket = Ticket.objects.exclude(status='canceled').get(flight_id=flight.id)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Ticket.DoesNotExist: Ticket matching query does not exist.
+2025-02-25 15:58:36,786 - WARNING - Not Found: /get_flights_by_airline_id/4/
+2025-02-25 16:01:40,563 - INFO - C:\LIOR\python\final_project\backend\base\models.py changed, reloading.
+2025-02-25 16:46:49,729 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:46:52,448 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:46:57,187 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:46:59,838 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:47:21,416 - ERROR - Internal Server Error: /create_flight/
+Traceback (most recent call last):
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lros2\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 23, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2025-02-25 16:50:51,138 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:51:03,915 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:51:06,693 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:51:13,527 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:51:25,621 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-02-25 16:53:37,496 - WARNING - Bad Request: /create_flight/

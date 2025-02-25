@@ -14,42 +14,32 @@ from ..permission import role_required
 from django.db.models import Q
 from ..decorators import *
 
-@api_view(['POST'])
-# @role_required(RolesEnum.ADMINISTRATOR.value)
+#Create a new admin (user_role_num = 1)
+@role_required(RolesEnum.ADMINISTRATOR.value)
+@api_view(['POST']) 
+@user_details_input_validation
+@admin_details_input_validation
+@create_airport_user(1)
 def admin_register(request): #Create a new admin
-    try:
-        role = UserRole.objects.get(id=1)
-    except ObjectDoesNotExist:
-        return Response({"error": "Admin role does not exist."}, status=status.HTTP_400_BAD_REQUEST)
-    airport_user = AirportUser.objects.create(
-            username=request.data['username'],
-            password=make_password(request.data['password']),
-            email=request.data['email'],
-            role_name= role
-        )
-    airport_user.save()
+    username = request.data['username']
+    airport_user = AirportUser.objects.get(username = username)
     first_name = request.data['first_name']
     last_name = request.data['last_name']
     admin = Admin.objects.create(first_name=first_name, last_name=last_name, airport_user=airport_user)
     admin.save()
     return Response({"message": "Admin registered successfully."}, status=status.HTTP_201_CREATED)
 
-#Create a new airline
-# @role_required(RolesEnum.ADMINISTRATOR.value)
+
+# Create a new airline (user_role_num = 2)
+@role_required(RolesEnum.ADMINISTRATOR.value)
 @api_view(['POST']) 
 @user_details_input_validation
 @airline_details_input_validation
-@create_airport_user
+@create_airport_user(3)
 def airline_register(request):
-    # customer_role = UserRole.objects.get(id=3)
-    # airport_user = AirportUser.objects.create(
-    #     username=request.data['username'],
-    #     password=make_password(request.data['password']),
-    #     email=request.data['email'],
-    #     role_name = customer_role
-    #     )
-    # airport_user.save()
-    airport_user = AirportUser.objects.last()
+    username = request.data['username']
+    airport_user = AirportUser.objects.get(username = username)
+    # airport_user = AirportUser.objects.last()
     country = Country.objects.get(id = request.data['country_id'])
     name = request.data['name']
     airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)

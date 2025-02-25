@@ -1,7 +1,7 @@
 from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
-from base.decorators import user_details_input_validation
+from base.decorators import *
 from base.models import Admin, AirportUser, Customer, RolesEnum, Ticket, UserRole, Airline, Country, Flight
 from base.serializer import AirlineSerializer, AirportUserSerializer, CountrySerializer, CustomerSerializer, FlightSerializer
 from rest_framework.decorators import action
@@ -18,30 +18,17 @@ from .models import UserRole
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import F
 
-
 def index(req):
     return JsonResponse('hello', safe=False)
 
-# @api_view(['POST']) #Create a new customer
-# def customer_register(request):
-#     serializer = CustomerSerializer(data=request.data)
-#     if serializer.is_valid():
-#         customer = serializer.save()  
-#         return Response(CustomerSerializer(customer).data, status=status.HTTP_201_CREATED)
-#     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['POST']) #Create a new customer
+#Create a new customer(user_role_num = 2)
+@api_view(['POST']) 
 @user_details_input_validation
+@customer_details_input_validation
+@create_airport_user(2)
 def customer_register(request):
-    role = UserRole.objects.get(id=2)
-    airport_user = AirportUser.objects.create_user(
-            username=request.data['username'],
-            password=request.data['password'],
-            # password=make_password(request.data['password']),
-            email=request.data['email'],
-            role_name= role,
-        )
-    airport_user.save()
+    username = request.data['username']
+    airport_user = AirportUser.objects.get(username = username)
     first_name = request.data['first_name']
     last_name = request.data['last_name']
     address = request.data['address']
@@ -51,6 +38,7 @@ def customer_register(request):
                                   address=address, phone_no=phone_no, credit_card_no=credit_card_no,airport_user=airport_user)
     customer.save()
     return Response({"message": "Customer registered successfully."}, status=status.HTTP_201_CREATED)    
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod

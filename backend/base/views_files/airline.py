@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from base.decorators import airline_flight_auth, authorize_airline
+from base.decorators import airline_flight_auth, authorize_airline, flight_details_input_validation
 from base.permission import role_required
 from ..models import Airline, Flight, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
@@ -21,10 +21,11 @@ logging.basicConfig(filename="./logs.log",
 
 @api_view(['POST'])
 @role_required(RolesEnum.AIRLINE.value)
+@flight_details_input_validation
 def add_flight(request):
     # Get the logged-in user's airline company
-    if not request.user or request.user.is_anonymous:
-        return Response({'error': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
+    # if not request.user or request.user.is_anonymous:
+    #     return Response({'error': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
     
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)

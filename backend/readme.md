@@ -146,6 +146,7 @@
 
 # FOR THE END:
     *** Prime admin
+    *** First and last names can be inherited.
     *** Finish the time zone problem. //DONE --- Both postgres and django were set to UTC timezone.s
     *** Creation of an object should not return the details of the object.
     *** A "tookoff" flight with no active tickets will be considered as canceled.
@@ -266,11 +267,12 @@
 
 # Input validity for methods:
     1. Create new airport user. //DONE & TESTED
-    2. Create new administator.
-    3. Create new customer. --- using decorator
-    4. Create new airline.
+    2. Create new administator. //DONE & TESTED
+    3. Create new customer. //DONE & TESTED
+    4. Create new airline. //DONE & TESTED
     5. Update customer --- as creating customer. --- using decorator
-    6. 
+    6. Add new flight
+    7. Update Flight
 
 # Methods to assure every user is authorized to modify his objects alone
     1. update_customer //DONE & TESTED
