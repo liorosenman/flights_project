@@ -68,8 +68,12 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+   'DATETIME_FORMAT': "%d-%m-%y %H:%M",  # Correct format
+    'DATE_FORMAT': "%d-%m-%y",
+    'TIME_FORMAT': "%H:%M",
 }
+
 
 
 SIMPLE_JWT = {
@@ -182,7 +186,10 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-
+DATE_FORMAT = "d-m-y" 
+TIME_FORMAT = "H:i"
+DATETIME_FORMAT = "d-m-y H:i" 
+USE_L10N = False
 # TIME_ZONE = 'Asia/Jerusalem'
 
 

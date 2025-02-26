@@ -143,10 +143,13 @@
 # ------------24/02/2024-------------------------
     1. Input validity methods, for airportuser and airline.
 
+# ------------26/02/2024-------------------------
+    1. Time & Date formats unification.
 
 # FOR THE END:
     *** Prime admin
     *** First and last names can be inherited.
+    *** Same time format.
     *** Finish the time zone problem. //DONE --- Both postgres and django were set to UTC timezone.s
     *** Creation of an object should not return the details of the object.
     *** A "tookoff" flight with no active tickets will be considered as canceled.

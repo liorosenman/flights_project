@@ -152,6 +152,13 @@ class Flight(models.Model):
     remaining_tickets = models.IntegerField()
     status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)
     # is_active = models.BooleanField(default=True)
+
+
+    def formatted_landing_time(self):
+        return self.landing_time.strftime("%D-%m-%y %H:%M")
+
+    def formatted_departure_time(self):
+        return self.departure_time.strftime("%D-%m-%y %H:%M")
     
     def __str__(self):
         return f"Flight {self.id} - {self.airline_company_id}"

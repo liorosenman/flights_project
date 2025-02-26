@@ -15,8 +15,9 @@ from django.utils.timezone import now
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.timezone import localtime, now
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
+from dateutil import parser
 
 logger = logging.getLogger('report_actions')
 
@@ -136,10 +137,36 @@ def admin_details_input_validation(func):
 def flight_details_input_validation(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
+        dep_time_str = request.data.get('departure_time') # The new departure time
         try:
-            dep_time = request.data.get('dep_time', '')
-        except:
-            return Response("Wrong format of date and time.")
+            if not dep_time_str or not isinstance(dep_time_str, str):
+                return Response("Empty or invalid type")
+            dep_time_str = dep_time_str.strip()
+            dep_time = parser.parse(dep_time_str)
+        except (ValueError, TypeError) as e:
+            return Response({"error":"Departure time is in Invalid datetime format"})
+        
+        now = datetime.now()
+        if (now > dep_time):
+            return Response({"error":"The time you picked is in the past."})
+        if 'landing_time' in request.data:
+            land_time_str = request.data.get('landing_time')
+            try:
+                if not land_time_str or not isinstance(land_time_str, str):
+                    return Response("Empty or invalid type")
+                land_time_str = land_time_str.strip()
+                land_time = parser.parse(land_time_str)
+            except (ValueError, TypeError) as e:
+                return Response({"error":"Landing time is in Invalid datetime format"})
+
+            if not land_time >= dep_time + timedelta(hours=1):
+                print("AAAAAAAAAAAAAAAAAAAAAA")
+                return Response({"error":"Landing time must be at least one hour ahead of the departure time."})
+        if 'remaining_tickets' in request.data:
+            rem_tickets = request.data.get('remaining_tickets')
+            if rem_tickets is None or rem_tickets <= 0:
+                print("BBBBBBBBBBBBBBBBBBBBBBBBB")
+                return Response({"Error":"Remaining tickets field has to be a positive integer."})
         return func(request, *args, **kwargs)
     return wrapper
         
