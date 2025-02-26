@@ -164,6 +164,12 @@ def flight_details_input_validation(func):
                 return Response({"error":"Landing time must be at least one hour ahead of the departure time."})
         if 'remaining_tickets' in request.data:
             rem_tickets = request.data.get('remaining_tickets')
+            try:
+                rem_tickets = int(rem_tickets)
+                if rem_tickets <= 0:
+                    return Response({"Error:":"Remaining tickets fields must be a positive integer"})
+            except:
+                return Response({"Error:":"Wrong input"})
             if rem_tickets is None or rem_tickets <= 0:
                 print("BBBBBBBBBBBBBBBBBBBBBBBBB")
                 return Response({"Error":"Remaining tickets field has to be a positive integer."})
