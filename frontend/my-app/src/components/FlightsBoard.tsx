@@ -1,7 +1,7 @@
 // FlightBoard.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Flight from '../Flight/Flight.tsx';
+import Flight from '../Flight.tsx';
 
 const FlightBoard = () => {
   const [flights, setFlights] = useState([]);

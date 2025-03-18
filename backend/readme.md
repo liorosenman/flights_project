@@ -118,7 +118,7 @@
 # ------------16/02/2024-------------------------
     # get_arrival_flights_by_country --- Present countries that have at least one active ticket.
     
-# ------------21/02/2024-------------------------
+# ------------21/02/2025-------------------------
     # Changes:
         ## 1. get_all_flights -> Show every flight, no filtering.
               No rows --> different msg.
@@ -127,24 +127,34 @@
               No rows --> different msg.
         ## 4. remove_airline --> New logic in the method, using sql
         
-# ------------22/02/2024-------------------------
+# ------------22/02/2025-------------------------
     1. Changes regarding flight status filed.
      ## Conditions for booking a flight.
      ## Customer - add_flight --- status = 'active' should be default.
     Scanning methods that should be updated by flights_update
     2. Changes of init.sql , status field of flight and ticket. (status 
     
-# ------------23/02/2024-------------------------
+# ------------23/02/2025-------------------------
     1. Changing get_all_airlines --- no serializer.
     2. Tests on views.py api points //DONE
         get_flights_by_airline_id --- adding flight id to the querty fields. //DONE
     3. Setting the timezone in postgres.
 
-# ------------24/02/2024-------------------------
+# ------------24/02/2025-------------------------
     1. Input validity methods, for airportuser and airline.
 
-# ------------26/02/2024-------------------------
+# ------------26/02/2025-------------------------
     1. Time & Date formats unification.
+
+# ------------17/03/2025-------------------------
+    1. Input validity for flight creation - TESTED
+
+# ------------18/03/2025-------------------------
+    1. Modify Ticket model - customer_id from OnetoOne to Foreign_key
+    2. Deletion of is_active property in Ticket table.
+    3. a. Update_flight_status time format changed to timezone.now()
+       b. Fixed Time zones formats in the conditions of the flight (flight.landing_time.astimezone(pytz.UTC)).
+       c. Active flight with one active ticket changed to 'Took-off' - TESTED
 
 # FOR THE END:
     *** Prime admin
@@ -170,7 +180,7 @@
     12. Stored procedures --- 
     13. Display fields, not ids --- when creating a flight, id is presented
     14. Remove ticket --- If the flight is full, is_active doesn't change //DONE
-    15. Automatic deactivation of a flight.
+    15. Automatic deactivation of a flight. //TO BE TESTED --- Decorate every relevant api method.
     15. Status of a response.
     16. get_flights_by_parameters --- Only date, without hour
     17. Remove users --- Check again

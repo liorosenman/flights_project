@@ -133,6 +133,7 @@ def get_airline_by_username(request, username):
 @api_view(['GET'])
 @decorators.update_flights_status()
 def get_all_flights(request): # Showing all flights, excluding canceled and already took-off flights
+    print("AAAAAAAAAAAAAAAAAAAA")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_all_flights()")

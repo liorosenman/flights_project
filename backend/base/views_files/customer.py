@@ -21,6 +21,7 @@ logger = logging.getLogger('report_actions')
 
 @api_view(['POST'])
 @role_required(RolesEnum.CUSTOMER.value)
+@decorators.update_flights_status()
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
     flight_id = request.data.get('flight_id')
