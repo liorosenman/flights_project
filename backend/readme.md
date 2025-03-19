@@ -162,8 +162,8 @@
         a. Creation of an object should return the details of the object. //Only Ticket
         b. Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets // DONE
         c. Update customer --- as creating customer. --- using decorator // DONE
-            1. Add new flight
-            2. Update Flight
+            1. Add new flight - DONE & TESTED
+            2. Update Flight - DONE (Within the function)
         d. Check methods that use serializer.
         e. Loggers.
         f. Display fields, not ids --- when creating a flight, id is presented

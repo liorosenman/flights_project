@@ -61,7 +61,7 @@ def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
     # if not flight.is_active:
     if flight.status is not 'active':
-        return Response({"msg":"This flight is inactive"})
+        return Response({"msg":"Only active flights can be updated."})
     new_dep_time_str = request.data.get('new_dep_time')
     new_dep_time = datetime.fromisoformat(new_dep_time_str)
     try:
