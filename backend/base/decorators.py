@@ -62,7 +62,9 @@ def conditions_for_cancel_a_ticket():
             ticket = get_object_or_404(Ticket, id = id)
             current_customer = request.user.customers
             current_customer_id = current_customer.id
-            if ticket.customer_id != current_customer_id:
+            print(f'The customer of the ticket is {ticket.customer_id}')
+            print(f'The logged customer is {current_customer_id}')
+            if ticket.customer_id_id != current_customer_id:
                 # logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
                 logger.warning(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response({'msg':'This is a ticket of another customer'})

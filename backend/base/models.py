@@ -165,7 +165,7 @@ class Flight(models.Model):
     
 class Ticket(models.Model):
     id = models.BigAutoField(primary_key=True)
-    flight_id = models.OneToOneField('Flight', on_delete=models.CASCADE, related_name='tickets')
+    flight_id = models.ForeignKey('Flight', on_delete=models.CASCADE, related_name='tickets')
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     # is_active = models.BooleanField(default=True)
     status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)

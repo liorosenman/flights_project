@@ -155,6 +155,8 @@
     3. a. Update_flight_status time format changed to timezone.now()
        b. Fixed Time zones formats in the conditions of the flight (flight.landing_time.astimezone(pytz.UTC)).
        c. Active flight with one active ticket changed to 'Took-off' - TESTED
+# ------------18/03/2025-------------------------
+    1. Modify Ticket model - flight_id from OnetoOne to Foreign_key
 
 # FOR THE END:
     *** Prime admin
