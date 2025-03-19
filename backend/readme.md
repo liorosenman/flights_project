@@ -157,14 +157,29 @@
        c. Active flight with one active ticket changed to 'Took-off' - TESTED
 # ------------18/03/2025-------------------------
     1. Modify Ticket model - flight_id from OnetoOne to Foreign_key
+# ------------19/03/2025-------------------------
+    Tasks:
+        a. Creation of an object should return the details of the object. //Only Ticket
+        b. Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets // DONE
+        c. Update customer --- as creating customer. --- using decorator // DONE
+            1. Add new flight
+            2. Update Flight
+        d. Check methods that use serializer.
+        e. Loggers.
+        f. Display fields, not ids --- when creating a flight, id is presented
+        g. Adding status to response.
+        h. Get flights py parameters - only date, no hours
+        i. Remove users --- Check again.
+
 
 # FOR THE END:
+    *** Admin creation - try to avoid try-catch 
     *** Prime admin
-    *** First and last names can be inherited.
-    *** Same time format.
+    *** First and last names can be inherited. // SKIPPED
+    *** Same time format. //SKIPPED
     *** Finish the time zone problem. //DONE --- Both postgres and django were set to UTC timezone.s
-    *** Creation of an object should not return the details of the object.
-    *** A "tookoff" flight with no active tickets will be considered as canceled.
+    *** Creation of an object should return the details of the object.
+    *** A "tookoff" flight with no active tickets will be considered as canceled. //DONE & TESTED
     *** Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets
     1. Input validity methods
     2. Moving to serializer to shorten the code
@@ -179,7 +194,7 @@
     9. get_my_tickets --- redesign // DONE
     10. Conditions for buying a ticket --- checking again if flight is active is unneccessary. //DONE
     11. get_all_flights //DONE
-    12. Stored procedures --- 
+    12. Stored procedures --- //DONE 
     13. Display fields, not ids --- when creating a flight, id is presented
     14. Remove ticket --- If the flight is full, is_active doesn't change //DONE
     15. Automatic deactivation of a flight. //TO BE TESTED --- Decorate every relevant api method.
@@ -307,6 +322,34 @@
     5. get_arrival_flights() //
     6. get_deparure_flights()
     5. ---GET_COUNTRIES
+
+# Automatic decativation of all flights:
+    1. get_all_flights()
+    2. get_flights_by_parameters()
+    3. get_my_flights()
+
+# Automatic deactivation of a single flight:
+    1. get_flight_by_id()
+    2. add_ticket()
+    3. remove_ticket()
+    4. get_my_tickets()
+    5. update_flight()
+
+# Creation of objects - Datails of the new objects are returned in response:
+    1. Flight - // DONE
+    2. Ticket - 
+    3. Airline // NO NEED
+    4. Customer - // NO NEED
+    5. AirportUser -// NOT AN END POINT
+    6. Admin - // NO NEED
+
+# Changing is_active to status will influence:
+    1. VIEWS // NO CHANGES NEEDED
+    2. CUSTOMER // DONE
+    3. ADMINISTRATOR // DONE
+    4. AIRLINE // DONE
+
+
 
 
 
