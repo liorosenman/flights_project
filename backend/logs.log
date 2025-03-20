@@ -12274,3 +12274,8 @@ DETAIL:  Key (flight_id_id)=(13) already exists.
 2025-03-19 12:45:10,846 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-03-19 15:50:34,184 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-03-19 15:51:13,052 - WARNING - Unauthorized: /login/
+2025-03-20 11:54:44,164 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-03-20 11:55:21,364 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-03-20 11:55:31,354 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-03-20 12:01:41,821 - WARNING - Not Found: /get_country_by_id/10/
+2025-03-20 12:12:58,505 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.

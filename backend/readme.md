@@ -164,7 +164,10 @@
         c. Update customer --- as creating customer. --- using decorator // DONE
             1. Add new flight - DONE & TESTED
             2. Update Flight - DONE (Within the function)
-        d. Check methods that use serializer.
+        d. Check methods that use serializer:
+            1. get_airline_by_id --- maybe add an email.
+            2. arrival_flights --- condition - flight is not canceled.
+            3. departure_flights --- condition - flight is not canceled.
         e. Loggers.
         f. Display fields, not ids --- when creating a flight, id is presented
         g. Adding status to response.
