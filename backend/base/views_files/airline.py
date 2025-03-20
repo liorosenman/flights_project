@@ -71,7 +71,7 @@ def update_flight(request, id):
     new_dep_time = make_aware(new_dep_time)
     current_time = now()
     if current_time > new_dep_time:
-        return Response({"msg":"The new departure time set to the past"})
+        return Response({"msg":"The new departure time mustn't set to the past"})
     old_dep_time = flight.departure_time
     old_land_time = flight.landing_time
     time_delta = new_dep_time - old_dep_time

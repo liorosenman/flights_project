@@ -31,8 +31,9 @@ def admin_register(request): #Create a new admin
 
 
 # Create a new airline (user_role_num = 2)
-@role_required(RolesEnum.ADMINISTRATOR.value)
+
 @api_view(['POST']) 
+@role_required(RolesEnum.ADMINISTRATOR.value)
 @user_details_input_validation
 @airline_details_input_validation
 @create_airport_user(3)
@@ -42,6 +43,7 @@ def airline_register(request):
     # airport_user = AirportUser.objects.last()
     country = Country.objects.get(id = request.data['country_id'])
     name = request.data['name']
+    print("CCCCCCCCCCCCCCCCCCCCCCCCCCC")
     airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)
     airline.save()
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
@@ -72,7 +74,7 @@ def get_all_customers():
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-# @role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(RolesEnum.ADMINISTRATOR.value)
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'base',
     'rest_framework',
+    'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
 ]
 
@@ -69,6 +70,10 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
    'DATETIME_FORMAT': "%d-%m-%y %H:%M",  # Correct format
     'DATE_FORMAT': "%d-%m-%y",
     'TIME_FORMAT': "%H:%M",

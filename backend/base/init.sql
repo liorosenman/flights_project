@@ -111,7 +111,8 @@ ticket_id BIGINT,
 flight_id BIGINT,
 origin_country TEXT,
 destination_country TEXT,
-departure_time TIMESTAMP
+departure_time TIMESTAMP,
+status TEXT,
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -120,7 +121,8 @@ BEGIN
     f.id::BIGINT AS flight_id,
     co.name::TEXT AS origin_country,
     cd.name::TEXT AS destination_country,
-    f.departure_time::TIMESTAMP as departure_time
+    f.departure_time::TIMESTAMP as departure_time,
+    t.status::TEXT AS ticket_status
     FROM base_ticket AS t    
     JOIN base_flight AS f ON t.flight_id_id = f.id
     JOIN base_country AS co ON f.origin_country_id_id = co.id

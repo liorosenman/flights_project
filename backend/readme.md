@@ -165,15 +165,21 @@
             1. Add new flight - DONE & TESTED
             2. Update Flight - DONE (Within the function)
         d. Check methods that use serializer:
-            1. get_airline_by_id --- maybe add an email.
+            1. get_airline_by_id --- maybe add an email. //DONE
             2. arrival_flights --- condition - flight is not canceled.
             3. departure_flights --- condition - flight is not canceled.
+            4. remove_airline --- rewrite (unupdated with is_active to status).
         e. Loggers.
         f. Display fields, not ids --- when creating a flight, id is presented
         g. Adding status to response.
         h. Get flights py parameters - only date, no hours
         i. Remove users --- Check again.
+        j. The definition of constant information like roles and countries.
+        k. Add update_flights_status to every relevant method.
 
+# ------------20/03/2025-------------------------
+    1. "flight_details_input_validation" decorator is revised.
+    2. All decorators --- Status was added to each Response.
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

@@ -30,7 +30,7 @@ urlpatterns = [
     path('get_airline_by_username/<str:username>/', views.get_airline_by_username, name='get_airline_by_username'),
     path('create_ticket/', customer.add_ticket),
     path('remove_ticket/<int:id>/', customer.remove_ticket),
-    path('get_my_tickets/', customer.get_my_tickets),
+    path('get_my_tickets/<int:id>/', customer.get_my_tickets),
     path('get_customer_by_username/<str:username>/', administrator.get_customer_by_username),
     path('remove_airline/<int:id>/', administrator.remove_airline),
     path('remove_customer/<int:id>/', administrator.remove_customer),
