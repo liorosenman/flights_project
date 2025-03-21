@@ -176,10 +176,15 @@
         i. Remove users --- Check again.
         j. The definition of constant information like roles and countries.
         k. Add update_flights_status to every relevant method.
+        l. Create a user, role_id --- number or string.
 
 # ------------20/03/2025-------------------------
     1. "flight_details_input_validation" decorator is revised.
     2. All decorators --- Status was added to each Response.
+# ------------21/03/2025-------------------------
+    1. get_flights_by_airline_id --- Add status to results.
+    2. airline --- remove_flight --- 'landed' flight cannot be removed as well.
+    3. TASK --- What flights can be removed?
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

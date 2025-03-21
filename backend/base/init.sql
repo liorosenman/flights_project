@@ -321,7 +321,7 @@ RETURNS TABLE (
     departure_time TIMESTAMP,
     landing_time TIMESTAMP,
     remaining_tickets INTEGER,
-    is_active BOOLEAN
+    status VARCHAR
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -333,12 +333,12 @@ BEGIN
     f.departure_time::TIMESTAMP AS departure_time,
     f.landing_time::TIMESTAMP AS landing_time,
     f.remaining_tickets::INTEGER AS remaining_tickets,
-    f.is_active::BOOLEAN AS is_active
+    f.status::VARCHAR AS status
     FROM base_flight AS f
     JOIN base_airline as a ON f.airline_company_id_id = a.id
     JOIN base_country as co ON f.origin_country_id_id = co.id
     JOIN base_country as cd ON f.destination_country_id_id = cd.id
-    WHERE f.airline_company_id_id = airline_id
+    WHERE f.airline_company_id_id = airline_id;
 
     END;
 $$ LANGUAGE plpgsql;   

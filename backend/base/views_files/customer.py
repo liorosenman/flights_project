@@ -39,11 +39,11 @@ def add_ticket(request):
     return Response(
         {"message": "Ticket successfully created", "remaining_tickets": flight.remaining_tickets},
         status=status.HTTP_200_OK)
-        
 
 
 @api_view(['PUT'])
 @role_required(RolesEnum.CUSTOMER.value)
+@decorators.update_flights_status()
 @decorators.conditions_for_cancel_a_ticket()
 def remove_ticket(request, id):
     # ticket = Ticket.objects.get(id = id)
@@ -72,33 +72,26 @@ def update_customer(request, id):
 @api_view([('GET')])
 @role_required(RolesEnum.CUSTOMER.value)
 @authorize_customer()
+@decorators.update_flights_status()
 def get_my_tickets(request, id):
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_tickets_by_customer_id(%s)", [id])
             rows = cursor.fetchall()
             if not rows:
-                return Response({"message": "There are no tickets for this customer"}, status=404)
+                  return Response(
+                    {"message": "No tickets found for this customer."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
             columns = [col[0] for col in cursor.description]
             my_tickets = [dict(zip(columns, row)) for row in rows]
-            return Response({"My tickets": my_tickets})
+            return Response(
+                {"message": "Tickets retrieved successfully.", "tickets": my_tickets},
+                status=status.HTTP_200_OK
+            )
     except Exception as e:
-        return Response({"status": "error", "message": str(e)}, status=400)
-    #         results = cursor.fetchall()
-    #         if results:
-    #             my_tickets = []
-    #             for result in results:
-    #                 ticket_details = {
-    #                     "Ticket-ID": result[0],
-    #                     "Flight-ID": result[1],
-    #                     "From:": result[2],
-    #                     "To": result[3],
-    #                     "Leaves in:":result[4],
-    #                      }
-    #                 my_tickets.append(ticket_details)
-    #             return Response({"My Tickets:":my_tickets})
-    #         else:
-    #             return Response({"status": "error", "message": "No customer found for the given ID."}, status=404)
-    # except Exception as e:
-    #     return Response({"status": "error", "message": str(e)}, status=400)
+        return Response(
+            {"message": "An error occurred while retrieving tickets.", "error": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
     

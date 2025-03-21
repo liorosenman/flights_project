@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from base import decorators
 from base.decorators import airline_flight_auth, authorize_airline, flight_details_input_validation
 from base.permission import role_required
 from ..models import Airline, Flight, RolesEnum, Ticket
@@ -23,10 +24,6 @@ logging.basicConfig(filename="./logs.log",
 @role_required(RolesEnum.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
-    # Get the logged-in user's airline company
-    # if not request.user or request.user.is_anonymous:
-    #     return Response({'error': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
-    
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
     except Airline.DoesNotExist:
@@ -43,35 +40,39 @@ def add_flight(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# @api_view(['POST'])
-# @role_required(RolesEnum.AIRLINE.value)
-# def add_flight(request):
-#      serializer = FlightSerializer(data=request.data)
-#      if serializer.is_valid():
-#         flight = serializer.save() 
-#         return Response(serializer.data, status=status.HTTP_201_CREATED)
-#      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
 @api_view(['PUT'])
 @role_required(RolesEnum.AIRLINE.value)
 @airline_flight_auth()
+@decorators.update_flights_status()
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
-    if not flight.is_active:
+    if not flight.status == 'active':
     # if flight.status is not 'active':
-        return Response({"msg":"Only active flights can be updated."})
+        return Response(
+            {"message": "Only active flights can be updated."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
     new_dep_time_str = request.data.get('new_dep_time')
-    new_dep_time = datetime.fromisoformat(new_dep_time_str)
+    if not new_dep_time_str:
+        return Response(
+            {"message": "'new_dep_time' is required."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
     try:
         new_dep_time = datetime.fromisoformat(new_dep_time_str)
     except ValueError:
-        return Response({"msg": "Invalid datetime format for 'new_dep_time'"}, status=400)
-    new_dep_time = make_aware(new_dep_time)
+        return Response(
+            {"message": "Invalid datetime format for 'new_dep_time'."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    # new_dep_time = make_aware(new_dep_time)
     current_time = now()
     if current_time > new_dep_time:
-        return Response({"msg":"The new departure time mustn't set to the past"})
+         return Response(
+            {"message": "The new departure time must not be in the past."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    # Calculation of the flight's new landing time.
     old_dep_time = flight.departure_time
     old_land_time = flight.landing_time
     time_delta = new_dep_time - old_dep_time
@@ -79,28 +80,40 @@ def update_flight(request, id):
     flight.departure_time = new_dep_time
     flight.landing_time = new_land_time
     flight.save()
-    return Response({"msg":"The flight has been updated"})
+    return Response(
+        {"message": "The flight has been updated successfully."},
+        status=status.HTTP_200_OK
+    )
 
 @api_view([('PUT')])
 @role_required(RolesEnum.AIRLINE.value)
 @airline_flight_auth()
+@decorators.update_flights_status()
 def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
    flight = get_object_or_404(Flight, id = id)
-   if not flight.is_active:
+   if not flight.status == 'active':
 #    if flight.status is not 'active':
-      return Response({"msg":"This flight cannot be deactivated."})
-   active_tickets = Ticket.objects.filter(flight_id=id, status__in=['active', 'tookoff'])
+      return Response(
+            {"message": "This flight cannot be deactivated because it is not active."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+   active_tickets = Ticket.objects.filter(flight_id=id, status__in=['active', 'tookoff', 'landed'])
    if active_tickets: # If there are active ticket in this to-be-deleted flight.
-      return Response({"msg":"There are active tickets in this flight"})
+      return Response(
+            {"message": "There are active or taken-off tickets associated with this flight."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
    flight.status = 'canceled'
    flight.save()
-   return Response({"msg":"Flight removed successfully"})
-
-
+   return Response(
+        {"message": "Flight has been successfully canceled."},
+        status=status.HTTP_200_OK
+    )
 
 @api_view(['GET'])
 @role_required(RolesEnum.AIRLINE.value)
 @authorize_airline()
+@decorators.update_flights_status()
 def get_my_flights(request, id):
     try:
         with connection.cursor() as cursor:
@@ -109,37 +122,23 @@ def get_my_flights(request, id):
             flights = [dict(zip(columns, row)) for row in cursor.fetchall()]  # Create list of dicts
 
         if not flights:
-            return Response({"status": "error", "message": "No airline found for the given ID."}, status=404)
+             return Response(
+                    {"message": "No flights found for the given airline ID."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
 
-        return Response({"my_flights": flights})
+        return Response(
+                {"message": "Flights retrieved successfully.", "flights": flights},
+                status=status.HTTP_200_OK
+            )
 
     except Exception as e:
-        return Response({"status": "error", "message": str(e)}, status=400)
+       return Response(
+            {"message": "An error occurred while retrieving flights.", "error": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
-# @api_view([('GET')])
-# def get_my_flights(request, id):
-#     try:
-#         with connection.cursor() as cursor:
-#             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [id])
-#             results = cursor.fetchall()
-#             if results:
-#                 columns = [col[0] for col in cursor.description]
-#                 flights = []
-#                 for result in results:
-#                     flight_details = dict(zip(columns, result))
 
-#                         # "Airline": result[0],
-#                         # "Origin": result[1],
-#                         # "Destination": result[2],
-#                         # "Take-Off": result[3],
-#                         # "Landing":result[4],
-#                         # "Tickets left:":result[5] }
-#                     flights.append(flight_details)
-#                 return Response({"My flights:": flights})
-#             else:
-#                 return Response({"status": "error", "message": "No airline found for the given username."}, status=404)
-#     except Exception as e:
-#         return Response({"status": "error", "message": str(e)}, status=400)
     
 
 
