@@ -17,7 +17,8 @@ from rest_framework.response import Response
 
 logging.basicConfig(filename="./logs.log",
                     format='%(asctime)s - %(levelname)s - %(message)s',
-                    filemode='a')
+                    filemode='a',
+                    level=logging.DEBUG)
 
 
 @api_view(['POST'])
@@ -35,6 +36,7 @@ def add_flight(request):
     serializer = FlightSerializer(data=flight_data)
     if serializer.is_valid():
         flight = serializer.save() 
+        logging.warning("Successful flight creation.")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

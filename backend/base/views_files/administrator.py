@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 # from base.decorators import role_required
 from base.decorators import create_airport_user
-from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, RolesEnum, Ticket, UserRole
+from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, RolesEnum, Ticket, UserRole, RolesById
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
@@ -14,7 +14,6 @@ from ..permission import role_required
 from django.db.models import Q
 from ..decorators import *
 from base import decorators
-from models import RolesById
 
 #Create a new admin (user_role_num = 1)
 @role_required(RolesEnum.ADMINISTRATOR.value)

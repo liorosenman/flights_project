@@ -13003,3 +13003,16 @@ TypeError: get_all_customers() takes 0 positional arguments but 1 was given
 2025-03-21 18:00:52,216 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-03-21 18:00:55,715 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-03-21 18:01:00,257 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-03-21 19:08:25,898 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:40,530 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:43,360 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:47,264 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:51,123 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:54,000 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:56,835 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:08:59,690 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-03-21 19:10:24,989 - WARNING - Bad Request: /create_flight/
+2025-03-21 19:10:30,685 - WARNING - Successful flight creation.
+2025-03-21 19:11:57,600 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-03-21 19:20:10,241 - WARNING - Successful flight creation.
+2025-03-21 19:23:32,344 - WARNING - Successful flight creation.
