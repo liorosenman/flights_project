@@ -14,6 +14,7 @@ from ..permission import role_required
 from django.db.models import Q
 from ..decorators import *
 from base import decorators
+from models import RolesById
 
 #Create a new admin (user_role_num = 1)
 @role_required(RolesEnum.ADMINISTRATOR.value)

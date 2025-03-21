@@ -170,12 +170,12 @@
             3. departure_flights --- condition - flight is not canceled.
             4. remove_airline --- rewrite (unupdated with is_active to status).
         e. Loggers.
-        f. Display fields, not ids --- when creating a flight, id is presented
-        g. Adding status to response.
+        f. Display fields, not ids --- when creating a flight, id is presented //DONE
+        g. Adding status to response. //DONE
         h. Get flights py parameters - only date, no hours
         i. Remove users --- Check again.
         j. The definition of constant information like roles and countries.
-        k. Add update_flights_status to every relevant method.
+        k. Add update_flights_status to every relevant method. //DONE
         l. Create a user, role_id --- number or string.
 
 # ------------20/03/2025-------------------------
@@ -247,21 +247,21 @@
 
 # ADDITIONS:
     1. In create a ticket - check if tickets left. // DONE
-    2. Create Countries --> User_roles --> airportuser
-    3. Automatic modification of activity of a flight that took off:
+    2. Create Countries --> User_roles --> airportuser //DONE
+    3. Automatic modification of activity of a flight that took off: (There are more) //DONE
         a. Add a ticket
         b. get all flights
         c. get flights by id
         d. get my flights 
         e. update flight
-    4. get-delete-put = Add ID as a seperate argument.
+    4. get-delete-put = Add ID as a seperate argument. //DONE
     4. Login method should consider activity/inactivity.
-    5. In get methods - Showing name and not id.
-    6. Decorators
+    5. In get methods - Showing name and not id. //DONE
+    6. Decorators //DONE
     7. Exclude inactive flights in the stored procedures.
     8. get_user_by_username --- Show everything except for the password
     9. Don't allow one user to use method on an object that belongs to another user. //DONE
-    10. Adjust id to name in GET methods.
+    10. Adjust id to name in GET methods. //DONE
 
 # Facade Base:
     1. get_all_flights()
@@ -315,8 +315,8 @@
     3. Create new customer. //DONE & TESTED
     4. Create new airline. //DONE & TESTED
     5. Update customer --- as creating customer. --- using decorator
-    6. Add new flight
-    7. Update Flight
+    6. Add new flight //DONE & TESTED
+    7. Update Flight //DONE
 
 # Methods to assure every user is authorized to modify his objects alone
     1. update_customer //DONE & TESTED
@@ -328,7 +328,8 @@
     7. get_my_flights//DONE & TESTED
 
 # Presentation of data, showing names and not ids
-# Automatic deactivation of a flight 
+
+# Automatic deactivation of a flight // DONE
     1. get_all_flights() // DONE & TESTED
     2. get_flight_by_id() // DONE & TESTED
     3. get_flights_by_airline_id() // DONE & TESTED
@@ -337,7 +338,7 @@
     6. get_deparure_flights()
     5. ---GET_COUNTRIES
 
-# Automatic decativation of all flights:
+# Automatic decativation of all flights: //DONE
     1. get_all_flights()
     2. get_flights_by_parameters()
     3. get_my_flights()
@@ -349,7 +350,7 @@
     4. get_my_tickets()
     5. update_flight()
 
-# Creation of objects - Datails of the new objects are returned in response:
+# Creation of objects - Datails of the new objects are returned in response: //NOT NEEDED
     1. Flight - // DONE
     2. Ticket - 
     3. Airline // NO NEED
@@ -357,7 +358,7 @@
     5. AirportUser -// NOT AN END POINT
     6. Admin - // NO NEED
 
-# Changing is_active to status will influence:
+# Changing is_active to status will influence: //DONE 
     1. VIEWS // NO CHANGES NEEDED
     2. CUSTOMER // DONE
     3. ADMINISTRATOR // DONE
