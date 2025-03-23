@@ -200,7 +200,8 @@ BEGIN
     JOIN base_country AS co ON f.origin_country_id_id = co.id
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.destination_country_id_id = country_id
-        AND f.landing_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours';
+        AND f.landing_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours'
+        AND f.status != 'canceled';
 END;
 $$ LANGUAGE plpgsql;
 -- ###################################################################################
@@ -231,7 +232,8 @@ BEGIN
     JOIN base_country AS co ON f.origin_country_id_id = co.id
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.origin_country_id_id = country_id
-        AND f.departure_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours';
+        AND f.departure_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours'
+        AND f.status != 'canceled';
 END;
 $$ LANGUAGE plpgsql;
 -- ####################################################################################
@@ -357,7 +359,7 @@ BEGIN
     FROM base_ticket as t
     JOIN base_flight as f ON t.flight_id_id = f.id
     JOIN base_airline as a ON f.airline_company_id_id = a.id
-    WHERE a.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
+    WHERE a.id = airline_id AND (f.status = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
 
     END;
 $$ LANGUAGE plpgsql;   

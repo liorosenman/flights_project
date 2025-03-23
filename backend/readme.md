@@ -166,14 +166,15 @@
             2. Update Flight - DONE (Within the function)
         d. Check methods that use serializer:
             1. get_airline_by_id --- maybe add an email. //DONE
-            2. arrival_flights --- condition - flight is not canceled.
-            3. departure_flights --- condition - flight is not canceled.
-            4. remove_airline --- rewrite (unupdated with is_active to status).
+            2. arrival_flights --- condition - flight is not canceled. //DONE
+            3. departure_flights --- condition - flight is not canceled. //DONE
+            4. remove_airline --- rewrite (unupdated with is_active to status). // DONE
+            5. Customer sign-up --- address can have spaces.
         e. Loggers.
         f. Display fields, not ids --- when creating a flight, id is presented //DONE
         g. Adding status to response. //DONE
         h. Get flights py parameters - only date, no hours
-        i. Remove users --- Check again.
+        i. Remove users --- Check again. //DONE
         j. The definition of constant information like roles and countries.
         k. Add update_flights_status to every relevant method. //DONE
         l. Create a user, role_id --- number or string.
@@ -185,6 +186,9 @@
     1. get_flights_by_airline_id --- Add status to results.
     2. airline --- remove_flight --- 'landed' flight cannot be removed as well.
     3. TASK --- What flights can be removed?
+    4. 
+# ------------23/03/2025------------------------- 
+    1. TEST - from 19.3 --- section d
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

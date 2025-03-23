@@ -14,7 +14,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from django.core.exceptions import ObjectDoesNotExist
-from .models import UserRole
+from .models import Roles, UserRole
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import F
 
@@ -26,7 +26,7 @@ def index(req):
 @api_view(['POST']) 
 @user_details_input_validation
 @customer_details_input_validation
-@create_airport_user(2)
+@create_airport_user(Roles.CUSTOMER.value)
 def customer_register(request):
     username = request.data['username']
     airport_user = AirportUser.objects.get(username = username)
@@ -50,6 +50,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['username'] = airport_user.username
         token['id'] = airport_user.id
         token['role_name'] = airport_user.role_name.role_name
+        token['role_id'] = airport_user.role_name.id
         return token
 
 class MyTokenObtainPairView(TokenObtainPairView): 

@@ -4,13 +4,13 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 # from base.decorators import role_required
 from base.decorators import create_airport_user
-from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, RolesEnum, Ticket, UserRole, RolesById
+from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, Roles, RolesEnum, Ticket, UserRole
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
 from base.serializer import CustomerSerializer
-from ..permission import role_required
+from ..permission import role_required, role_required_new
 from django.db.models import Q
 from ..decorators import *
 from base import decorators
@@ -20,7 +20,7 @@ from base import decorators
 @api_view(['POST']) 
 @user_details_input_validation
 @admin_details_input_validation
-@create_airport_user(1)
+@create_airport_user(Roles.ADMINISTRATOR.value)
 def admin_register(request): #Create a new admin
     username = request.data['username']
     airport_user = AirportUser.objects.get(username = username)
@@ -33,7 +33,7 @@ def admin_register(request): #Create a new admin
 
 # Create a new airline (user_role_num = 2)
 @api_view(['POST']) 
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(RolesEnum.AIRLINE.value)
 @user_details_input_validation
 @airline_details_input_validation
 @create_airport_user(3)
@@ -111,7 +111,7 @@ def get_customer_by_username(request, username):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['PUT'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required_new(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)

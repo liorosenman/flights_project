@@ -35,7 +35,7 @@ class AirportUserManager(BaseUserManager):
             raise ValueError("Superuser must have is_superuser=True.")
         return self.create_user(username, password, **extra_fields)
 
-class RolesById(enum.Enum):
+class Roles(enum.Enum):
     ADMINISTRATOR = 1
     CUSTOMER = 2
     AIRLINE = 3
