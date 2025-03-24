@@ -13103,3 +13103,27 @@ TypeError: get_all_customers() takes 0 positional arguments but 1 was given
 2025-03-24 11:13:42,028 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-03-24 11:13:47,196 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-03-24 11:29:29,506 - INFO - C:\LIOR\python\final_project\backend\base\models.py changed, reloading.
+2025-03-24 14:22:18,608 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-03-24 14:23:11,013 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-03-24 14:23:16,280 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-03-24 14:25:03,649 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-03-24 14:32:04,546 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:37:20,798 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:37:23,913 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:38:09,316 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:38:11,419 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:38:31,313 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:38:34,362 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:38:37,523 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:39:00,192 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:39:02,246 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:39:09,489 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:39:49,246 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:42:14,401 - WARNING - Not Found: /remove_customer/18/
+2025-03-24 14:46:28,224 - WARNING - Unauthorized: /login/
+2025-03-24 14:47:39,138 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:47:42,154 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:47:49,723 - WARNING - Unauthorized: /login/
+2025-03-24 14:53:33,506 - WARNING - Unauthorized: /login/
+2025-03-24 14:55:29,064 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-24 14:55:46,481 - WARNING - Unauthorized: /login/

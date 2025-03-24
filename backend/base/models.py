@@ -141,7 +141,7 @@ class Airline(models.Model):
     name = models.CharField(max_length=100, unique=True)
     country_id = models.ForeignKey('Country', on_delete=models.CASCADE, related_name='airlines')
     airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='airlines', default=2)
-
+    # The 'default=2' should be removed.
     def __str__(self):
         return self.name
     
@@ -155,7 +155,6 @@ class Flight(models.Model):
     departure_time = models.DateTimeField()
     remaining_tickets = models.IntegerField()
     status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)
-    # is_active = models.BooleanField(default=True)
 
 
     def formatted_landing_time(self):
@@ -171,24 +170,41 @@ class Ticket(models.Model):
     id = models.BigAutoField(primary_key=True)
     flight_id = models.ForeignKey('Flight', on_delete=models.CASCADE, related_name='tickets')
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    # is_active = models.BooleanField(default=True)
     status = models.CharField(default=FlightStatus.ACTIVE.value, choices=FLIGHT_STATUS_CHOICES)
 
     def __str__(self):
         return f"Ticket {self.id} for {self.customer.first_name} {self.customer.last_name} on Flight {self.flight.id}"
-    
 
+
+# In the first start-up of the program, it creates the constant roles.
 @receiver(post_migrate)
 def create_default_roles(sender, **kwargs):
     if sender.name == "base":
-        if not getattr(create_default_roles, 'has_run', False):
-            create_default_roles.has_run = True
+        if not UserRole.objects.exists(): 
             for role in RolesEnum:
                 UserRole.objects.get_or_create(role_name=role.value)
+            print("Default roles created.")
 
+# In the first start-up of the program, it creates the constant eight countries.
 @receiver(post_migrate)
-def create_default_roles(sender, **kwargs):
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAA")
+def create_default_countries(sender, **kwargs):
+    if sender.name == "base":
+        if not Country.objects.exists():
+            images_path = os.path.join(settings.MEDIA_ROOT, 'country_images')
+            
+            if os.path.exists(images_path):
+                for filename in os.listdir(images_path):
+                    name, ext = os.path.splitext(filename)
+                    if ext.lower() in ['.jpg', '.jpeg', '.png', '.gif']:
+                        Country.objects.get_or_create(
+                            name=name,
+                            defaults={'image': f'country_images/{filename}'}
+                        )
+                print("✅ Default countries created from images.")
+            else:
+                print(f"⚠️ Directory {images_path} does not exist.")
+
+
 
 
 

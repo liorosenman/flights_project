@@ -106,7 +106,7 @@ def customer_details_input_validation(func):
                 status=status.HTTP_400_BAD_REQUEST
             )
             address = data.get('address', '')
-            if not address or len(address) > 255 or not re.fullmatch(r'[A-Za-z0-9]+', address) or len(re.findall(r'[A-Za-z]', address)) < 2:
+            if not address or len(address) > 255 or not re.fullmatch(r'[A-Za-z0-9 ]+$', address) or len(re.findall(r'[A-Za-z]', address)) < 2:
                 return Response(
                 {"error": "Address is required, 255 characters max, only letters and numbers."}, 
                 status=status.HTTP_400_BAD_REQUEST

@@ -169,15 +169,17 @@
             2. arrival_flights --- condition - flight is not canceled. //DONE
             3. departure_flights --- condition - flight is not canceled. //DONE
             4. remove_airline --- rewrite (unupdated with is_active to status). // DONE
-            5. Customer sign-up --- address can have spaces.
-        e. Loggers.
+            5. Customer sign-up --- address can have spaces. //DONE
+        e1. Loggers.
+        e2. Comments.
         f. Display fields, not ids --- when creating a flight, id is presented //DONE
         g. Adding status to response. //DONE
-        h. Get flights py parameters - only date, no hours
+        h. Get flights py parameters - only date, no hours //DONE
         i. Remove users --- Check again. //DONE
-        j. The definition of constant information like roles and countries.
+        j. The definition of constant information like roles and countries. //DONE
         k. Add update_flights_status to every relevant method. //DONE
         l. Create a user, role_id --- number or string. //DONE
+        m. Doesn't allow a inactive user to login. //DONE
 
 # ------------20/03/2025-------------------------
     1. "flight_details_input_validation" decorator is revised.
@@ -192,7 +194,8 @@
 # ------------24/03/2025------------------------- 
     1. I changed role_required(role_id) by enum
     2. TASK --- Inactive user cannot sign in.
-    3. TASK --- get_methods 
+    3. TASK --- get_methods -- include status.
+    4. TASK --- AirportUser model --- remove 'default=2'
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

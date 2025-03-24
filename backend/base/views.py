@@ -17,6 +17,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from .models import Roles, UserRole
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import F
+from rest_framework.exceptions import AuthenticationFailed
 
 def index(req):
     return JsonResponse('hello', safe=False)
@@ -52,7 +53,13 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['role_name'] = airport_user.role_name.role_name
         token['role_id'] = airport_user.role_name.id
         return token
-
+    
+    # def validate(self, attrs):
+    #     data = super().validate(attrs)
+    #     if not self.user.is_active:
+    #         raise AuthenticationFailed("Your account is inactive.")
+    #     return data
+    
 class MyTokenObtainPairView(TokenObtainPairView): 
     serializer_class = MyTokenObtainPairSerializer
    
