@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from base.decorators import authorize_customer, customer_details_input_validation
 from base.permission import role_required
-from ..models import Airline, Customer, Flight, RolesEnum, Ticket
+from ..models import Airline, Customer, Flight, Roles, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
 from base import decorators
 
@@ -20,7 +20,7 @@ logger = logging.getLogger('report_actions')
 # logger.setLevel(logging.DEBUG)
 
 @api_view(['POST'])
-@role_required(RolesEnum.CUSTOMER.value)
+@role_required(Roles.CUSTOMER.value)
 @decorators.update_flights_status()
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
@@ -42,7 +42,7 @@ def add_ticket(request):
 
 
 @api_view(['PUT'])
-@role_required(RolesEnum.CUSTOMER.value)
+@role_required(Roles.CUSTOMER.value)
 @decorators.update_flights_status()
 @decorators.conditions_for_cancel_a_ticket()
 def remove_ticket(request, id):
@@ -57,7 +57,7 @@ def remove_ticket(request, id):
 
 
 @api_view(['PUT'])
-@role_required(RolesEnum.CUSTOMER.value)
+@role_required(Roles.CUSTOMER.value)
 @authorize_customer()
 @customer_details_input_validation
 def update_customer(request, id):
@@ -70,7 +70,7 @@ def update_customer(request, id):
 
 
 @api_view([('GET')])
-@role_required(RolesEnum.CUSTOMER.value)
+@role_required(Roles.CUSTOMER.value)
 @authorize_customer()
 @decorators.update_flights_status()
 def get_my_tickets(request, id):

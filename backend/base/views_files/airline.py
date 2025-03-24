@@ -8,7 +8,7 @@ from rest_framework import status
 from base import decorators
 from base.decorators import airline_flight_auth, authorize_airline, flight_details_input_validation
 from base.permission import role_required
-from ..models import Airline, Flight, RolesEnum, Ticket
+from ..models import Airline, Flight, Roles, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
 from django.utils.timezone import now, make_aware
 from django.db import connection
@@ -22,7 +22,7 @@ logging.basicConfig(filename="./logs.log",
 
 
 @api_view(['POST'])
-@role_required(RolesEnum.AIRLINE.value)
+@role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
     try:
@@ -43,7 +43,7 @@ def add_flight(request):
 
 
 @api_view(['PUT'])
-@role_required(RolesEnum.AIRLINE.value)
+@role_required(Roles.AIRLINE.value)
 @airline_flight_auth()
 @decorators.update_flights_status()
 def update_flight(request, id):
@@ -88,7 +88,7 @@ def update_flight(request, id):
     )
 
 @api_view([('PUT')])
-@role_required(RolesEnum.AIRLINE.value)
+@role_required(Roles.AIRLINE.value)
 @airline_flight_auth()
 @decorators.update_flights_status()
 def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
@@ -113,7 +113,7 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
     )
 
 @api_view(['GET'])
-@role_required(RolesEnum.AIRLINE.value)
+@role_required(Roles.AIRLINE.value)
 @authorize_airline()
 @decorators.update_flights_status()
 def get_my_flights(request, id):

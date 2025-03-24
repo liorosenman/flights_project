@@ -180,9 +180,15 @@ class Ticket(models.Model):
 
 @receiver(post_migrate)
 def create_default_roles(sender, **kwargs):
-    if sender.name == "base":  # Replace with your actual Django app name
-        for role in RolesEnum:
-            UserRole.objects.get_or_create(role_name=role.value)
+    if sender.name == "base":
+        if not getattr(create_default_roles, 'has_run', False):
+            create_default_roles.has_run = True
+            for role in RolesEnum:
+                UserRole.objects.get_or_create(role_name=role.value)
+
+@receiver(post_migrate)
+def create_default_roles(sender, **kwargs):
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
 
 

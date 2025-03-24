@@ -10,14 +10,15 @@ from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
 from base.serializer import CustomerSerializer
-from ..permission import role_required, role_required_new
+from ..permission import role_required
 from django.db.models import Q
 from ..decorators import *
 from base import decorators
 
 #Create a new admin (user_role_num = 1)
-@role_required(RolesEnum.ADMINISTRATOR.value)
+
 @api_view(['POST']) 
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @admin_details_input_validation
 @create_airport_user(Roles.ADMINISTRATOR.value)
@@ -33,10 +34,10 @@ def admin_register(request): #Create a new admin
 
 # Create a new airline (user_role_num = 2)
 @api_view(['POST']) 
-@role_required(RolesEnum.AIRLINE.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @airline_details_input_validation
-@create_airport_user(3)
+@create_airport_user(Roles.AIRLINE.value)
 def airline_register(request):
     username = request.data['username']
     airport_user = AirportUser.objects.get(username = username)
@@ -48,7 +49,7 @@ def airline_register(request):
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_user_by_username(request, username):
     try:
         with connection.cursor() as cursor:
@@ -76,7 +77,7 @@ def get_user_by_username(request, username):
         }, status=400)
     
 @api_view(['GET'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_all_customers(request):
         customers = Customer.objects.all()
         if not customers.exists():
@@ -85,7 +86,7 @@ def get_all_customers(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:
@@ -111,7 +112,7 @@ def get_customer_by_username(request, username):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['PUT'])
-@role_required_new(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
@@ -143,7 +144,7 @@ def remove_airline(request, id):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['PUT'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
@@ -168,7 +169,7 @@ def remove_customer(request, id):
 
 
 @api_view(['PUT'])
-@role_required(RolesEnum.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
           return Response({

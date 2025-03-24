@@ -177,7 +177,7 @@
         i. Remove users --- Check again. //DONE
         j. The definition of constant information like roles and countries.
         k. Add update_flights_status to every relevant method. //DONE
-        l. Create a user, role_id --- number or string.
+        l. Create a user, role_id --- number or string. //DONE
 
 # ------------20/03/2025-------------------------
     1. "flight_details_input_validation" decorator is revised.
@@ -189,6 +189,10 @@
     4. 
 # ------------23/03/2025------------------------- 
     1. TEST - from 19.3 --- section d
+# ------------24/03/2025------------------------- 
+    1. I changed role_required(role_id) by enum
+    2. TASK --- Inactive user cannot sign in.
+    3. TASK --- get_methods 
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 
@@ -353,6 +357,9 @@
     3. remove_ticket()
     4. get_my_tickets()
     5. update_flight()
+
+# Add status in get methods:
+    1. 
 
 # Creation of objects - Datails of the new objects are returned in response: //NOT NEEDED
     1. Flight - // DONE
