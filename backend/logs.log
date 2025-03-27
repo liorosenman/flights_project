@@ -13127,3 +13127,16 @@ TypeError: get_all_customers() takes 0 positional arguments but 1 was given
 2025-03-24 14:53:33,506 - WARNING - Unauthorized: /login/
 2025-03-24 14:55:29,064 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-03-24 14:55:46,481 - WARNING - Unauthorized: /login/
+2025-03-26 16:57:18,322 - INFO - Shalom Shalom
+2025-03-26 16:57:34,180 - INFO - Shalom Shalom
+2025-03-26 16:59:29,584 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-03-26 17:04:47,021 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-03-26 17:04:50,622 - INFO - Shalom Shalom
+2025-03-26 17:06:11,098 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:06:14,189 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:18,435 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:21,547 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:24,620 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:28,718 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:32,823 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-03-26 17:10:41,086 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.

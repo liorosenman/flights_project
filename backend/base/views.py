@@ -18,6 +18,9 @@ from .models import Roles, UserRole
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import F
 from rest_framework.exceptions import AuthenticationFailed
+import logging
+
+logger = logging.getLogger('report_actions')
 
 def index(req):
     return JsonResponse('hello', safe=False)
@@ -181,6 +184,7 @@ def get_airline_by_username(request, username):
 @api_view(['GET'])
 @decorators.update_flights_status()
 def get_all_flights(request): 
+    logger.info("Shalom Shalom")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_all_flights()")

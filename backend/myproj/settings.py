@@ -227,9 +227,9 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename' : str(LOGS_DIR / 'report_actions.log'),
+            'filename': BASE_DIR / 'base' / 'report_actions.log',
             'formatter': 'verbose',
         },
     },
@@ -242,7 +242,7 @@ LOGGING = {
     'loggers': {
         'report_actions': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
         },
     },

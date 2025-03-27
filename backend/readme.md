@@ -196,7 +196,12 @@
     2. TASK --- Inactive user cannot sign in.
     3. TASK --- get_methods -- include status.
     4. TASK --- AirportUser model --- remove 'default=2'
-
+# ------------26/03/2025------------------------- 
+    1. Logger was set successfully.
+# ------------27/03/2025------------------------- 
+    1. React initialization:
+        a. Models created.
+    
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 
     *** Prime admin
@@ -206,7 +211,7 @@
     *** Creation of an object should return the details of the object.
     *** A "tookoff" flight with no active tickets will be considered as canceled. //DONE & TESTED
     *** Update methods that are influenced by changing flight\ticket is_active to status. -- including tickets
-    1. Input validity methods
+    1. Input validity methods //DONE & TESTED
     2. Moving to serializer to shorten the code
     3. Divide the views into folders //DONE
     4. Authorization //DONE
@@ -222,8 +227,8 @@
     12. Stored procedures --- //DONE 
     13. Display fields, not ids --- when creating a flight, id is presented
     14. Remove ticket --- If the flight is full, is_active doesn't change //DONE
-    15. Automatic deactivation of a flight. //TO BE TESTED --- Decorate every relevant api method.
-    15. Status of a response.
+    15. Automatic deactivation of a flight. //DONE & TESTED
+    15. Status of a response. //DONE
     16. get_flights_by_parameters --- Only date, without hour
     17. Remove users --- Check again
     18. Creation of the countries with a file. // DONE
