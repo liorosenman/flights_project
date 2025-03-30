@@ -1,6 +1,10 @@
 import axios from "axios";
-import airportUser from "../../models"
+import { UserToken } from "../../models/UserToken";
 
-export const loginrequest = async(username : string, password:string): Promise<Product> => {
-    await axios.put<Product>(`${SERVER}/${id}/`, updatedprod);
-    return updatedprod
+const SERVER = 'http://127.0.0.1:8000/'
+
+export const loginRequest = async (username: string, password: string): Promise<UserToken> => {
+    const response = await axios.post<UserToken>(SERVER + 'login/', { username, password });
+    return response.data;
+  };
+

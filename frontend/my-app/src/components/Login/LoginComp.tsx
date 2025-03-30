@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from './loginSlice';
+import { loginUser } from './loginSlice.tsx';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
+import { RootState } from '../../app/store.ts';
+// import { AppDispatch, RootState } from '../../app/store'
 
-const LoginPage = () => {
+const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.login);
 
-  const handleLogin = async (e) => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { token, error, loading } = useSelector((state: RootState) => state.login);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(loginUser({ username, password }));
+    await dispatch(loginUser({ username, password }));
   };
 
   return (
@@ -40,10 +46,10 @@ const LoginPage = () => {
         >
           {loading ? 'Logging in...' : 'Login'}
         </button>
-        {error && <p className="text-red-500 text-sm mt-2">{error.detail || 'Login failed'}</p>}
+        {error && <p className="text-red-500 text-sm mt-2">{error || 'Login failed'}</p>}
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default LoginComp;
