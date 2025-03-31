@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from './loginSlice.tsx';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
@@ -9,15 +9,23 @@ import { RootState } from '../../app/store.ts';
 const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const { token, error, loading } = useSelector((state: RootState) => state.login);
+ 
+  // const navigate = useNavigate();
+  const { token, error, loading } = useAppSelector((state: RootState) => state.login);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     await dispatch(loginUser({ username, password }));
+    
   };
+
+  useEffect(() => {
+    if (token) {
+      console.log("Login successful");
+      // navigate('/dashboard'); 
+    }
+  }, [token]);
 
   return (
     <div className="max-w-sm mx-auto mt-10 p-4 shadow rounded-xl bg-white">

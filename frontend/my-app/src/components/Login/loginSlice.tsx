@@ -2,10 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { loginRequest } from './LoginAPI.tsx';
 import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
+// import { UserToken } from '../../models/UserToken.ts';
 
 interface LoginState {
   token : UserToken | null;
-  error : string;
+  error: string | null;
   loading: boolean;
   // error: string | null;
 }
@@ -18,13 +19,24 @@ const initialState: LoginState = {
 
 export const loginUser = createAsyncThunk(
   'login/loginUser',
-  async ({ username, password }: { username: string; password: string }): Promise<UserToken> => {
-    return await loginRequest(username, password);
+  async ({ username, password }: { username: string; password: string }, 
+    {rejectWithValue}
+   ) => {
+    try
+    {
+    const result = await loginRequest(username, password);
+    if ('error' in result) {
+      return (result.error);
+    }
+    return result
+  }catch (error:any){
+    return rejectWithValue(error.message || 'Unexpected error occurred');
+  }
   }
 );
 
 
-const flightSlice = createSlice({
+const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {},
@@ -36,13 +48,14 @@ const flightSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
           state.loading = false;
-          state.token = action.payload;
+          state.token = action.payload as UserToken || null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'Login failed';
+        state.error = action.payload as string || 'Login failed';
       });
   },
 });
 
-export default flightSlice.reducer;
+
+export default loginSlice.reducer;
