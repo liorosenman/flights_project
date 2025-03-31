@@ -26,7 +26,8 @@ export const loginUser = createAsyncThunk(
     {
     const result = await loginRequest(username, password);
     if ('error' in result) {
-      return (result.error);
+      return rejectWithValue(result.error);
+      // return (result.error);
     }
     return result
   }catch (error:any){
