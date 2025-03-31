@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { RootState } from '../../app/store.ts';
 // import { AppDispatch, RootState } from '../../app/store'
+import './styles.css';
 
 const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -28,13 +29,13 @@ const LoginComp: React.FC = () => {
   }, [token]);
 
   return (
-    <div className="max-w-sm mx-auto mt-10 p-4 shadow rounded-xl bg-white">
+    <div className="container">
       <h2 className="text-xl font-semibold mb-4">Login</h2>
       <form onSubmit={handleLogin}>
         <input
           type="text"
           placeholder="Username"
-          className="border p-2 mb-2 w-full rounded"
+          className="input-field"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -42,19 +43,19 @@ const LoginComp: React.FC = () => {
         <input
           type="password"
           placeholder="Password"
-          className="border p-2 mb-2 w-full rounded"
+          className="input-field"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded w-full"
+          className="button"
           disabled={loading}
         >
           {loading ? 'Logging in...' : 'Login'}
         </button>
-        {error && <p className="text-red-500 text-sm mt-2">{error || 'Login failed'}</p>}
+        {error && <p className="error-message">{error || 'Login failed'}</p>}
       </form>
     </div>
   );
