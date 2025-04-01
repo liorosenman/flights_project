@@ -57,11 +57,24 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['role_id'] = airport_user.role_name.id
         return token
     
-    # def validate(self, attrs):
-    #     data = super().validate(attrs)
-    #     if not self.user.is_active:
-    #         raise AuthenticationFailed("Your account is inactive.")
-    #     return data
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        if not self.user.is_active:
+            raise AuthenticationFailed("Your account is inactive.")
+        return data
+    
+    def authenticate(self, **kwargs):
+        # Call the parent authenticate method to get the user
+        user = super().authenticate(**kwargs)
+
+        # If the user is inactive, raise the custom exception
+        if user and not user.is_active:
+            raise AuthenticationFailed(
+                detail="This account is inactive.",
+                code="account_inactive"
+            )
+        
+        return user
     
 class MyTokenObtainPairView(TokenObtainPairView): 
     serializer_class = MyTokenObtainPairSerializer

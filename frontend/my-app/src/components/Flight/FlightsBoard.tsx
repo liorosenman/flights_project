@@ -1,21 +1,16 @@
 // FlightBoard.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Flight from "./Flight.tsx";
+import {FlightData} from '../../models/flightdata.ts';
+import FlightRow from "./FlightRow.tsx";
+import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
+import {selectFlights} from './flightSlice.tsx'
 
-const FlightBoard = () => {
-  const [flights, setFlights] = useState([]);
+const FlightsBoard: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const flights = useAppSelector(selectFlights);
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/get_all_flights/')
-      .then(response => {
-        setFlights(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the flights!', error);
-      });
-  }, []);
-
+  
+ 
   return (
     <div>
       <h1>Flight Board</h1>
@@ -33,7 +28,7 @@ const FlightBoard = () => {
         </thead>
         <tbody>
           {flights.map(flight => (
-            <Flight flight={flight} />
+            <FlightRow flight={flight} />
           ))}
         </tbody>
       </table>
@@ -41,4 +36,6 @@ const FlightBoard = () => {
   );
 };
 
-export default FlightBoard;
+export default FlightsBoard;
+
+

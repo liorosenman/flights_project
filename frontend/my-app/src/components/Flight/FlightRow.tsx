@@ -1,7 +1,7 @@
 // Flight.js
 import React from 'react';
 
-const Flight = ({ flight }) => {
+const FlightRow = ({ flight })   => {
   return (
     <tr>
       <td>{flight.id}</td>
@@ -15,4 +15,4 @@ const Flight = ({ flight }) => {
   );
 };
 
-export default Flight;
+export default FlightRow

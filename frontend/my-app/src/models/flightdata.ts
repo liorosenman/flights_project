@@ -8,7 +8,7 @@ export enum FlightStatus {
   CANCELLED = 'CANCELLED',
 }
 
-export interface Flight {
+export interface FlightData {
   id: number;
   airline_company: Airline;
   origin_country: Country;

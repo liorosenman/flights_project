@@ -201,6 +201,11 @@
 # ------------27/03/2025------------------------- 
     1. React initialization:
         a. Models created.
+# ------------31/03/2025------------------------- 
+    1. Front --- Login --- Needs navigation to the right page. (Admin, customer, airline)
+# ------------01/04/2025------------------------- 
+    1. Front --- get_flights component
+
     
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

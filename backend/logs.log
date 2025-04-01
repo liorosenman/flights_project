@@ -13173,3 +13173,20 @@ TypeError: get_all_customers() takes 0 positional arguments but 1 was given
 2025-03-31 22:47:08,537 - WARNING - Unauthorized: /login/
 2025-03-31 22:47:31,078 - WARNING - Unauthorized: /login/
 2025-03-31 22:48:02,065 - WARNING - Unauthorized: /login/
+2025-04-01 11:26:24,838 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:26:48,107 - WARNING - Unauthorized: /login/
+2025-04-01 11:27:27,932 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:28:26,671 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:29:06,482 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:29:11,760 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:29:36,542 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:29:44,861 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:30:06,708 - WARNING - Unauthorized: /login/
+2025-04-01 11:30:21,659 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:37:11,566 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:38:55,666 - WARNING - Unauthorized: /login/
+2025-04-01 11:41:48,913 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:42:05,666 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:42:27,643 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:42:32,775 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-01 11:44:19,923 - WARNING - Unauthorized: /login/
