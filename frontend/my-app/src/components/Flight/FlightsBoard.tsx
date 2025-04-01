@@ -3,12 +3,19 @@ import React, { useState, useEffect } from 'react';
 import {FlightData} from '../../models/flightdata.ts';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
-import {selectFlights} from './flightSlice.tsx'
+import {loadFlights, selectFlights} from './flightSlice.tsx'
 
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlights);
+  console.table(flights);
+  
+  useEffect(() => {
+    console.log("BBBBBBBBBBBBBBBBB");
+    dispatch(loadFlights());
+    console.table(flights)
 
+  }, [])
   
  
   return (
@@ -21,9 +28,10 @@ const FlightsBoard: React.FC = () => {
             <th>Airline</th>
             <th>Origin Country</th>
             <th>Destination Country</th>
-            <th>Landing Time</th>
             <th>Departure Time</th>
+            <th>Landing Time</th>
             <th>Remaining Tickets</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>

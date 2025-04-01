@@ -4,6 +4,7 @@ import {FlightData} from '../../models/flightdata.ts'
 const SERVER = "http://127.0.0.1:8000/";
 
 export const fetchFlights = async (): Promise<FlightData[]> => {
-    const response = await axios.get(SERVER + "/get_all_flights/");
-    return response.data;
+    const response = await axios.get(SERVER + "get_all_flights/");
+    console.table("AAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    return response.data.flights;
  };
