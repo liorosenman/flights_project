@@ -11,6 +11,23 @@
     ## Customer
     ## Airline
 
+# Front-end components:
+    1. Login page
+        a. Wrong credentials --- error message.
+        b. Valid credentials --- customer,airline to flights page, admin to users page.
+        c. Link to register as a customer.
+    2. Flights page for customer, and airline.
+        --- For customer --- Details and BUY button, once clicked - the flight will be filled with distinct color,
+            and the button will turn to CANCEL button.
+        --- For airline --- Details and UPDATE-REMOVE buttons. 
+            UPDATE will open calendar for changing the departure time, including a cancel button, closing the board.
+            REMOVE will remove the flight form the board, if it answers the conditions for it.
+        --- Errors will be addressed.
+    3. Tickets page for customer, and airline.
+    4. For admin --- Additional forms for registering as admin, customer, airline:
+        --- Table of users, select between the three what to show.
+        --- Forms of signing-up, select user with select-list\radio buttons.
+
 # Validate creation details for AirportUser, admin, customer and airline
     ## Customer can be created by admin and an anonymous user.
     ## Admin and airline can be created by admin alone.
@@ -364,7 +381,7 @@
     2. get_flights_by_parameters()
     3. get_my_flights()
 
-# Automatic deactivation of a single flight:
+# Automatic deactivation of a single flight: //DONE
     1. get_flight_by_id()
     2. add_ticket()
     3. remove_ticket()
