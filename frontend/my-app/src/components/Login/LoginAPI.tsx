@@ -4,10 +4,11 @@ import { ErrorResponse } from "../../models/ErrorResponse"
 
 const SERVER = 'http://127.0.0.1:8000/'
 
-export const loginRequest = async (username: string, password: string) :  Promise<UserToken | ErrorResponse> =>{
+export const loginRequest = async (username: string, password: string) :  Promise<any | ErrorResponse> =>{
     try {
       const response = await axios.post<UserToken>(SERVER + 'login/', { username, password });
-      return response.data
+      console.log(response);
+      return response.data.access
     }catch (error:any){
       if (error.response && error.response.data && error.response.data.detail) {
         console.log("ERROR")

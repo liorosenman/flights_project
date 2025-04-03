@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from './loginSlice.tsx';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { RootState } from '../../app/store.ts';
 // import { AppDispatch, RootState } from '../../app/store'
+import { jwtDecode } from 'jwt-decode';
 import './styles.css';
 
 const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
- 
+  const navigate = useNavigate();
   // const navigate = useNavigate();
   const { token, error, loading } = useAppSelector((state: RootState) => state.login);
 
@@ -23,8 +24,10 @@ const LoginComp: React.FC = () => {
 
   useEffect(() => {
     if (token) {
-      console.log("Login successful");
-      // navigate('/dashboard'); 
+      console.log(token);
+      const decoded: any = jwtDecode(String(token));
+      const roleId = decoded.role_id;
+      navigate('/users');
     }
   }, [token]);
 

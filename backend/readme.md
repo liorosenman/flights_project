@@ -222,7 +222,8 @@
     1. Front --- Login --- Needs navigation to the right page. (Admin, customer, airline)
 # ------------01/04/2025------------------------- 
     1. Front --- get_flights component
-
+# ------------03/04/2025------------------------
+    1. User login, continue from the slicer row 28 (('error' in result)) --- maybe decode will work.
     
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

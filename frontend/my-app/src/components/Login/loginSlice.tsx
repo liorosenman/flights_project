@@ -5,7 +5,7 @@ import { UserToken } from '../../models/UserToken.ts';
 // import { UserToken } from '../../models/UserToken.ts';
 
 interface LoginState {
-  token : UserToken | null;
+  token : any | null;
   error: string | null;
   loading: boolean;
   // error: string | null;
@@ -49,7 +49,8 @@ const loginSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
           state.loading = false;
-          state.token = action.payload as UserToken || null;
+          state.token = action.payload.access_token
+          // state.token = (action.payload?.token || action.payload?.access_token || action.payload) as string;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
