@@ -19,7 +19,7 @@ urlpatterns = [
     path('create_new_admin/', administrator.admin_register),
     path('create_new_customer/', views.customer_register),
     path('create_new_airline/', administrator.airline_register),
-    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('logout/', views.logout_user, name='logout'),
     path('create_country/', country.create_country),
     path('get_all_countries/', views.get_all_countries),

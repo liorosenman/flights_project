@@ -6,9 +6,8 @@ const SERVER = 'http://127.0.0.1:8000/'
 
 export const loginRequest = async (username: string, password: string) :  Promise<any | ErrorResponse> =>{
     try {
-      const response = await axios.post<UserToken>(SERVER + 'login/', { username, password });
-      console.log(response);
-      return response.data.access
+      const response = await axios.post<any>(SERVER + 'login/', { username, password });
+      return { token: response.data.access }
     }catch (error:any){
       if (error.response && error.response.data && error.response.data.detail) {
         console.log("ERROR")

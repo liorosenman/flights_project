@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { loginRequest } from './LoginAPI.tsx';
 import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
+import { RootState } from '../../app/store.ts';
 // import { UserToken } from '../../models/UserToken.ts';
 
 interface LoginState {
@@ -13,7 +14,7 @@ interface LoginState {
 
 const initialState: LoginState = {
   token : null,
-  error : "",
+  error : null,
   loading: false,
 }
 
@@ -25,11 +26,14 @@ export const loginUser = createAsyncThunk(
     try
     {
     const result = await loginRequest(username, password);
-    if ('error' in result) {
-      return rejectWithValue(result.error);
-      // return (result.error);
+    if (result.error) {
+      return rejectWithValue(result.error)
     }
+    console.log(result);
     return result
+    // if (result && typeof result === 'object' && 'data.access' in result) {
+    //    return result.data.access
+    // }
   }catch (error:any){
     return rejectWithValue(error.message || 'Unexpected error occurred');
   }
@@ -49,7 +53,10 @@ const loginSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
           state.loading = false;
-          state.token = action.payload.access_token
+          console.log("FULFILLED");
+          state.token = action.payload.token
+          console.log(state.token);
+          
           // state.token = (action.payload?.token || action.payload?.access_token || action.payload) as string;
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -61,3 +68,4 @@ const loginSlice = createSlice({
 
 
 export default loginSlice.reducer;
+export const selectLoginState = (state: RootState) => state.login;

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from './loginSlice.tsx';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { loginUser, selectLoginState } from './loginSlice.tsx';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { RootState } from '../../app/store.ts';
-// import { AppDispatch, RootState } from '../../app/store'
 import { jwtDecode } from 'jwt-decode';
 import './styles.css';
 
@@ -13,21 +10,45 @@ const LoginComp: React.FC = () => {
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  // const navigate = useNavigate();
-  const { token, error, loading } = useAppSelector((state: RootState) => state.login);
+
+  const { token, error, loading } = useAppSelector(selectLoginState);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    await dispatch(loginUser({ username, password }));
-    
+    try {
+      await dispatch(loginUser({ username, password }));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    if (token) {
+    if (typeof token === 'string' && token) {
+      console.log("INSIDE THE USEEFFECT");
       console.log(token);
-      const decoded: any = jwtDecode(String(token));
-      const roleId = decoded.role_id;
-      navigate('/users');
+
+      try {
+        const decoded: any = jwtDecode(token);
+        console.log(decoded);
+        const roleId = decoded.role_id;
+        switch (roleId) {
+          case 1:
+            navigate('/users');
+            break;
+          case 2:
+            navigate('/clients');
+            break;
+          case 3:
+            navigate('/airlines');
+            break;
+          default:
+            console.log('Unknown user role: Staying on the login page');
+            break;
+        }
+      } catch (error) {
+        console.error('Error decoding token:', error);
+      }
+
     }
   }, [token]);
 
@@ -51,13 +72,10 @@ const LoginComp: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button
-          type="submit"
-          className="button"
-          disabled={loading}
-        >
+        <button type="submit" className="button" disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
         </button>
+        <Link to = "/createcustomer">Sign up form for customers</Link>
         {error && <p className="error-message">{error || 'Login failed'}</p>}
       </form>
     </div>
