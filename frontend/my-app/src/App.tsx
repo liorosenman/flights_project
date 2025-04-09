@@ -4,7 +4,7 @@ import LoginComp from '../src/components/Login/LoginComp.tsx';
 import Users from './pages/Users.tsx';
 import ClientPg from './components/clientPg.tsx';
 import AirlinePg from './components/airlinePg.tsx';
-import CreateCustomer from './components/createusers/CreateCustomer.jsx';
+import CreateCustomer from './components/createusers/CreateCustomerComp.tsx';
 
 const App = () => {
   return (

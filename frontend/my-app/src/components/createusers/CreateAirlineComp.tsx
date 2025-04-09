@@ -1,34 +1,28 @@
 // src/components/SignupForm.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createCustomer, selectUserSucMsg } from './createUserSlicer.tsx'
-import { selectUserLoading, selectUserError } from './createUserSlicer.tsx'
+import { createAirline, createCustomer, selectUserState} from './createUserSlicer.tsx'
+import { useAppDispatch, useAppSelector} from '../../app/hooks.ts';
 
 const CustomerSignupForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         password: '',
         email: '',
-        first_name: '',
-        last_name: '',
-        address: '',
-        phone_no: '',
-        credit_card_no: '',
+        name: '',
+        country: '',
     });
 
-    //   const { loading, error } = useSelector((state) => state.customer);
-    const loading = useSelector(selectUserLoading);
-    const error = useSelector(selectUserError);
-    const SuccessMsg = useSelector(selectUserSucMsg);
-    const dispatch = useDispatch();
-
+    // const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useAppDispatch();
+    const {error, loading, successMessage } = useAppSelector(selectUserState);
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(createCustomer(formData));
+        await dispatch(createAirline(formData));
     };
 
     return (
@@ -47,8 +41,8 @@ const CustomerSignupForm = () => {
             ))}
             <button type="submit">Signup</button>
             {loading && <p>Signing up...</p>}
-            {error && <p style={{ color: 'red' }}>{error.error}</p>} 
-            {SuccessMsg && <p style={{ color: 'green' }}>{SuccessMsg.message}</p>} 
+            {error && <p style={{ color: 'red' }}>{error}</p>} 
+            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} 
 
         </form>
     );

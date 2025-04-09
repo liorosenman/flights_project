@@ -13314,3 +13314,4 @@ Traceback (most recent call last):
 django.db.utils.IntegrityError: duplicate key value violates unique constraint "base_airportuser_username_key"
 DETAIL:  Key (username)=(raanan95) already exists.
 
+2025-04-09 16:57:09,298 - WARNING - Conflict: /create_new_customer/

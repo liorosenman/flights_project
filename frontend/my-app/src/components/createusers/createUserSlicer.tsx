@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import CreateUserService from './CreateUserService'
-import customerSignUpService from './CreateUserService';
+import {customerSignUpService} from './CreateUserService.tsx';
+import {airlineSignupService} from './CreateUserService.tsx';
+import { RootState } from '../../app/store';
 
 interface CreateUserState {
     user : any[] | null
@@ -22,15 +23,28 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
     'user/createCustomer',
     async (customerData, { rejectWithValue }) => {
       try {
-        const response = await customerSignUpService(customerData); ////////////////////////
-        console.log(response);
+        const response = await customerSignUpService(customerData);
         return response.data;
-      } catch (error:any) { // was without :any
-        // return rejectWithValue(error.response.data);
-        return rejectWithValue(error.response?.data?.error || 'Unknown error');
+      } catch (error:any) { 
+        return rejectWithValue(error.response?.data?.error  || 'Unknown error');
       }
     }
   );
+
+  export const createAirline = createAsyncThunk<string, Record<string, any>>(
+    'user/createAirline',
+    async (airlineData, { rejectWithValue }) => {
+      try {
+        const response = await airlineSignupService(airlineData);
+        return response.data;
+      } catch (error:any) { 
+        // return rejectWithValue(error.response?.data?.error || 'Unknown error');
+        return rejectWithValue(error.error || 'Unknown error');
+      }
+    }
+  );
+
+
 
   const UserSlicer = createSlice({
   name: 'user',
@@ -48,19 +62,23 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
         state.error = null
       })
       .addCase(createCustomer.rejected, (state, action) => {
-        console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
         state.loading = false;
         state.error = action.payload as string || action.error.message  ||'Register failed';
-
+        console.log("BBBBBBBBBBBBBBBBBBBBBB");
+        console.log(action.payload);
+        
+        console.log(state.error);
+        // console.log(state.successMessage)
+        
       });
     },
   });
 
 export default UserSlicer.reducer;
-export const selectUserLoading = (state: { user: { loading: boolean } }) => state.user.loading;
-export const selectUserError = (state: { user: { error: string | null } }) => state.user.error;
-export const selectUserSucMsg = (state: { user: { successMessage: string | null } }) => state.user.successMessage;
-
+// export const selectUserLoading = (state: { user: { loading: boolean } }) => state.user.loading;
+// export const selectUserError = (state: { user: { error: string | null } }) => state.user.error;
+// export const selectUserSucMsg = (state: { user: { successMessage: string | null } }) => state.user.successMessage;
+export const selectUserState = (state: RootState) => state.user;
 
 
 
