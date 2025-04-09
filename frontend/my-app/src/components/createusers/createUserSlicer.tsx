@@ -23,9 +23,11 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
     async (customerData, { rejectWithValue }) => {
       try {
         const response = await customerSignUpService(customerData); ////////////////////////
+        console.log(response);
         return response.data;
-      } catch (error) {
-        return rejectWithValue(error.response.data);
+      } catch (error:any) { // was without :any
+        // return rejectWithValue(error.response.data);
+        return rejectWithValue(error.response?.data?.error || 'Unknown error');
       }
     }
   );
@@ -42,13 +44,14 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
       })
       .addCase(createCustomer.fulfilled, (state, action) => {
         state.loading = false;
-        state.successMessage = action.payload;
+        state.successMessage = action.payload as string
         state.error = null
       })
       .addCase(createCustomer.rejected, (state, action) => {
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
         state.loading = false;
-        state.error = action.payload as string || 'Register failed';
-        console.log(action.error.message)
+        state.error = action.payload as string || action.error.message  ||'Register failed';
+
       });
     },
   });

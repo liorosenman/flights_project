@@ -28,7 +28,7 @@ const CustomerSignupForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch(await createCustomer(formData));
+        await dispatch(createCustomer(formData));
     };
 
     return (
@@ -45,10 +45,11 @@ const CustomerSignupForm = () => {
                     />
                 </div>
             ))}
-            {loading && <p>Signing up...</p>}
-
-            {error && <p style={{ color: 'red' }}>{error.message}</p>}
             <button type="submit">Signup</button>
+            {loading && <p>Signing up...</p>}
+            {error && <p style={{ color: 'red' }}>{error.error}</p>} 
+            {SuccessMsg && <p style={{ color: 'green' }}>{SuccessMsg.message}</p>} 
+
         </form>
     );
 };
