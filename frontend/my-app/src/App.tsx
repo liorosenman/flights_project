@@ -5,6 +5,7 @@ import Users from './pages/Users.tsx';
 import ClientPg from './components/clientPg.tsx';
 import AirlinePg from './components/airlinePg.tsx';
 import CreateCustomer from './components/createusers/CreateCustomerComp.tsx';
+import CreateAirline from './components/createusers/CreateAirlineComp.tsx';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/clients" element={<ClientPg />} />
         <Route path="/airlines" element={<AirlinePg />} />
         <Route path="/createcustomer" element={<CreateCustomer />} />
+        <Route path="/createairline" element={<CreateAirline />} />
 
       </Routes>
     </Router>

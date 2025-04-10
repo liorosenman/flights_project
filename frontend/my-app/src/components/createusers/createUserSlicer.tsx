@@ -64,13 +64,21 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
       .addCase(createCustomer.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string || action.error.message  ||'Register failed';
-        console.log("BBBBBBBBBBBBBBBBBBBBBB");
-        console.log(action.payload);
-        
-        console.log(state.error);
-        // console.log(state.successMessage)
-        
-      });
+      })
+      .addCase(createAirline.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createAirline.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload as string
+        state.error = null
+      })
+      .addCase(createAirline.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string || action.error.message  ||'Register failed';
+      });  
+
     },
   });
 

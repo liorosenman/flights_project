@@ -1,10 +1,9 @@
-// src/components/SignupForm.js
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { createAirline, createCustomer, selectUserState} from './createUserSlicer.tsx'
-import { useAppDispatch, useAppSelector} from '../../app/hooks.ts';
+import { createAirline, selectUserState } from './createUserSlicer.tsx';
+import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
+import { useSelector } from 'react-redux';
 
-const CustomerSignupForm = () => {
+const CustomerForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -13,39 +12,95 @@ const CustomerSignupForm = () => {
         country: '',
     });
 
-    // const dispatch = useDispatch<AppDispatch>();
+    // const countries = ['USA', 'canada', 'UK', 'Germany', 'France', 'India']; 
+    
+    const countryError = useAppSelector((state) => state.country.error);
+
     const dispatch = useAppDispatch();
-    const {error, loading, successMessage } = useAppSelector(selectUserState);
+    const { error, loading, successMessage } = useAppSelector(selectUserState);
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         await dispatch(createAirline(formData));
+        console.log('Submitted data:', formData);
+        // You can send this data to your backend here
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            {Object.keys(formData).map((field) => (
-                <div key={field}>
-                    <label>{field.replace('_', ' ').toUpperCase()}</label>
-                    <input
-                        type={field === 'password' ? 'password' : 'text'}
-                        name={field}
-                        value={formData[field]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-            ))}
-            <button type="submit">Signup</button>
+            <div>
+                <label>Username:</label>
+                <input
+                    type="text"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+
+            <div>
+                <label>Password:</label>
+                <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+
+            <div>
+                <label>Email:</label>
+                <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+
+            <div>
+                <label>Name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+
+            <div>
+                <label>Country:</label>
+                <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    required
+                >
+                    <option value="">Select Country</option>
+                    {countries.map((country) => (
+                        <option key={country} value={country}>{country}</option>
+                    ))}
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+            {countryError && <p style={{ color: 'red' }}>Country Error: {countryError}</p>}
             {loading && <p>Signing up...</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>} 
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} 
-
+            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
         </form>
     );
 };
 
-export default CustomerSignupForm;
+export default CustomerForm;

@@ -76,6 +76,9 @@ const LoginComp: React.FC = () => {
           {loading ? 'Logging in...' : 'Login'}
         </button>
         <Link to = "/createcustomer">Sign up form for customers</Link>
+        <br></br>
+        <Link to = "/createairline">Sign up form for airlines</Link>
+
         {error && <p className="error-message">{error || 'Login failed'}</p>}
       </form>
     </div>
