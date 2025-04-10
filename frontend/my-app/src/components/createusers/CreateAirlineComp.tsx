@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createAirline, selectUserState } from './createUserSlicer.tsx';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCountries } from '../countries/countrySlicer.tsx';
+import { Country } from '../../models/country.ts';
+import { AppDispatch } from '../../app/store.ts';
 
 const CustomerForm = () => {
     const [formData, setFormData] = useState({
@@ -12,12 +15,33 @@ const CustomerForm = () => {
         country: '',
     });
 
+    const [countries, setCountries] =  useState<Country[]>([]);
     // const countries = ['USA', 'canada', 'UK', 'Germany', 'France', 'India']; 
     
     const countryError = useAppSelector((state) => state.country.error);
 
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const { error, loading, successMessage } = useAppSelector(selectUserState);
+
+    useEffect(() => {
+        const loadCountries = async () => {
+          try {
+            const response = await dispatch(fetchCountries());
+            console.log(response);
+            
+            setCountries(response.data);
+          } catch (err: any) {
+            console.log("ERROR");
+            
+            // setError(err.message || 'Error fetching countries');
+          }
+        };
+    
+        loadCountries();
+      }, []);
+    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
