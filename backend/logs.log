@@ -13315,3 +13315,36 @@ django.db.utils.IntegrityError: duplicate key value violates unique constraint "
 DETAIL:  Key (username)=(raanan95) already exists.
 
 2025-04-09 16:57:09,298 - WARNING - Conflict: /create_new_customer/
+2025-04-10 14:30:38,439 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-10 14:30:38,440 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-10 14:33:29,058 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:06:01,821 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:06:01,822 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:06:57,916 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:06:57,919 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:12:58,792 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:12:58,795 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:13:01,106 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:13:01,108 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:13:39,260 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:13:39,261 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:20:18,918 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:20:18,921 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:16,922 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:44,775 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:44,778 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:48,106 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:48,110 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:49,899 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:49,901 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:51,018 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:22:51,021 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:23:09,211 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:23:09,214 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:26,189 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:26,192 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:27,319 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:27,321 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:37,845 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 16:24:37,846 - WARNING - Method Not Allowed: /get_all_countries/
+2025-04-12 17:38:41,886 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

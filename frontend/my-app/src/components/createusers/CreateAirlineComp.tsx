@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../countries/countrySlicer.tsx';
 import { Country } from '../../models/country.ts';
 import { AppDispatch } from '../../app/store.ts';
+import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 
 const CustomerForm = () => {
     const [formData, setFormData] = useState({
@@ -12,34 +13,19 @@ const CustomerForm = () => {
         password: '',
         email: '',
         name: '',
-        country: '',
+        country_id: '',
     });
 
-    const [countries, setCountries] =  useState<Country[]>([]);
-    // const countries = ['USA', 'canada', 'UK', 'Germany', 'France', 'India']; 
-    
-    const countryError = useAppSelector((state) => state.country.error);
-
-    // const dispatch = useAppDispatch();
-    const dispatch = useDispatch<AppDispatch>();
+    // const [countries, setCountries] =  useState<Country[]>([]);
     const { error, loading, successMessage } = useAppSelector(selectUserState);
-
-    useEffect(() => {
-        const loadCountries = async () => {
-          try {
-            const response = await dispatch(fetchCountries());
-            console.log(response);
-            
-            setCountries(response.data);
-          } catch (err: any) {
-            console.log("ERROR");
-            
-            // setError(err.message || 'Error fetching countries');
-          }
-        };
+    const countryError = useAppSelector((state) => state.country.error);
+    const dispatch = useDispatch<AppDispatch>();
     
-        loadCountries();
-      }, []);
+
+    // useEffect(() => {
+    //     dispatch(fetchCountries());
+
+    //   }, []);
     
 
     const handleChange = (e) => {
@@ -53,7 +39,7 @@ const CustomerForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await dispatch(createAirline(formData));
-        console.log('Submitted data:', formData);
+        // console.log('Submitted data:', formData);
         // You can send this data to your backend here
     };
 
@@ -104,18 +90,7 @@ const CustomerForm = () => {
             </div>
 
             <div>
-                <label>Country:</label>
-                <select
-                    name="country"
-                    value={formData.country}
-                    onChange={handleChange}
-                    required
-                >
-                    <option value="">Select Country</option>
-                    {countries.map((country) => (
-                        <option key={country} value={country}>{country}</option>
-                    ))}
-                </select>
+                <SelectCountryComp value={formData.country_id} onChange={handleChange} />
             </div>
 
             <button type="submit">Submit</button>
