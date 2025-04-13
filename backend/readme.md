@@ -229,6 +229,9 @@
 # ------------09/04/2025------------------------
     1. Customer register //DONE & TESTED
     2. Airline register to be finished.
+# ------------13/04/2025------------------------
+    1. Customer register & errors // DONE & TESTED
+    2. Airline register & errors // DONE& TESTED
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

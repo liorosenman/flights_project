@@ -24,7 +24,7 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
     async (customerData, { rejectWithValue }) => {
       try {
         const response = await customerSignUpService(customerData);
-        return response.data;
+        return response.data.message;
       } catch (error:any) { 
         return rejectWithValue(error.response?.data?.error  || 'Unknown error');
       }
@@ -36,8 +36,7 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
     async (airlineData, { rejectWithValue }) => {
       try {
         const response = await airlineSignupService(airlineData);
-        console.log(response);
-        return response.data // Deleted the .data
+        return response.data.message;
       } catch (error:any) { 
         return rejectWithValue(error.response?.data?.error || 'Unknown error');
         // return rejectWithValue(error.error || 'Unknown error');
