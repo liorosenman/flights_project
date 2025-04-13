@@ -13348,3 +13348,16 @@ DETAIL:  Key (username)=(raanan95) already exists.
 2025-04-12 16:24:37,845 - WARNING - Method Not Allowed: /get_all_countries/
 2025-04-12 16:24:37,846 - WARNING - Method Not Allowed: /get_all_countries/
 2025-04-12 17:38:41,886 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-13 13:37:31,329 - WARNING - Conflict: /create_new_airline/
+2025-04-13 13:41:14,744 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:45:22,798 - WARNING - Bad Request: /create_new_customer/
+2025-04-13 13:51:13,349 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:53:37,816 - WARNING - Conflict: /create_new_airline/
+2025-04-13 13:54:19,715 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:54:58,518 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:55:20,964 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:55:29,608 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 13:58:49,316 - WARNING - Unauthorized: /create_new_airline/
+2025-04-13 13:59:00,283 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 14:05:43,063 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-13 14:05:45,046 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.

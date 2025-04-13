@@ -255,7 +255,7 @@ def airline_details_input_validation(func):
             data = request.data
             name = data.get('name', '')
             if not name or len(name) > 100 or not name.isalpha():
-                return Response({"Error":"Airline name is required, letters only, 100 characters max."},
+                return Response({"error":"Airline name is required, letters only, 100 characters max."},
                                 status=status.HTTP_400_BAD_REQUEST)
             return func(request, *args, **kwargs)
         return wrapper

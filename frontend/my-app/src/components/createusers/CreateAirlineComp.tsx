@@ -20,13 +20,13 @@ const CustomerForm = () => {
     const { error, loading, successMessage } = useAppSelector(selectUserState);
     const countryError = useAppSelector((state) => state.country.error);
     const dispatch = useDispatch<AppDispatch>();
-    
+
 
     // useEffect(() => {
     //     dispatch(fetchCountries());
 
     //   }, []);
-    
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -96,8 +96,9 @@ const CustomerForm = () => {
             <button type="submit">Submit</button>
             {countryError && <p style={{ color: 'red' }}>Country Error: {countryError}</p>}
             {loading && <p>Signing up...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>} 
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+            {error && <p style={{ color: 'red' }}>{typeof error === 'string' ? error : error.message || JSON.stringify(error)}</p>}
+            {successMessage && <p style={{ color: 'green' }}>{typeof successMessage === 'string' ? successMessage : successMessage.message || JSON.stringify(successMessage)}</p>}
+
         </form>
     );
 };
