@@ -1,17 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {customerSignUpService} from './CreateUserService.tsx';
+import {adminSignupService, customerSignUpService} from './CreateUserService.tsx';
 import {airlineSignupService} from './CreateUserService.tsx';
 import { RootState } from '../../app/store';
 
 interface CreateUserState {
-    user : any[] | null
+    // user : any[] | null
     error: string | null;
     loading: boolean;
     successMessage: string | null;
   }
   
 const initialState: CreateUserState = {
-  user : null,
+  // user : null,
   error : null,
   loading: false,
   successMessage: null
@@ -39,12 +39,22 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
         return response.data.message;
       } catch (error:any) { 
         return rejectWithValue(error.response?.data?.error || 'Unknown error');
-        // return rejectWithValue(error.error || 'Unknown error');
       }
     }
   );
 
-
+  export const createAdmin = createAsyncThunk<string, Record<string, any>>(
+    'user/createAdmin',
+    async (adminData, { rejectWithValue }) => {
+      try {
+        const response = await adminSignupService(adminData);
+        console.log(response);
+        return response.data.message;
+      } catch (error:any) { 
+        return rejectWithValue(error.response?.data?.error || 'Unknown error');
+      }
+    }
+  );
 
   const UserSlicer = createSlice({
   name: 'user',
@@ -64,6 +74,7 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
       .addCase(createCustomer.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string || action.error.message  ||'Register failed';
+        state.successMessage = null;
       })
       .addCase(createAirline.pending, (state) => {
         state.loading = true;
@@ -77,15 +88,26 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
       .addCase(createAirline.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string || action.error.message  ||'Register failed';
-      });  
-
+        state.successMessage = null;
+      })
+      .addCase(createAdmin.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createAdmin.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload as string
+        state.error = null
+      })
+      .addCase(createAdmin.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string || action.error.message  ||'Register failed';
+        state.successMessage = null
+      }); 
     },
   });
 
 export default UserSlicer.reducer;
-// export const selectUserLoading = (state: { user: { loading: boolean } }) => state.user.loading;
-// export const selectUserError = (state: { user: { error: string | null } }) => state.user.error;
-// export const selectUserSucMsg = (state: { user: { successMessage: string | null } }) => state.user.successMessage;
 export const selectUserState = (state: RootState) => state.user;
 
 

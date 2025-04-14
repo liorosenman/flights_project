@@ -10,4 +10,9 @@ export const airlineSignupService = async (airlineData) => {
     return await axios.post(SERVER + 'create_new_airline/', airlineData);
 }
 
+export const adminSignupService = async (adminData) => {
+    return await axios.post(SERVER + 'create_new_admin/', adminData);
+}
+
+
 

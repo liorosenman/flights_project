@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { createAirline, selectUserState } from './createUserSlicer.tsx';
+import { createAdmin, createAirline, selectUserState } from './createUserSlicer.tsx';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../countries/countrySlicer.tsx';
@@ -7,26 +7,17 @@ import { Country } from '../../models/country.ts';
 import { AppDispatch } from '../../app/store.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 
-const AirlineForm = () => {
+const AdminForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         password: '',
         email: '',
-        name: '',
-        country_id: '',
+        first_name: '',
+        last_name: '',
     });
 
-    // const [countries, setCountries] =  useState<Country[]>([]);
     const { error, loading, successMessage } = useAppSelector(selectUserState);
-    const countryError = useAppSelector((state) => state.country.error);
     const dispatch = useDispatch<AppDispatch>();
-
-
-    // useEffect(() => {
-    //     dispatch(fetchCountries());
-
-    //   }, []);
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,9 +29,7 @@ const AirlineForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(createAirline(formData));
-        // console.log('Submitted data:', formData);
-        // You can send this data to your backend here
+        await dispatch(createAdmin(formData));
     };
 
     return (
@@ -79,22 +68,28 @@ const AirlineForm = () => {
             </div>
 
             <div>
-                <label>Name:</label>
+                <label>First Name:</label>
                 <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                     required
                 />
             </div>
 
             <div>
-                <SelectCountryComp value={formData.country_id} onChange={handleChange} />
+                <label>Last Name:</label>
+                <input
+                    type="text"
+                    name="last_name"
+                    value={formData.last_name}
+                    onChange={handleChange}
+                    required
+                />
             </div>
 
             <button type="submit">Submit</button>
-            {countryError && <p style={{ color: 'red' }}>Country Error: {countryError}</p>}
             {loading && <p>Signing up...</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
@@ -102,4 +97,4 @@ const AirlineForm = () => {
     );
 };
 
-export default AirlineForm;
+export default AdminForm;

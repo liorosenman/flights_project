@@ -4,14 +4,15 @@ import loginReducer from '../components/Login/loginSlice.tsx'
 import flightReducer from '../components/Flight/flightSlice.tsx'
 import  userReducer  from '../components/createusers/createUserSlicer.tsx';
 import countryReducer from '../components/countries/countrySlicer.tsx';
+import airlineReducer from '../components/airline/airlineSlicer.tsx';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     login: loginReducer,
     user: userReducer,
-    country: countryReducer
-    
+    country: countryReducer,
+    airline: airlineReducer
   },
 });
 

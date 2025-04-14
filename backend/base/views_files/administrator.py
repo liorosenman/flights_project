@@ -34,7 +34,7 @@ def admin_register(request): #Create a new admin
 
 # Create a new airline (user_role_num = 2)
 @api_view(['POST']) 
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @airline_details_input_validation
 @create_airport_user(Roles.AIRLINE.value)

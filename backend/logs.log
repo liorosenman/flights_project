@@ -13362,3 +13362,11 @@ DETAIL:  Key (username)=(raanan95) already exists.
 2025-04-13 14:05:43,063 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-04-13 14:05:45,046 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-04-13 14:06:29,680 - WARNING - Bad Request: /create_new_airline/
+2025-04-13 14:55:22,997 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-13 14:55:25,016 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-13 15:36:11,275 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-13 15:38:06,896 - WARNING - Bad Request: /create_new_admin/
+2025-04-13 15:38:22,021 - WARNING - Bad Request: /create_new_admin/
+2025-04-13 15:39:22,805 - WARNING - Bad Request: /create_new_admin/
+2025-04-13 15:39:37,808 - WARNING - Bad Request: /create_new_admin/
+2025-04-13 15:41:41,779 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

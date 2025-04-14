@@ -20,7 +20,6 @@ export const fetchCountries = createAsyncThunk<Country[], void>(
   async (_, thunkAPI) => {
     try {
       const response = await getAllCountries();
-      console.log(response);
       return response.data.countries as Country[];
       
       

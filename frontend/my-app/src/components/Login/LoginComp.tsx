@@ -36,10 +36,10 @@ const LoginComp: React.FC = () => {
             navigate('/users');
             break;
           case 2:
-            navigate('/clients');
+            navigate('/createflight');
             break;
           case 3:
-            navigate('/airlines');
+            navigate('/createflight');
             break;
           default:
             console.log('Unknown user role: Staying on the login page');
@@ -78,6 +78,8 @@ const LoginComp: React.FC = () => {
         <Link to = "/createcustomer">Sign up form for customers</Link>
         <br></br>
         <Link to = "/createairline">Sign up form for airlines</Link>
+        <br></br>
+        <Link to = "/createadmin">Sign up form for admins</Link>
 
         {error && <p className="error-message">{error || 'Login failed'}</p>}
       </form>

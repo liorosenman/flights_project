@@ -232,6 +232,7 @@
 # ------------13/04/2025------------------------
     1. Customer register & errors // DONE & TESTED
     2. Airline register & errors // DONE& TESTED
+    3. Admin register $ errors // DONE & TESTED
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

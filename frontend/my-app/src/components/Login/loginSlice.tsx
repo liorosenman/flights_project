@@ -53,11 +53,8 @@ const loginSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
           state.loading = false;
-          console.log("FULFILLED");
           state.token = action.payload.token
-          console.log(state.token);
           
-          // state.token = (action.payload?.token || action.payload?.access_token || action.payload) as string;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
