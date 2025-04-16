@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchFlights } from './FlightAPI.ts';
+import { fetchFlights } from './flightService.ts';
 import { FlightData } from '../../models/flightdata';
 import { RootState } from '../../app/store.ts';
 
