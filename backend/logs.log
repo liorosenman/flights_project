@@ -13370,3 +13370,66 @@ DETAIL:  Key (username)=(raanan95) already exists.
 2025-04-13 15:39:22,805 - WARNING - Bad Request: /create_new_admin/
 2025-04-13 15:39:37,808 - WARNING - Bad Request: /create_new_admin/
 2025-04-13 15:41:41,779 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-14 16:16:30,952 - WARNING - Unauthorized: /login/
+2025-04-14 16:16:48,319 - WARNING - Unauthorized: /login/
+2025-04-14 16:17:35,580 - WARNING - Unauthorized: /login/
+2025-04-14 16:18:41,969 - WARNING - Unauthorized: /login/
+2025-04-14 16:20:40,199 - WARNING - Unauthorized: /login/
+2025-04-14 16:21:26,268 - WARNING - Unauthorized: /login/
+2025-04-14 16:39:49,077 - WARNING - Bad Request: /create_flight/
+2025-04-14 16:40:01,581 - WARNING - Successful flight creation.
+2025-04-14 16:44:14,364 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 16:44:20,621 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 16:47:44,285 - WARNING - Successful flight creation.
+2025-04-14 16:47:58,844 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 16:48:00,899 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 16:48:04,030 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 16:48:09,143 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-14 17:26:59,804 - WARNING - Forbidden: /create_flight/
+2025-04-14 17:53:30,955 - WARNING - Unauthorized: /create_flight/
+2025-04-14 17:56:14,404 - WARNING - Forbidden: /create_flight/
+2025-04-16 11:12:49,001 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:16:34,664 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-16 11:16:41,928 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-16 11:16:44,941 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-16 11:17:05,490 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-16 11:17:13,690 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-16 11:24:34,817 - WARNING - Successful flight creation.
+2025-04-16 11:26:35,772 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:26:41,078 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:26:59,879 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:27:04,970 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:27:54,976 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:31:12,025 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:31:14,072 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:31:18,199 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:31:22,299 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:31:41,458 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:32:44,071 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:32:50,329 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:33:17,286 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:37:55,276 - WARNING - Unauthorized: /create_flight/
+2025-04-16 11:42:39,747 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:42:58,571 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:43:19,969 - WARNING - Unauthorized: /create_flight/
+2025-04-16 11:45:38,006 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:48:31,825 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:48:36,045 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-16 11:48:50,313 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:54:33,504 - WARNING - Unauthorized: /create_flight/
+2025-04-16 11:54:51,805 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:57:09,414 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-16 11:57:13,554 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-16 11:57:15,552 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-16 11:57:29,060 - WARNING - Bad Request: /create_flight/
+2025-04-16 11:57:55,502 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-16 11:57:57,600 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-16 11:58:06,717 - WARNING - Bad Request: /create_flight/
+2025-04-16 12:08:37,018 - WARNING - Successful flight creation.
+2025-04-16 12:09:38,228 - WARNING - Bad Request: /create_flight/
+2025-04-16 12:10:38,008 - WARNING - Unauthorized: /create_flight/
+2025-04-16 12:12:51,910 - WARNING - Unauthorized: /create_flight/
+2025-04-16 12:15:43,040 - WARNING - Bad Request: /create_flight/
+2025-04-16 12:17:17,451 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-04-16 12:17:26,282 - WARNING - Successful flight creation.
+2025-04-16 12:19:17,962 - WARNING - Bad Request: /create_flight/

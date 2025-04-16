@@ -13,6 +13,7 @@ export const createFlightService = async (flightData: Record<string, any>, token
     return await axios.post(SERVER + "create_flight/", flightData, {
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
     });
   };

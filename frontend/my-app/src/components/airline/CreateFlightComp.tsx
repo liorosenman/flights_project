@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createFlight } from './airlineSlicer.tsx';
+import { createFlight, selectAirlineState } from './airlineSlicer.tsx';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../app/store';
 import { } from './airlineSlicer.tsx';
@@ -17,7 +17,7 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
     });
 
     const token = useAppSelector((state) => selectLoginState(state).token);
-
+    const { error, loading, SuccessMessage } = useAppSelector(selectAirlineState);
   
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       setFormData({
@@ -88,6 +88,9 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
           </div>
 
           <button type="submit">Create Flight</button>
+          {loading && <p>Signing up...</p>}
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {SuccessMessage && <p style={{ color: 'green' }}>{SuccessMessage}</p>}
         </form>
       );
     }

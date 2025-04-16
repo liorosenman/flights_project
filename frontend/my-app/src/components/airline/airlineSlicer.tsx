@@ -103,3 +103,4 @@ extraReducers: (builder) => {
 });
 
 export default AirlineSlicer.reducer;
+export const selectAirlineState = (state: RootState) => state.airline;

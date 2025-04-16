@@ -167,6 +167,8 @@ def flight_details_input_validation(func):
             )
         
         now = datetime.now()
+        print(now)
+        print(dep_time)
         if (now > dep_time):
                return Response(
                 {"error": "The selected departure time is in the past."},
@@ -207,7 +209,7 @@ def flight_details_input_validation(func):
         try:
             if isinstance(rem_tickets, float) or (isinstance(rem_tickets, str) and '.' in rem_tickets):
                 return Response(
-                    {"error": "Remaining tickets must be a whole number (no decimals allowed)."}, 
+                    {"error": "Remaining tickets must be an integer number (no decimals allowed)."}, 
                     status=status.HTTP_400_BAD_REQUEST
                 )
             

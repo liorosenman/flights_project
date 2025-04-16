@@ -25,19 +25,23 @@ logging.basicConfig(filename="./logs.log",
 @role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
+    print(request.data)
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
+        print(request.user.id)
     except Airline.DoesNotExist:
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
     
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
-    
+    print(airline_company.id)
     serializer = FlightSerializer(data=flight_data)
+    print(serializer)
     if serializer.is_valid():
+        print("DDDDDDDDDDDDDDDDDDDD")
         flight = serializer.save() 
         logging.warning("Successful flight creation.")
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"message": "The flight was created successfully."}, status=status.HTTP_201_CREATED)   
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

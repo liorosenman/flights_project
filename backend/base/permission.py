@@ -31,15 +31,15 @@ def role_required(required_role):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             if not request.user.is_authenticated:
-                return Response({"msg":"No authenticated user."})
+                return Response({"error":"No authenticated user."})
             if not hasattr(request.user, 'role_name'):
-                return Response({'msg':'No attribute role_name provided'})
+                return Response({"error":'No attribute role_name provided'})
             current_role_name_id = request.user.role_name.id
             print(current_role_name_id)
             print(required_role)
             if (required_role != current_role_name_id):
                 permitted_user_role = UserRole.objects.get(id = required_role).role_name
-                return Response({"msg": f"Permission denied. Only {permitted_user_role}s are permitted."}, 
+                return Response({"error": f"Permission denied. Only {permitted_user_role}s are permitted."}, 
                                 status=status.HTTP_403_FORBIDDEN)
             return func(request, *args, **kwargs)
         return wrapper
