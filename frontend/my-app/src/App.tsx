@@ -8,6 +8,9 @@ import CreateCustomer from './components/createusers/CreateCustomerComp.tsx';
 import CreateAirline from './components/createusers/CreateAirlineComp.tsx';
 import CreateAdmin from './components/createusers/CreateAdminComp.tsx';
 import CreateFlightComp from './components/airline/CreateFlightComp.tsx';
+import FlightsBoard from './components/Flight/FlightsBoard.tsx';
+import { useAppSelector } from './app/hooks.ts';
+
 
 const App = () => {
   return (
@@ -22,6 +25,9 @@ const App = () => {
         <Route path="/createairline" element={<CreateAirline />} />
         <Route path="/createadmin" element={<CreateAdmin />} />
         <Route path="/createflight" element={<CreateFlightComp />} />
+        <Route path="/flightsboard" element = {<FlightsBoard />} />
+                      
+
 
       </Routes>
     </Router>

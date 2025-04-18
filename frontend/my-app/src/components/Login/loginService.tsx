@@ -16,7 +16,17 @@ export const loginRequest = async (username: string, password: string) :  Promis
     }
     return { error: 'Login failed' };
   }
-    
-  }
+}
+
+export const logoutUser = async (refresh_token: string) => {
+  return await axios.post(SERVER + 'logout_user/', {
+    refresh_token: refresh_token,
+  });
+};
+   
+
+
+
+  
 
 

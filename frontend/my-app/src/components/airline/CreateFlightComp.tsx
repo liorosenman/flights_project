@@ -6,6 +6,7 @@ import { } from './airlineSlicer.tsx';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppSelector } from '../../app/hooks.ts';
 import { selectLoginState } from '../Login/loginSlice.tsx';
+import Menu from '../Menu/menuComp.tsx';
 
   const CreateFlightComp = () => {
     const [formData, setFormData] = useState({
@@ -35,6 +36,8 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
     }
 
       return (
+        <div>
+          <Menu/>
         <form onSubmit={handleSubmit}>
           <h2>Create Flight</h2>
 
@@ -92,6 +95,7 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
           {error && <p style={{ color: 'red' }}>{error}</p>}
           {SuccessMessage && <p style={{ color: 'green' }}>{SuccessMessage}</p>}
         </form>
+        </div>
       );
     }
   

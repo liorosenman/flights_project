@@ -13447,3 +13447,10 @@ DETAIL:  Key (username)=(raanan95) already exists.
 2025-04-16 14:39:12,047 - WARNING - Not Found: /get_arrival_flights/8/
 2025-04-16 14:40:59,916 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-04-16 14:41:01,922 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-16 14:41:34,341 - WARNING - Unauthorized: /login/
+2025-04-16 14:42:26,855 - WARNING - Bad Request: /create_flight/
+2025-04-16 14:43:26,845 - WARNING - Bad Request: /create_flight/
+2025-04-16 14:43:39,617 - WARNING - Bad Request: /create_flight/
+2025-04-16 14:44:10,394 - WARNING - Successful flight creation.
+2025-04-16 14:44:27,367 - WARNING - Not Found: /get_arrival_flights/8/
+2025-04-16 14:46:45,703 - WARNING - Successful flight creation.

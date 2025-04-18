@@ -2,6 +2,9 @@
 import React from 'react';
 
 const FlightRow = ({ flight })   => {
+
+  
+
   return (
     <tr>
       <td>{flight.flight_id}</td>

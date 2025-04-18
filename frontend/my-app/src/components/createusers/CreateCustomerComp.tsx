@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createCustomer, selectUserState} from './createUserSlicer.tsx'
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { AppDispatch } from '../../app/store.ts';
+import Menu from '../Menu/menuComp.tsx';
 
 const CustomerSignupForm = () => {
     const [formData, setFormData] = useState({
@@ -29,6 +30,8 @@ const CustomerSignupForm = () => {
     };
 
     return (
+        <div>
+        <Menu/>
         <form onSubmit={handleSubmit}>
             {Object.keys(formData).map((field) => (
                 <div key={field}>
@@ -48,6 +51,7 @@ const CustomerSignupForm = () => {
             {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} 
 
         </form>
+        </div>
     );
 };
 
