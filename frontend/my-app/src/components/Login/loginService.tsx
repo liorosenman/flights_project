@@ -19,7 +19,7 @@ export const loginRequest = async (username: string, password: string) :  Promis
 }
 
 export const logoutUser = async (refresh_token: string) => {
-  return await axios.post(SERVER + 'logout_user/', {
+  return await axios.post(SERVER + 'logout/', {
     refresh_token: refresh_token,
   });
 };

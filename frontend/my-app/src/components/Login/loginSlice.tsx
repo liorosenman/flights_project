@@ -3,14 +3,12 @@ import { loginRequest, logoutUser } from './loginService.tsx';
 import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
 import { AppDispatch, RootState } from '../../app/store.ts';
-// import { UserToken } from '../../models/UserToken.ts';
 
 interface LoginState {
   token : any | null;
   refreshToken: string | null;
   error: string | null;
   loading: boolean;
-  // error: string | null;
 }
 
 const initialState: LoginState = {
@@ -31,8 +29,6 @@ export const loginUser = createAsyncThunk(
     if (result.error) {
       return rejectWithValue(result.error)
     }
-    console.log(result);
-    
     return result
   }catch (error:any){
     return rejectWithValue(error.message || 'Unexpected error occurred');
@@ -65,17 +61,15 @@ export const loginUser = createAsyncThunk(
 export const logout = createAsyncThunk<void, void>(
   'login/logout',
   async (_, { getState, rejectWithValue }) => {
-    // ⬇️ access the refreshToken directly
     const state = getState() as { auth: LoginState };
     const refreshToken = state.auth.refreshToken;
-
+    
     try {
       if (refreshToken) {
         await logoutUser(refreshToken);
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
-        state.auth.token = null
-        state.auth.refreshToken = null
+        loginSlice.actions.clearAuthTokens();  
       }
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Logout failed');
@@ -92,6 +86,10 @@ const loginSlice = createSlice({
       state.token = action.payload.access;
       state.refreshToken = action.payload.refresh;
     },
+    clearAuthTokens: (state) => {
+      state.token = null;
+      state.refreshToken = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -127,3 +125,4 @@ const loginSlice = createSlice({
 
 export default loginSlice.reducer;
 export const selectLoginState = (state: RootState) => state.login;
+export const { setAuthTokens, clearAuthTokens } = loginSlice.actions;

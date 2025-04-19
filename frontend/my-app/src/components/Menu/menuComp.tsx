@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { logout, selectLoginState } from '../Login/loginSlice.tsx';
+import loginSlice, { logout, selectLoginState}from '../Login/loginSlice.tsx';
 import { Outlet } from 'react-router-dom';
+import { clearAuthTokens } from '../Login/loginSlice.tsx';
 
 const Menu = () => {
 
@@ -14,6 +15,7 @@ const Menu = () => {
   const handleLogout = async (e: React.MouseEvent) => {
     e.preventDefault();
     await dispatch(logout());
+    dispatch(clearAuthTokens());
     const currentToken = localStorage.getItem('access_token');
     console.log('token in Redux:', token);
     console.log('token in localStorage:', currentToken);

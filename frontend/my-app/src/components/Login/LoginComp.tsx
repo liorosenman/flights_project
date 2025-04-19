@@ -23,11 +23,9 @@ const LoginComp: React.FC = () => {
   };
 
   useEffect(() => {
-    if (typeof token === 'string' && token) {
-      console.log("INSIDE THE USEEFFECT");
-      console.log(token);
-
-      try {
+      
+        if (token != null){
+        try{
         const decoded: any = jwtDecode(token);
         console.log(decoded);
         const roleId = decoded.role_id;
@@ -45,10 +43,10 @@ const LoginComp: React.FC = () => {
             console.log('Unknown user role: Staying on the login page');
             break;
         }
+        
       } catch (error) {
         console.error('Error decoding token:', error);
       }
-
     }
   }, [token]);
 
