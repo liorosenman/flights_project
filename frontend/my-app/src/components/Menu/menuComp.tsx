@@ -17,9 +17,9 @@ const Menu = () => {
     await dispatch(logout());
     dispatch(clearAuthTokens());
     const currentToken = localStorage.getItem('access_token');
-    console.log('token in Redux:', token);
-    console.log('token in localStorage:', currentToken);
-    console.log(token);
+    // console.log('token in Redux:', token);
+    // console.log('token in localStorage:', currentToken);
+    // console.log(token);
     
     navigate('/login');
   };

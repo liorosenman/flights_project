@@ -35,7 +35,10 @@ export const createFlight = createAsyncThunk<string, Record<string, any>, { stat
       console.log(response);
       return response.data.message;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.error || 'Unknown error');
+        return rejectWithValue(
+          error.response?.data?.error || error.message || 'Unknown error'
+        );
+      // return rejectWithValue(response.error || 'Unknown error');
     }
   }
 );

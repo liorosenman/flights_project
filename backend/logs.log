@@ -13454,3 +13454,29 @@ DETAIL:  Key (username)=(raanan95) already exists.
 2025-04-16 14:44:10,394 - WARNING - Successful flight creation.
 2025-04-16 14:44:27,367 - WARNING - Not Found: /get_arrival_flights/8/
 2025-04-16 14:46:45,703 - WARNING - Successful flight creation.
+2025-04-20 12:05:35,439 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:09:14,334 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:14:14,857 - WARNING - Bad Request: /create_flight/
+2025-04-20 12:16:29,921 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:18:42,159 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:18:47,049 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:18:55,344 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:19:03,566 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:21:15,963 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:21:23,488 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:22:01,704 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:22:05,877 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:22:07,922 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:22:53,136 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:24:59,183 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:25:05,561 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:25:15,562 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:27:22,963 - WARNING - Successful flight creation.
+2025-04-20 12:27:59,169 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:29:07,808 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-04-20 12:29:13,303 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:29:37,455 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:29:58,445 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:32:29,626 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-20 12:48:30,223 - WARNING - Unauthorized: /create_flight/
+2025-04-20 12:49:36,952 - WARNING - Successful flight creation.
