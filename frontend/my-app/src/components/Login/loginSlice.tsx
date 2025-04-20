@@ -3,20 +3,26 @@ import { loginRequest, logoutUser } from './loginService.tsx';
 import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
 import { AppDispatch, RootState } from '../../app/store.ts';
+import {jwtDecode} from 'jwt-decode';
+
+const accessToken = localStorage.getItem('access_token');
+let roleId = null;
 
 interface LoginState {
-  token : any | null;
+  token: string | null;
   refreshToken: string | null;
+  roleId: number | null;
   error: string | null;
   loading: boolean;
 }
 
 const initialState: LoginState = {
-  token: localStorage.getItem('access_token'),
+  token: accessToken,
   refreshToken: localStorage.getItem('refresh_token'),
-  error : null,
+  roleId: roleId,
+  error: null,
   loading: false,
-}
+};
 
 export const loginUser = createAsyncThunk(
   'login/loginUser',
@@ -83,8 +89,21 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     setAuthTokens: (state, action) => {
-      state.token = action.payload.access;
-      state.refreshToken = action.payload.refresh;
+      const token = action.payload?.access || null;
+      const refreshToken = action.payload?.refresh || null;
+      state.token = token;
+      state.refreshToken = refreshToken;
+      if (token) {
+        try {
+          const decoded: any = jwtDecode(token);
+          state.roleId = decoded.role_id || null;
+        } catch (error) {
+          console.error("Failed to decode token:", error);
+          state.roleId = null;
+        }
+      } else {
+        state.roleId = null;
+      }
     },
     clearAuthTokens: (state) => {
       state.token = null;
@@ -126,3 +145,4 @@ const loginSlice = createSlice({
 export default loginSlice.reducer;
 export const selectLoginState = (state: RootState) => state.login;
 export const { setAuthTokens, clearAuthTokens } = loginSlice.actions;
+export const selectUserRoleId = (state: RootState) => state.login.roleId;

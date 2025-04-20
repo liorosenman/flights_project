@@ -4,16 +4,22 @@ import {FlightData} from '../../models/flightdata.ts';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
 import {loadFlights, selectFlights} from './flightSlice.tsx'
+import {selectLoginState} from '../Login/loginSlice.tsx' ;
+import { selectUserRoleId } from '../Login/loginSlice.tsx';
+import {getMyFlights} from '../airline/airlineSlicer.tsx';
 
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlights);
-  console.table(flights);
+  const roleId = useAppSelector(selectUserRoleId);
+
+  // console.table(flights);
+
   
   useEffect(() => {
-    console.log("BBBBBBBBBBBBBBBBB");
-    dispatch(loadFlights());
-    console.table(flights)
+    
+    // dispatch(loadFlights());
+    // console.table(flights)
 
   }, [])
   
