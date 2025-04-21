@@ -3,29 +3,37 @@ import React, { useState, useEffect } from 'react';
 import {FlightData} from '../../models/flightdata.ts';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
-import {loadFlights, selectFlights} from './flightSlice.tsx'
+import {getMyFlights, loadFlights, selectFlights} from './flightSlice.tsx'
 import {selectLoginState} from '../Login/loginSlice.tsx' ;
 import { selectUserRoleId } from '../Login/loginSlice.tsx';
-import {getMyFlights} from '../airline/airlineSlicer.tsx';
+import {UserRole} from '../../models/userRole.ts';
+import Menu from '../Menu/menuComp.tsx';
 
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlights);
-  const roleId = useAppSelector(selectUserRoleId);
+  const roleId = useAppSelector((state) => selectLoginState(state).roleId)
+  const userId = useAppSelector((state) => selectLoginState(state).userId)
+  const token = useAppSelector((state) => selectLoginState(state).token)
 
-  // console.table(flights);
 
-  
   useEffect(() => {
-    
-    // dispatch(loadFlights());
-    // console.table(flights)
-
+    (async () => {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    console.log(token);
+    console.log(roleId);
+    if (token && roleId === UserRole.AIRLINE){
+      console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+      
+      await dispatch(getMyFlights({ token }));
+    }
+    })();
   }, [])
   
  
   return (
     <div>
+      <Menu/>
       <h1>Flight Board</h1>
       <table>
         <thead>

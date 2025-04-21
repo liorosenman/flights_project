@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, isAction } from '@reduxjs/toolkit';
 import { loginRequest, logoutUser } from './loginService.tsx';
 import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
@@ -7,11 +7,13 @@ import {jwtDecode} from 'jwt-decode';
 
 const accessToken = localStorage.getItem('access_token');
 let roleId = null;
+let userId = null;
 
 interface LoginState {
   token: string | null;
   refreshToken: string | null;
   roleId: number | null;
+  userId: number | null;
   error: string | null;
   loading: boolean;
 }
@@ -20,6 +22,7 @@ const initialState: LoginState = {
   token: accessToken,
   refreshToken: localStorage.getItem('refresh_token'),
   roleId: roleId,
+  userId: userId,
   error: null,
   loading: false,
 };
@@ -27,7 +30,7 @@ const initialState: LoginState = {
 export const loginUser = createAsyncThunk(
   'login/loginUser',
   async ({ username, password }: { username: string; password: string }, 
-    {rejectWithValue}
+    {dispatch, rejectWithValue}
    ) => {
     try
     {
@@ -35,6 +38,10 @@ export const loginUser = createAsyncThunk(
     if (result.error) {
       return rejectWithValue(result.error)
     }
+    // dispatch(setAuthTokens(result));
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    console.log(result);
+    
     return result
   }catch (error:any){
     return rejectWithValue(error.message || 'Unexpected error occurred');
@@ -92,22 +99,29 @@ const loginSlice = createSlice({
       const token = action.payload?.access || null;
       const refreshToken = action.payload?.refresh || null;
       state.token = token;
+      console.log(state.token);
+      
       state.refreshToken = refreshToken;
       if (token) {
         try {
           const decoded: any = jwtDecode(token);
           state.roleId = decoded.role_id || null;
+          state.userId = decoded.id || null;
         } catch (error) {
           console.error("Failed to decode token:", error);
           state.roleId = null;
+          state.userId = null;
         }
       } else {
         state.roleId = null;
+        state.userId = null;
       }
     },
     clearAuthTokens: (state) => {
       state.token = null;
       state.refreshToken = null;
+      state.roleId = null;
+      state.userId = null;
     }
   },
   extraReducers: (builder) => {
@@ -118,7 +132,17 @@ const loginSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
           state.loading = false;
-          state.token = action.payload.token
+          console.log("CCCCCCCCCCCCCCCCCCCCCC");
+          console.log(state.token);
+          console.log(action.payload);
+          
+          // state.token = action.payload.token
+          loginSlice.actions.setAuthTokens(action.payload); 
+          console.log(state.token);
+          console.log("EEEEEEEEEEEEEEEEEEEE");
+          console.log(state.token);
+          
+          
           
       })
       .addCase(loginUser.rejected, (state, action) => {

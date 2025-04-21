@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchFlights } from './flightService.ts';
+import { fetchFlights } from './flightService.tsx';
 import { FlightData } from '../../models/flightdata';
 import { RootState } from '../../app/store.ts';
+import { getMyFlightsService} from './flightService.tsx';
 
 interface FlightState {
     flights: FlightData[];
@@ -26,6 +27,22 @@ interface FlightState {
     }
   );
 
+export const getMyFlights = createAsyncThunk(
+  'airline/getMyFlights',
+  async ({ token }: { token: string | null }, { rejectWithValue }) => {
+    try {
+      if (!token) {
+        return rejectWithValue('No token provided.');
+      }
+      const data = await getMyFlightsService(token);
+      return data.flights;
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.error || 'Failed to retrieve flights.');
+    }
+  }
+);
+
+
   const flightSlice = createSlice({
     name: 'flight',
     initialState,
@@ -41,6 +58,18 @@ interface FlightState {
             state.flights = action.payload
         })
         .addCase(loadFlights.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || 'Loading flights failed';
+        })
+        .addCase(getMyFlights.pending, (state) => {
+          state.loading = true;
+          state.error = ""
+        })
+        .addCase(getMyFlights.fulfilled, (state, action) => {
+            state.loading = false;
+            state.flights = action.payload
+        })
+        .addCase(getMyFlights.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string || 'Loading flights failed';
         });

@@ -118,12 +118,13 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
 
 @api_view(['GET'])
 @role_required(Roles.AIRLINE.value)
-@authorize_airline()
+# @authorize_airline()
 @decorators.update_flights_status()
-def get_my_flights(request, id):
+def get_my_flights(request):
+    the_airline_id = Airline.objects.get(airport_user=request.user).id
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [id])
+            cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [the_airline_id])
             columns = [col[0] for col in cursor.description]  # Extract column names
             flights = [dict(zip(columns, row)) for row in cursor.fetchall()]  # Create list of dicts
 
@@ -140,7 +141,7 @@ def get_my_flights(request, id):
 
     except Exception as e:
        return Response(
-            {"message": "An error occurred while retrieving flights.", "error": str(e)},
+            {"error": "An error occurred while retrieving flights.", "error": str(e)},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 

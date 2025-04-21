@@ -23,7 +23,8 @@ const LoginComp: React.FC = () => {
   };
 
   useEffect(() => {
-      
+        console.log("GGGGGGGGGGGGGGGGGGGGG");
+        
         if (token != null){
         try{
         const decoded: any = jwtDecode(token);
@@ -37,6 +38,8 @@ const LoginComp: React.FC = () => {
             navigate('/createflight');
             break;
           case 3:
+            console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            
             navigate('/createflight');
             break;
           default:

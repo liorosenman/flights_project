@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { createFlight, selectAirlineState } from './airlineSlicer.tsx';
+import { createFlight, AirlineState} from './airlineSlicer.tsx';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../app/store';
+import { AppDispatch, RootState } from '../../app/store';
 import { } from './airlineSlicer.tsx';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppSelector } from '../../app/hooks.ts';
@@ -18,7 +18,10 @@ import Menu from '../Menu/menuComp.tsx';
     });
 
     const token = useAppSelector((state) => selectLoginState(state).token);
-    const { error, loading, SuccessMessage } = useAppSelector(selectAirlineState);
+    const { error, loading, SuccessMessage } = useAppSelector(
+      (state: RootState) => state.airline
+    );
+    
   
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       setFormData({

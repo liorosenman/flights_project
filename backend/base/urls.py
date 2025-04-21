@@ -38,7 +38,7 @@ urlpatterns = [
     path('update_customer/<int:id>/', customer.update_customer),
     path('update_flight/<int:id>/', airline.update_flight),
     path('remove_flight/<int:id>/', airline.remove_flight),
-    path('get_my_flights/<int:id>/', airline.get_my_flights),
+    path('get_my_flights/', airline.get_my_flights),
     path('get_my_tickets/<int:id>/', customer.get_my_tickets),
     path('get_all_flights/', views.get_all_flights),
     path('get_flights_by_parameters/', views.get_flights_by_parameters),

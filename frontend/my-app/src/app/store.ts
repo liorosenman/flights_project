@@ -12,7 +12,8 @@ export const store = configureStore({
     login: loginReducer,
     user: userReducer,
     country: countryReducer,
-    airline: airlineReducer
+    airline: airlineReducer,
+    flight: flightReducer,
   },
 });
 

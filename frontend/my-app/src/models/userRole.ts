@@ -1,5 +1,5 @@
-export interface UserRole {
-    id: number;
-    name: string;
-  }
-  
+export enum UserRole {
+  ADMIN = 1,
+  CUSTOMER = 2,
+  AIRLINE = 3,
+}

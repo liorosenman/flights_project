@@ -27,8 +27,9 @@ const Menu = () => {
   return (
     <div>
         <nav style={{ borderBottom: "solid 1px", paddingBottom: "1rem" }}>
-        <Link to="/createcustomer">Board</Link>| {" "}
+        <Link to="/createcustomer">CustomerSignUp</Link>| {" "}
         <Link to="/createflight">Flight</Link>|{" "}
+        <Link to="/flightsboard">Board</Link>|{" "}
         {/* <a href="/login" onClick={handleLogout}>LogOut</a> |{" "} */}
         <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
           LogOut
