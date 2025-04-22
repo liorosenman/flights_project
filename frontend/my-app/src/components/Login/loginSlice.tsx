@@ -4,6 +4,7 @@ import axios from 'axios';
 import { UserToken } from '../../models/UserToken.ts';
 import { AppDispatch, RootState } from '../../app/store.ts';
 import {jwtDecode} from 'jwt-decode';
+import { useAppDispatch } from '../../app/hooks.ts';
 
 const accessToken = localStorage.getItem('access_token');
 let roleId = null;
@@ -31,20 +32,20 @@ export const loginUser = createAsyncThunk(
   'login/loginUser',
   async ({ username, password }: { username: string; password: string }, 
     {dispatch, rejectWithValue}
-   ) => {
-    try
-    {
-    const result = await loginRequest(username, password);
-    if (result.error) {
-      return rejectWithValue(result.error)
-    }
-    // dispatch(setAuthTokens(result));
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    console.log(result);
-    
-    return result
-  }catch (error:any){
-    return rejectWithValue(error.message || 'Unexpected error occurred');
+    ) => {
+      try
+      {
+      const result = await loginRequest(username, password);
+      if (result.error) {
+        return rejectWithValue(result.error)
+      }
+      // dispatch(setAuthTokens(result));
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      console.log(result);
+      // localStorage.setItem("acc")
+      return result
+    }catch (error:any){
+      return rejectWithValue(error.message || 'Unexpected error occurred');
   }
   }
 );
@@ -95,35 +96,40 @@ const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    setAuthTokens: (state, action) => {
-      const token = action.payload?.access || null;
-      const refreshToken = action.payload?.refresh || null;
-      state.token = token;
-      console.log(state.token);
+    justPrint: () => {
+      console.log("HHHHHHHHHHHHHHHHHHHHHHH");
       
-      state.refreshToken = refreshToken;
-      if (token) {
-        try {
-          const decoded: any = jwtDecode(token);
-          state.roleId = decoded.role_id || null;
-          state.userId = decoded.id || null;
-        } catch (error) {
-          console.error("Failed to decode token:", error);
-          state.roleId = null;
-          state.userId = null;
-        }
-      } else {
-        state.roleId = null;
-        state.userId = null;
-      }
     },
+  //   setAuthTokens: (state, action) => {
+  //     const token = action.payload?.access || null;
+  //     const refreshToken = action.payload?.refresh || null;
+  //     state.token = token;
+  //     console.log(state.token);
+  //     console.log("JJJJJJJJJJJJJJJJJJJJJJJJJJJ");
+      
+  //     state.refreshToken = refreshToken;
+  //     if (token) {
+  //       try {
+  //         const decoded: any = jwtDecode(token);
+  //         state.roleId = decoded.role_id || null;
+  //         state.userId = decoded.id || null;
+  //       } catch (error) {
+  //         console.error("Failed to decode token:", error);
+  //         state.roleId = null;
+  //         state.userId = null;
+  //       }
+  //     } else {
+  //       state.roleId = null;
+  //       state.userId = null;
+  //     }
+  //   },
     clearAuthTokens: (state) => {
       state.token = null;
       state.refreshToken = null;
       state.roleId = null;
       state.userId = null;
-    }
-  },
+    }},
+    
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.pending, (state) => {
@@ -131,20 +137,32 @@ const loginSlice = createSlice({
         state.error = ""
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-          state.loading = false;
-          console.log("CCCCCCCCCCCCCCCCCCCCCC");
-          console.log(state.token);
-          console.log(action.payload);
-          
-          // state.token = action.payload.token
-          loginSlice.actions.setAuthTokens(action.payload); 
-          console.log(state.token);
-          console.log("EEEEEEEEEEEEEEEEEEEE");
-          console.log(state.token);
-          
-          
-          
+        const token = action.payload?.token || null;
+        state.token = token;
+        state.loading = false;
+        state.error = null;
+      
+        if (token) {
+          try {
+            const decoded: any = jwtDecode(token);
+            console.log(decoded);
+            
+            state.roleId = decoded.role_id || null;
+            state.userId = decoded.id || null;
+      
+            // Store to localStorage if needed
+            localStorage.setItem('access_token', token);
+          } catch (error) {
+            console.error("Failed to decode token:", error);
+            state.roleId = null;
+            state.userId = null;
+          }
+        } else {
+          state.roleId = null;
+          state.userId = null;
+        }
       })
+      
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string || 'Login failed';

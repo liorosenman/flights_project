@@ -16,42 +16,66 @@ const LoginComp: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await dispatch(loginUser({ username, password }));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-        console.log("GGGGGGGGGGGGGGGGGGGGG");
+      const resultAction = await dispatch(loginUser({ username, password }));
+      
+      // Check if login succeeded
+      if (loginUser.fulfilled.match(resultAction)) {
+        console.log(resultAction.payload);
         
-        if (token != null){
-        try{
+        const token = resultAction.payload?.token
+        console.log(token);
+        console.log(resultAction.payload);
         const decoded: any = jwtDecode(token);
-        console.log(decoded);
         const roleId = decoded.role_id;
+  
         switch (roleId) {
           case 1:
             navigate('/users');
             break;
           case 2:
-            navigate('/createflight');
-            break;
           case 3:
-            console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-            
             navigate('/createflight');
             break;
           default:
-            console.log('Unknown user role: Staying on the login page');
-            break;
+            console.log('Unknown role ID');
         }
-        
-      } catch (error) {
-        console.error('Error decoding token:', error);
       }
+    } catch (error) {
+      console.error('Login failed', error);
     }
-  }, [token]);
+  };
+  
+
+  // useEffect(() => {
+  //       console.log("GGGGGGGGGGGGGGGGGGGGG");
+  //       console.log(token);
+        
+  //       if (token != null){
+  //       try{
+  //       const decoded: any = jwtDecode(token);
+  //       console.log(decoded);
+  //       const roleId = decoded.role_id;
+  //       switch (roleId) {
+  //         case 1:
+  //           navigate('/users');
+  //           break;
+  //         case 2:
+  //           navigate('/createflight');
+  //           break;
+  //         case 3:
+  //           console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+  //           navigate('/createflight');
+  //           break;
+  //         default:
+  //           console.log('Unknown user role: Staying on the login page');
+  //           break;
+  //       }
+        
+  //     } catch (error) {
+  //       console.error('Error decoding token:', error);
+  //     }
+  //   }
+  // }, [token]);
 
   return (
     <div className="container">
@@ -64,7 +88,7 @@ const LoginComp: React.FC = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-        />
+        />  
         <input
           type="password"
           placeholder="Password"
