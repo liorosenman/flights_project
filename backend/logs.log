@@ -13538,3 +13538,15 @@ TypeError: get_my_flights() missing 1 required positional argument: 'id'
 2025-04-21 17:12:55,781 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-04-21 17:14:32,192 - WARNING - Forbidden: /get_my_flights/
 2025-04-21 18:29:49,318 - WARNING - Unauthorized: /login/
+2025-04-22 10:23:56,400 - WARNING - Unauthorized: /login/
+2025-04-22 10:32:13,788 - WARNING - Unauthorized: /login/
+2025-04-22 16:16:29,737 - WARNING - Unauthorized: /create_new_airline/
+2025-04-22 16:16:55,891 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:16:57,899 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:17:00,906 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:18:24,980 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:18:28,013 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:20:48,957 - WARNING - Bad Request: /create_new_customer/
+2025-04-22 16:22:20,238 - WARNING - Unauthorized: /create_new_admin/
+2025-04-22 16:22:27,713 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-22 16:22:39,031 - WARNING - Conflict: /create_new_admin/

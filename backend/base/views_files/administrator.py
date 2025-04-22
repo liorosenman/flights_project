@@ -18,7 +18,7 @@ from base import decorators
 #Create a new admin (user_role_num = 1)
 
 @api_view(['POST']) 
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @admin_details_input_validation
 @create_airport_user(Roles.ADMINISTRATOR.value)
