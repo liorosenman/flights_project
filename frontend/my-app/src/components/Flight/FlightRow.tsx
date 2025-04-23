@@ -2,11 +2,14 @@
 import React from 'react';
 import {selectLoginState} from '../Login/loginSlice.tsx';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { addTicket, loadFlights } from './flightSlice.tsx';
+import { addTicket, loadFlights, selectFlightsState } from './flightSlice.tsx';
+import { FlightState } from './flightSlice.tsx';
 
 const FlightRow = ({ flight })   => {
   const dispatch = useAppDispatch();
   const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
+  const { error, successMsg, loading } = useAppSelector(selectFlightsState);
+  
   const formatDateTime = (dateString: string) => {
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, '0');

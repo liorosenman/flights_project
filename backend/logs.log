@@ -13573,3 +13573,8 @@ TypeError: get_my_flights() missing 1 required positional argument: 'id'
 2025-04-23 17:42:54,673 - WARNING - Unauthorized: /login/
 2025-04-23 17:43:09,312 - WARNING - Unauthorized: /login/
 2025-04-23 17:44:24,793 - WARNING - Conflict: /create_ticket/
+2025-04-23 19:09:41,373 - WARNING - Conflict: /create_ticket/
+2025-04-23 19:11:35,988 - WARNING - Conflict: /create_ticket/
+2025-04-23 19:11:36,058 - WARNING - Conflict: /create_ticket/
+2025-04-23 19:18:01,183 - WARNING - Conflict: /create_ticket/
+2025-04-23 19:37:52,956 - WARNING - Conflict: /create_ticket/

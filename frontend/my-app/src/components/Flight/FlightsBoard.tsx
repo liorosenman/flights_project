@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FlightData } from '../../models/flightdata.ts';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
-import { getMyFlights, loadFlights, selectFlights } from './flightSlice.tsx'
+import { getMyFlights, loadFlights, selectFlightsState } from './flightSlice.tsx'
 import { selectLoginState } from '../Login/loginSlice.tsx';
 import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { UserRole } from '../../models/userRole.ts';
@@ -11,7 +11,7 @@ import Menu from '../Menu/menuComp.tsx';
 
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
-  const flights = useAppSelector(selectFlights);
+  const flights = useAppSelector(selectFlightsState);
   const roleId = useAppSelector((state) => selectLoginState(state).roleId)
   const userId = useAppSelector((state) => selectLoginState(state).userId)
   const token = useAppSelector((state) => selectLoginState(state).token)

@@ -5,22 +5,26 @@ import { RootState } from '../../app/store.ts';
 import { getMyFlightsService} from './flightService.tsx';
 import axios from 'axios';
 
-interface FlightState {
+export interface FlightState {
     flights: FlightData[];
     loading: boolean;
     error: string | null;
+    successMsg: string | null;
   }
 
   const initialState: FlightState = {
     flights: [],
     loading: false,
     error: null,
+    successMsg: null
   };
 
   export const loadFlights = createAsyncThunk<FlightData[], void, { rejectValue: string }>(
     'flight/loadFlights',
     async (_, { rejectWithValue }) => {
       try {
+        console.log("BBBBBBBBBBBBBBBBBBB");
+        
         return await fetchFlights();
       } catch (error: any) {
         return rejectWithValue(error.response?.data?.message || 'Failed to fetch flights');
@@ -55,6 +59,7 @@ export const addTicket = createAsyncThunk<
 
     try {
       const result = await addTicketService(flight_id, token);
+      console.log(result);
       return result;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Ticket purchase failed');
@@ -94,9 +99,23 @@ export const addTicket = createAsyncThunk<
         .addCase(getMyFlights.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string || 'Loading flights failed';
+        })
+        .addCase(addTicket.pending, (state) => {
+          state.loading = true;
+          state.error = ""
+        })
+        .addCase(addTicket.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = null;
+            state.successMsg = action.payload as string
+            
+        })
+        .addCase(addTicket.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || 'Ticket purchasing failure.';
         });
     },
   });
 
   export default flightSlice.reducer;
-  export const selectFlights = (state: RootState) => state.flight.flights;
+  export const selectFlightsState = (state: RootState) => state.flight
