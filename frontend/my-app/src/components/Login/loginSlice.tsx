@@ -81,6 +81,7 @@ export const logout = createAsyncThunk<void, void>(
     try {
       if (refreshToken) {
         await logoutUser(refreshToken);
+        console.log("DDDDDDDDDDDDDDD");
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
         loginSlice.actions.clearAuthTokens();  
@@ -175,6 +176,10 @@ const loginSlice = createSlice({
         state.loading = false;
         state.token = null;
         state.refreshToken = null;
+        state.roleId = null;
+        state.userId = null;
+        console.log("LLLLLLLLLLOGEDOUT");
+        
       })
       .addCase(logout.rejected, (state, action) => {
         state.loading = false;
@@ -186,5 +191,5 @@ const loginSlice = createSlice({
 
 export default loginSlice.reducer;
 export const selectLoginState = (state: RootState) => state.login;
-export const { setAuthTokens, clearAuthTokens } = loginSlice.actions;
+export const { clearAuthTokens } = loginSlice.actions;
 export const selectUserRoleId = (state: RootState) => state.login.roleId;

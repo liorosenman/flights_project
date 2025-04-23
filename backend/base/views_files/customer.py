@@ -24,6 +24,7 @@ logger = logging.getLogger('report_actions')
 @decorators.update_flights_status()
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
+    print("AAAAAAAAAAAAAAAAAAAAA")
     flight_id = request.data.get('flight_id')
     flight = get_object_or_404(Flight, id = flight_id)
     # if not flight.is_active:

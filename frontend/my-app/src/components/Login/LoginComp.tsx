@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { jwtDecode } from 'jwt-decode';
 import './styles.css';
+import { UserRole } from '../../models/userRole.ts';
 
 const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -17,23 +18,27 @@ const LoginComp: React.FC = () => {
     e.preventDefault();
     try {
       const resultAction = await dispatch(loginUser({ username, password }));
+      console.log("BBBBBBBBBBBBBBBBB");
+      console.log((resultAction));
+      
+      
       
       // Check if login succeeded
       if (loginUser.fulfilled.match(resultAction)) {
-        console.log(resultAction.payload);
-        
         const token = resultAction.payload?.token
-        console.log(token);
-        console.log(resultAction.payload);
         const decoded: any = jwtDecode(token);
         const roleId = decoded.role_id;
-  
+        console.log("AAAAAAAAAAAAAAAAAAA");
+        console.log("THE ROLE ID IS ", roleId);
+        
         switch (roleId) {
-          case 1:
+          case UserRole.ADMIN:
             navigate('/users');
             break;
-          case 2:
-          case 3:
+          case UserRole.CUSTOMER:
+            navigate('/flightsboard');
+            break;
+          case UserRole.AIRLINE:
             navigate('/createflight');
             break;
           default:

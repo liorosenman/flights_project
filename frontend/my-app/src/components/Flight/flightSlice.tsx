@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchFlights } from './flightService.tsx';
+import { addTicketService, fetchFlights } from './flightService.tsx';
 import { FlightData } from '../../models/flightdata';
 import { RootState } from '../../app/store.ts';
 import { getMyFlightsService} from './flightService.tsx';
+import axios from 'axios';
 
 interface FlightState {
     flights: FlightData[];
@@ -41,6 +42,27 @@ export const getMyFlights = createAsyncThunk(
     }
   }
 );
+
+export const addTicket = createAsyncThunk<
+  any,
+  { flight_id: number },
+  { state: RootState }
+>(
+  'flight/addTicket',
+  async ({ flight_id }, { getState, rejectWithValue }) => {
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No token');
+
+    try {
+      const result = await addTicketService(flight_id, token);
+      return result;
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.error || 'Ticket purchase failed');
+    }
+  }
+);
+
+
 
 
   const flightSlice = createSlice({

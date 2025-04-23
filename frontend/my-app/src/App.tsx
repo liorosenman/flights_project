@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/createadmin" element={<CreateAdmin />} />
         <Route path="/createflight" element={<CreateFlightComp />} />
         <Route path="/flightsboard" element = {<FlightsBoard />} />
-                      
+                     
 
 
       </Routes>

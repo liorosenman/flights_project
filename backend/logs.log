@@ -13550,3 +13550,26 @@ TypeError: get_my_flights() missing 1 required positional argument: 'id'
 2025-04-22 16:22:20,238 - WARNING - Unauthorized: /create_new_admin/
 2025-04-22 16:22:27,713 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-04-22 16:22:39,031 - WARNING - Conflict: /create_new_admin/
+2025-04-23 13:58:30,669 - WARNING - Unauthorized: /login/
+2025-04-23 14:23:22,669 - WARNING - Unauthorized: /login/
+2025-04-23 15:12:21,784 - WARNING - Unauthorized: /login/
+2025-04-23 17:20:48,634 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:32:36,876 - WARNING - Unauthorized: /login/
+2025-04-23 17:32:52,989 - WARNING - Unauthorized: /login/
+2025-04-23 17:33:03,521 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:33:03,537 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:33:05,186 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:33:05,206 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:37:46,431 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:37:46,450 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:37:47,881 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:37:47,901 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:38:47,838 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-23 17:38:52,588 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-23 17:39:03,166 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:39:03,181 - WARNING - Not Found: /add_ticket/
+2025-04-23 17:40:25,190 - WARNING - Unauthorized: /login/
+2025-04-23 17:40:38,540 - WARNING - Conflict: /create_ticket/
+2025-04-23 17:42:54,673 - WARNING - Unauthorized: /login/
+2025-04-23 17:43:09,312 - WARNING - Unauthorized: /login/
+2025-04-23 17:44:24,793 - WARNING - Conflict: /create_ticket/

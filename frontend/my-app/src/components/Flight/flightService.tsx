@@ -16,3 +16,21 @@ export const fetchFlights = async (): Promise<FlightData[]> => {
     });
     return response.data;
   };
+
+
+  export const addTicketService = async (flight_id: number, token: string) => {
+    const response = await axios.post(
+      `${SERVER}/create_ticket/`,
+      { flight_id },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+  
+    return response.data;
+  };
+
+
