@@ -11,10 +11,11 @@ import Menu from '../Menu/menuComp.tsx';
 
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
-  const flights = useAppSelector(selectFlightsState);
-  const roleId = useAppSelector((state) => selectLoginState(state).roleId)
-  const userId = useAppSelector((state) => selectLoginState(state).userId)
-  const token = useAppSelector((state) => selectLoginState(state).token)
+  const flights = useAppSelector(selectFlightsState).flights;
+  const { roleId, userId, token } = useAppSelector(selectLoginState);
+  // const roleId = useAppSelector((state) => selectLoginState(state).roleId)
+  // const userId = useAppSelector((state) => selectLoginState(state).userId)
+  // const token = useAppSelector((state) => selectLoginState(state).token)
 
 
   useEffect(() => {

@@ -307,8 +307,8 @@ BEGIN
     FROM base_flight AS f
     JOIN base_airline as a ON f.airline_company_id_id = a.id
     JOIN base_country as co ON f.origin_country_id_id = co.id
-    JOIN base_country as cd ON f.destination_country_id_id = cd.id;
-
+    JOIN base_country as cd ON f.destination_country_id_id = cd.id
+    ORDER BY f.departure_time;
     END;
 $$ LANGUAGE plpgsql;
 

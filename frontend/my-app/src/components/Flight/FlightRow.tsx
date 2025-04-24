@@ -23,15 +23,15 @@ const FlightRow = ({ flight })   => {
 
   const handlePurchase = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
-    console.log(flightId);
-    await dispatch(addTicket({ flight_id: flightId }));
     try {
       await dispatch(addTicket({ flight_id: flightId })).unwrap();
       await dispatch(loadFlights());
     } catch (error) {
       console.error("Ticket purchase failed:", error);
     }
-  }
+  };
+  
+
   return (
     <tr>
       <td>{flight.flight_id}</td>

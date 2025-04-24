@@ -44,10 +44,11 @@ const Menu = () => {
         {roleId === 2 && (
           <>
         <Link to="/flightsboard">Board</Link>|{" "}
+        <Link to="/ticketslist">My Tickets</Link>|{" "}
           </>
         )}
         <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
-          LogOut1
+          LogOut
         </button>
       </nav>
       <Outlet />

@@ -1,12 +1,7 @@
 import { Airline } from './airline';
 import { Country } from './country';
+import { FlightStatus } from './FlightStatus';
 
-export enum FlightStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE',
-  DELAYED = 'DELAYED',
-  CANCELLED = 'CANCELLED',
-}
 
 export interface FlightData {
   id: number;

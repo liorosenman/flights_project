@@ -72,12 +72,13 @@ def update_customer(request, id):
 
 @api_view([('GET')])
 @role_required(Roles.CUSTOMER.value)
-@authorize_customer()
+# @authorize_customer()
 @decorators.update_flights_status()
-def get_my_tickets(request, id):
+def get_my_tickets(request):
+    the_customer_id = Customer.objects.get(airport_user=request.user).id
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_tickets_by_customer_id(%s)", [id])
+            cursor.execute("SELECT * FROM get_tickets_by_customer_id(%s)", [the_customer_id])
             rows = cursor.fetchall()
             if not rows:
                   return Response(
