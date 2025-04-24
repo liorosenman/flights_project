@@ -13652,3 +13652,4 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: get_my_tickets() missing 1 required positional argument: 'id'
 2025-04-24 11:58:29,920 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-24 12:30:29,014 - WARNING - Conflict: /create_ticket/

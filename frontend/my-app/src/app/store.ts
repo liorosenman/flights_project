@@ -5,6 +5,7 @@ import flightReducer from '../components/Flight/flightSlice.tsx'
 import  userReducer  from '../components/createusers/createUserSlicer.tsx';
 import countryReducer from '../components/countries/countrySlicer.tsx';
 import airlineReducer from '../components/airline/airlineSlicer.tsx';
+import ticketReducer from '../components/ticket/ticketSlicer.tsx';
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     country: countryReducer,
     airline: airlineReducer,
     flight: flightReducer,
+    ticket: ticketReducer,
   },
 });
 

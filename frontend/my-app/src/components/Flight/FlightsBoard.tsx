@@ -9,6 +9,8 @@ import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { UserRole } from '../../models/userRole.ts';
 import Menu from '../Menu/menuComp.tsx';
 
+
+
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlightsState).flights;

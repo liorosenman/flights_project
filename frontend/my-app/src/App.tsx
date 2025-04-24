@@ -10,7 +10,7 @@ import CreateAdmin from './components/createusers/CreateAdminComp.tsx';
 import CreateFlightComp from './components/airline/CreateFlightComp.tsx';
 import FlightsBoard from './components/Flight/FlightsBoard.tsx';
 import { useAppSelector } from './app/hooks.ts';
-import TicketComp from './components/ticket/TicketComp.tsx';
+import TicketsList from './components/ticket/TicketsList.tsx';
 
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/createadmin" element={<CreateAdmin />} />
         <Route path="/createflight" element={<CreateFlightComp />} />
         <Route path="/flightsboard" element = {<FlightsBoard />} />
-        <Route path="/ticketslist" element = {<TicketComp />} />
+        <Route path="/ticketslist" element = {<TicketsList />} />
                      
 
 
