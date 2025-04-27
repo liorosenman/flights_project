@@ -13653,3 +13653,64 @@ Traceback (most recent call last):
 TypeError: get_my_tickets() missing 1 required positional argument: 'id'
 2025-04-24 11:58:29,920 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-04-24 12:30:29,014 - WARNING - Conflict: /create_ticket/
+2025-04-24 16:12:34,636 - WARNING - Unauthorized: /get_my_tickets/
+2025-04-24 16:12:34,648 - WARNING - Unauthorized: /get_my_tickets/
+2025-04-24 16:59:09,195 - WARNING - Forbidden: /get_my_tickets/
+2025-04-24 16:59:09,214 - WARNING - Forbidden: /get_my_tickets/
+2025-04-27 10:33:42,281 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:33:44,489 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:35:40,148 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:42:14,089 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:42:19,504 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:42:26,889 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:42:29,128 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 10:43:22,825 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-27 10:43:39,831 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-27 11:12:23,824 - WARNING - Unauthorized: /create_flight/
+2025-04-27 11:16:08,670 - WARNING - Unauthorized: /create_flight/
+2025-04-27 11:17:54,291 - WARNING - Unauthorized: /login/
+2025-04-27 11:18:31,626 - WARNING - Unauthorized: /get_my_flights/
+2025-04-27 11:18:31,634 - WARNING - Unauthorized: /get_my_flights/
+2025-04-27 11:21:53,958 - WARNING - Unauthorized: /login/
+2025-04-27 11:22:27,506 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:22:27,538 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:27:18,505 - WARNING - Method Not Allowed: /get_all_flights/
+2025-04-27 11:28:50,680 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 11:28:58,065 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 11:29:14,732 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 11:29:27,425 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 11:30:10,844 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 11:30:45,132 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:35:18,664 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:35:18,702 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:36:21,190 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:36:21,241 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:37:21,995 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:37:22,022 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:39:37,699 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:39:37,726 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:40:04,048 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:40:04,077 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:42:32,819 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:42:32,875 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:43:46,898 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:43:46,963 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:49:28,125 - WARNING - Unauthorized: /login/
+2025-04-27 11:51:12,974 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:51:13,032 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:54:40,352 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:54:40,411 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:55:16,835 - WARNING - Not Found: /get_my_flights/
+2025-04-27 11:55:16,914 - WARNING - Not Found: /get_my_flights/
+2025-04-27 12:10:21,110 - WARNING - Not Found: /get_my_flights/
+2025-04-27 12:10:21,202 - WARNING - Not Found: /get_my_flights/
+2025-04-27 12:10:55,343 - WARNING - Unauthorized: /login/
+2025-04-27 12:11:25,488 - WARNING - Unauthorized: /login/
+2025-04-27 12:11:35,975 - WARNING - Not Found: /get_my_flights/
+2025-04-27 12:11:36,035 - WARNING - Not Found: /get_my_flights/
+2025-04-27 12:12:39,268 - WARNING - Successful flight creation.
+2025-04-27 12:14:55,435 - WARNING - Successful flight creation.
+2025-04-27 12:18:39,497 - WARNING - Bad Request: /remove_flight/32/
+2025-04-27 12:24:08,977 - WARNING - Bad Request: /remove_flight/32/
+2025-04-27 12:24:37,217 - WARNING - Unauthorized: /login/
+2025-04-27 12:26:22,478 - WARNING - Conflict: /create_ticket/

@@ -49,38 +49,6 @@ const LoginComp: React.FC = () => {
       console.error('Login failed', error);
     }
   };
-  
-
-  // useEffect(() => {
-  //       console.log("GGGGGGGGGGGGGGGGGGGGG");
-  //       console.log(token);
-        
-  //       if (token != null){
-  //       try{
-  //       const decoded: any = jwtDecode(token);
-  //       console.log(decoded);
-  //       const roleId = decoded.role_id;
-  //       switch (roleId) {
-  //         case 1:
-  //           navigate('/users');
-  //           break;
-  //         case 2:
-  //           navigate('/createflight');
-  //           break;
-  //         case 3:
-  //           console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-  //           navigate('/createflight');
-  //           break;
-  //         default:
-  //           console.log('Unknown user role: Staying on the login page');
-  //           break;
-  //       }
-        
-  //     } catch (error) {
-  //       console.error('Error decoding token:', error);
-  //     }
-  //   }
-  // }, [token]);
 
   return (
     <div className="container">

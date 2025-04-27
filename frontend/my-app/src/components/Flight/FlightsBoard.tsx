@@ -8,7 +8,7 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
 import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { UserRole } from '../../models/userRole.ts';
 import Menu from '../Menu/menuComp.tsx';
-
+import { clearFlightState } from './flightSlice.tsx';
 
 
 const FlightsBoard: React.FC = () => {
@@ -35,6 +35,13 @@ const FlightsBoard: React.FC = () => {
 
     })();
   }, [])
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearFlightState());
+    };
+  }, [dispatch]);
+
 
 
   return (

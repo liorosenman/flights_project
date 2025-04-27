@@ -100,13 +100,13 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
    if not flight.status == 'active':
 #    if flight.status is not 'active':
       return Response(
-            {"message": "This flight cannot be deactivated because it is not active."},
+            {"error": "This flight cannot be deactivated because it is already inactive."},
             status=status.HTTP_400_BAD_REQUEST
         )
-   active_tickets = Ticket.objects.filter(flight_id=id, status__in=['active', 'tookoff', 'landed'])
+   active_tickets = Ticket.objects.filter(flight_id=id, status__in=['active', 'tookoff'])
    if active_tickets: # If there are active ticket in this to-be-deleted flight.
       return Response(
-            {"message": "There are active or taken-off tickets associated with this flight."},
+            {"error": "There are active or taken-off tickets associated with this flight."},
             status=status.HTTP_400_BAD_REQUEST
         )
    flight.status = 'canceled'
@@ -122,6 +122,7 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
 @decorators.update_flights_status()
 def get_my_flights(request):
     the_airline_id = Airline.objects.get(airport_user=request.user).id
+    print(f"THE AIRLINE ID IS {the_airline_id}")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [the_airline_id])

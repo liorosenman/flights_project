@@ -1,15 +1,37 @@
 import axios from 'axios'
-import {FlightData} from '../../models/flightdata.ts'
-const SERVER = "http://127.0.0.1:8000/";
+import { FlightData } from '../../models/flightdata.ts'
+const SERVER = "http://127.0.0.1:8000";
 
 export const fetchFlights = async (): Promise<FlightData[]> => {
-    const response = await axios.get(SERVER + "get_all_flights/");
-    return response.data.flights;
- };
+  const response = await axios.get(SERVER + "/get_all_flights/");
+  return response.data.flights;
+};
 
- // Specific airline's flights
- export const getMyFlightsService = async (token: string) => {
-    const response = await axios.get(`${SERVER}/get_my_flights/`, {
+// Specific airline's flights
+export const getMyFlightsService = async (token: string) => {
+  const response = await axios.get(`${SERVER}/get_my_flights/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
+
+export const addTicketService = async (flight_id: number, token: string) => {
+  const response = await axios.post(
+    `${SERVER}/create_ticket/`,
+    { flight_id },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+}
+  export const removeFlightService = async (id: number, token: string) => {
+    const response = await axios.put(`${SERVER}/remove_flight/${id}/`, null, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -17,20 +39,5 @@ export const fetchFlights = async (): Promise<FlightData[]> => {
     return response.data;
   };
 
-
-  export const addTicketService = async (flight_id: number, token: string) => {
-    const response = await axios.post(
-      `${SERVER}/create_ticket/`,
-      { flight_id },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-  
-    return response.data;
-  };
 
 
