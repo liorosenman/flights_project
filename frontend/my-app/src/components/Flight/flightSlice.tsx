@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { addTicketService, fetchFlights, removeFlightService } from './flightService.tsx';
+import { addTicketService, fetchFlights, removeFlightService, updateFlightService } from './flightService.tsx';
 import { FlightData } from '../../models/flightdata';
-import { RootState } from '../../app/store.ts';
+import { AppDispatch, RootState } from '../../app/store.ts';
 import { getMyFlightsService} from './flightService.tsx';
 import axios from 'axios';
 
@@ -11,6 +11,7 @@ export interface FlightState {
     error: string | null;
     successMsg: string | null;
     targetFlightId: number | null;
+    toBeUpdatedFlight: number | null;
   }
 
   const initialState: FlightState = {
@@ -19,6 +20,7 @@ export interface FlightState {
     error: null,
     successMsg: null,
     targetFlightId: null,
+    toBeUpdatedFlight: null,
   };
 
   export const loadFlights = createAsyncThunk<FlightData[], void, { rejectValue: string }>(
@@ -56,6 +58,7 @@ export const addTicket = createAsyncThunk<
 >(
   'flight/addTicket',
   async ({ flight_id }, { getState, rejectWithValue }) => {
+    
     const token = getState().login.token;
     if (!token) return rejectWithValue('No token');
 
@@ -69,18 +72,44 @@ export const addTicket = createAsyncThunk<
   }
 );
 
-export const removeFlight = createAsyncThunk<string,number,  { state: RootState }>(
-  'flight/removeFlight',
-  async (flightId, { getState, rejectWithValue }) => {
+export const removeFlight = createAsyncThunk<
+  string,                           
+  { flight_id: number },              
+  { rejectValue: string; dispatch: AppDispatch, state:RootState } 
+>(
+  'flights/removeFlight',
+  async ({ flight_id }, { dispatch, rejectWithValue, getState }) => { 
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No token');
     try {
-      const token = getState().login.token; // adjust if your login slice is different
-      if (!token) {
-        return rejectWithValue('No access token available');
-      }
-      const result = await removeFlightService(flightId, token);
-      return result.message;
+      dispatch(setTargetFlightId(flight_id)); 
+      const response = await removeFlightService(flight_id, token); 
+      return response.message;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.error || 'Flight removal failed.');
+      return rejectWithValue(error.response?.data?.error || 'Failed to remove flight.');
+    }
+  }
+);
+
+export const updateFlight = createAsyncThunk<
+  string,  
+  { flightId: number; newDepTime: string },
+  { state: RootState }
+>(
+  'flight/updateFlight',
+  async ({ flightId, newDepTime }, { getState, rejectWithValue }) => {
+    // clearFlightState();
+    try {
+      const token = getState().login.token;
+      if (!token) {
+        return rejectWithValue('No access token available.');
+      }
+      const result = await updateFlightService(flightId, newDepTime, token);
+      return result.message; 
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Flight update failed.'
+      );
     }
   }
 );
@@ -93,17 +122,26 @@ export const removeFlight = createAsyncThunk<string,number,  { state: RootState 
     initialState,
     reducers: {
       clearFlightState: (state) => {
-        state.flights = [];
+        // state.flights = [];
         state.loading = false;
         state.error = null;
         state.successMsg = null;
+        state.toBeUpdatedFlight = null;
       },
+
+      setTargetFlightId: (state, action) => {
+        state.targetFlightId = action.payload;
+      },
+
+      setToBeUpdFlightId: (state, action) => {
+        state.toBeUpdatedFlight = action.payload;
     },
+  },
     extraReducers: (builder) => {
       builder
         .addCase(loadFlights.pending, (state) => {
           state.loading = true;
-          state.error = ""
+          state.error = "";
         })
         .addCase(loadFlights.fulfilled, (state, action) => {
             state.loading = false;
@@ -150,11 +188,25 @@ export const removeFlight = createAsyncThunk<string,number,  { state: RootState 
         })
         .addCase(removeFlight.rejected, (state, action) => {
           state.loading = false;
-          state.error = action.payload as string || 'Ticket purchasing failure.';
+          state.error = action.payload as string || 'Flight removal failure.';
+        })
+        .addCase(updateFlight.pending, (state) => {
+          state.loading = true;
+          state.error = ""
+        })
+        .addCase(updateFlight.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = null;
+            state.successMsg = action.payload as string
+        })
+        .addCase(updateFlight.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || 'Flight removal failure.';
         });
-    },
+
+    }
   });
 
   export default flightSlice.reducer;
   export const selectFlightsState = (state: RootState) => state.flight
-  export const { clearFlightState } = flightSlice.actions;
+  export const { clearFlightState, setTargetFlightId, setToBeUpdFlightId} = flightSlice.actions;

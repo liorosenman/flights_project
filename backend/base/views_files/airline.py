@@ -10,7 +10,7 @@ from base.decorators import airline_flight_auth, authorize_airline, flight_detai
 from base.permission import role_required
 from ..models import Airline, Flight, Roles, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, FlightSerializer
-from django.utils.timezone import now, make_aware
+from django.utils.timezone import now, make_aware, is_naive
 from django.db import connection
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -58,6 +58,7 @@ def update_flight(request, id):
             {"message": "Only active flights can be updated."},
             status=status.HTTP_400_BAD_REQUEST
         )
+    
     new_dep_time_str = request.data.get('new_dep_time')
     if not new_dep_time_str:
         return Response(
@@ -66,11 +67,14 @@ def update_flight(request, id):
         )
     try:
         new_dep_time = datetime.fromisoformat(new_dep_time_str)
+        if is_naive(new_dep_time):
+            new_dep_time = make_aware(new_dep_time)
     except ValueError:
         return Response(
             {"message": "Invalid datetime format for 'new_dep_time'."},
-            status=status.HTTP_400_BAD_REQUEST
-        )
+            status=status.HTTP_400_BAD_REQUEST)
+   
+
     # new_dep_time = make_aware(new_dep_time)
     current_time = now()
     if current_time > new_dep_time:

@@ -28,19 +28,19 @@ def conditions_for_booking_a_flight():
         def wrapper(request, *args, **kwargs):
             customer = get_object_or_404(Customer, airport_user_id = request.user.id)
             if not request.user.is_active:
-                return Response({"Error": "This client is not active."}, status=status.HTTP_403_FORBIDDEN)
+                return Response({"error": "This client is not active."}, status=status.HTTP_403_FORBIDDEN)
             flight_id = request.data.get('flight_id')
             flight = get_object_or_404(Flight, id= flight_id)
             # if not flight.is_active:
             if not flight.status == 'active':
-                return Response({"Error": "Canceled or already took off flight."}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Canceled or already took off flight."}, status=status.HTTP_400_BAD_REQUEST)
             # ticket = get_object_or_404(Ticket, flight_id=flight_id, customer_id=customer.id, is_active=True)
 
             ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, status='active').first()
             if ticket:
-                return Response({"Error": "This customer already has a ticket for this flight."}, status=status.HTTP_409_CONFLICT)
+                return Response({"error": "This customer already has a ticket for this flight."}, status=status.HTTP_409_CONFLICT)
             if flight.remaining_tickets <= 0:
-                return Response({"Error": "Sold-Out!"}, status=status.HTTP_410_GONE)
+                return Response({"error": "Sold-Out!"}, status=status.HTTP_410_GONE)
             return func(request, *args, **kwargs)
         return wrapper
     return decorator

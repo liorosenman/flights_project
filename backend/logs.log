@@ -13714,3 +13714,270 @@ TypeError: get_my_tickets() missing 1 required positional argument: 'id'
 2025-04-27 12:24:08,977 - WARNING - Bad Request: /remove_flight/32/
 2025-04-27 12:24:37,217 - WARNING - Unauthorized: /login/
 2025-04-27 12:26:22,478 - WARNING - Conflict: /create_ticket/
+2025-04-27 15:32:31,177 - WARNING - Successful flight creation.
+2025-04-27 15:33:16,041 - WARNING - Bad Request: /remove_flight/32/
+2025-04-27 15:37:56,233 - WARNING - Successful flight creation.
+2025-04-27 15:38:51,729 - WARNING - Unauthorized: /login/
+2025-04-27 15:39:11,635 - WARNING - Gone: /create_ticket/
+2025-04-27 15:41:09,105 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-27 15:41:11,188 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-27 15:41:14,216 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-27 15:41:17,258 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-27 15:41:36,214 - WARNING - Gone: /create_ticket/
+2025-04-27 17:20:20,844 - WARNING - Bad Request: /create_flight/
+2025-04-27 17:21:59,426 - WARNING - Successful flight creation.
+2025-04-27 17:22:26,340 - ERROR - Internal Server Error: /update_flight/35/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 76, in update_flight
+    if current_time > new_dep_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-04-27 17:24:08,855 - ERROR - Internal Server Error: /update_flight/35/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 76, in update_flight
+    if current_time > new_dep_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-04-27 17:26:18,530 - ERROR - Internal Server Error: /update_flight/35/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 76, in update_flight
+    if current_time > new_dep_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-04-27 17:31:59,763 - WARNING - Successful flight creation.
+2025-04-27 17:33:01,596 - ERROR - Internal Server Error: /update_flight/36/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 76, in update_flight
+    if current_time > new_dep_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-04-27 17:37:28,870 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:38:33,979 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:39:48,084 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:40:56,541 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:40:59,557 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:41:01,602 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:41:36,980 - ERROR - Internal Server Error: /update_flight/36/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 61, in update_flight
+    if not new_dep_time_str:
+           ^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_dep_time_str' where it is not associated with a value
+2025-04-27 17:42:20,082 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:42:41,000 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:43:02,927 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:46:02,077 - ERROR - Internal Server Error: /update_flight/36/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 307, in wrapper
+    return func(request, id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\airline.py", line 62, in update_flight
+    if not new_dep_time:
+           ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_dep_time' where it is not associated with a value
+2025-04-27 17:48:02,403 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:48:11,819 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:48:13,830 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:48:38,682 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:48:42,822 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.

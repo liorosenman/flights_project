@@ -39,5 +39,19 @@ export const addTicketService = async (flight_id: number, token: string) => {
     return response.data;
   };
 
+  export const updateFlightService = async (flightId: number, newDepTime: string, token: string) => {
+    const response = await axios.put(
+      `${SERVER}/update_flight/${flightId}/`,
+      { new_dep_time: newDepTime },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    return response.data;
+  };
+
 
 
