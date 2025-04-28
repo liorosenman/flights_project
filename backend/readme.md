@@ -233,6 +233,8 @@
     1. Customer register & errors // DONE & TESTED
     2. Airline register & errors // DONE& TESTED
     3. Admin register $ errors // DONE & TESTED
+# ------------28/04/2025------------------------
+    1. get_flight_by_id --- Successful return will send flight only, no message. (views.py)
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

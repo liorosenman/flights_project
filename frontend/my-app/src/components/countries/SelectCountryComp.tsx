@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { fetchCountries } from './countrySlicer.tsx';
 
 interface Props {
+  label: string, 
   value: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

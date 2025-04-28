@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addTicketService, fetchFlights, removeFlightService, updateFlightService } from './flightService.tsx';
 import { FlightData } from '../../models/flightdata';
 import { AppDispatch, RootState } from '../../app/store.ts';
-import { getMyFlightsService} from './flightService.tsx';
+import { getMyFlightsService, getFlightByIdService} from './flightService.tsx';
 import axios from 'axios';
 
 export interface FlightState {
@@ -36,6 +36,7 @@ export interface FlightState {
     }
   );
 
+  //The flights are for a specific airline.
 export const getMyFlights = createAsyncThunk(
   'airline/getMyFlights',
   async ({ token }: { token: string | null }, { rejectWithValue }) => {
@@ -109,6 +110,28 @@ export const updateFlight = createAsyncThunk<
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || 'Flight update failed.'
+      );
+    }
+  }
+);
+
+export const getFlightById = createAsyncThunk<
+  any, // (You can replace 'any' with a FlightData type if you have)
+  number,
+  { state: RootState }
+>(
+  'flight/getFlightById',
+  async (id, { getState, rejectWithValue }) => {
+    try {
+      const token = getState().login.token;
+      if (!token) {
+        return rejectWithValue('No access token available.');
+      }
+      const result = await getFlightByIdService(id, token);
+      return result.flight; // returning only the flight object
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || error.message || 'Flight retrieval failed.'
       );
     }
   }
@@ -197,6 +220,19 @@ export const updateFlight = createAsyncThunk<
             state.successMsg = action.payload as string
         })
         .addCase(updateFlight.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || 'Flight removal failure.';
+        })
+        .addCase(getFlightById.pending, (state) => {
+          state.loading = true;
+          state.error = ""
+        })
+        .addCase(getFlightById.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = null;
+            state.flights = [action.payload];
+        })
+        .addCase(getFlightById.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string || 'Flight removal failure.';
         });

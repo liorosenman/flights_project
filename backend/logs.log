@@ -14006,3 +14006,20 @@ UnboundLocalError: cannot access local variable 'new_dep_time' where it is not a
 2025-04-28 11:06:59,622 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-04-28 11:07:03,685 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-04-28 11:07:10,889 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-28 12:25:05,100 - WARNING - Unauthorized: /remove_ticket/7/
+2025-04-28 12:33:37,755 - WARNING - Successful flight creation.
+2025-04-28 12:34:11,086 - WARNING - Conflict: /create_ticket/
+2025-04-28 12:37:00,709 - WARNING - Successful flight creation.
+2025-04-28 12:37:37,552 - WARNING - Successful flight creation.
+2025-04-28 12:52:23,906 - WARNING - Successful flight creation.
+2025-04-28 12:53:03,424 - WARNING - Successful flight creation.
+2025-04-28 12:57:17,610 - WARNING - Successful flight creation.
+2025-04-28 13:01:33,767 - WARNING - Successful flight creation.
+2025-04-28 13:02:18,711 - WARNING - Successful flight creation.
+2025-04-28 13:07:54,965 - WARNING - Successful flight creation.
+2025-04-28 13:08:41,146 - WARNING - Successful flight creation.
+2025-04-28 16:17:23,949 - WARNING - Unauthorized: /get_my_flights/
+2025-04-28 16:17:23,963 - WARNING - Unauthorized: /get_my_flights/
+2025-04-28 17:28:39,380 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-04-28 18:27:37,777 - WARNING - Unauthorized: /get_flight_by_id/6/
+2025-04-28 18:27:37,791 - WARNING - Unauthorized: /get_flight_by_id/6/

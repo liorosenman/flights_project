@@ -234,7 +234,7 @@ def get_flight_by_id(request, id):
             columns = [col[0] for col in cursor.description]
             flight = dict(zip(columns, row))
             return Response(
-                {"message": "Flight retrieved successfully.", "flight": flight},
+                {"flight": flight},
                 status=status.HTTP_200_OK
             )
     except Exception as e:

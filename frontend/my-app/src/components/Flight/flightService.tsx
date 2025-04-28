@@ -53,5 +53,16 @@ export const addTicketService = async (flight_id: number, token: string) => {
     return response.data;
   };
 
+  // flightService.ts
+export const getFlightByIdService = async (id: number, token: string) => {
+  const response = await axios.get(`${SERVER}/get_flight_by_id/${id}/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
+
 
 

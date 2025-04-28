@@ -6,8 +6,16 @@ import { addTicket, getMyFlights, loadFlights, removeFlight, selectFlightsState,
 import { FlightState } from './flightSlice.tsx';
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { setTargetFlightId, setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
+import { FlightData } from '../../models/flightdata.ts';
+import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 
-const FlightRow = ({ flight }) => {
+interface FlightRowProps {
+  flight: LinkedFlightData;   
+  onRefilter: () => Promise<void>; 
+}
+
+
+const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   // const [error, setError] = useState<string | null>(null);
   // const [targetFlightId, setTargetFlightId] = useState<number | null>(null);
   // const [successMsg, setSuccessMsg, ]
@@ -17,11 +25,14 @@ const FlightRow = ({ flight }) => {
   const { loading } = useAppSelector(selectFlightsState);
   const { targetFlightId, error, successMsg, toBeUpdatedFlight } = useAppSelector(selectFlightsState);
 
+
+
   const handlePurchase = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
     try {
       await dispatch(addTicket({ flight_id: flightId })).unwrap();
-      await dispatch(loadFlights());
+      await onRefilter(); 
+
     } catch (error) {
       console.error("Ticket purchase failed:", error);
     }
