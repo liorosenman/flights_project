@@ -114,9 +114,6 @@ export const updateFlight = createAsyncThunk<
   }
 );
 
-
-
-
   const flightSlice = createSlice({
     name: 'flight',
     initialState,

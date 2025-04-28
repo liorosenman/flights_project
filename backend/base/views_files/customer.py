@@ -54,7 +54,7 @@ def remove_ticket(request, id):
     flight.remaining_tickets += 1
     flight.save()
     ticket.save()
-    return Response({"msg": "Ticket removed", "ticket_id": id, "remaining_tickets" : flight.remaining_tickets}, status=status.HTTP_200_OK)
+    return Response({"message": "Ticket removed", "ticket_id": id, "remaining_tickets" : flight.remaining_tickets}, status=status.HTTP_200_OK)
 
 
 @api_view(['PUT'])

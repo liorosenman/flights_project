@@ -107,29 +107,31 @@ $$ LANGUAGE plpgsql;
 -- ####################################################################################
 CREATE OR REPLACE FUNCTION get_tickets_by_customer_id(customer_id BIGINT)
 RETURNS TABLE (
-ticket_id BIGINT,
-flight_id BIGINT,
-origin_country TEXT,
-destination_country TEXT,
-departure_time TIMESTAMP,
-status TEXT,
+  ticket_id BIGINT,
+  flight_id BIGINT,
+  origin_country TEXT,
+  destination_country TEXT,
+  departure_time TIMESTAMP,
+  ticket_status TEXT
 ) AS $$
 BEGIN
-    RETURN QUERY
-    SELECT 
+  RETURN QUERY
+  SELECT 
     t.id::BIGINT AS ticket_id,
     f.id::BIGINT AS flight_id,
     co.name::TEXT AS origin_country,
     cd.name::TEXT AS destination_country,
-    f.departure_time::TIMESTAMP as departure_time,
+    f.departure_time::TIMESTAMP AS departure_time,
     t.status::TEXT AS ticket_status
-    FROM base_ticket AS t    
-    JOIN base_flight AS f ON t.flight_id_id = f.id
-    JOIN base_country AS co ON f.origin_country_id_id = co.id
-    JOIN base_country AS cd ON f.destination_country_id_id = cd.id
-    WHERE t.customer_id_id = customer_id;
+  FROM base_ticket AS t    
+  JOIN base_flight AS f ON t.flight_id_id = f.id
+  JOIN base_country AS co ON f.origin_country_id_id = co.id
+  JOIN base_country AS cd ON f.destination_country_id_id = cd.id
+  WHERE t.customer_id_id = customer_id
+  ORDER BY f.departure_time;
 END;
 $$ LANGUAGE plpgsql;
+
 
 
 -- ####################################################################################

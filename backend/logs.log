@@ -13981,3 +13981,28 @@ UnboundLocalError: cannot access local variable 'new_dep_time' where it is not a
 2025-04-27 17:48:13,830 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-04-27 17:48:38,682 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-04-27 17:48:42,822 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-04-27 17:49:47,219 - WARNING - Method Not Allowed: /get_flight_by_id/36/
+2025-04-27 17:52:38,612 - WARNING - Successful flight creation.
+2025-04-27 17:55:23,316 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:08:37,629 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:10:09,805 - WARNING - Bad Request: /remove_flight/34/
+2025-04-27 18:12:45,029 - WARNING - Bad Request: /update_flight/34/
+2025-04-27 18:13:09,424 - WARNING - Bad Request: /update_flight/34/
+2025-04-27 18:14:56,394 - WARNING - Method Not Allowed: /update_flight/37/
+2025-04-27 18:14:59,608 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:16:00,969 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:22:49,380 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:25:52,162 - WARNING - Bad Request: /remove_flight/34/
+2025-04-27 18:25:59,599 - WARNING - Bad Request: /remove_flight/32/
+2025-04-27 18:37:46,597 - WARNING - Bad Request: /update_flight/37/
+2025-04-27 18:40:11,949 - WARNING - Bad Request: /update_flight/34/
+2025-04-27 18:40:31,725 - WARNING - Bad Request: /update_flight/34/
+2025-04-27 18:43:57,778 - WARNING - Bad Request: /update_flight/34/
+2025-04-28 11:06:04,419 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-28 11:06:07,481 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-28 11:06:10,546 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-28 11:06:16,752 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-04-28 11:06:47,116 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-28 11:06:59,622 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-28 11:07:03,685 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-04-28 11:07:10,889 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.

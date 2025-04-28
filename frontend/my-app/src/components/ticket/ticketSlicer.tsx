@@ -7,21 +7,22 @@ import { selectLoginState } from '../Login/loginSlice.tsx';
 import { FlightData } from '../../models/flightdata.ts';
 import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { TicketData } from '../../models/TicketData.ts';
-import {  getMyTicketsService } from './ticketService.tsx';
+import {  cancelTicketService, getMyTicketsService } from './ticketService.tsx';
 
 export interface ticketstate {
     tickets : TicketData[]
     error: string | null;
     loading: boolean;
     SuccessMessage: string | null;
+    targetFlightId: string | null;
   }
   
 const initialState: ticketstate = {
   tickets : [],
   error : null,
   loading: false,
-  SuccessMessage: null
-
+  SuccessMessage: null,
+  targetFlightId: null,
 };
 
 export const getMyTickets = createAsyncThunk(
@@ -35,6 +36,29 @@ export const getMyTickets = createAsyncThunk(
       return data.tickets;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Failed to retrieve Tickets.');
+    }
+  }
+);
+
+export const cancelTicket = createAsyncThunk<
+  string, // Return type on success
+  number, // Argument type (ticketId)
+  { state: RootState }
+>(
+  'ticket/cancelTicket',
+  async (ticketId, { getState, rejectWithValue }) => {
+    try {
+      const token = getState().login.token; // adjust if your login slice is different
+      if (!token) {
+        return rejectWithValue('No access token available.');
+      }
+
+      const result = await cancelTicketService(ticketId, token);
+      return result.message; // assuming your Django returns { message: "..." }
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Ticket cancelation failed.'
+      );
     }
   }
 );

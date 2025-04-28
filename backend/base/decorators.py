@@ -57,11 +57,12 @@ def conditions_for_cancel_a_ticket():
                 # logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
                 logger.warning(f"User {current_customer_id} tried to remove a ticket of another user")
                 return Response(
-                    {'msg': 'This is a ticket of another customer.'}, 
+                    {'message': 'This is a ticket of another customer.'}, 
                     status=status.HTTP_403_FORBIDDEN
                 )
             if not ticket.status == 'active':
-                return Response({"msg": "Canceled ticket or already tookoff flight"}, status=status.HTTP_200_OK)
+                return Response({"message": "Canceled ticket or already tookoff flight"}
+                    , status=status.HTTP_200_OK)
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator
