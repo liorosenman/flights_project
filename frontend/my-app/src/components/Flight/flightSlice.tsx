@@ -4,9 +4,10 @@ import { FlightData } from '../../models/flightdata';
 import { AppDispatch, RootState } from '../../app/store.ts';
 import { getMyFlightsService, getFlightByIdService} from './flightService.tsx';
 import axios from 'axios';
+import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 
 export interface FlightState {
-    flights: FlightData[];
+    flights: LinkedFlightData[];
     loading: boolean;
     error: string | null;
     successMsg: string | null;
@@ -23,7 +24,7 @@ export interface FlightState {
     toBeUpdatedFlight: null,
   };
 
-  export const loadFlights = createAsyncThunk<FlightData[], void, { rejectValue: string }>(
+  export const loadFlights = createAsyncThunk<LinkedFlightData[], void, { rejectValue: string }>(
     'flight/loadFlights',
     async (_, { rejectWithValue }) => {
       try {

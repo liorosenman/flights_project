@@ -104,7 +104,7 @@ const FlightsBoard: React.FC = () => {
         </thead>
         <tbody>
           {flights.map(flight => (
-            <FlightRow flight={flight} onRefilter={() => handleFilterClick()}  />
+            <FlightRow flight={flight} onRefilter={() => handleFilterClick(lastFilters)}  />
           ))}
         </tbody>
       </table>

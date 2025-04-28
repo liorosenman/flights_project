@@ -14023,3 +14023,21 @@ UnboundLocalError: cannot access local variable 'new_dep_time' where it is not a
 2025-04-28 17:28:39,380 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-04-28 18:27:37,777 - WARNING - Unauthorized: /get_flight_by_id/6/
 2025-04-28 18:27:37,791 - WARNING - Unauthorized: /get_flight_by_id/6/
+2025-04-28 18:29:26,408 - WARNING - Not Found: /get_my_flights/6/
+2025-04-28 18:29:39,608 - WARNING - Unauthorized: /get_flight_by_id/6/
+2025-04-28 19:47:42,360 - WARNING - Unauthorized: /get_flight_by_id/40/
+2025-04-28 19:47:57,520 - WARNING - Unauthorized: /get_flight_by_id/40/
+2025-04-28 19:47:57,535 - WARNING - Unauthorized: /get_flight_by_id/40/
+2025-04-28 19:48:06,221 - WARNING - Unauthorized: /get_flight_by_id/40/
+2025-04-28 19:48:06,235 - WARNING - Unauthorized: /get_flight_by_id/40/
+2025-04-28 19:48:32,098 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:48:32,120 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:51:03,650 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:52:32,890 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:55:48,811 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:57:37,057 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 19:58:24,596 - WARNING - Unauthorized: /get_flight_by_id/5/
+2025-04-28 20:02:36,826 - WARNING - Unauthorized: /get_my_tickets/
+2025-04-28 20:02:36,838 - WARNING - Unauthorized: /get_my_tickets/
+2025-04-28 21:06:30,423 - WARNING - Unauthorized: /get_flight_by_id/9/
+2025-04-28 21:06:32,117 - WARNING - Unauthorized: /get_flight_by_id/9/
