@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { selectLoginState } from '../Login/loginSlice.tsx';
-import { cancelTicket, getMyTickets } from './ticketSlicer.tsx';
+import { cancelTicket, getMyTickets, selectTicketState } from './ticketSlicer.tsx';
+import { clearTicketsState } from './ticketSlicer.tsx';
 
 const TicketRow = ({ ticket }) => {
   const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
   const dispatch = useAppDispatch();
-  const [cancelSuccess, setCancelSuccess] = useState<{ [key: number]: string }>({});
-  const [cancelError, setCancelError] = useState<{ [key: number]: string }>({});
+  const { targetTicketId, error, SuccessMessage } = useAppSelector(selectTicketState);
+  // const [cancelSuccess, setCancelSuccess] = useState<{ [key: number]: string }>({});
+  // const [cancelError, setCancelError] = useState<{ [key: number]: string }>({});
 
   const handleRemoval = async (e: React.MouseEvent, ticketId: number) => {
     e.preventDefault();
-    setCancelSuccess({});
-    setCancelError({});
+    dispatch(clearTicketsState())
     try {
-      const response = await dispatch(cancelTicket(ticketId)).unwrap();
-      console.log(response);
-      setCancelSuccess({ [ticketId]: response });
+      await dispatch(cancelTicket(ticketId)).unwrap();
     } catch (error) {
-      setCancelError({ [ticketId]: error || 'Failed to cancel ticket.' });
+      console.error("Ticket removal failed.");
+      
     }
     await dispatch(getMyTickets({ token }));
   };
@@ -42,10 +42,10 @@ const TicketRow = ({ ticket }) => {
         )}
       </tr>
 
-      {(cancelError[ticket.ticket_id] || cancelSuccess[ticket.ticket_id]) && (
+      {((targetTicketId === ticket.ticket_id) && (error || SuccessMessage)) && (
         <tr>
-          <td colSpan={9} style={{ textAlign: 'center', color: cancelError[ticket.ticket_id] ? 'red' : 'green' }}>
-            {cancelError[ticket.ticket_id] || cancelSuccess[ticket.ticket_id]}
+          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+            {error || SuccessMessage}
           </td>
         </tr>
       )}

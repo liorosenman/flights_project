@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { FlightData } from '../../models/flightdata.ts'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
+import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
 
 const SERVER = "http://127.0.0.1:8000";
 
@@ -66,6 +67,40 @@ export const getFlightByIdService = async (id: number, token: string) => {
   return response.data;
 };
 
+
+export const getFlightsByAirlineIdService = async (airlineId: number) => {
+  console.log("THE ID OF THE AIRLINE IS ", airlineId);
+  const response = await axios.get(`${SERVER}/get_flights_by_airline_id/${airlineId}/`);
+  console.log("EEEEEEEEEEEEEEEEEEEEEEE");
+  console.log(response);
+  return response.data;
+};
+
+
+export const getAllAirlinesService = async () => {
+  const response = await axios.get(`${SERVER}/get_all_airlines/`);
+  return response.data;
+};
+
+
+  export const getFlightsByParametersService = async (params: FlightSearchParams) => {
+    const response = await axios.post(`${SERVER}/get_flights_by_parameters/`, params);
+    return response.data;
+  };
+
+  export const getArrivalFlightsService = async (countryId: number) => {
+    console.log("THE CHOSEN COUNTRY IS: ", countryId);
+    
+    const response = await axios.get(`${SERVER}/get_arrival_flights/${countryId}/`);
+    return response.data;
+  };
+
+  export const getDepartureFlightsService = async (countryId: number) => {
+    console.log("THE CHOSEN COUNTRY IS: ", countryId);
+    
+    const response = await axios.get(`${SERVER}/get_departure_flights/${countryId}/`);
+    return response.data;
+  };
 
 
 

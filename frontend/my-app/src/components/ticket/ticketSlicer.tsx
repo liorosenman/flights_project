@@ -14,7 +14,7 @@ export interface ticketstate {
     error: string | null;
     loading: boolean;
     SuccessMessage: string | null;
-    targetFlightId: string | null;
+    targetTicketId: string | null;
   }
   
 const initialState: ticketstate = {
@@ -22,7 +22,7 @@ const initialState: ticketstate = {
   error : null,
   loading: false,
   SuccessMessage: null,
-  targetFlightId: null,
+  targetTicketId: null,
 };
 
 export const getMyTickets = createAsyncThunk(
@@ -46,8 +46,9 @@ export const cancelTicket = createAsyncThunk<
   { state: RootState }
 >(
   'ticket/cancelTicket',
-  async (ticketId, { getState, rejectWithValue }) => {
+  async (ticketId, { dispatch, getState, rejectWithValue }) => {
     try {
+      dispatch(setTargetTicketId(ticketId))
       const token = getState().login.token; // adjust if your login slice is different
       if (!token) {
         return rejectWithValue('No access token available.');
@@ -68,7 +69,17 @@ export const cancelTicket = createAsyncThunk<
 const ticketslicer = createSlice({
 name: 'ticket',
 initialState,
-reducers: {},
+reducers: {
+  clearTicketsState: (state) => {
+    state.loading = false;
+    state.error = null;
+    state.SuccessMessage = null;
+    state.targetTicketId = null;
+  },
+  setTargetTicketId: (state, action) => {
+    state.targetTicketId = action.payload;
+  },
+},
 extraReducers: (builder) => {
   builder
     .addCase(getMyTickets.rejected, (state, action) => {
@@ -83,23 +94,23 @@ extraReducers: (builder) => {
       state.loading = true;
       state.error = null;
     })
-    //  .addCase(createFlight.pending, (state) => {
-    //     state.loading = true;
-    //     state.error = null;
-    //       })
-    //  .addCase(createFlight.fulfilled, (state, action) => {
-    //     state.loading = false;
-    //     state.SuccessMessage = action.payload as string
-    //     state.error = null
-    //       })
-    //  .addCase(createFlight.rejected, (state, action) => {
-    //       state.loading = false;
-    //       state.error = action.payload as string || action.error.message  ||'Register failed';
-    //       state.SuccessMessage = null;
-    //       })
+     .addCase(cancelTicket.pending, (state) => {
+        state.loading = true;
+        state.error = ""
+          })
+     .addCase(cancelTicket.fulfilled, (state, action) => {
+        state.loading = false;
+        state.SuccessMessage = action.payload as string
+        state.error = null
+          })
+     .addCase(cancelTicket.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || action.error.message  ||'Register failed';
+          state.SuccessMessage = null;
+          })
   }
 });
 
 export default ticketslicer.reducer;
 export const selectTicketState = (state: RootState) => state.ticket;
-
+export const { clearTicketsState, setTargetTicketId} = ticketslicer.actions;

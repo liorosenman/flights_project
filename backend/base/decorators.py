@@ -313,7 +313,8 @@ def update_flights_status():
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            current_time = timezone.now() # Change from datetime.now() to timezone.now()
+            current_time = timezone.now() 
+            print(current_time)
             flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
                  .filter(departure_time__lt=current_time)
             for flight in flights_to_update:

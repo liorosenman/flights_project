@@ -268,7 +268,7 @@ def get_flights_by_airline_id(request, id):
         )
     
 
-@api_view(['GET'])
+@api_view(['POST']) # This is post, because of submmiting parameters.
 @decorators.update_flights_status()
 def get_flights_by_parameters(request):
     origin_country_id = request.data.get('origin_country_id')

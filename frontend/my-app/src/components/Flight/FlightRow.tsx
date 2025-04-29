@@ -47,7 +47,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       // await dispatch(getMyFlights({ token }));
       // dispatch(setTargetFlightId(null))
     } catch (error) {
-      console.error("Ticket removal failed.", error);
+      console.error("Flight removal failed.", error);
     }
   };
 

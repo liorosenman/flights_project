@@ -3,10 +3,16 @@ import React, { useState } from 'react';
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
-import {clearFlightState, getFlightById, loadFlights} from './flightSlice.tsx'
-
+import { clearFlightState, getFlightById, getFlightsByParameters, loadFlights } from './flightSlice.tsx'
+import SelectAirlineComp from '../airline/SelectAirlineComp.tsx'
 interface FlightFiltersProps {
   onFilter: (filters: any) => void; // You can define a better type later
+}
+
+export interface FlightSearchParams {
+  origin_country_id: number;
+  dest_country_id: number;
+  dep_date: string;
 }
 
 const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
@@ -19,6 +25,12 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
   const [country, setCountry] = useState<string>('');
   const dispatch = useAppDispatch();
   const [lastFilters, setLastFilters] = useState<any>(null);
+
+  interface FlightSearchParams {
+    origin_country_id: number;
+    dest_country_id: number;
+    dep_date: string;
+  }
 
   const handleFilterClick = async () => {
 
@@ -36,10 +48,11 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
         if (airlineId && airlineId > 0) {
           filters = { type: selectedOption, airlineId };
         }
-       
+
         break;
       case FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS:
         if (originCountry && destinationCountry && departureDate) {
+          console.log("THESE ARE THE PARAMETERS: ", originCountry, destinationCountry, departureDate);
           filters = { type: selectedOption, originCountry, destinationCountry, departureDate };
         }
         break;
@@ -76,7 +89,6 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
         ))}
       </select>
 
-      {/* Dynamic input fields depending on selected option */}
       {selectedOption === FlightFilterOptions.GET_FLIGHT_BY_ID && (
         <input
           type="text"
@@ -87,11 +99,17 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
       )}
 
       {selectedOption === FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID && (
-        <input
-          type="text"
-          placeholder="Enter Airline ID"
-          value={airlineId !== null ? airlineId : ''}
-          onChange={(e) => handlePositiveIntegerInput(e, setAirlineId)}
+        <SelectAirlineComp
+          label="Airlines:"
+          value={airlineId !== null ? airlineId.toString() : ''}
+          onChange={(e) => {
+            const value = e.target.value;
+            if (value === '') {
+              setAirlineId(null);
+            } else {
+              setAirlineId(Number(value));
+            }
+          }}
         />
       )}
 
@@ -105,7 +123,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
           <SelectCountryComp
             label="Destination Country"
             value={destinationCountry}
-            onChange={(e)=> setDestinationCountry(e.target.value)}
+            onChange={(e) => setDestinationCountry(e.target.value)}
           />
           <input
             type="date"
@@ -117,12 +135,12 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
 
       {(selectedOption === FlightFilterOptions.GET_ARRIVAL_FLIGHTS ||
         selectedOption === FlightFilterOptions.GET_DEPARTURE_FLIGHTS) && (
-        <SelectCountryComp
-          label="Country"
-          value={country}
-          onChange={(e) => setCountry(e.target.value)}
-        />
-      )}
+          <SelectCountryComp
+            label="Country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+        )}
 
       <button onClick={handleFilterClick} style={{ marginLeft: '10px' }}>
         Filter

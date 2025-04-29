@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { addTicketService, fetchFlights, removeFlightService, updateFlightService } from './flightService.tsx';
+import { addTicketService, fetchFlights, getArrivalFlightsService, getDepartureFlightsService, getFlightsByAirlineIdService, getFlightsByParametersService, removeFlightService, updateFlightService } from './flightService.tsx';
 import { FlightData } from '../../models/flightdata';
 import { AppDispatch, RootState } from '../../app/store.ts';
 import { getMyFlightsService, getFlightByIdService} from './flightService.tsx';
 import axios from 'axios';
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
+import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
 
 export interface FlightState {
     flights: LinkedFlightData[];
@@ -141,6 +142,76 @@ export const getFlightById = createAsyncThunk<
   }
 );
 
+export const getFlightsByAirlineId = createAsyncThunk<
+  any,  // (or you can define types if you want stronger typing later)
+  number // airlineId
+>(
+  'flight/getFlightsByAirlineId',
+  async (airlineId, { rejectWithValue }) => {
+    try {
+      const result = await getFlightsByAirlineIdService(airlineId);
+      console.log("FFFFFFFFFFFFFFFFFFFFFFFFF");
+      console.log(result);
+      return result.flights; 
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to retrieve airline flights.'
+      );
+    }
+  }
+);
+
+export const getArrivalFlights = createAsyncThunk<
+  any,    // (You can define a stricter return type later)
+  number  // country ID
+>(
+  'flight/getArrivalFlights',
+  async (countryId, { rejectWithValue }) => {
+    try {
+      const result = await getArrivalFlightsService(countryId);
+      return result.flights; // backend returns { message, flights }
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to retrieve arrival flights.'
+      );
+    }
+  }
+);
+
+export const getFlightsByParameters = createAsyncThunk<
+  any, 
+  FlightSearchParams
+>(
+  'flight/getFlightsByParameters',
+  async (params, { rejectWithValue }) => {
+    try {
+      const result = await getFlightsByParametersService(params);
+      return result.flights;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to retrieve flights.'
+      );
+    }
+  }
+);
+
+export const getDepartureFlights = createAsyncThunk<
+  any,    // (You can define a stricter return type later)
+  number  // country ID
+>(
+  'flight/getDepartureFlights',
+  async (countryId, { rejectWithValue }) => {
+    try {
+      const result = await getDepartureFlightsService(countryId);
+      return result.flights; // backend returns { message, flights }
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to retrieve arrival flights.'
+      );
+    }
+  }
+);
+
   const flightSlice = createSlice({
     name: 'flight',
     initialState,
@@ -243,9 +314,57 @@ export const getFlightById = createAsyncThunk<
         })
         .addCase(getFlightById.rejected, (state, action) => {
           state.loading = false;
-          state.generalErr = action.payload as string || 'Flight removal failure.';
-        });
-
+          state.generalErr = action.payload as string || 'Flight loading failure.';
+        })
+      .addCase(getFlightsByAirlineId.pending, (state) => {
+        state.loading = true;
+        state.generalErr = ""
+      })
+      .addCase(getFlightsByAirlineId.fulfilled, (state, action) => {
+          state.loading = false;
+          state.flights = action.payload;
+      })
+      .addCase(getFlightsByAirlineId.rejected, (state, action) => {
+        state.loading = false;
+        state.generalErr = action.payload as string || 'Flights loading failure.';
+      })
+      .addCase(getFlightsByParameters.pending, (state) => {
+        state.loading = true;
+        state.generalErr = ""
+      })
+      .addCase(getFlightsByParameters.fulfilled, (state, action) => {
+          state.loading = false;
+          
+          state.flights = action.payload;
+      })
+      .addCase(getFlightsByParameters.rejected, (state, action) => {
+        state.loading = false;
+        state.generalErr = action.payload as string || 'Flights loading failure.';
+      })
+      .addCase(getArrivalFlights.pending, (state) => {
+        state.loading = true;
+        state.generalErr = ""
+      })
+      .addCase(getArrivalFlights.fulfilled, (state, action) => {
+          state.loading = false;
+          state.flights = action.payload;
+      })
+      .addCase(getArrivalFlights.rejected, (state, action) => {
+        state.loading = false;
+        state.generalErr = action.payload as string || 'Flights loading failure.';
+      })
+      .addCase(getDepartureFlights.pending, (state) => {
+        state.loading = true;
+        state.generalErr = ""
+      })
+      .addCase(getDepartureFlights.fulfilled, (state, action) => {
+          state.loading = false;
+          state.flights = action.payload;
+      })
+      .addCase(getDepartureFlights.rejected, (state, action) => {
+        state.loading = false;
+        state.generalErr = action.payload as string || 'Flights loading failure.';
+      });
     }
   });
 
