@@ -31,6 +31,7 @@ export const addTicketService = async (flight_id: number, token: string) => {
       },
     }
   );
+  return response.data;
 }
   export const removeFlightService = async (id: number, token: string) => {
     const response = await axios.put(`${SERVER}/remove_flight/${id}/`, null, {

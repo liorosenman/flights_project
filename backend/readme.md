@@ -235,6 +235,8 @@
     3. Admin register $ errors // DONE & TESTED
 # ------------28/04/2025------------------------
     1. get_flight_by_id --- Successful return will send flight only, no message. (views.py)
+    2. Filtering saved in methods: add ticket, remove flight, update flight.
+    3. Messages appearing after methods.
 
 # FOR THE END:
     *** Admin creation - try to avoid try-catch 

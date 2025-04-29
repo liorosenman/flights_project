@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
-import {getFlightById, loadFlights} from './flightSlice.tsx'
+import {clearFlightState, getFlightById, loadFlights} from './flightSlice.tsx'
 
 interface FlightFiltersProps {
   onFilter: (filters: any) => void; // You can define a better type later
@@ -23,7 +23,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
   const handleFilterClick = async () => {
 
     let filters: any = {};
-
+    dispatch(clearFlightState())
     switch (selectedOption) {
       case FlightFilterOptions.GET_ALL_FLIGHTS:
         filters = { type: selectedOption };

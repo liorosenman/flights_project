@@ -14041,3 +14041,4 @@ UnboundLocalError: cannot access local variable 'new_dep_time' where it is not a
 2025-04-28 20:02:36,838 - WARNING - Unauthorized: /get_my_tickets/
 2025-04-28 21:06:30,423 - WARNING - Unauthorized: /get_flight_by_id/9/
 2025-04-28 21:06:32,117 - WARNING - Unauthorized: /get_flight_by_id/9/
+2025-04-28 21:31:33,496 - WARNING - Unauthorized: /login/

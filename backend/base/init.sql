@@ -100,8 +100,8 @@ BEGIN
     ON f.destination_country_id_id = cd.id
     JOIN base_airline AS a
     ON f.airline_company_id_id = a.id
-    WHERE f.airline_company_id_id = airline_id;
-
+    WHERE f.airline_company_id_id = airline_id
+    ORDER BY f.departure_time;
 END;
 $$ LANGUAGE plpgsql;
 -- ####################################################################################
@@ -168,7 +168,8 @@ BEGIN
     WHERE
         f.origin_country_id_id = origin_country
         AND f.destination_country_id_id = destination_country
-        AND DATE(f.departure_time) = DATE(departure);
+        AND DATE(f.departure_time) = DATE(departure)
+    ORDER BY f.departure_time;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -203,7 +204,8 @@ BEGIN
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.destination_country_id_id = country_id
         AND f.landing_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours'
-        AND f.status != 'canceled';
+        AND f.status != 'canceled'
+    ORDER BY f.departure_time;
 END;
 $$ LANGUAGE plpgsql;
 -- ###################################################################################
@@ -235,7 +237,8 @@ BEGIN
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.origin_country_id_id = country_id
         AND f.departure_time BETWEEN NOW() AND NOW() + INTERVAL '12 hours'
-        AND f.status != 'canceled';
+        AND f.status != 'canceled'
+    ORDER BY f.departure_time;
 END;
 $$ LANGUAGE plpgsql;
 -- ####################################################################################

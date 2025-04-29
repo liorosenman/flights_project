@@ -9,7 +9,8 @@ import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 export interface FlightState {
     flights: LinkedFlightData[];
     loading: boolean;
-    error: string | null;
+    error: string | null; // Error for a single flights row.
+    generalErr: string | null;
     successMsg: string | null;
     targetFlightId: number | null;
     toBeUpdatedFlight: number | null;
@@ -19,6 +20,7 @@ export interface FlightState {
     flights: [],
     loading: false,
     error: null,
+    generalErr: null,
     successMsg: null,
     targetFlightId: null,
     toBeUpdatedFlight: null,
@@ -59,12 +61,13 @@ export const addTicket = createAsyncThunk<
   { state: RootState }
 >(
   'flight/addTicket',
-  async ({ flight_id }, { getState, rejectWithValue }) => {
+  async ({ flight_id }, { getState, rejectWithValue, dispatch }) => {
     
     const token = getState().login.token;
     if (!token) return rejectWithValue('No token');
 
     try {
+      dispatch(setTargetFlightId(flight_id));
       const result = await addTicketService(flight_id, token);
       console.log(result);
       return result;
@@ -86,7 +89,7 @@ export const removeFlight = createAsyncThunk<
     try {
       dispatch(setTargetFlightId(flight_id)); 
       const response = await removeFlightService(flight_id, token); 
-      return response.message;
+      return response;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Failed to remove flight.');
     }
@@ -148,6 +151,8 @@ export const getFlightById = createAsyncThunk<
         state.error = null;
         state.successMsg = null;
         state.toBeUpdatedFlight = null;
+        state.targetFlightId = null;
+        state.generalErr = null;
       },
 
       setTargetFlightId: (state, action) => {
@@ -186,17 +191,21 @@ export const getFlightById = createAsyncThunk<
         })
         .addCase(addTicket.pending, (state) => {
           state.loading = true;
-          state.error = ""
+          state.error = null;
         })
         .addCase(addTicket.fulfilled, (state, action) => {
             state.loading = false;
             state.error = null;
-            state.successMsg = action.payload as string
+            state.successMsg = action.payload.message as string
+            console.log(state.successMsg);
+            
             
         })
         .addCase(addTicket.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string || 'Ticket purchasing failure.';
+          console.log(state.error);
+          
         })
         .addCase(removeFlight.pending, (state) => {
           state.loading = true;
@@ -226,16 +235,15 @@ export const getFlightById = createAsyncThunk<
         })
         .addCase(getFlightById.pending, (state) => {
           state.loading = true;
-          state.error = ""
+          state.generalErr = ""
         })
         .addCase(getFlightById.fulfilled, (state, action) => {
             state.loading = false;
-            state.error = null;
             state.flights = [action.payload];
         })
         .addCase(getFlightById.rejected, (state, action) => {
           state.loading = false;
-          state.error = action.payload as string || 'Flight removal failure.';
+          state.generalErr = action.payload as string || 'Flight removal failure.';
         });
 
     }

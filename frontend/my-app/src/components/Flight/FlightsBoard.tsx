@@ -17,7 +17,11 @@ const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlightsState).flights;
   const { roleId, userId, token } = useAppSelector(selectLoginState);
-  const [lastFilters, setLastFilters] = useState<any>(null);
+  const { generalErr } = useAppSelector(selectFlightsState);
+    
+  const [lastFilters, setLastFilters] = useState({
+    type: FlightFilterOptions.GET_ALL_FLIGHTS,
+  });
 
   const handleFilterClick = async (filters: any) => {
 
@@ -29,6 +33,7 @@ const FlightsBoard: React.FC = () => {
       case FlightFilterOptions.GET_FLIGHT_BY_ID:
         if (filters.flightId != null && filters.flightId > 0) {
           await dispatch(getFlightById(filters.flightId));
+          setLastFilters({type:FlightFilterOptions.GET_FLIGHT_BY_ID})
         }
         break;
   
@@ -88,6 +93,9 @@ const FlightsBoard: React.FC = () => {
     <div>
       <Menu />
       <h1>Flight Board</h1>
+    {generalErr &&
+      <h4 style={{color:"red"}}>{generalErr}</h4>
+    }
       <FlightFilters onFilter={handleFilterClick} />
       <table>
         <thead>

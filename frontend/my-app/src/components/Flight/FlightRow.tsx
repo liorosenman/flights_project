@@ -24,7 +24,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
   const { loading } = useAppSelector(selectFlightsState);
   const { targetFlightId, error, successMsg, toBeUpdatedFlight } = useAppSelector(selectFlightsState);
-
+  
 
 
   const handlePurchase = async (e: React.MouseEvent, flightId: number) => {
@@ -40,17 +40,19 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
   const handleRemoval = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
+    dispatch(clearFlightState())
     try {
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
-      await dispatch(getMyFlights({ token }));
-      dispatch(setTargetFlightId(null))
+      await onRefilter();
+      // await dispatch(getMyFlights({ token }));
+      // dispatch(setTargetFlightId(null))
     } catch (error) {
       console.error("Ticket removal failed.", error);
     }
   };
 
   const openUpdCalendar = (e: React.MouseEvent, flightId: number) => {
-    clearFlightState();
+    dispatch(clearFlightState());
     console.log("THE SUCCESS IS ", successMsg);
     console.log("THE ERROR IS ", error);
     dispatch(setToBeUpdFlightId(flightId))
@@ -65,7 +67,6 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       return;
     }
     console.log("BBBBBBBBBBBBBBBB");
-    // dispatch(clearFlightState())
     try {
       await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
       setupdDate(''); // clear after update
@@ -130,9 +131,11 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
 {(targetFlightId === flight.flight_id || toBeUpdatedFlight === flight.flight_id) && (error || successMsg) && (
   <tr>
-    <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-      {error ? error : successMsg}
-    </td>
+   <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+  {error
+    ? (typeof error === 'object' && error !== null ? (error as any).message : error)
+    : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+</td>
   </tr>
 )}
 
