@@ -386,4 +386,33 @@ BEGIN
     WHERE a.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'))
 
     END;
-$$ LANGUAGE plpgsql;   
+$$ LANGUAGE plpgsql; 
+
+-- ####################################################################################
+
+CREATE OR REPLACE FUNCTION get_customers_details()
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    address VARCHAR,
+    phone_no INTEGER,
+    email VARCHAR,
+    airport_id BIGINT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        c.id::BIGINT AS CustomerID,
+        u.username::VARCHAR AS username,
+        c.first_name::VARCHAR AS first_name,
+        c.last_name::VARCHAR AS last_name,
+        c.address::VARCHAR AS address,
+        c.phone_no::INTEGER AS phone_no,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id
+    FROM base_customer AS c
+    JOIN base_airportuser AS u ON c.airport_user_id = u.id;
+END;
+$$ LANGUAGE plpgsql;

@@ -11,15 +11,26 @@ import CreateFlightComp from './components/airline/CreateFlightComp.tsx';
 import FlightsBoard from './components/Flight/FlightsBoard.tsx';
 import { useAppSelector } from './app/hooks.ts';
 import TicketsList from './components/ticket/TicketsList.tsx';
+import CustomerTable from './components/users/customers/CustomerTable.tsx';
+import MenuLayout from './components/Menu/MainLayout.tsx';
+import AdminsTable from './components/users/admins/AdminsTable.tsx';
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+        {/* Public route */}
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<LoginComp />} />
+
+        {/* Protected routes inside MenuLayout */}
+        {/* <Route element={<MenuLayout />}></Route>
+      <Route path="/" element={<Navigate to="/login" />} /> */}
+      <Route element={<MenuLayout />}>
         <Route path="/login" element={<LoginComp />} />
         <Route path="/users" element={<Users />} />
+        <Route path= "/adminslist" element={<AdminsTable/>}/>
         <Route path="/clients" element={<ClientPg />} />
         <Route path="/airlines" element={<AirlinePg />} />
         <Route path="/createcustomer" element={<CreateCustomer />} />
@@ -28,9 +39,8 @@ const App = () => {
         <Route path="/createflight" element={<CreateFlightComp />} />
         <Route path="/flightsboard" element = {<FlightsBoard />} />
         <Route path="/ticketslist" element = {<TicketsList />} />
-                     
-
-
+        <Route path="/customerslist" element = {<CustomerTable />} />
+        </Route>
       </Routes>
     </Router>
   );

@@ -21,7 +21,6 @@ const TicketsList = () => {
   
   return (
       <div>
-        <Menu />
         <h1>My tickets</h1>
         <table>
           <thead>

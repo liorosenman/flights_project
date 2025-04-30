@@ -107,7 +107,7 @@ const FlightsBoard: React.FC = () => {
 
   return (
     <div>
-      <Menu />
+      {/* <Menu /> */}
       <h1>Flight Board</h1>
       {generalErr &&
         <h4 style={{ color: "red" }}>{generalErr}</h4>

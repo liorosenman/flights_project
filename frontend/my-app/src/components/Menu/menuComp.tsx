@@ -14,16 +14,9 @@ const Menu = () => {
 
   const handleLogout =  () => {
     // e.preventDefault();
-    console.log("EEEEEEEEEEEEEEEEEEEEEEEEE");
-    console.log('the roleid is ', roleId);
-    
     // await dispatch(logout());
     // dispatch(clearAuthTokens());
     const currentToken = localStorage.getItem('access_token');
-    console.log('token in Redux:', token);
-    console.log('token in localStorage:', currentToken);
-    console.log(token);
-    
     navigate('/login');
   };
 
@@ -47,11 +40,17 @@ const Menu = () => {
         <Link to="/ticketslist">My Tickets</Link>|{" "}
           </>
         )}
+        {roleId === 1 && (
+          <>
+          <Link to= "/customerslist">Customers</Link>|{" "}
+          <Link to= "/adminslist">Admins</Link>|{" "}
+
+          </>)}
         <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
           LogOut
         </button>
       </nav>
-      <Outlet />
+     
     </div>
   )
 }

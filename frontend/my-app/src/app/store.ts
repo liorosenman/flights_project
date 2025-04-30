@@ -6,6 +6,7 @@ import  userReducer  from '../components/createusers/createUserSlicer.tsx';
 import countryReducer from '../components/countries/countrySlicer.tsx';
 import airlineReducer from '../components/airline/airlineSlicer.tsx';
 import ticketReducer from '../components/ticket/ticketSlicer.tsx';
+import customersReducer from '../components/users/customers/customersSlice.tsx';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     airline: airlineReducer,
     flight: flightReducer,
     ticket: ticketReducer,
+    customer: customersReducer,
   },
 });
 

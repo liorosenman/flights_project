@@ -77,13 +77,34 @@ def get_user_by_username(request, username):
         }, status=400)
     
 @api_view(['GET'])
-@role_required(Roles.ADMINISTRATOR.value)
-def get_all_customers(request):
-        customers = Customer.objects.all()
-        if not customers.exists():
-            return Response({"message": "There are no customers"}, status=status.HTTP_200_OK)
-        serializer = CustomerSerializer(customers, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+# @role_required(Roles.ADMINISTRATOR.value)
+def get_customers_details(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_customers_details()")
+            rows = cursor.fetchall()
+            columns = [col[0] for col in cursor.description]
+            customers = [dict(zip(columns, row)) for row in rows]
+
+        return Response(customers, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response(
+            {"error": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+    
+# @api_view(['GET'])
+# # @role_required(Roles.ADMINISTRATOR.value)
+# def get_all_customers(request):
+#         customers = Customer.objects.all()
+#         if not customers.exists():
+#             return Response({"message": "There are no customers"}, status=status.HTTP_200_OK)
+#         serializer = CustomerSerializer(customers, many=True)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
@@ -144,7 +165,7 @@ def remove_airline(request, id):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['PUT'])
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
@@ -169,7 +190,7 @@ def remove_customer(request, id):
 
 
 @api_view(['PUT'])
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
           return Response({

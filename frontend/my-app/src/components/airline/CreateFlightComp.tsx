@@ -40,11 +40,12 @@ import Menu from '../Menu/menuComp.tsx';
 
       return (
         <div>
-          <Menu/>
+          {/* <Menu/> */}
         <form onSubmit={handleSubmit}>
           <h2>Create Flight</h2>
 
           <SelectCountryComp
+          label='From:'
             value={formData.origin_country_id}
             onChange={(e) =>
               setFormData({ ...formData, origin_country_id: e.target.value })
@@ -52,6 +53,7 @@ import Menu from '../Menu/menuComp.tsx';
           />
 
           <SelectCountryComp
+          label='TO:'
             value={formData.destination_country_id}
             onChange={(e) =>
               setFormData({ ...formData, destination_country_id: e.target.value })
