@@ -8,16 +8,16 @@ RETURNS TABLE (
 BEGIN
     RETURN QUERY
     SELECT 
-        a.id::BIGINT AS airline_id,
-        a.name::TEXT AS airline_name,
+        al.id::BIGINT AS airline_id,
+        al.name::TEXT AS airline_name,
         c.name::TEXT AS country_name,
         u.username::TEXT AS username
     FROM 
-        base_airline AS a
+        base_airline AS al
     JOIN 
-        base_country AS c ON a.country_id_id = c.id
+        base_country AS c ON al.country_id_id = c.id
     JOIN 
-        base_airportuser AS u ON a.airport_user_id = u.id
+        base_airportuser AS u ON al.airport_user_id = u.id
     WHERE 
         u.username = input_username;
 END;
@@ -86,7 +86,7 @@ BEGIN
     RETURN QUERY
     SELECT
     f.id::BIGINT AS flight_id,
-    a.name::TEXT AS airline_name,
+    al.name::TEXT AS airline_name,
     co.name::TEXT AS origin_country_name,
     cd.name::TEXT AS destination_country_name,
     f.departure_time::TIMESTAMP AS departure_time,
@@ -98,8 +98,8 @@ BEGIN
     ON f.origin_country_id_id = co.id
     JOIN base_country AS cd
     ON f.destination_country_id_id = cd.id
-    JOIN base_airline AS a
-    ON f.airline_company_id_id = a.id
+    JOIN base_airline AS al
+    ON f.airline_company_id_id = al.id
     WHERE f.airline_company_id_id = airline_id
     ORDER BY f.departure_time;
 END;
@@ -154,7 +154,7 @@ BEGIN
     RETURN QUERY
     SELECT
         f.id::BIGINT AS flight_id,
-        a.name::VARCHAR AS airline_name,
+        al.name::VARCHAR AS airline_name,
         co.name::VARCHAR AS origin_country_name,
         cd.name::VARCHAR AS destination_country_name,
         f.departure_time::TIMESTAMP AS departure_time,
@@ -162,7 +162,7 @@ BEGIN
         f.remaining_tickets::INTEGER AS remaining_tickets,
         f.status::VARCHAR AS status
     FROM base_flight AS f
-    JOIN base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN base_airline AS al ON f.airline_company_id_id = al.id
     JOIN base_country AS co ON f.origin_country_id_id = co.id
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE
@@ -191,7 +191,7 @@ BEGIN
     RETURN QUERY
     SELECT
     f.id::BIGINT AS flight_id,
-    a.name::VARCHAR AS airline_name,
+    al.name::VARCHAR AS airline_name,
     co.name::VARCHAR AS origin_country_name,
     cd.name::VARCHAR AS destination_country_name,
     f.departure_time::TIMESTAMP AS departure_time,
@@ -199,7 +199,7 @@ BEGIN
     f.remaining_tickets::INTEGER AS remaining_tickets,
     f.status::VARCHAR AS status
     FROM base_flight AS f
-    JOIN base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN base_airline AS al ON f.airline_company_id_id = al.id
     JOIN base_country AS co ON f.origin_country_id_id = co.id
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.destination_country_id_id = country_id
@@ -224,7 +224,7 @@ BEGIN
     RETURN QUERY
     SELECT
     f.id::BIGINT AS flight_id,
-    a.name::VARCHAR AS airline_name,
+    al.name::VARCHAR AS airline_name,
     co.name::VARCHAR AS origin_country_name,
     cd.name::VARCHAR AS destination_country_name,
     f.departure_time::TIMESTAMP AS departure_time,
@@ -232,7 +232,7 @@ BEGIN
     f.remaining_tickets::INTEGER AS remaining_tickets,
     f.status::VARCHAR AS status
     FROM base_flight AS f
-    JOIN base_airline AS a ON f.airline_company_id_id = a.id
+    JOIN base_airline AS al ON f.airline_company_id_id = al.id
     JOIN base_country AS co ON f.origin_country_id_id = co.id
     JOIN base_country AS cd ON f.destination_country_id_id = cd.id
     WHERE f.origin_country_id_id = country_id
@@ -254,15 +254,15 @@ RETURNS TABLE (
 BEGIN
     RETURN QUERY
     SELECT
-        a.id AS ID,
-        a.username AS username,
-        a.password AS password,
-        a.email AS email,
+        al.id AS ID,
+        al.username AS username,
+        al.password AS password,
+        al.email AS email,
         r.role_name AS role_name,
-        a.is_active AS is_active
-    FROM base_airportuser AS a
-    JOIN base_userrole as r ON a.role_name_id = r.id
-    WHERE a.username = input_username;
+        al.is_active AS is_active
+    FROM base_airportuser AS al
+    JOIN base_userrole as r ON al.role_name_id = r.id
+    WHERE al.username = input_username;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -302,7 +302,7 @@ BEGIN
     RETURN QUERY
     SELECT
     f.id::BIGINT AS flight_id,
-    a.name::VARCHAR AS airline_name,
+    al.name::VARCHAR AS airline_name,
     co.name::VARCHAR AS origin_country_name,
     cd.name::VARCHAR AS destination_country_name,
     f.departure_time::TIMESTAMP AS departure_time,
@@ -310,7 +310,7 @@ BEGIN
     f.remaining_tickets::INTEGER AS remaining_tickets,
     f.status::VARCHAR AS status
     FROM base_flight AS f
-    JOIN base_airline as a ON f.airline_company_id_id = a.id
+    JOIN base_airline as al ON f.airline_company_id_id = al.id
     JOIN base_country as co ON f.origin_country_id_id = co.id
     JOIN base_country as cd ON f.destination_country_id_id = cd.id
     ORDER BY f.departure_time;
@@ -334,7 +334,7 @@ BEGIN
     RETURN QUERY
     SELECT
     f.id::BIGINT AS flight_id,
-    a.name::VARCHAR AS airline_name,
+    al.name::VARCHAR AS airline_name,
     co.name::VARCHAR AS origin_country_name,
     cd.name::VARCHAR AS destination_country_name,
     f.departure_time::TIMESTAMP AS departure_time,
@@ -342,7 +342,7 @@ BEGIN
     f.remaining_tickets::INTEGER AS remaining_tickets,
     f.status::VARCHAR AS status
     FROM base_flight AS f
-    JOIN base_airline as a ON f.airline_company_id_id = a.id
+    JOIN base_airline as al ON f.airline_company_id_id = al.id
     JOIN base_country as co ON f.origin_country_id_id = co.id
     JOIN base_country as cd ON f.destination_country_id_id = cd.id
     WHERE f.airline_company_id_id = airline_id;
@@ -363,8 +363,8 @@ BEGIN
     t.id::BIGINT AS ticket_id
     FROM base_ticket as t
     JOIN base_flight as f ON t.flight_id_id = f.id
-    JOIN base_airline as a ON f.airline_company_id_id = a.id
-    WHERE a.id = airline_id AND (f.status = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
+    JOIN base_airline as al ON f.airline_company_id_id = al.id
+    WHERE al.id = airline_id AND (f.status = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
 
     END;
 $$ LANGUAGE plpgsql;   
@@ -382,8 +382,8 @@ BEGIN
     t.id::BIGINT AS ticket_id
     FROM base_ticket as t
     JOIN base_flight as f ON t.flight_id_id = f.id
-    JOIN base_airline as a ON f.airline_company_id_id = a.id
-    WHERE a.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'))
+    JOIN base_airline as al ON f.airline_company_id_id = al.id
+    WHERE al.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'))
 
     END;
 $$ LANGUAGE plpgsql; 
@@ -414,5 +414,56 @@ BEGIN
         u.id::BIGINT AS airport_id
     FROM base_customer AS c
     JOIN base_airportuser AS u ON c.airport_user_id = u.id;
+END;
+$$ LANGUAGE plpgsql;
+
+-- ####################################################################################
+
+CREATE OR REPLACE FUNCTION get_admins_details()
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    email VARCHAR,
+    airport_id BIGINT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        al.id::BIGINT AS AdminID,
+        u.username::VARCHAR AS username,
+        al.first_name::VARCHAR AS first_name,
+        al.last_name::VARCHAR AS last_name,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id
+    FROM base_admin AS al
+    JOIN base_airportuser AS u ON al.airport_user_id = u.id;
+END;
+$$ LANGUAGE plpgsql;
+
+-- ################################################################
+
+CREATE OR REPLACE FUNCTION get_airlines_details()
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    name VARCHAR,
+    country VARCHAR,
+    email VARCHAR,
+    airport_id BIGINT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        al.id::BIGINT AS id,
+        au.username::VARCHAR AS username,
+        al.name::VARCHAR AS name,
+        c.name::VARCHAR AS country,
+        au.email::VARCHAR AS email,
+        au.id::BIGINT AS airport_id
+    FROM base_airline al
+    JOIN base_airportuser au ON al.airport_user_id = au.id
+    JOIN base_country c ON al.country_id_id = c.id;
 END;
 $$ LANGUAGE plpgsql;

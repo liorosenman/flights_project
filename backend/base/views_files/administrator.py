@@ -133,14 +133,13 @@ def get_customer_by_username(request, username):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['PUT'])
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
     airport_user = AirportUser.objects.get(id = airline.airport_user_id)
     if not airport_user.is_active:
         return Response({
-            "status": "warning",
             "message": "This airline is already inactive."
         }, status=status.HTTP_200_OK)
     try:
@@ -151,16 +150,13 @@ def remove_airline(request, id):
                 # airline = Airline.objects.get(id=id)
                 AirportUser.objects.filter(id = airline.airport_user_id).update(is_active = False)
                 return Response({
-                    "status": "success",
                     "message": "Airline was removed successfully."
                 }, status=status.HTTP_200_OK)
             return Response({
-                "status": "error",
                 "message": "There are active tickets. Airline removal is forbidden."
             }, status=status.HTTP_403_FORBIDDEN)
     except Exception as e:
         return Response({
-            "status": "error",
             "message": f"An unexpected error occurred: {str(e)}"
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -172,7 +168,6 @@ def remove_customer(request, id):
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
     if not airport_user.is_active:
         return Response({
-            "status": "warning",
             "message": "This customer is already inactive."
         }, status=status.HTTP_200_OK)
     tickets = Ticket.objects.filter(customer_id_id = id, status__in=["active", "tookoff"])
@@ -180,11 +175,9 @@ def remove_customer(request, id):
         airport_user.is_active = False
         airport_user.save()
         return Response({
-            "status": "success",
             "message": "The customer was removed successfully."
         }, status=status.HTTP_200_OK)
     return Response({
-        "status": "error",
         "message": "There are active tickets. Customer removal is forbidden."
     }, status=status.HTTP_403_FORBIDDEN)
 
@@ -194,21 +187,55 @@ def remove_customer(request, id):
 def remove_admin(request, id):
     if (id == 1):
           return Response({
-            "status": "error",
             "message": "Prime admin must not be removed!"
         }, status=status.HTTP_403_FORBIDDEN)
     admin = get_object_or_404(Admin, id = id)
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
-    if not admin.is_active:
+    if not airport_user.is_active:
           return Response({
-            "status": "warning",
             "message": "This admin is already inactive."
         }, status=status.HTTP_200_OK)
     airport_user.is_active = False
     airport_user.save()
     return Response({
-        "status": "success",
         "message": "The admin was deactivated successfully."
     }, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+# @role_required(Roles.ADMINISTRATOR.value)
+def get_admins_details(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_admins_details()")
+            rows = cursor.fetchall()
+            columns = [col[0] for col in cursor.description]
+            admins = [dict(zip(columns, row)) for row in rows]
+
+        return Response(admins, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response(
+            {"error": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+@api_view(['GET'])
+# @role_required(Roles.ADMINISTRATOR.value)
+def get_airlines_details(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_airlines_details()")
+            rows = cursor.fetchall()
+            columns = [col[0] for col in cursor.description]
+            airlines = [dict(zip(columns, row)) for row in rows]
+
+        return Response(airlines, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response(
+            {"error": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
     
 

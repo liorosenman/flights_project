@@ -4,7 +4,7 @@ import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
 import { clearFlightState, getFlightById, getFlightsByParameters, loadFlights } from './flightSlice.tsx'
-import SelectAirlineComp from '../airline/SelectAirlineComp.tsx'
+import SelectAirlineComp from '../users/airline/SelectAirlineComp.tsx'
 interface FlightFiltersProps {
   onFilter: (filters: any) => void; // You can define a better type later
 }

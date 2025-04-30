@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
-import { fetchAdmins, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
+import { fetchAirlines, removeAirline, setTargetAirlineId } from './airlineSlicer.tsx';
 import Menu from '../../Menu/menuComp.tsx';
-import {clearAdminState} from './adminsSlice.tsx'
+import {clearAirlineState} from './airlineSlicer.tsx'
+import { selectAirlineState } from './airlineSlicer.tsx';
 
-const AdminTable: React.FC = () => {
+const AirlinesTable: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { admins, loading, error, successMsg, targetAdminId, isfiltered } = useAppSelector(selectAdminState);
+  const { airlines, loading, error, successMsg, targetAirlineId } = useAppSelector(selectAirlineState);
   const [search, setSearch] = useState('');
   
 
   useEffect(() => {
-    dispatch(fetchAdmins());
+    dispatch(fetchAirlines());
   }, []);
 
-  const handleRemoveAdmin = async (e: React.MouseEvent, adminId: number) => {
+  const handleRemoveAirline = async (e: React.MouseEvent, airlineId: number) => {
     e.preventDefault();
-    dispatch(clearAdminState())
-    dispatch(setTargetAdminId(adminId))
+    dispatch(clearAirlineState())
+    dispatch(setTargetAirlineId(airlineId))
     try {
-      await dispatch(removeAdmin(adminId)).unwrap();
+      await dispatch(removeAirline(airlineId)).unwrap();
     } catch (error) {
-      console.error("Admin removal failed.", error);
+      console.error("Airline removal failed.", error);
     }
   };
 
-  const filteredAdmins = admins.filter(c =>
-    c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.username.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredAdmins = airlines.filter(c =>
+  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.username.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
     <div>
-      <h2>Admins List</h2>
+      <h2>Airlines List</h2>
       <input
         type="text"
         placeholder="Search by username"
@@ -46,27 +47,27 @@ const AdminTable: React.FC = () => {
           <tr>
             <th>ID</th>
             <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>|Name</th>
+            <th>Country</th>
             <th>Email</th>
             <th>Airport ID</th>
           </tr>
         </thead>
         <tbody>
-          {admins.map(a => (
+          {airlines.map(a => (
             <React.Fragment key={a.id}>
               <tr>
                 <td>{a.id}</td>
                 <td>{a.username}</td>
-                <td>{a.first_name}</td>
-                <td>{a.last_name}</td>
+                <td>{a.name}</td>
+                <td>{a.country}</td>
                 <td>{a.email}</td>
                 <td>{a.airport_id}</td>
                 <td>
-                  <button onClick={(e) => handleRemoveAdmin(e, a.id)}>DELETE</button>
+                  <button onClick={(e) => handleRemoveAirline(e, a.id)}>DELETE</button>
                 </td>
               </tr>
-              {(targetAdminId === a.id) && (error || successMsg) && (
+              {(targetAirlineId === a.id) && (error || successMsg) && (
                 <tr>
                   <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
                     {error
@@ -83,4 +84,4 @@ const AdminTable: React.FC = () => {
   );
 };
 
-export default AdminTable;
+export default AirlinesTable;

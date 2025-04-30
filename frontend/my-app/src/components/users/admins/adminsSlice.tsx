@@ -1,0 +1,104 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import {LinkedCustomer} from '../../../models/LinkedCustomer.ts'
+import { RootState } from '../../../app/store.ts';
+import { getAllAdminsService, removeAdminService } from './adminsService.tsx';
+import {LinkedAdmin} from '../../../models/LinkedAdmin.ts';
+
+interface CustomerState {
+    admins: LinkedAdmin[];
+    loading: boolean;
+    error: string | null;
+    successMsg: string | null;
+    targetAdminId : number | null;
+    isfiltered: boolean;
+  }
+
+const initialState: CustomerState = {
+    admins: [],
+    loading: false,
+    error: null,
+    successMsg: null,
+    targetAdminId : null,
+    isfiltered: false
+  };
+
+  export const fetchAdmins = createAsyncThunk(
+    'admin/Admins',
+    async (_, { getState, rejectWithValue }) => {
+      const token = (getState() as RootState).login.token;
+      if (!token) return rejectWithValue('No token');
+      try {
+        return await getAllAdminsService(token);
+      } catch (err: any) {
+        return rejectWithValue(err.error);
+      }
+    }
+  );
+
+  export const removeAdmin = createAsyncThunk<
+  { message: string },  // return type
+  number,                               // input: customer ID
+  { state: RootState; rejectValue: string }
+>(
+  'admin/removeAdmin',
+  async (adminId, { getState, rejectWithValue }) => {
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No access token available.');
+    try {
+      const result = await removeAdminService(adminId, token);
+      return result;
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || 'Admin removal failed.');
+    }
+  }
+);
+
+  const adminSlicer = createSlice({
+    name: 'admin',
+    initialState,
+    reducers: {
+      clearAdminState: (state) => {
+        state.loading = false;
+        state.error = null;
+        state.successMsg = null;
+        state.targetAdminId = null;
+      },
+      setTargetAdminId: (state, action) => {
+        state.targetAdminId = action.payload;
+      }
+    },
+
+    extraReducers: (builder) => {
+      builder
+        .addCase(fetchAdmins.pending, (state) => {
+          state.loading = true;
+          state.error = null;
+        })
+        .addCase(fetchAdmins.fulfilled, (state, action) => {
+          state.admins = action.payload;
+          state.loading = false;
+        })
+        .addCase(fetchAdmins.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string;
+        })
+        .addCase(removeAdmin.pending, (state) => {
+          state.loading = true;
+          state.error = null;
+        })
+        .addCase(removeAdmin.fulfilled, (state, action) => {
+          state.loading = false;
+          state.successMsg = action.payload.message as string;
+        })
+        .addCase(removeAdmin.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string;
+          
+          
+        });
+    },
+  });
+
+  export default adminSlicer.reducer;
+  export const selectAdminState = (state: RootState) => state.admin
+  export const { clearAdminState, setTargetAdminId} = adminSlicer.actions;

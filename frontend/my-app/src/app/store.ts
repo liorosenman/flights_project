@@ -4,9 +4,10 @@ import loginReducer from '../components/Login/loginSlice.tsx'
 import flightReducer from '../components/Flight/flightSlice.tsx'
 import  userReducer  from '../components/createusers/createUserSlicer.tsx';
 import countryReducer from '../components/countries/countrySlicer.tsx';
-import airlineReducer from '../components/airline/airlineSlicer.tsx';
+import airlineReducer from '../components/users/airline/airlineSlicer.tsx';
 import ticketReducer from '../components/ticket/ticketSlicer.tsx';
 import customersReducer from '../components/users/customers/customersSlice.tsx';
+import adminReducer from '../components/users/admins/adminsSlice.tsx'
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     flight: flightReducer,
     ticket: ticketReducer,
     customer: customersReducer,
+    admin: adminReducer,
   },
 });
 

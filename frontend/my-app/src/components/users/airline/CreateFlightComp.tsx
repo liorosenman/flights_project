@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { createFlight, AirlineState} from './airlineSlicer.tsx';
 import { useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../app/store';
-import { } from './airlineSlicer.tsx';
-import SelectCountryComp from '../countries/SelectCountryComp.tsx';
-import { useAppSelector } from '../../app/hooks.ts';
-import { selectLoginState } from '../Login/loginSlice.tsx';
-import Menu from '../Menu/menuComp.tsx';
+import { useAppSelector } from '../../../app/hooks.ts';
+import { AppDispatch, RootState } from '../../../app/store.ts';
+import { selectLoginState } from '../../Login/loginSlice.tsx';
+import SelectCountryComp from '../../countries/SelectCountryComp.tsx';
+
 
   const CreateFlightComp = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +17,7 @@ import Menu from '../Menu/menuComp.tsx';
     });
 
     const token = useAppSelector((state) => selectLoginState(state).token);
-    const { error, loading, SuccessMessage } = useAppSelector(
+    const { error, loading, SuccessMsg } = useAppSelector(
       (state: RootState) => state.airline
     );
     
@@ -98,7 +97,7 @@ import Menu from '../Menu/menuComp.tsx';
           <button type="submit">Create Flight</button>
           {loading && <p>Signing up...</p>}
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          {SuccessMessage && <p style={{ color: 'green' }}>{SuccessMessage}</p>}
+          {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
         </form>
         </div>
       );

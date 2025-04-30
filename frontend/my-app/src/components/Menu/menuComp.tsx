@@ -44,7 +44,7 @@ const Menu = () => {
           <>
           <Link to= "/customerslist">Customers</Link>|{" "}
           <Link to= "/adminslist">Admins</Link>|{" "}
-
+          <Link to= "/airlineslist">Airlines</Link>
           </>)}
         <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
           LogOut

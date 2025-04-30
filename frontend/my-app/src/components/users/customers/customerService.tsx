@@ -3,8 +3,6 @@ import axios from 'axios';
 const SERVER = "http://127.0.0.1:8000";
 
 export const getAllCustomersService = async (token: string) => {
-  console.log("LOOKLOOK");
-  
   const response = await axios.get(`${SERVER}/get_all_customers/`, {
     headers: {
       Authorization: `Bearer ${token}`,

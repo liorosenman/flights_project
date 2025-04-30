@@ -1,6 +1,6 @@
 // SelectCountryComp.tsx
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchAirlines } from './airlineSlicer.tsx';
 
 interface Props {

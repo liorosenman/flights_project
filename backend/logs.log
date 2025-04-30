@@ -14184,3 +14184,198 @@ UnboundLocalError: cannot access local variable 'new_dep_time' where it is not a
 2025-04-30 13:37:02,743 - WARNING - Not Found: /get_customers_details/
 2025-04-30 13:37:02,755 - WARNING - Not Found: /get_customers_details/
 2025-04-30 13:41:16,092 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 13:43:06,232 - WARNING - Unauthorized: /remove_customer/1/
+2025-04-30 13:43:13,760 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 14:49:20,088 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 14:49:27,380 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 14:49:36,725 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 15:27:01,590 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:27:55,471 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:29:14,407 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:40:02,538 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:40:41,700 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:46:08,344 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:47:45,388 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:52:52,121 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:52:52,127 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:21,205 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:26,217 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:31,205 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:35,215 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:53,895 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:53,899 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:53:58,218 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:00,201 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:01,218 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:03,209 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:04,215 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:20,217 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:29,215 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:31,211 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:56,216 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:54:59,212 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 15:56:07,105 - WARNING - Forbidden: /remove_customer/1/
+2025-04-30 15:56:14,065 - WARNING - Forbidden: /remove_customer/5/
+2025-04-30 16:55:54,930 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:20,183 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:26,580 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:38,428 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:40,780 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:42,813 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:00:56,398 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:01:00,705 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:01:43,719 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:45,715 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:47,843 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:49,985 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:55,174 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:57,171 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:01:59,209 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:02:02,256 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:02:15,832 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:02:31,248 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:02:34,278 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:03:01,915 - WARNING - Not Found: /get_admins_details/
+2025-04-30 17:13:03,395 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,406 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,410 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,894 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:13:03,899 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:13:03,907 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,908 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,982 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:13:03,997 - WARNING - Bad Request: /create_new_admin/
+2025-04-30 17:14:23,913 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:14:23,916 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:15:38,336 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:15:38,340 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:28,095 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:28,097 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:30,603 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:30,612 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:42,410 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:42,415 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:45,520 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:45,529 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:51,299 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:51,304 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:55,994 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:16:55,996 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:26:14,575 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:26:14,584 - WARNING - Unauthorized: /get_all_customers/
+2025-04-30 17:32:21,283 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:32:25,472 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:32:27,485 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:32:30,408 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:32:45,990 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:32:51,132 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:33:14,160 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:33:19,296 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:33:24,408 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:33:28,490 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:33:30,541 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:35:42,054 - ERROR - Internal Server Error: /remove_admin/5/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\administrator.py", line 199, in remove_admin
+    if not admin.is_active:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'Admin' object has no attribute 'is_active'
+2025-04-30 17:37:59,820 - ERROR - Internal Server Error: /remove_admin/5/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\administrator.py", line 199, in remove_admin
+    if not admin.is_active:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'Admin' object has no attribute 'is_active'
+2025-04-30 17:38:50,814 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:38:57,004 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:01,149 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:03,116 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:30,307 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:32,129 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:35,250 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:39:55,080 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:41:33,359 - WARNING - Forbidden: /remove_admin/1/
+2025-04-30 17:52:06,320 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:52:15,669 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:52:22,923 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:52:30,183 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:52:38,487 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:52:40,454 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 17:53:23,450 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:53:28,670 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:53:32,874 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:53:37,023 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:53:40,084 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:53:54,868 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-04-30 17:55:09,318 - ERROR - Internal Server Error: /get_all_airlines/
+2025-04-30 17:58:21,672 - ERROR - Internal Server Error: /get_all_airlines/
+2025-04-30 18:05:16,544 - ERROR - Internal Server Error: /get_all_airlines/
+2025-04-30 18:06:24,249 - ERROR - Internal Server Error: /get_all_airlines/
+2025-04-30 18:07:03,750 - ERROR - Internal Server Error: /get_all_airlines/
+2025-04-30 18:27:11,958 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 18:27:15,095 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 18:27:19,242 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 18:27:21,272 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 18:27:23,330 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 19:09:29,012 - WARNING - Unauthorized: /get_all_admins/
+2025-04-30 19:09:29,017 - WARNING - Unauthorized: /get_all_admins/
+2025-04-30 19:10:03,852 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:10:58,482 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:13:05,460 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:15:07,530 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:16:34,856 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:16:40,850 - WARNING - Unauthorized: /remove_airline/12/
+2025-04-30 19:18:21,049 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-04-30 19:19:14,579 - WARNING - Forbidden: /remove_airline/13/
+2025-04-30 19:19:22,850 - WARNING - Forbidden: /remove_airline/14/
+2025-04-30 19:21:05,172 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
