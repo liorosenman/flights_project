@@ -14379,3 +14379,276 @@ AttributeError: 'Admin' object has no attribute 'is_active'
 2025-04-30 19:19:14,579 - WARNING - Forbidden: /remove_airline/13/
 2025-04-30 19:19:22,850 - WARNING - Forbidden: /remove_airline/14/
 2025-04-30 19:21:05,172 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 11:55:26,411 - ERROR - Internal Server Error: /get_customer_by_username/lioros2025
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/get_customer_by_username/lioros2025/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-01 11:57:06,612 - WARNING - Unauthorized: /get_customer_by_username/lioros2025/
+2025-05-01 11:57:22,609 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:05:52,896 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:05:57,255 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:06:02,462 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:06:40,298 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:06:45,126 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:06:52,299 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:07:08,473 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:07:15,737 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:07:18,834 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:07:20,854 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:07:27,015 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:08:05,818 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:08:49,849 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 13:11:37,606 - ERROR - Internal Server Error: /get_customer_by_username/lioros2025/
+2025-05-01 13:18:00,143 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:04,123 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:07,136 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:15,134 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:17,139 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:20,120 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:23,126 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:37,120 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:40,150 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:45,132 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:47,136 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:52,128 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:54,121 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:18:59,119 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:19:05,120 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:19:12,132 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:19:19,129 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:20:10,708 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:25:13,127 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:25:15,119 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:25:22,148 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 13:25:43,120 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 14:01:30,134 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 14:01:30,140 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 14:02:30,979 - WARNING - Unauthorized: /login/
+2025-05-01 15:43:00,365 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:00,371 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:13,130 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:43:13,137 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:43:15,301 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:15,309 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:58,657 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:58,665 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:43:59,592 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:43:59,599 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:44:14,707 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:44:14,713 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:48:08,124 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:48:08,128 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:48:37,753 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:48:37,760 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 15:52:13,681 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 15:52:13,689 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 17:13:43,204 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 17:20:22,066 - WARNING - Not Found: /get_customer_by_username/sadsa/
+2025-05-01 17:38:09,794 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 17:38:09,797 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 17:38:11,439 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 17:38:11,443 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 17:38:56,113 - WARNING - Not Found: /get_customer_by_username/koko/
+2025-05-01 17:39:11,942 - WARNING - Forbidden: /remove_customer/1/
+2025-05-01 17:40:34,141 - WARNING - Forbidden: /remove_customer/1/
+2025-05-01 17:41:07,066 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 17:59:03,920 - WARNING - Forbidden: /remove_admin/1/
+2025-05-01 18:01:36,359 - WARNING - Forbidden: /remove_customer/5/
+2025-05-01 18:01:38,224 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 18:12:35,703 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 18:12:43,012 - WARNING - Forbidden: /remove_customer/1/
+2025-05-01 18:12:47,809 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 18:18:20,122 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 18:34:15,586 - WARNING - Not Found: /get_customer_by_username/liros/
+2025-05-01 18:34:26,777 - WARNING - Not Found: /get_customer_by_username/lirosos2025/
+2025-05-01 18:34:31,867 - WARNING - Not Found: /get_customer_by_username/lirosos2025/
+2025-05-01 18:37:04,735 - WARNING - Not Found: /get_customer_by_username/menayhth/
+2025-05-01 18:37:13,997 - WARNING - Not Found: /get_customer_by_username/tshah32w/
+2025-05-01 18:37:30,441 - WARNING - Forbidden: /remove_customer/1/
+2025-05-01 18:37:37,735 - WARNING - Not Found: /get_customer_by_username/taki/
+2025-05-01 18:46:33,124 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:46:36,106 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:46:45,122 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:46:55,113 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:47:01,129 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:48:48,719 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:48:48,723 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 18:48:52,979 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 18:48:52,988 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 18:49:25,991 - ERROR - Internal Server Error: /get_all_customers/
+2025-05-01 18:49:26,038 - ERROR - Internal Server Error: /get_all_customers/
+2025-05-01 18:51:38,489 - ERROR - Internal Server Error: /get_all_customers/
+2025-05-01 18:51:38,541 - ERROR - Internal Server Error: /get_all_customers/
+2025-05-01 18:53:47,354 - WARNING - Not Found: /get_customer_by_username/meni9/
+2025-05-01 18:54:04,997 - WARNING - Not Found: /get_customer_by_username/menfds/
+2025-05-01 19:41:51,245 - WARNING - Not Found: /get_customer_by_username/veronair80/
+2025-05-01 19:44:28,983 - WARNING - Not Found: /get_admins_details/
+2025-05-01 19:46:31,448 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:46:43,952 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:00,751 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:17,432 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:28,928 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:33,027 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:38,189 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:46,473 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:55,801 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:47:58,832 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 19:48:18,718 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 19:48:27,062 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 19:48:38,564 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 19:48:42,624 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 19:49:06,171 - ERROR - Internal Server Error: /get_admin_by_username/padmin/
+2025-05-01 19:59:05,069 - WARNING - Not Found: /get_admins_details/
+2025-05-01 20:02:15,177 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:05:42,122 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:11,765 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:11,773 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:18,013 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:18,016 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:30,155 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:30,157 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:37,860 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:37,864 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:53,266 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:53,273 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:54,627 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:07:54,632 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:35,322 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:35,329 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:39,796 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:39,802 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:52,504 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:08:52,509 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:03,517 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:03,523 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:22,046 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:22,050 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:25,874 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:25,883 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:38,269 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:38,274 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:51,231 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:09:51,238 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:10:26,382 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:10:26,387 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:10:28,667 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:10:28,672 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:11:56,696 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:11:56,699 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:17,865 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:17,869 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:31,173 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:31,178 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:32,856 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:32,864 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:38,319 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:38,322 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:46,786 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:12:46,791 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:14:00,122 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:20:43,147 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:21:07,128 - WARNING - Unauthorized: /get_all_customers/
+2025-05-01 20:24:18,448 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 20:24:36,617 - WARNING - Not Found: /get_admin_by_username/admin3kjhg/
+2025-05-01 20:29:36,952 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 20:29:41,085 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 20:29:58,457 - WARNING - Forbidden: /remove_admin/1/
+2025-05-01 20:30:07,859 - WARNING - Not Found: /get_admin_by_username/p/
+2025-05-01 20:37:31,097 - WARNING - Not Found: /get_airlines_details
+2025-05-01 20:37:33,776 - WARNING - Not Found: /get_airlines_details/
+2025-05-01 20:38:57,498 - WARNING - Not Found: /get_admin_by_username/veronair80/
+2025-05-01 20:39:17,364 - ERROR - Internal Server Error: /get_airline_by_username/veronair80/
+2025-05-01 20:40:27,389 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:40:39,740 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:40:45,761 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:40:51,775 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:01,101 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:11,514 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:27,139 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:34,412 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:41,654 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:50,988 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:41:53,000 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:42:09,637 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 20:42:14,803 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 20:42:23,047 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 20:43:21,384 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-01 20:44:03,262 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:44:10,553 - ERROR - Internal Server Error: /get_airline_by_username/veronair80/
+2025-05-01 20:45:07,541 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:45:10,596 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-01 20:46:14,998 - ERROR - Internal Server Error: /get_airline_by_username/veronair80/
+2025-05-01 20:47:50,406 - ERROR - Internal Server Error: /get_airline_by_username/veronair80/
+2025-05-01 20:51:38,246 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:52:48,443 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:52:48,447 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:17,300 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:17,303 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:27,493 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:27,497 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:36,669 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:36,672 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:42,286 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:53:42,291 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:03,475 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:03,479 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:30,589 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:30,592 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:35,543 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:35,546 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:45,281 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:45,287 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:59,610 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:54:59,614 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:55:20,258 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:55:20,264 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:55:52,253 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:55:56,238 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:56:41,920 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:56:41,923 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:56:44,398 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:56:44,404 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:10,634 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:10,639 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:17,790 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:17,794 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:19,207 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:19,212 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:20,836 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:20,840 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:48,289 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:48,301 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:54,986 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:57:54,992 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:59:44,237 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:59:55,236 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 20:59:59,244 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 21:00:02,226 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 21:00:25,244 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 21:00:29,239 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 21:02:52,253 - WARNING - Unauthorized: /get_all_admins/
+2025-05-01 21:04:29,645 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 21:04:51,211 - WARNING - Not Found: /get_admin_by_username/aaa/
+2025-05-01 21:08:17,700 - WARNING - Not Found: /get_admin_by_username/aaa/
+2025-05-01 21:12:33,134 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 21:13:26,412 - WARNING - Not Found: /get_admin_by_username/elal/
+2025-05-01 21:14:42,511 - WARNING - Not Found: /get_airline_by_username//
+2025-05-01 21:17:14,523 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 21:17:20,054 - WARNING - Not Found: /get_admin_by_username//
+2025-05-01 21:17:24,947 - WARNING - Not Found: /get_customer_by_username//
+2025-05-01 21:17:30,323 - WARNING - Not Found: /get_airline_by_username//
+2025-05-01 21:17:40,597 - WARNING - Forbidden: /remove_airline/1/
+2025-05-01 21:17:54,632 - WARNING - Forbidden: /remove_airline/14/
+2025-05-01 21:18:11,035 - WARNING - Not Found: /get_airline_by_username/toront/
+2025-05-01 21:18:23,712 - WARNING - Not Found: /get_airline_by_username/toront/
+2025-05-01 21:26:32,987 - WARNING - Successful flight creation.

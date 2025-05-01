@@ -1,58 +1,86 @@
 CREATE OR REPLACE FUNCTION get_airline_data_by_username(input_username TEXT)
 RETURNS TABLE (
-    airline_id BIGINT,
-    airline_name TEXT,
-    country_name TEXT,
-    username TEXT
+    id BIGINT,
+    username VARCHAR,
+    name VARCHAR,
+    country VARCHAR,
+    email VARCHAR,
+    airport_id BIGINT,
+    status BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
-    SELECT 
-        al.id::BIGINT AS airline_id,
-        al.name::TEXT AS airline_name,
-        c.name::TEXT AS country_name,
-        u.username::TEXT AS username
-    FROM 
-        base_airline AS al
-    JOIN 
-        base_country AS c ON al.country_id_id = c.id
-    JOIN 
-        base_airportuser AS u ON al.airport_user_id = u.id
-    WHERE 
-        u.username = input_username;
+    SELECT
+        al.id::BIGINT AS id,
+        au.username::VARCHAR AS username,
+        al.name::VARCHAR AS name,
+        c.name::VARCHAR AS country,
+        au.email::VARCHAR AS email,
+        au.id::BIGINT AS airport_id,
+        au.is_active::BOOLEAN AS status
+    FROM base_airline al
+    JOIN base_airportuser au ON al.airport_user_id = au.id
+    JOIN base_country c ON al.country_id_id = c.id
+    WHERE au.username = input_username AND au.role_name_id = 3;
 END;
 $$ LANGUAGE plpgsql;
 
 -- ####################################################################################
 
-CREATE OR REPLACE FUNCTION get_customer_by_username(input_username TEXT)
+CREATE OR REPLACE FUNCTION get_customer_data_by_username(input_username TEXT)
 RETURNS TABLE (
-    ID BIGINT,
-    first_name TEXT,
-    last_name TEXT,
-    address TEXT,
-    phone_number INTEGER,
-    credit_card BIGINT,
-    username TEXT
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    address VARCHAR,
+    phone_no INTEGER,
+    email VARCHAR,
+    airport_id BIGINT,
+    status BOOLEAN 
 ) AS $$
 BEGIN
     RETURN QUERY
     SELECT
-        c.id::BIGINT AS ID,
-        c.first_name::TEXT AS first_name,
-        c.last_name::TEXT AS last_name,
-        c.address::TEXT AS address,
-        c.phone_no::INTEGER AS phone_number,
-        c.credit_card_no::BIGINT AS credit_card,
-        u.username::TEXT AS username
+        c.id::BIGINT AS CustomerID,
+        u.username::VARCHAR AS username,
+        c.first_name::VARCHAR AS first_name,
+        c.last_name::VARCHAR AS last_name,
+        c.address::VARCHAR AS address,
+        c.phone_no::INTEGER AS phone_no,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id,
+        u.is_active::BOOLEAN AS status
     FROM base_customer AS c
-    JOIN base_airportuser AS u
-    ON c.airport_user_id = u.id
-    WHERE u.username = input_username;
+    JOIN base_airportuser AS u ON c.airport_user_id = u.id
+    WHERE u.username = input_username AND u.role_name_id = 2
 END;
 $$ LANGUAGE plpgsql;
 
-
+--##########################################################################
+CREATE OR REPLACE FUNCTION get_admin_data_by_username(input_username TEXT)
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    email VARCHAR,
+    airport_id BIGINT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        al.id::BIGINT AS AdminID,
+        u.username::VARCHAR AS username,
+        al.first_name::VARCHAR AS first_name,
+        al.last_name::VARCHAR AS last_name,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id
+    FROM base_admin AS al
+    JOIN base_airportuser AS u ON al.airport_user_id = u.id
+    WHERE u.username = input_username;
+END;
+$$ LANGUAGE plpgsql;
 
 
 -- ####################################################################################
@@ -399,7 +427,8 @@ RETURNS TABLE (
     address VARCHAR,
     phone_no INTEGER,
     email VARCHAR,
-    airport_id BIGINT
+    airport_id BIGINT,
+    status BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -411,7 +440,8 @@ BEGIN
         c.address::VARCHAR AS address,
         c.phone_no::INTEGER AS phone_no,
         u.email::VARCHAR AS email,
-        u.id::BIGINT AS airport_id
+        u.id::BIGINT AS airport_id,
+        u.is_active::BOOLEAN AS status
     FROM base_customer AS c
     JOIN base_airportuser AS u ON c.airport_user_id = u.id;
 END;
@@ -426,7 +456,8 @@ RETURNS TABLE (
     first_name VARCHAR,
     last_name VARCHAR,
     email VARCHAR,
-    airport_id BIGINT
+    airport_id BIGINT,
+    status BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -436,9 +467,11 @@ BEGIN
         al.first_name::VARCHAR AS first_name,
         al.last_name::VARCHAR AS last_name,
         u.email::VARCHAR AS email,
-        u.id::BIGINT AS airport_id
+        u.id::BIGINT AS airport_id,
+        u.is_active::BOOLEAN AS status
     FROM base_admin AS al
-    JOIN base_airportuser AS u ON al.airport_user_id = u.id;
+    JOIN base_airportuser AS u ON al.airport_user_id = u.id
+    WHERE u.role_name_id = 1;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -451,7 +484,8 @@ RETURNS TABLE (
     name VARCHAR,
     country VARCHAR,
     email VARCHAR,
-    airport_id BIGINT
+    airport_id BIGINT,
+    status BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -461,9 +495,39 @@ BEGIN
         al.name::VARCHAR AS name,
         c.name::VARCHAR AS country,
         au.email::VARCHAR AS email,
-        au.id::BIGINT AS airport_id
+        au.id::BIGINT AS airport_id,
+        au.is_active AS status
     FROM base_airline al
     JOIN base_airportuser au ON al.airport_user_id = au.id
     JOIN base_country c ON al.country_id_id = c.id;
+END;
+$$ LANGUAGE plpgsql;
+
+-- ############################################################
+
+
+CREATE OR REPLACE FUNCTION get_admin_data_by_username(input_username TEXT)
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    email VARCHAR,
+    airport_id BIGINT,
+    status BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        al.id::BIGINT AS AdminID,
+        u.username::VARCHAR AS username,
+        al.first_name::VARCHAR AS first_name,
+        al.last_name::VARCHAR AS last_name,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id,
+        U.is_active AS status
+    FROM base_admin AS al
+    JOIN base_airportuser AS u ON al.airport_user_id = u.id
+    WHERE u.username = input_username AND u.role_name_id = 1;
 END;
 $$ LANGUAGE plpgsql;

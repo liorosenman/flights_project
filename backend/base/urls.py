@@ -51,6 +51,8 @@ urlpatterns = [
     path('get_all_admins/', administrator.get_admins_details),
     path('remove_admin/<int:id>/', administrator.remove_admin),
     path('get_all_airlines/', administrator.get_airlines_details),
+    path('get_admin_by_username/<str:username>/', administrator.get_admin_by_username),
+    path('get_airline_by_username/<str:username>/', administrator.get_airline_by_username),
          
     
     # path('change_allrolenames_to_two/', views.change_rolename_to_admin),

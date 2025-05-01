@@ -107,29 +107,25 @@ def get_customers_details(request):
 
 
 @api_view(['GET'])
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM get_customer_by_username(%s)", [username])
+            cursor.execute("SELECT * FROM get_customer_data_by_username(%s)", [username])
             columns = [col[0] for col in cursor.description]
             result = cursor.fetchone()
             if result:
                 customer_details = dict(zip(columns,result))
                 return Response({
-                    "status": "success",
-                    "message": "Customer retrieved successfully.",
-                    "data": customer_details
+                    "customer": customer_details
                 }, status=status.HTTP_200_OK)
             else:
                 return Response({
-                "status": "not_found",
                 "message": "No customer found for the given username."
             }, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:
         return Response({
-            "status": "error",
-            "message": f"An error occurred while retrieving the customer: {str(e)}"
+            "error": f"An error occurred while retrieving the customer: {str(e)}"
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['PUT'])
@@ -237,5 +233,47 @@ def get_airlines_details(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-    
 
+@api_view(['GET'])
+# @role_required(Roles.ADMINISTRATOR.value)
+def get_admin_by_username(request, username):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_admin_data_by_username(%s)", [username])
+            columns = [col[0] for col in cursor.description]
+            result = cursor.fetchone()
+            if result:
+                admin_details = dict(zip(columns,result))
+                return Response({
+                    "admin": admin_details
+                }, status=status.HTTP_200_OK)
+            else:
+                return Response({
+                "message": "No admin found for the given username."
+            }, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({
+            "error": f"An error occurred while retrieving the admin: {str(e)}"
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+@api_view(['GET'])
+# @role_required(Roles.ADMINISTRATOR.value)
+def get_airline_by_username(request, username):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_airline_data_by_username(%s)", [username])
+            columns = [col[0] for col in cursor.description]
+            result = cursor.fetchone()
+            if result:
+                airline_details = dict(zip(columns,result))
+                return Response({
+                    "airline": airline_details
+                }, status=status.HTTP_200_OK)
+            else:
+                return Response({
+                "message": "No airline found for the given username."
+            }, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({
+            "error": f"An error occurred while retrieving the airline: {str(e)}"
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
