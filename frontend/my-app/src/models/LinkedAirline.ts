@@ -4,5 +4,6 @@ export interface LinkedAirline {
     name: string;
     country: string;
     email: string;
-    airport_id: number;             
+    airport_id: number; 
+    status: boolean;            
   }

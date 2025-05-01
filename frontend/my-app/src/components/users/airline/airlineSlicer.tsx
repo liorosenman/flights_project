@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { LinkedAirline } from '../../../models/LinkedAirline';
 import { RootState } from '../../../app/store';
-import { getAllAirlinesService } from './airlineService.tsx';
+import { getAirlineByUsernameService, getAllAirlinesService } from './airlineService.tsx';
 import { createFlightService, removeAirlineService } from './airlineService.tsx';
+import { getAdminByUsernameService } from '../admins/adminsService.tsx';
 
 
 
@@ -12,6 +13,7 @@ export interface AirlineState {
   loading: boolean;
   successMsg: string | null;
   targetAirlineId: number | null;
+  filterError: string | null;
 }
 
 const initialState: AirlineState = {
@@ -19,7 +21,8 @@ const initialState: AirlineState = {
   error: null,
   loading: false,
   successMsg: null,
-  targetAirlineId: null
+  targetAirlineId: null,
+  filterError: null
 };
 
 export const createFlight = createAsyncThunk<string, Record<string, any>, { state: RootState }>(
@@ -86,6 +89,27 @@ export const removeAirline = createAsyncThunk<
   }
 );
 
+export const getAirlineByUsername = createAsyncThunk<
+  any,
+  string,
+  { state: RootState }
+>(
+  'airlines/getAirlineByUsername',
+  async (username, { getState, rejectWithValue }) => {
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No access token');
+
+    try {
+      const result = await getAirlineByUsernameService(username, token);
+      return result;
+    } catch (err: any) {
+      const errorMsg =
+        err.response?.data?.message || err.response?.data?.error || 'Failed to fetch airline.';
+      return rejectWithValue(errorMsg);
+    }
+  }
+);
+
 
 
 // export const getMyFlights = createAsyncThunk(
@@ -109,6 +133,7 @@ const AirlineSlicer = createSlice({
       state.error = null;
       state.successMsg = null;
       state.targetAirlineId = null;
+      state.filterError = null;
     },
     setTargetAirlineId: (state, action) => {
       state.targetAirlineId = action.payload;
@@ -156,9 +181,22 @@ const AirlineSlicer = createSlice({
         state.loading = false;
         state.error = action.payload as string || action.error.message || 'Register failed';
         console.log("THE WROMG IS:",state.error);
-        
         state.successMsg = null;
       })
+      .addCase(getAirlineByUsername.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+          })
+        .addCase(getAirlineByUsername.fulfilled, (state, action) => {
+          state.loading = false;
+          state.airlines = [action.payload];
+        })
+        .addCase(getAirlineByUsername.rejected, (state, action) => {
+          state.loading = false;
+          state.error = null;
+          state.filterError = action.payload as string;
+        });
+
   }
 });
 

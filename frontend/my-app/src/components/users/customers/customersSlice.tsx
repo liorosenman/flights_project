@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {LinkedCustomer} from '../../../models/LinkedCustomer.ts'
 import { RootState } from '../../../app/store.ts';
-import { getAllCustomersService, removeCustomerService } from './customerService.tsx';
+import { getAllCustomersService, getCustomerByUsernameService, removeCustomerService } from './customerService.tsx';
 
 interface CustomerState {
-    customers: LinkedCustomer[];
+    customers: LinkedCustomer[]
     loading: boolean;
     error: string | null;
     successMsg: string | null;
     targetCustomerId : number | null;
-    isfiltered: boolean;
+    filterError: string | null;
   }
 
 const initialState: CustomerState = {
@@ -18,7 +18,7 @@ const initialState: CustomerState = {
     error: null,
     successMsg: null,
     targetCustomerId : null,
-    isfiltered: false
+    filterError: null
   };
 
   export const fetchCustomers = createAsyncThunk(
@@ -57,6 +57,28 @@ const initialState: CustomerState = {
   }
 );
 
+export const getCustomerByUsername = createAsyncThunk<
+  any,
+  string,
+  { state: RootState }
+>(
+  'customers/getCustomerByUsername',
+  async (username, { getState, rejectWithValue }) => {
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No access token');
+
+    try {
+      const result = await getCustomerByUsernameService(username, token);
+      console.log(result);
+      return result;
+    } catch (err: any) {
+      const errorMsg =
+        err.response?.data?.message || err.response?.data?.error || 'Failed to fetch customer';
+      return rejectWithValue(errorMsg);
+    }
+  }
+);
+
   const customersSlice = createSlice({
     name: 'customers',
     initialState,
@@ -66,6 +88,7 @@ const initialState: CustomerState = {
         state.error = null;
         state.successMsg = null;
         state.targetCustomerId = null;
+        state.filterError = null;
       },
       setTargetCustomerId: (state, action) => {
         state.targetCustomerId = action.payload;
@@ -86,7 +109,8 @@ const initialState: CustomerState = {
         })
         .addCase(fetchCustomers.rejected, (state, action) => {
           state.loading = false;
-          state.error = action.payload as string;
+          state.filterError = action.payload as string;
+          state.error = null;
         })
         .addCase(removeCustomer.pending, (state) => {
           state.loading = true;
@@ -95,16 +119,32 @@ const initialState: CustomerState = {
         .addCase(removeCustomer.fulfilled, (state, action) => {
           state.loading = false;
           state.successMsg = action.payload.message as string;
+          state.error = null;
+          state.filterError = null;
         })
         .addCase(removeCustomer.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string;
-          
-          
+          state.filterError = null;
+        })
+        .addCase(getCustomerByUsername.pending, (state) => {
+          state.loading = true;
+          state.error = null;
+        })
+        .addCase(getCustomerByUsername.fulfilled, (state, action) => {
+          state.loading = false;
+          state.customers = [action.payload];
+        })
+        .addCase(getCustomerByUsername.rejected, (state, action) => {
+          state.loading = false;
+          state.error = null;
+          state.filterError = action.payload as string;
         });
+
     },
   });
 
   export default customersSlice.reducer;
   export const selectCustomerState = (state: RootState) => state.customer
   export const { clearCustomerState, setTargetCustomerId} = customersSlice.actions;
+  

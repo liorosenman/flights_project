@@ -17,9 +17,7 @@ import SelectCountryComp from '../../countries/SelectCountryComp.tsx';
     });
 
     const token = useAppSelector((state) => selectLoginState(state).token);
-    const { error, loading, SuccessMsg } = useAppSelector(
-      (state: RootState) => state.airline
-    );
+    const { error, loading, successMsg } = useAppSelector((state: RootState) => state.airline);
     
   
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {

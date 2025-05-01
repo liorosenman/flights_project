@@ -8,4 +8,5 @@ export interface Customer {
   phone_no: number;
   credit_card_no: number;
   airport_user: AirportUser;
+
 }

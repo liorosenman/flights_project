@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchCustomers, removeCustomer, selectCustomerState, setTargetCustomerId } from './customersSlice.tsx';
 import Menu from '../../Menu/menuComp.tsx';
-import {clearCustomerState} from './customersSlice.tsx'
+import { clearCustomerState } from './customersSlice.tsx'
+import { clearAirlineState } from '../airline/airlineSlicer.tsx';
+import { clearAdminState } from '../admins/adminsSlice.tsx';
+import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 
 const CustomerTable: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { customers, loading, error, successMsg, targetCustomerId, isfiltered } = useAppSelector(selectCustomerState);
+  const { customers, loading, error, successMsg, targetCustomerId } = useAppSelector(selectCustomerState);
   const [search, setSearch] = useState('');
-  
+
 
   useEffect(() => {
+    clearUsersStates(dispatch);
     dispatch(fetchCustomers());
   }, []);
 
@@ -19,8 +23,6 @@ const CustomerTable: React.FC = () => {
     dispatch(clearCustomerState())
     dispatch(setTargetCustomerId(customerId))
     try {
-      console.log('AAAAAAAAAAAAAAAAAAAAAAA');
-      
       await dispatch(removeCustomer(customerId)).unwrap();
       // await dispatch(getMyFlights({ token }));
       // dispatch(setTargetFlightId(null))
@@ -29,22 +31,15 @@ const CustomerTable: React.FC = () => {
     }
   };
 
-  const filteredCustomers = customers.filter(c =>
-    c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.username.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredCustomers = customers.filter(c =>
+  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.username.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
     <div>
-      <h2>Customers List Long Long List</h2>
-      <input
-        type="text"
-        placeholder="Search by name or username"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{ marginBottom: '10px' }}
-      />
+      <h2>Customers List</h2>
       <table border={1} cellPadding={5}>
         <thead>
           <tr>
@@ -56,10 +51,11 @@ const CustomerTable: React.FC = () => {
             <th>Phone</th>
             <th>Email</th>
             <th>Airport ID</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {filteredCustomers.map(c => (
+          {customers.map(c => (
             <React.Fragment key={c.id}>
               <tr>
                 <td>{c.id}</td>
@@ -70,6 +66,7 @@ const CustomerTable: React.FC = () => {
                 <td>{c.phone_no}</td>
                 <td>{c.email}</td>
                 <td>{c.airport_id}</td>
+                <td>{c.status ? 'Active' : 'Inactive'}</td>
                 <td>
                   <button onClick={(e) => handleRemoveCustomer(e, c.id)}>DELETE</button>
                 </td>

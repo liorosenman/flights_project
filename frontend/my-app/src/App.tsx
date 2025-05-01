@@ -15,6 +15,7 @@ import CustomerTable from './components/users/customers/CustomerTable.tsx';
 import MenuLayout from './components/Menu/MainLayout.tsx';
 import AdminsTable from './components/users/admins/AdminsTable.tsx';
 import AirlinesTable from './components/users/airline/AirlinesTable.tsx';
+import UserManagerComp from './components/users/admins/UserManagerComp.tsx';
 
 
 const App = () => {
@@ -24,25 +25,26 @@ const App = () => {
         {/* Public route */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginComp />} />
-
-        {/* Protected routes inside MenuLayout */}
-        {/* <Route element={<MenuLayout />}></Route>
-      <Route path="/" element={<Navigate to="/login" />} /> */}
-      <Route element={<MenuLayout />}>
-        <Route path="/login" element={<LoginComp />} />
-        <Route path="/users" element={<Users />} />
-        <Route path= "/adminslist" element={<AdminsTable/>}/>
-        <Route path="/airlineslist" element={<AirlinesTable />} />
-        <Route path="/createcustomer" element={<CreateCustomer />} />
-        <Route path="/createairline" element={<CreateAirline />} />
-        <Route path="/createadmin" element={<CreateAdmin />} />
-        <Route path="/createflight" element={<CreateFlightComp />} />
-        <Route path="/flightsboard" element = {<FlightsBoard />} />
-        <Route path="/ticketslist" element = {<TicketsList />} />
-        <Route path="/customerslist" element = {<CustomerTable />} />
-        <Route path="/adminslist" element = {<AdminsTable />} />
+        <Route element={<MenuLayout />}>
+          <Route path="/login" element={<LoginComp />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/adminslist" element={<AdminsTable />} />
+          <Route path="/airlineslist" element={<AirlinesTable />} />
+          <Route path="/createcustomer" element={<CreateCustomer />} />
+          <Route path="/createairline" element={<CreateAirline />} />
+          <Route path="/createadmin" element={<CreateAdmin />} />
+          <Route path="/createflight" element={<CreateFlightComp />} />
+          <Route path="/flightsboard" element={<FlightsBoard />} />
+          <Route path="/ticketslist" element={<TicketsList />} />
+          <Route path="/customerslist" element={<CustomerTable />} />
+          <Route path="/adminslist" element={<AdminsTable />} />
         </Route>
       </Routes>
+      <Routes>
+        <Route path="/users/:roleId" element={<UserManagerComp />} />
+      </Routes>
+
+
     </Router>
   );
 };

@@ -4,6 +4,9 @@ import { fetchAirlines, removeAirline, setTargetAirlineId } from './airlineSlice
 import Menu from '../../Menu/menuComp.tsx';
 import {clearAirlineState} from './airlineSlicer.tsx'
 import { selectAirlineState } from './airlineSlicer.tsx';
+import { clearCustomerState } from '../customers/customersSlice.tsx';
+import { clearAdminState } from '../admins/adminsSlice.tsx';
+import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 
 const AirlinesTable: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -12,6 +15,7 @@ const AirlinesTable: React.FC = () => {
   
 
   useEffect(() => {
+    clearUsersStates(dispatch);
     dispatch(fetchAirlines());
   }, []);
 
@@ -35,13 +39,6 @@ const AirlinesTable: React.FC = () => {
   return (
     <div>
       <h2>Airlines List</h2>
-      <input
-        type="text"
-        placeholder="Search by username"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{ marginBottom: '10px' }}
-      />
       <table border={1} cellPadding={5}>
         <thead>
           <tr>
@@ -51,6 +48,7 @@ const AirlinesTable: React.FC = () => {
             <th>Country</th>
             <th>Email</th>
             <th>Airport ID</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -63,6 +61,7 @@ const AirlinesTable: React.FC = () => {
                 <td>{a.country}</td>
                 <td>{a.email}</td>
                 <td>{a.airport_id}</td>
+                <td>{a.status ? 'Active' : 'Inactive'}</td>
                 <td>
                   <button onClick={(e) => handleRemoveAirline(e, a.id)}>DELETE</button>
                 </td>

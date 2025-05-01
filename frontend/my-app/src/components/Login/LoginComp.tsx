@@ -18,11 +18,6 @@ const LoginComp: React.FC = () => {
     e.preventDefault();
     try {
       const resultAction = await dispatch(loginUser({ username, password }));
-      console.log("BBBBBBBBBBBBBBBBB");
-      console.log((resultAction));
-      
-      
-      
       // Check if login succeeded
       if (loginUser.fulfilled.match(resultAction)) {
         const token = resultAction.payload?.token
@@ -33,7 +28,7 @@ const LoginComp: React.FC = () => {
         
         switch (roleId) {
           case UserRole.ADMIN:
-            navigate('/users');
+            navigate('/users/1');
             break;
           case UserRole.CUSTOMER:
             navigate('/flightsboard');

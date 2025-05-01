@@ -7,6 +7,7 @@ export interface LinkedCustomer {
     address: string;
     phone_no: number;
     email: string;
-    airport_id: number;             
+    airport_id: number;
+    status: boolean             
   }
   

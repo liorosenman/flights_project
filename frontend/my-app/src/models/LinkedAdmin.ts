@@ -4,5 +4,6 @@ export interface LinkedAdmin {
     first_name: string;
     last_name: string;
     email: string;
-    airport_id: number;             
+    airport_id: number;
+    status: boolean;           
   }

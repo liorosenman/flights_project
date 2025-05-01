@@ -59,11 +59,11 @@ const FlightsBoard: React.FC = () => {
         break;
 
       case FlightFilterOptions.GET_ARRIVAL_FLIGHTS:
-        if (filters.country){
+        if (filters.country) {
           await dispatch(getArrivalFlights(filters.country))
           setLastFilters({ type: FlightFilterOptions.GET_ARRIVAL_FLIGHTS })
         }
-      break;
+        break;
 
       case FlightFilterOptions.GET_DEPARTURE_FLIGHTS:
         if (filters.country) {
@@ -112,7 +112,10 @@ const FlightsBoard: React.FC = () => {
       {generalErr &&
         <h4 style={{ color: "red" }}>{generalErr}</h4>
       }
-      <FlightFilters onFilter={handleFilterClick} />
+      {roleId === 2 && (
+        <FlightFilters onFilter={handleFilterClick} />
+      )}
+
       <table>
         <thead>
           <tr>

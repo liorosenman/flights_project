@@ -3,14 +3,18 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchAdmins, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
 import Menu from '../../Menu/menuComp.tsx';
 import {clearAdminState} from './adminsSlice.tsx'
+import { clearCustomerState } from '../customers/customersSlice.tsx';
+import { clearAirlineState } from '../airline/airlineSlicer.tsx';
+import { clearUsersStates } from './UserManagerComp.tsx';
 
 const AdminTable: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { admins, loading, error, successMsg, targetAdminId, isfiltered } = useAppSelector(selectAdminState);
+  const { admins, loading, error, successMsg, targetAdminId } = useAppSelector(selectAdminState);
   const [search, setSearch] = useState('');
   
 
   useEffect(() => {
+    clearUsersStates(dispatch);
     dispatch(fetchAdmins());
   }, []);
 
@@ -34,13 +38,6 @@ const AdminTable: React.FC = () => {
   return (
     <div>
       <h2>Admins List</h2>
-      <input
-        type="text"
-        placeholder="Search by username"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{ marginBottom: '10px' }}
-      />
       <table border={1} cellPadding={5}>
         <thead>
           <tr>
@@ -50,6 +47,7 @@ const AdminTable: React.FC = () => {
             <th>Last Name</th>
             <th>Email</th>
             <th>Airport ID</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -62,6 +60,7 @@ const AdminTable: React.FC = () => {
                 <td>{a.last_name}</td>
                 <td>{a.email}</td>
                 <td>{a.airport_id}</td>
+                <td>{a.status ? 'Active' : 'Inactive'}</td>
                 <td>
                   <button onClick={(e) => handleRemoveAdmin(e, a.id)}>DELETE</button>
                 </td>

@@ -22,3 +22,12 @@ export const removeCustomerService = async (customerId: number, token: string) =
   return response.data;
 };
 
+export const getCustomerByUsernameService = async (username: string, token: string) => {
+  const response = await axios.get(`${SERVER}/get_customer_by_username/${username}/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data.customer;
+};
+
