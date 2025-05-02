@@ -25,7 +25,6 @@ logging.basicConfig(filename="./logs.log",
 @role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
-    print(request.data)
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
         print(request.user.id)
@@ -52,7 +51,6 @@ def add_flight(request):
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
     if not flight.status == 'active':
-    # if flight.status is not 'active':
         return Response(
             {"message": "Only active flights can be updated."},
             status=status.HTTP_400_BAD_REQUEST
@@ -72,9 +70,7 @@ def update_flight(request, id):
         return Response(
             {"message": "Invalid datetime format for 'new_dep_time'."},
             status=status.HTTP_400_BAD_REQUEST)
-   
 
-    # new_dep_time = make_aware(new_dep_time)
     current_time = now()
     if current_time > new_dep_time:
          return Response(
@@ -101,7 +97,6 @@ def update_flight(request, id):
 def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
    flight = get_object_or_404(Flight, id = id)
    if not flight.status == 'active':
-#    if flight.status is not 'active':
       return Response(
             {"error": "This flight cannot be deactivated because it is already inactive."},
             status=status.HTTP_400_BAD_REQUEST
@@ -121,11 +116,9 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
 
 @api_view(['GET'])
 @role_required(Roles.AIRLINE.value)
-# @authorize_airline()
 @decorators.update_flights_status()
 def get_my_flights(request):
     the_airline_id = Airline.objects.get(airport_user=request.user).id
-    print(f"THE AIRLINE ID IS {the_airline_id}")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [the_airline_id])

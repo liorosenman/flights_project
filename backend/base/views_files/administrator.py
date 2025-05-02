@@ -10,15 +10,14 @@ from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
 from base.serializer import CustomerSerializer
-from ..permission import role_required
+from ..permission import authorize_admin_and_customer, role_required
 from django.db.models import Q
 from ..decorators import *
 from base import decorators
 
 #Create a new admin (user_role_num = 1)
-
 @api_view(['POST']) 
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @admin_details_input_validation
 @create_airport_user(Roles.ADMINISTRATOR.value)
@@ -41,7 +40,6 @@ def admin_register(request): #Create a new admin
 def airline_register(request):
     username = request.data['username']
     airport_user = AirportUser.objects.get(username = username)
-    # airport_user = AirportUser.objects.last()
     country = Country.objects.get(id = request.data['country_id'])
     name = request.data['name']
     airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)
@@ -77,7 +75,7 @@ def get_user_by_username(request, username):
         }, status=400)
     
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_customers_details(request):
     try:
         with connection.cursor() as cursor:
@@ -94,20 +92,9 @@ def get_customers_details(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-    
-# @api_view(['GET'])
-# # @role_required(Roles.ADMINISTRATOR.value)
-# def get_all_customers(request):
-#         customers = Customer.objects.all()
-#         if not customers.exists():
-#             return Response({"message": "There are no customers"}, status=status.HTTP_200_OK)
-#         serializer = CustomerSerializer(customers, many=True)
-#         return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-
+# Managing for admin, load details to update for customer.
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@authorize_admin_and_customer()
 def get_customer_by_username(request, username):
     try:
         with connection.cursor() as cursor:
@@ -127,9 +114,10 @@ def get_customer_by_username(request, username):
         return Response({
             "error": f"An error occurred while retrieving the customer: {str(e)}"
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
+
 @api_view(['PUT'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
@@ -157,7 +145,7 @@ def remove_airline(request, id):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['PUT'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
@@ -179,7 +167,7 @@ def remove_customer(request, id):
 
 
 @api_view(['PUT'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
           return Response({
@@ -198,7 +186,7 @@ def remove_admin(request, id):
     }, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_admins_details(request):
     try:
         with connection.cursor() as cursor:
@@ -216,7 +204,7 @@ def get_admins_details(request):
         )
 
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_airlines_details(request):
     try:
         with connection.cursor() as cursor:
@@ -235,7 +223,7 @@ def get_airlines_details(request):
 
 
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_admin_by_username(request, username):
     try:
         with connection.cursor() as cursor:
@@ -257,7 +245,7 @@ def get_admin_by_username(request, username):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_airline_by_username(request, username):
     try:
         with connection.cursor() as cursor:

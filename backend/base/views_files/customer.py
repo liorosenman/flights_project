@@ -24,18 +24,14 @@ logger = logging.getLogger('report_actions')
 @decorators.update_flights_status()
 @decorators.conditions_for_booking_a_flight()
 def add_ticket(request):
-    print("AAAAAAAAAAAAAAAAAAAAA")
     flight_id = request.data.get('flight_id')
     flight = get_object_or_404(Flight, id = flight_id)
-    # if not flight.is_active:
-    #     return Response({"msg": "Chosen flight is not active"})
     flight.remaining_tickets -= 1
     flight.save()
     customer = Customer.objects.get(airport_user_id = request.user.id)
     ticket = Ticket.objects.create(
             flight_id=flight,
             customer_id=customer,
-            # is_active=True
     )
     return Response(
         {"message": "Ticket successfully created", "remaining_tickets": flight.remaining_tickets},
@@ -47,7 +43,6 @@ def add_ticket(request):
 @decorators.update_flights_status()
 @decorators.conditions_for_cancel_a_ticket()
 def remove_ticket(request, id):
-    # ticket = Ticket.objects.get(id = id)
     ticket = get_object_or_404(Ticket, id = id)
     ticket.status = 'canceled'
     flight = Flight.objects.get(id = ticket.flight_id_id)
@@ -59,27 +54,22 @@ def remove_ticket(request, id):
 
 @api_view(['PUT'])
 @role_required(Roles.CUSTOMER.value)
-# @authorize_customer()
 @user_details_input_validation
 @customer_details_input_validation
 @update_airport_user()
 def update_customer(request):
     the_customer_id = Customer.objects.get(airport_user=request.user).id
-    print("AAAAAAAAAAAAAAAAAAAAA")
     print(the_customer_id)
     customer = get_object_or_404(Customer, id = the_customer_id)
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
-    # print(serializer)
     if serializer.is_valid():
         serializer.save()
-        # return Response(serializer.data, status=status.HTTP_200_OK)
         return Response({"message":"The customer was updated successfully."})
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view([('GET')])
 @role_required(Roles.CUSTOMER.value)
-# @authorize_customer()
 @decorators.update_flights_status()
 def get_my_tickets(request):
     the_customer_id = Customer.objects.get(airport_user=request.user).id
