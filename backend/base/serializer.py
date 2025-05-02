@@ -55,16 +55,58 @@ class AdminSerializer(serializers.ModelSerializer):
     #     admin = Admin.objects.create(airport_user=airport_user, **validated_data)
     #     return admin
 
+# class CustomerSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Customer
+#         fields = '__all__'
+        
+#     def create(self, validated_data):
+#         airport_user_data = validated_data.pop('airport_user')
+#         airport_user = AirportUserSerializer.create(AirportUserSerializer(), validated_data=airport_user_data) # use nested serializer create method
+#         customer = Customer.objects.create(airport_user=airport_user, **validated_data)
+#         return customer
+
+from rest_framework import serializers
+from .models import Customer, AirportUser
+
 class CustomerSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(source='airport_user.email')
+    password = serializers.CharField(write_only=True, required=False, source='airport_user.password')
+
     class Meta:
         model = Customer
-        fields = '__all__'
+        fields = [
+            'first_name',
+            'last_name',
+            'address',
+            'phone_no',
+            'credit_card_no',
+            'email',
+            'password',
+        ]
+
+    def update(self, instance, validated_data):
+        # airport_user_data = validated_data.pop('airport_user', {})
         
-    def create(self, validated_data):
-        airport_user_data = validated_data.pop('airport_user')
-        airport_user = AirportUserSerializer.create(AirportUserSerializer(), validated_data=airport_user_data) # use nested serializer create method
-        customer = Customer.objects.create(airport_user=airport_user, **validated_data)
-        return customer
+        # Update email
+        email = validated_data.pop('email', None)
+        if email:
+            instance.airport_user.email = email
+        
+        # Update password securely
+        password = validated_data.pop('password', None)
+        if password:
+            instance.airport_user.set_password(password)
+
+        instance.airport_user.save()
+
+        # Update customer fields
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        return instance
+
 
 class AirlineSerializer(serializers.ModelSerializer):
     class Meta:

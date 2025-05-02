@@ -14652,3 +14652,125 @@ RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash an
 2025-05-01 21:18:11,035 - WARNING - Not Found: /get_airline_by_username/toront/
 2025-05-01 21:18:23,712 - WARNING - Not Found: /get_airline_by_username/toront/
 2025-05-01 21:26:32,987 - WARNING - Successful flight creation.
+2025-05-02 11:00:18,685 - WARNING - Bad Request: /update_customer/1/
+2025-05-02 11:06:48,939 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:06:52,077 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:07:04,655 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:07:09,893 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:07:15,119 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:07:22,472 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:08:39,115 - INFO - C:\LIOR\python\final_project\backend\base\urls.py changed, reloading.
+2025-05-02 11:09:13,402 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: update_customer() missing 1 required positional argument: 'id'
+2025-05-02 11:11:27,343 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:11:31,932 - WARNING - Bad Request: /update_customer/
+2025-05-02 11:17:33,593 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:17:36,663 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:17:41,821 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:18:32,307 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:18:44,216 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:19:31,405 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:19:56,599 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:02,830 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:07,971 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:11,064 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:26,778 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:28,821 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:31,882 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:20:46,489 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:21:47,481 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 127, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\customer.py", line 69, in update_customer
+    serializer.save()
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\serializers.py", line 203, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\serializers.py", line 1019, in update
+    raise_errors_on_nested_writes('update', self, validated_data)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\serializers.py", line 871, in raise_errors_on_nested_writes
+    assert not any(
+           ^^^^^^^^
+AssertionError: The `.update()` method does not support writable dotted-source fields by default.
+Write an explicit `.update()` method for serializer `base.serializer.CustomerSerializer`, or set `read_only=True` on dotted-source serializer fields.
+2025-05-02 11:31:55,082 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:32:02,357 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:35:31,205 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:36:11,075 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:37:05,535 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:38:55,594 - WARNING - Bad Request: /update_customer/
+2025-05-02 11:43:38,805 - WARNING - Not Found: /get_customer_data_by_username/lioros2025/
+2025-05-02 11:44:51,717 - WARNING - Method Not Allowed: /get_customer_by_username/lioros2025/
+2025-05-02 11:45:07,091 - WARNING - Method Not Allowed: /get_customer_by_username/lioros2025/
+2025-05-02 11:47:06,627 - WARNING - Unauthorized: /login/
+2025-05-02 11:53:20,157 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:53:33,710 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:53:45,220 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:54:01,741 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:54:17,085 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:54:27,111 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-02 11:55:32,901 - WARNING - Unauthorized: /login/
+2025-05-02 11:55:57,317 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:56:00,454 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 11:59:24,632 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-05-02 11:59:43,581 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-05-02 12:00:34,997 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.

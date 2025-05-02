@@ -59,14 +59,17 @@ def remove_ticket(request, id):
 
 @api_view(['PUT'])
 @role_required(Roles.CUSTOMER.value)
-@authorize_customer()
+# @authorize_customer()
 @customer_details_input_validation
-def update_customer(request, id):
-    customer = get_object_or_404(Customer, id = id)
+def update_customer(request):
+    the_customer_id = Customer.objects.get(airport_user=request.user).id
+    customer = get_object_or_404(Customer, id = the_customer_id)
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
+    print(serializer)
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        # return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response({"message":"The customer was updated successfully."})
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
