@@ -14774,3 +14774,481 @@ Write an explicit `.update()` method for serializer `base.serializer.CustomerSer
 2025-05-02 11:59:24,632 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-05-02 11:59:43,581 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-05-02 12:00:34,997 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-05-02 13:25:07,793 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:25:53,499 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:26:05,812 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:26:30,581 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:26:35,524 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:28:28,786 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:28:32,656 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:28:34,454 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:32:04,625 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:32:10,754 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:32:13,768 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:32:28,414 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:36:44,773 - WARNING - Method Not Allowed: /update_customer/
+2025-05-02 13:38:58,416 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:39:23,816 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:41:59,503 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:42:09,704 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 13:42:47,379 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:42:50,517 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:42:52,581 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:42:54,626 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:43:21,838 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:46:01,816 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:46:13,317 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:46:17,502 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:46:21,072 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:46:47,023 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:46:53,274 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:46:57,487 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:04,779 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:06,817 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:18,318 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:20,369 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:27,964 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:47:40,375 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:47:58,057 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:49:05,421 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:49:16,917 - WARNING - Bad Request: /update_customer/
+2025-05-02 13:49:42,493 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:50:04,625 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:50:08,882 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:50:19,273 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:51:04,578 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:51:06,641 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:51:20,250 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:51:35,771 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:51:37,835 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:52:44,210 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:52:51,523 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:52:53,561 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:10,953 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:17,184 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:39,693 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:44,891 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:47,985 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:53:57,370 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:54:02,560 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 90, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 129, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 260, in wrapper
+    user_to_update = AirportUser.objects.get(id = request.id)
+                                                  ^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\request.py", line 423, in __getattr__
+    return self.__getattribute__(attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'id'
+2025-05-02 13:54:31,324 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:28,222 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:32,281 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:35,349 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:40,455 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:50,861 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:56:53,969 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 13:58:15,654 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 90, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 129, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 268, in wrapper
+    update_airport_user.save()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'save'
+2025-05-02 13:59:45,473 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 14:01:37,711 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 14:01:40,889 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 14:01:44,234 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 14:06:29,284 - WARNING - Unauthorized: /update_customer/
+2025-05-02 14:06:59,331 - WARNING - Method Not Allowed: /logout/
+2025-05-02 14:09:54,804 - WARNING - Unauthorized: /login/
+2025-05-02 15:08:08,497 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:08:27,375 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:08:34,638 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:08:37,785 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:09:52,606 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:02,984 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:08,118 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:33,281 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:41,686 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:43,740 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:45,733 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:55,120 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:10:58,199 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 15:11:05,463 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 16:13:46,806 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:15:08,513 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:20:09,712 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:20:41,532 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:22:51,957 - WARNING - Unauthorized: /update_customer/
+2025-05-02 16:22:58,432 - WARNING - Unauthorized: /update_customer/
+2025-05-02 16:23:56,847 - WARNING - Unauthorized: /login/
+2025-05-02 16:28:59,071 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:34:43,022 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:46:12,324 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:50:59,798 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:06,130 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:09,199 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:16,405 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:36,366 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:47,859 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:51:49,849 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:52:08,650 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-02 16:52:17,390 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:53:00,483 - WARNING - Unauthorized: /update_customer/
+2025-05-02 16:53:04,902 - WARNING - Unauthorized: /update_customer/
+2025-05-02 16:53:47,709 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:54:09,639 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:54:28,535 - WARNING - Bad Request: /update_customer/
+2025-05-02 16:55:12,323 - WARNING - Unauthorized: /login/
+2025-05-02 17:07:50,466 - WARNING - Unauthorized: /login/
+2025-05-02 17:08:09,144 - WARNING - Unauthorized: /login/
+2025-05-02 17:09:04,171 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:11:51,170 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:11:53,257 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:13:38,131 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:28:07,296 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:29:14,844 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:30:14,964 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:30:20,354 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:30:24,440 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:30:50,104 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:30:53,189 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:30:56,254 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:31:36,492 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:32:05,179 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:32:10,393 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:32:12,401 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:32:15,578 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:34:17,639 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:19,694 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:22,775 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:26,880 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:29,915 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:33,032 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:34:37,569 - WARNING - Unauthorized: /update_customer/
+2025-05-02 17:34:57,954 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-02 17:34:57,962 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-02 17:34:59,777 - WARNING - Unauthorized: /get_customer_by_username/lioros2025/
+2025-05-02 17:34:59,785 - WARNING - Unauthorized: /get_customer_by_username/lioros2025/
+2025-05-02 17:35:31,713 - WARNING - Unauthorized: /update_customer/
+2025-05-02 17:36:04,981 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:36:07,039 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:36:11,208 - WARNING - Unauthorized: /update_customer/
+2025-05-02 17:37:23,543 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:37:27,861 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:42:38,688 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:43:24,860 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:43:26,977 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:43:29,008 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:43:31,154 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:43:34,253 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:43:43,360 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:44:39,122 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:44:44,487 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:44:45,732 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:45:06,606 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:45:08,708 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:45:10,788 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:45:13,127 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:45:27,802 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:45:40,099 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:46:24,621 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:46:28,472 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:49:04,350 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:52:25,886 - WARNING - Bad Request: /update_customer/
+2025-05-02 17:57:26,977 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:57:41,488 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:57:48,515 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:58:18,904 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 17:58:24,086 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:01:04,571 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:02:17,124 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:02:21,334 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:02:27,226 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:02:48,887 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:02:55,111 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:03:00,389 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:03:03,549 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:03:12,922 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:03:18,157 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:04:00,344 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:04:06,631 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:04:12,807 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:04:43,479 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:04:48,823 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:05:02,166 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:05:06,289 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:05:16,733 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:05:22,963 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:06:01,719 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:06:13,189 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:06:20,472 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:06:24,551 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:06:26,567 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:07:47,707 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:11:15,425 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:11:19,521 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:11:22,638 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:11:30,966 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:13:50,967 - WARNING - Unauthorized: /login/
+2025-05-02 18:13:58,539 - WARNING - Unauthorized: /login/
+2025-05-02 18:14:24,999 - WARNING - Unauthorized: /login/
+2025-05-02 18:20:51,920 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:20:51,987 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:25:59,294 - WARNING - Unauthorized: /login/
+2025-05-02 18:26:06,345 - WARNING - Unauthorized: /login/
+2025-05-02 18:28:14,332 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:28:14,392 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:29:14,312 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:30:06,971 - WARNING - Unauthorized: /login/
+2025-05-02 18:37:34,147 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:37:37,243 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:37:45,578 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:38:35,895 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:40:45,913 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:40:45,985 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:41:24,204 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 94, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 136, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 272, in wrapper
+    user_to_update.set_password(password)
+                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'password' where it is not associated with a value
+2025-05-02 18:41:38,615 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:41:47,833 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:41:53,832 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:41:57,678 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:05,970 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:09,756 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:17,608 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:24,023 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:39,164 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:42:44,240 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 94, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 136, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 272, in wrapper
+    user_to_update.set_password(password)
+                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'password' where it is not associated with a value
+2025-05-02 18:43:59,382 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:43:59,449 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:47:47,517 - WARNING - Unauthorized: /login/
+2025-05-02 18:48:44,951 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:48:45,024 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:49:31,644 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:50:22,046 - ERROR - Internal Server Error: /update_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 94, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 136, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 272, in wrapper
+    user_to_update.set_password(password)
+                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'password' where it is not associated with a value
+2025-05-02 18:52:44,595 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:52:47,701 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:52:49,788 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:52:55,003 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:53:13,794 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-02 18:53:56,749 - WARNING - Unauthorized: /login/
+2025-05-02 18:54:07,818 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:54:07,877 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 18:56:05,429 - WARNING - Bad Request: /update_customer/
+2025-05-02 18:57:07,330 - WARNING - Unauthorized: /login/
+2025-05-02 19:09:10,323 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:09:20,955 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:09:21,028 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:16:49,936 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:16:49,982 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:18:43,209 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:19:10,298 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:19:23,466 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:19:29,891 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:20:56,346 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:21:41,462 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:21:41,507 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:23:12,795 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:24:20,480 - WARNING - Bad Request: /update_customer/
+2025-05-02 19:26:00,109 - WARNING - Unauthorized: /login/
+2025-05-02 19:26:07,088 - WARNING - Unauthorized: /login/
+2025-05-02 19:27:15,044 - WARNING - Unauthorized: /login/
+2025-05-02 19:29:22,325 - WARNING - Unauthorized: /login/
+2025-05-02 19:29:28,140 - WARNING - Unauthorized: /login/
+2025-05-02 19:29:43,741 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:29:43,764 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:40:11,859 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:40:11,923 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:52:30,107 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:52:30,130 - WARNING - Not Found: /get_my_tickets/
+2025-05-02 19:55:08,594 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.

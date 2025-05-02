@@ -12,8 +12,9 @@ const Menu = () => {
 
   const dispatch = useAppDispatch();
 
-  const handleLogout =  () => {
-    // e.preventDefault();
+  const handleLogout =  (e) => {
+    e.preventDefault();
+    
     // await dispatch(logout());
     // dispatch(clearAuthTokens());
     const currentToken = localStorage.getItem('access_token');
@@ -38,6 +39,7 @@ const Menu = () => {
           <>
         <Link to="/flightsboard">Board</Link>|{" "}
         <Link to="/ticketslist">My Tickets</Link>|{" "}
+        <Link to="/updatecustomer">Details</Link>|{" "}
           </>
         )}
         {roleId === 1 && (

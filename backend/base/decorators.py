@@ -68,31 +68,38 @@ def conditions_for_cancel_a_ticket():
     return decorator
 
 def user_details_input_validation(func):
-        @wraps(func)
-        def wrapper(request, *args, **kwargs):
-            data = request.data
-            username = data.get('username', '')
+    @wraps(func)
+    def wrapper(request, *args, **kwargs):
+        print("ZZZZZZZZZZZZZZZZZZZZZZZZZZ")
+        data = request.data
+        username = data.get('username', '')
+        if username:
             if AirportUser.objects.filter(username=username).exists():
                 return Response({'error': 'Username is already taken'}, status=status.HTTP_409_CONFLICT)
             if not re.match(r'^[a-zA-Z0-9]*$', username) or not any(char.isdigit() for char in username):
                 return Response({'error': 'Username must be unique, contain at least one digit, and have no special characters'},
                                 status=status.HTTP_400_BAD_REQUEST)
-            password = data.get('password', '')
+        print("YYYYYYYYYYYYYYYYYYYYYYYY")
+        if 'password' in data:  # Only validate if key exists, even if value is empty
+            password = data['password']
             if not re.match(r'^[a-zA-Z0-9]*$', password) or len(password) < 4 or not any(char.isdigit() for char in password):
                 return Response({'error': 'Password must include at least one digit, at least four characters, and have no special characters'},
                                 status=status.HTTP_400_BAD_REQUEST)
-            email = data.get('email', '')
-            email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-            if not re.match(email_pattern, email):
-                return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
-            return func(request, *args, **kwargs)
-        return wrapper
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        email = data.get('email', '')
+        email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        if not re.match(email_pattern, email):
+            return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
+        print("BBBBBBBBBBBBBBBBBBBBBBBBb")
+        return func(request, *args, **kwargs)
+    return wrapper
     
 
 def customer_details_input_validation(func):
     # def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
+            print("CCCCCCCCCCCCCCCCCCCCCCCCCCCC")
             data = request.data
             first_name = data.get('first_name', '')
             if not first_name or not first_name.isalpha() or len(first_name) > 50:
@@ -100,6 +107,7 @@ def customer_details_input_validation(func):
                 {"error": "First name is required, only letters, 50 characters max."}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
+            print("WWWWWWWWWWWWWWWWWWWWWWWWWWWW")
             last_name = data.get('last_name', '')
             if not last_name or not last_name.isalpha() or len(last_name) > 50:
                 return Response(
@@ -124,6 +132,7 @@ def customer_details_input_validation(func):
                 {"error": "Credit card number must be 8 characters, digits only."}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
+            
             return func(request, *args, **kwargs)
         return wrapper
     # return decorator
@@ -248,6 +257,25 @@ def create_airport_user(user_role_id):
             return func(request, *args, **kwargs)
         return wrapper
     return decorator
+
+def update_airport_user():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            print("I AM IN")
+            # user = request.user
+            user_to_update = AirportUser.objects.get(id = request.user.id)
+            email = request.data.get('email')
+            if 'password' in request.data:
+                password = request.data.get('password')
+                user_to_update.set_password(password)
+            user_to_update.email = email
+            user_to_update.save()
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
+
+
 
 
 

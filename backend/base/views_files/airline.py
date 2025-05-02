@@ -38,7 +38,6 @@ def add_flight(request):
     serializer = FlightSerializer(data=flight_data)
     print(serializer)
     if serializer.is_valid():
-        print("DDDDDDDDDDDDDDDDDDDD")
         flight = serializer.save() 
         logging.warning("Successful flight creation.")
         return Response({"message": "The flight was created successfully."}, status=status.HTTP_201_CREATED)   

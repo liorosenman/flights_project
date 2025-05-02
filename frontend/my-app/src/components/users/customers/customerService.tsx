@@ -31,3 +31,15 @@ export const getCustomerByUsernameService = async (username: string, token: stri
   return response.data.customer;
 };
 
+export const updateCustomerService = async (data: any, token: string) => {
+  console.log(data);
+  const response = await axios.put(`${SERVER}/update_customer/`, data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  console.log(response.data);
+  return response.data;
+};
+

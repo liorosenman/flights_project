@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from base.decorators import authorize_customer, customer_details_input_validation
+from base.decorators import authorize_customer, customer_details_input_validation, update_airport_user, user_details_input_validation
 from base.permission import role_required
 from ..models import Airline, Customer, Flight, Roles, RolesEnum, Ticket
 from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
@@ -60,12 +60,16 @@ def remove_ticket(request, id):
 @api_view(['PUT'])
 @role_required(Roles.CUSTOMER.value)
 # @authorize_customer()
+@user_details_input_validation
 @customer_details_input_validation
+@update_airport_user()
 def update_customer(request):
     the_customer_id = Customer.objects.get(airport_user=request.user).id
+    print("AAAAAAAAAAAAAAAAAAAAA")
+    print(the_customer_id)
     customer = get_object_or_404(Customer, id = the_customer_id)
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
-    print(serializer)
+    # print(serializer)
     if serializer.is_valid():
         serializer.save()
         # return Response(serializer.data, status=status.HTTP_200_OK)

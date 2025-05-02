@@ -31,7 +31,6 @@ const CustomerSignupForm = () => {
 
     return (
         <div>
-        <Menu/>
         <form onSubmit={handleSubmit}>
             {Object.keys(formData).map((field) => (
                 <div key={field}>

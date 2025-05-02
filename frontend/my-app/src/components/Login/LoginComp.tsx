@@ -23,8 +23,6 @@ const LoginComp: React.FC = () => {
         const token = resultAction.payload?.token
         const decoded: any = jwtDecode(token);
         const roleId = decoded.role_id;
-        console.log("AAAAAAAAAAAAAAAAAAA");
-        console.log("THE ROLE ID IS ", roleId);
         
         switch (roleId) {
           case UserRole.ADMIN:

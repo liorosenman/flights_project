@@ -16,6 +16,7 @@ import MenuLayout from './components/Menu/MainLayout.tsx';
 import AdminsTable from './components/users/admins/AdminsTable.tsx';
 import AirlinesTable from './components/users/airline/AirlinesTable.tsx';
 import UserManagerComp from './components/users/admins/UserManagerComp.tsx';
+import UpdateCustomerDetails from './components/users/customers/UpdateCustomerDetails.tsx';
 
 
 const App = () => {
@@ -38,6 +39,8 @@ const App = () => {
           <Route path="/ticketslist" element={<TicketsList />} />
           <Route path="/customerslist" element={<CustomerTable />} />
           <Route path="/adminslist" element={<AdminsTable />} />
+          <Route path="/updatecustomer" element={<UpdateCustomerDetails/>} />
+
         </Route>
       </Routes>
       <Routes>

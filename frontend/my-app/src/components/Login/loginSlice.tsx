@@ -17,6 +17,7 @@ interface LoginState {
   userId: number | null;
   error: string | null;
   loading: boolean;
+  username: string | null
 }
 
 const initialState: LoginState = {
@@ -26,6 +27,7 @@ const initialState: LoginState = {
   userId: userId,
   error: null,
   loading: false,
+  username: null
 };
 
 export const loginUser = createAsyncThunk(
@@ -150,7 +152,7 @@ const loginSlice = createSlice({
             
             state.roleId = decoded.role_id || null;
             state.userId = decoded.id || null;
-      
+            state.username = decoded.username || null;
             // Store to localStorage if needed
             localStorage.setItem('access_token', token);
           } catch (error) {

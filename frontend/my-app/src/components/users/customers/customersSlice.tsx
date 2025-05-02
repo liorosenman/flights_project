@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {LinkedCustomer} from '../../../models/LinkedCustomer.ts'
 import { RootState } from '../../../app/store.ts';
-import { getAllCustomersService, getCustomerByUsernameService, removeCustomerService } from './customerService.tsx';
+import { getAllCustomersService, getCustomerByUsernameService, removeCustomerService, updateCustomerService } from './customerService.tsx';
 
 interface CustomerState {
     customers: LinkedCustomer[]
@@ -10,6 +10,7 @@ interface CustomerState {
     successMsg: string | null;
     targetCustomerId : number | null;
     filterError: string | null;
+    customer: LinkedCustomer | null;
   }
 
 const initialState: CustomerState = {
@@ -18,7 +19,8 @@ const initialState: CustomerState = {
     error: null,
     successMsg: null,
     targetCustomerId : null,
-    filterError: null
+    filterError: null,
+    customer: null
   };
 
   export const fetchCustomers = createAsyncThunk(
@@ -62,7 +64,7 @@ export const getCustomerByUsername = createAsyncThunk<
   string,
   { state: RootState }
 >(
-  'customers/getCustomerByUsername',
+  'customer/getCustomerByUsername',
   async (username, { getState, rejectWithValue }) => {
     const token = getState().login.token;
     if (!token) return rejectWithValue('No access token');
@@ -79,6 +81,30 @@ export const getCustomerByUsername = createAsyncThunk<
   }
 );
 
+export const updateCustomer = createAsyncThunk<
+  any, 
+  any, 
+  { state: RootState }
+>(
+  'customer/updateCustomer',
+  async (formData, { getState, rejectWithValue }) => {
+    const token = getState().login.token;
+    if (!token) return rejectWithValue('No token provided');
+
+    try {
+      const result = await updateCustomerService(formData, token);
+      console.log("WHAT IS THE RESULT?");
+      console.log(result);
+      
+      return result;
+
+    } catch (error: any) {
+      console.log(error);
+      return rejectWithValue(error.response?.data?.error || 'Update failed');
+    }
+  }
+);
+
   const customersSlice = createSlice({
     name: 'customers',
     initialState,
@@ -89,6 +115,7 @@ export const getCustomerByUsername = createAsyncThunk<
         state.successMsg = null;
         state.targetCustomerId = null;
         state.filterError = null;
+        state.customer = null
       },
       setTargetCustomerId: (state, action) => {
         state.targetCustomerId = action.payload;
@@ -103,8 +130,6 @@ export const getCustomerByUsername = createAsyncThunk<
         })
         .addCase(fetchCustomers.fulfilled, (state, action) => {
           state.customers = action.payload;
-          console.log(state.customers);
-          
           state.loading = false;
         })
         .addCase(fetchCustomers.rejected, (state, action) => {
@@ -133,12 +158,26 @@ export const getCustomerByUsername = createAsyncThunk<
         })
         .addCase(getCustomerByUsername.fulfilled, (state, action) => {
           state.loading = false;
-          state.customers = [action.payload];
+          state.customer = action.payload;
         })
         .addCase(getCustomerByUsername.rejected, (state, action) => {
           state.loading = false;
           state.error = null;
           state.filterError = action.payload as string;
+        })
+        .addCase(updateCustomer.pending, (state) => {
+          state.loading = true;
+          state.error = null;
+        })
+        .addCase(updateCustomer.fulfilled, (state, action) => {
+          state.loading = false;
+          state.successMsg = action.payload.message as string;
+          state.error = null
+        })
+        .addCase(updateCustomer.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string;
+          state.successMsg = null
         });
 
     },

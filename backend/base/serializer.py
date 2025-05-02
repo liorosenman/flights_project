@@ -70,42 +70,10 @@ from rest_framework import serializers
 from .models import Customer, AirportUser
 
 class CustomerSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(source='airport_user.email')
-    password = serializers.CharField(write_only=True, required=False, source='airport_user.password')
-
     class Meta:
         model = Customer
-        fields = [
-            'first_name',
-            'last_name',
-            'address',
-            'phone_no',
-            'credit_card_no',
-            'email',
-            'password',
-        ]
-
-    def update(self, instance, validated_data):
-        # airport_user_data = validated_data.pop('airport_user', {})
+        fields = '__all__'
         
-        # Update email
-        email = validated_data.pop('email', None)
-        if email:
-            instance.airport_user.email = email
-        
-        # Update password securely
-        password = validated_data.pop('password', None)
-        if password:
-            instance.airport_user.set_password(password)
-
-        instance.airport_user.save()
-
-        # Update customer fields
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-
-        return instance
 
 
 class AirlineSerializer(serializers.ModelSerializer):

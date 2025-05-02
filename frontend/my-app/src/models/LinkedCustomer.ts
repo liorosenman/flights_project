@@ -8,6 +8,8 @@ export interface LinkedCustomer {
     phone_no: number;
     email: string;
     airport_id: number;
-    status: boolean             
+    status: boolean,
+    credit_card_no: number 
+    password?:string            
   }
   

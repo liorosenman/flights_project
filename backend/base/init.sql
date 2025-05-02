@@ -34,10 +34,11 @@ RETURNS TABLE (
     first_name VARCHAR,
     last_name VARCHAR,
     address VARCHAR,
-    phone_no INTEGER,
+    phone_no INTEGER,,
+    credit_card_no INTEGER,
     email VARCHAR,
     airport_id BIGINT,
-    status BOOLEAN 
+    status BOOLEAN,
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -48,12 +49,13 @@ BEGIN
         c.last_name::VARCHAR AS last_name,
         c.address::VARCHAR AS address,
         c.phone_no::INTEGER AS phone_no,
+        c.credit_card_no::INTEGER AS credit_card_no,
         u.email::VARCHAR AS email,
         u.id::BIGINT AS airport_id,
-        u.is_active::BOOLEAN AS status
+        u.is_active::BOOLEAN AS status,
     FROM base_customer AS c
     JOIN base_airportuser AS u ON c.airport_user_id = u.id
-    WHERE u.username = input_username AND u.role_name_id = 2
+    WHERE u.username = input_username AND u.role_name_id = 2;
 END;
 $$ LANGUAGE plpgsql;
 
