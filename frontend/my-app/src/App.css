@@ -82,6 +82,20 @@
   background-color: #0056b3;
 }
 
+.half-width-select {
+  width: 50%;
+}
+
+.single-object-error {
+  font-size: '40px';
+  color:red;
+}
+
+.single_object-error {
+  font-size: '40px';
+  color: green;
+}
+
 
 
 

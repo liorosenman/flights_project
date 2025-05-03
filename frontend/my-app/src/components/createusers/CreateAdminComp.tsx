@@ -33,7 +33,8 @@ const AdminForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="centered-form" onSubmit={handleSubmit}>
+            <h2 className="text-center mb-4">Admin Sign-up</h2>
             <div>
                 <label>Username:</label>
                 <input

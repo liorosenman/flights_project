@@ -5,6 +5,8 @@ import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
 import { clearFlightState, getFlightById, getFlightsByParameters, loadFlights } from './flightSlice.tsx'
 import SelectAirlineComp from '../users/airline/SelectAirlineComp.tsx'
+import '../../App.css';
+
 interface FlightFiltersProps {
   onFilter: (filters: any) => void; // You can define a better type later
 }
@@ -77,7 +79,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap align-items-end gap-3 mb-3">
+    <div className="d-flex flex-wrap align-items-end gap-3 mb-3 half-width-select ">
       <select
         className="form-select form-select-lg mb-3" aria-label="Large select example"
         value={selectedOption}

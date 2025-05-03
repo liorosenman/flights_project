@@ -21,14 +21,14 @@ const Menu = () => {
         <div>
           {roleId === 3 && (
             <>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createcustomer">Customer Sign Up</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">Flight</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">My Flights</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/flightsboard">Board</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">Create flight</Link>
             </>
           )}
           {roleId === 2 && (
             <>
-              <Link className="me-3 text-dark  text-decoration-none fw-semibold" to="/flightsboard">Board</Link>
+              <Link className="me-3 text-dark  text-decoration-none fw-semibold" to="/flightsboard">Flights Board</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/ticketslist">My Tickets</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/updatecustomer">Details</Link>
             </>

@@ -15439,3 +15439,8 @@ TypeError: get_customer_by_username() missing 1 required positional argument: 'u
 2025-05-02 20:56:19,539 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-05-02 20:56:44,681 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
 2025-05-02 20:56:45,187 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-05-03 12:17:04,113 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-03 12:17:04,127 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-03 12:38:09,511 - WARNING - Not Found: /get_arrival_flights/3/
+2025-05-03 12:58:37,005 - WARNING - Conflict: /create_ticket/
+2025-05-03 13:20:20,998 - WARNING - Bad Request: /create_flight/

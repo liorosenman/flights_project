@@ -44,7 +44,8 @@ const AirlineForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="centered-form" onSubmit={handleSubmit}>
+        <h2 className="text-center mb-4">Airline Sign-up</h2> 
             <div>
                 <label>Username:</label>
                 <input

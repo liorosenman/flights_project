@@ -10,8 +10,8 @@ import { FlightData } from '../../models/flightdata.ts';
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 
 interface FlightRowProps {
-  flight: LinkedFlightData;   
-  onRefilter: () => Promise<void>; 
+  flight: LinkedFlightData;
+  onRefilter: () => Promise<void>;
 }
 
 
@@ -24,14 +24,14 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
   const { loading } = useAppSelector(selectFlightsState);
   const { targetFlightId, error, successMsg, toBeUpdatedFlight } = useAppSelector(selectFlightsState);
-  
+
 
 
   const handlePurchase = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
     try {
       await dispatch(addTicket({ flight_id: flightId })).unwrap();
-      await onRefilter(); 
+      await onRefilter();
 
     } catch (error) {
       console.error("Ticket purchase failed:", error);
@@ -90,13 +90,13 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
         <td>{flight.remaining_tickets}</td>
         <td>{flight.status}</td>
 
-        {roleId === 2 && flight.status === 'active' && (
+        {roleId === 2 && flight.status === 'active' ? (
           <td>
             <button className="buy-ticket-btn" onClick={(e) => handlePurchase(e, flight.flight_id)}>
               Buy ticket
             </button>
           </td>
-        )}
+        ) : null}
 
         {roleId === 3 && flight.status === 'active' && (
           <>
@@ -104,8 +104,8 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
               <button onClick={(e) => handleRemoval(e, flight.flight_id)}>
                 Deactivate
               </button>
-            
-            
+
+
               <button onClick={(e) => openUpdCalendar(e, flight.flight_id)}>
                 +
               </button>
@@ -115,29 +115,29 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       </tr>
 
       {toBeUpdatedFlight === flight.flight_id && (
-  <tr>
-    <td colSpan={9} style={{ textAlign: 'center' }}>
-      <input
-        type="datetime-local"
-        value={updDate}
-        onChange={(e) => setupdDate(e.target.value)}
-        style={{ marginRight: '10px' }}
-        required
-      />
-      <button onClick={(e) => handleUpdateFlight(e, flight.flight_id)}>Update</button>
-    </td>
-  </tr>
-)}
+        <tr>
+          <td colSpan={9} style={{ textAlign: 'center' }}>
+            <input
+              type="datetime-local"
+              value={updDate}
+              onChange={(e) => setupdDate(e.target.value)}
+              style={{ marginRight: '10px' }}
+              required
+            />
+            <button onClick={(e) => handleUpdateFlight(e, flight.flight_id)}>Update</button>
+          </td>
+        </tr>
+      )}
 
-{(targetFlightId === flight.flight_id || toBeUpdatedFlight === flight.flight_id) && (error || successMsg) && (
-  <tr>
-   <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-  {error
-    ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-    : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
-</td>
-  </tr>
-)}
+      {(targetFlightId === flight.flight_id || toBeUpdatedFlight === flight.flight_id) && (error || successMsg) && (
+        <tr>
+          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+            {error
+              ? (typeof error === 'object' && error !== null ? (error as any).message : error)
+              : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+          </td>
+        </tr>
+      )}
 
     </>
   );

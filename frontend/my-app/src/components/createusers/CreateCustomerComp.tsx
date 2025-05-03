@@ -5,6 +5,7 @@ import { createCustomer, selectUserState} from './createUserSlicer.tsx'
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { AppDispatch } from '../../app/store.ts';
 import Menu from '../Menu/menuComp.tsx';
+import '../../App.css';
 
 const CustomerSignupForm = () => {
     const [formData, setFormData] = useState({
@@ -31,7 +32,8 @@ const CustomerSignupForm = () => {
 
     return (
         <div>
-        <form onSubmit={handleSubmit}>
+        <form className="centered-form" onSubmit={handleSubmit}>
+        <h2 className="text-center mb-4">Customer Sign-up</h2>
             {Object.keys(formData).map((field) => (
                 <div key={field}>
                     <label>{field.replace('_', ' ').toUpperCase()}</label>
@@ -46,7 +48,7 @@ const CustomerSignupForm = () => {
             ))}
             <button type="submit">Signup</button>
             {loading && <p>Signing up...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>} 
+            {error && <p className='single-object-error'>{error}</p>} 
             {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} 
 
         </form>
