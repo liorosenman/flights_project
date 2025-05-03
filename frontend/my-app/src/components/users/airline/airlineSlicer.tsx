@@ -149,6 +149,8 @@ const AirlineSlicer = createSlice({
       .addCase(fetchAirlines.fulfilled, (state, action) => {
         state.loading = false;
         state.airlines = action.payload;
+        console.log(state.airlines);
+        
       })
       .addCase(fetchAirlines.pending, (state) => {
         state.loading = true;

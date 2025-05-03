@@ -15444,3 +15444,44 @@ TypeError: get_customer_by_username() missing 1 required positional argument: 'u
 2025-05-03 12:38:09,511 - WARNING - Not Found: /get_arrival_flights/3/
 2025-05-03 12:58:37,005 - WARNING - Conflict: /create_ticket/
 2025-05-03 13:20:20,998 - WARNING - Bad Request: /create_flight/
+2025-05-03 15:26:25,835 - WARNING - Bad Request: /create_new_customer/
+2025-05-03 15:26:56,059 - WARNING - Bad Request: /create_new_customer/
+2025-05-03 15:31:45,017 - WARNING - Bad Request: /create_new_customer/
+2025-05-03 15:32:31,215 - WARNING - Bad Request: /create_new_customer/
+2025-05-03 16:12:14,796 - WARNING - Unauthorized: /login/
+2025-05-03 16:30:00,299 - WARNING - Unauthorized: /login/
+2025-05-03 16:31:32,566 - WARNING - Unauthorized: /remove_customer/2/
+2025-05-03 16:33:15,735 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:33:15,738 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:33:21,769 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:33:21,774 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:51:04,044 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:51:04,052 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 16:51:55,772 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:00:51,820 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:00:51,827 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:07:15,872 - WARNING - Unauthorized: /login/
+2025-05-03 17:15:09,097 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:15:09,104 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:16:49,855 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:16:49,858 - WARNING - Unauthorized: /get_all_airlines/
+2025-05-03 17:19:10,102 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-03 17:19:12,185 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-03 17:19:14,223 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-03 17:25:31,031 - WARNING - Unauthorized: /remove_airline/4/
+2025-05-03 17:25:35,856 - WARNING - Unauthorized: /remove_airline/1/
+2025-05-03 17:27:06,181 - WARNING - Unauthorized: /remove_airline/1/
+2025-05-03 17:27:12,032 - WARNING - Forbidden: /remove_airline/1/
+2025-05-03 17:28:44,476 - WARNING - Unauthorized: /remove_customer/1/
+2025-05-03 17:50:19,444 - WARNING - Unauthorized: /remove_admin/1/
+2025-05-03 18:00:11,712 - WARNING - Unauthorized: /remove_admin/1/
+2025-05-03 18:01:26,422 - WARNING - Unauthorized: /remove_admin/1/
+2025-05-03 18:04:54,785 - WARNING - Unauthorized: /remove_admin/2/
+2025-05-03 18:06:06,441 - WARNING - Unauthorized: /remove_customer/9/
+2025-05-03 18:07:46,362 - WARNING - Unauthorized: /remove_admin/3/
+2025-05-03 18:08:03,292 - WARNING - Unauthorized: /remove_admin/2/
+2025-05-03 18:10:50,765 - WARNING - Unauthorized: /create_new_admin/
+2025-05-03 18:11:43,093 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-03 18:11:47,423 - WARNING - Bad Request: /create_new_admin/
+2025-05-03 18:12:14,792 - WARNING - Unauthorized: /remove_admin/6/
+2025-05-03 18:15:09,614 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.

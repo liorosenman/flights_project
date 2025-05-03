@@ -6,10 +6,13 @@ import {clearAdminState} from './adminsSlice.tsx'
 import { clearCustomerState } from '../customers/customersSlice.tsx';
 import { clearAirlineState } from '../airline/airlineSlicer.tsx';
 import { clearUsersStates } from './UserManagerComp.tsx';
+import '../../../App.css'
+import { selectLoginState } from '../../Login/loginSlice.tsx';
 
 const AdminTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { admins, loading, error, successMsg, targetAdminId } = useAppSelector(selectAdminState);
+  const { roleId } = useAppSelector(selectLoginState);
   const [search, setSearch] = useState('');
   
 
@@ -20,6 +23,7 @@ const AdminTable: React.FC = () => {
 
   const handleRemoveAdmin = async (e: React.MouseEvent, adminId: number) => {
     e.preventDefault();
+    console.log("THE ROLE ID IS " ,localStorage.getItem('role_id'));
     dispatch(clearAdminState())
     dispatch(setTargetAdminId(adminId))
     try {
@@ -29,16 +33,16 @@ const AdminTable: React.FC = () => {
     }
   };
 
-  const filteredAdmins = admins.filter(c =>
-    c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-    c.username.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredAdmins = admins.filter(c =>
+  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
+  //   c.username.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
     <div>
       <h2>Admins List</h2>
-      <table border={1} cellPadding={5}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white">
         <thead>
           <tr>
             <th>ID</th>
@@ -62,7 +66,7 @@ const AdminTable: React.FC = () => {
                 <td>{a.airport_id}</td>
                 <td>{a.status ? 'Active' : 'Inactive'}</td>
                 <td>
-                  <button onClick={(e) => handleRemoveAdmin(e, a.id)}>DELETE</button>
+                  <button className='remove-user-btn' onClick={(e) => handleRemoveAdmin(e, a.id)}>REMOVE</button>
                 </td>
               </tr>
               {(targetAdminId === a.id) && (error || successMsg) && (

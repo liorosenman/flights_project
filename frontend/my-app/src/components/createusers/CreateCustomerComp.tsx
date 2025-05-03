@@ -49,7 +49,7 @@ const CustomerSignupForm = () => {
             <button type="submit">Signup</button>
             {loading && <p>Signing up...</p>}
             {error && <p className='single-object-error'>{error}</p>} 
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} 
+            {successMessage && <p className='single-object-confirm'>{successMessage}</p>} 
 
         </form>
         </div>

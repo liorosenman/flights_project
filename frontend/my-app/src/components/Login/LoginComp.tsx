@@ -21,12 +21,18 @@ const LoginComp: React.FC = () => {
       // Check if login succeeded
       if (loginUser.fulfilled.match(resultAction)) {
         const token = resultAction.payload?.token
-        const decoded: any = jwtDecode(token);
+        // const decoded: any = jwtDecode(token);
+        const decoded = jwtDecode<{ role_id: number }>(token);
         const roleId = decoded.role_id;
+        localStorage.setItem('access_token', resultAction.payload.access);
+        localStorage.setItem('refresh_token', resultAction.payload.refresh);
+        localStorage.setItem('role_id', String(roleId));
         
         switch (roleId) {
           case UserRole.ADMIN:
             navigate('/users/1');
+            console.log("THE ROLE ID IS ",roleId);
+            
             break;
           case UserRole.CUSTOMER:
             navigate('/flightsboard');
@@ -44,41 +50,44 @@ const LoginComp: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-xl font-semibold mb-4">Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          className="input-field"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />  
-        <input
-          type="password"
-          placeholder="Password"
-          className="input-field"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="button" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-        <Link to = "/createcustomer">Sign up form for customers</Link>
-        <br></br>
-        <Link to = "/createairline">Sign up form for airlines</Link>
-        <br></br>
-        <Link to = "/createadmin">Sign up form for admins</Link>
-        <br></br>
-        <Link to = "/createflight">Create flight</Link>
-        <br></br>
-        <Link to = "/customerslist">Customers Table</Link>
+<div className="fullscreen-center-container">
+  <div className="login-form-box">
+    <h2 className="text-xl font-semibold mb-4">Login</h2>
+    <form onSubmit={handleLogin}>
+      <input
+        type="text"
+        placeholder="Username"
+        className="input-field"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        className="input-field"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <button type="submit" className="button" disabled={loading}>
+        {loading ? 'Logging in...' : 'Login'}
+      </button>
 
-        {error && <p className="error-message">{error || 'Login failed'}</p>}
-      </form>
-    </div>
+      <Link to="/createcustomer">Sign up form for customers</Link>
+      <br />
+      <Link to="/createairline">Sign up form for airlines</Link>
+      <br />
+      <Link to="/createadmin">Sign up form for admins</Link>
+      <br />
+      <Link to="/createflight">Create flight</Link>
+      <br />
+      <Link to="/customerslist">Customers Table</Link>
+
+      {error && <p className="error-message">{error || 'Login failed'}</p>}
+    </form>
+  </div>
+</div>
   );
 };
 

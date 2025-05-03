@@ -12,7 +12,6 @@ const TicketsList = () => {
 
   useEffect(() => {
     (async () => {
-      console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
        await dispatch(getMyTickets({ token }));
       
     })();
@@ -21,8 +20,8 @@ const TicketsList = () => {
   
   return (
       <div>
-        <h1>My tickets</h1>
-        <table>
+        <h1>My bookings</h1>
+        <table className="table table-bordered table-striped table-hover flight-table bg-white">
           <thead>
             <tr>
               <th>ID</th>

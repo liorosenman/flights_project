@@ -91,10 +91,23 @@
   color:red;
 }
 
-.single_object-error {
+.single-object-confirm {
   font-size: '40px';
   color: green;
 }
+
+.remove-user-btn,
+.cancel-ticket-btn {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
 
 
 

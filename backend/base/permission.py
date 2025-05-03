@@ -28,7 +28,7 @@ from base.models import UserRole
 
 def role_required(required_role):
     def decorator(func):
-        @wraps(func)
+        @wraps(func) 
         def wrapper(request, *args, **kwargs):
             if not request.user.is_authenticated:
                 return Response({"error":"No authenticated user."}, status=status.HTTP_401_UNAUTHORIZED)

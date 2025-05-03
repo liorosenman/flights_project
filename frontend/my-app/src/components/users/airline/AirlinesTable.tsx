@@ -7,6 +7,7 @@ import { selectAirlineState } from './airlineSlicer.tsx';
 import { clearCustomerState } from '../customers/customersSlice.tsx';
 import { clearAdminState } from '../admins/adminsSlice.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
+import '../../../App.css'
 
 const AirlinesTable: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -39,7 +40,7 @@ const AirlinesTable: React.FC = () => {
   return (
     <div>
       <h2>Airlines List</h2>
-      <table border={1} cellPadding={5}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white">
         <thead>
           <tr>
             <th>ID</th>
@@ -63,7 +64,7 @@ const AirlinesTable: React.FC = () => {
                 <td>{a.airport_id}</td>
                 <td>{a.status ? 'Active' : 'Inactive'}</td>
                 <td>
-                  <button onClick={(e) => handleRemoveAirline(e, a.id)}>DELETE</button>
+                  <button className='remove-user-btn' onClick={(e) => handleRemoveAirline(e, a.id)}>REMOVE</button>
                 </td>
               </tr>
               {(targetAirlineId === a.id) && (error || successMsg) && (

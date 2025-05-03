@@ -99,10 +99,7 @@ const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    justPrint: () => {
-      console.log("HHHHHHHHHHHHHHHHHHHHHHH");
-      
-    },
+    
   //   setAuthTokens: (state, action) => {
   //     const token = action.payload?.access || null;
   //     const refreshToken = action.payload?.refresh || null;

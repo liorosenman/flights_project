@@ -6,12 +6,14 @@ import { clearCustomerState } from './customersSlice.tsx'
 import { clearAirlineState } from '../airline/airlineSlicer.tsx';
 import { clearAdminState } from '../admins/adminsSlice.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
+import '../../../App.css'
+import { selectLoginState } from '../../Login/loginSlice.tsx';
 
 const CustomerTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { customers, loading, error, successMsg, targetCustomerId } = useAppSelector(selectCustomerState);
   const [search, setSearch] = useState('');
-
+  const { roleId } = useAppSelector(selectLoginState);
 
   useEffect(() => {
     clearUsersStates(dispatch);
@@ -20,6 +22,7 @@ const CustomerTable: React.FC = () => {
 
   const handleRemoveCustomer = async (e: React.MouseEvent, customerId: number) => {
     e.preventDefault();
+    console.log("THE ROLE ID IS " ,roleId);
     dispatch(clearCustomerState())
     dispatch(setTargetCustomerId(customerId))
     try {
@@ -40,7 +43,7 @@ const CustomerTable: React.FC = () => {
   return (
     <div>
       <h2>Customers List</h2>
-      <table border={1} cellPadding={5}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white">
         <thead>
           <tr>
             <th>ID</th>
@@ -68,7 +71,7 @@ const CustomerTable: React.FC = () => {
                 <td>{c.airport_id}</td>
                 <td>{c.status ? 'Active' : 'Inactive'}</td>
                 <td>
-                  <button onClick={(e) => handleRemoveCustomer(e, c.id)}>DELETE</button>
+                  <button className='remove-user-btn' onClick={(e) => handleRemoveCustomer(e, c.id)}>REMOVE</button>
                 </td>
               </tr>
               {(targetCustomerId === c.id) && (error || successMsg) && (

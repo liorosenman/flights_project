@@ -97,8 +97,8 @@ const AirlineForm = () => {
             <button type="submit">Submit</button>
             {countryError && <p style={{ color: 'red' }}>Country Error: {countryError}</p>}
             {loading && <p>Signing up...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+            {error && <p className='single-object-error'>{error}</p>}
+            {successMessage && <p className='single-object-confirm'>{successMessage}</p>}
         </form>
     );
 };

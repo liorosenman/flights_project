@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { selectLoginState } from '../Login/loginSlice.tsx';
 import { cancelTicket, getMyTickets, selectTicketState } from './ticketSlicer.tsx';
 import { clearTicketsState } from './ticketSlicer.tsx';
+import '../../App.css'
 
 const TicketRow = ({ ticket }) => {
   const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
@@ -35,7 +36,7 @@ const TicketRow = ({ ticket }) => {
         <td>{ticket.status}</td>
         {roleId === 2 && ticket.status === 'active' && (
           <td>
-            <button onClick={(e) => handleRemoval(e, ticket.ticket_id)}>
+            <button className='cancel-ticket-btn' onClick={(e) => handleRemoval(e, ticket.ticket_id)}>
               Cancel
             </button>
           </td>
@@ -44,7 +45,7 @@ const TicketRow = ({ ticket }) => {
 
       {((targetTicketId === ticket.ticket_id) && (error || SuccessMessage)) && (
         <tr>
-          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+          <td colSpan={9} className={error ? 'single-object-error' : 'single-object-confirm'}>
             {error || SuccessMessage}
           </td>
         </tr>

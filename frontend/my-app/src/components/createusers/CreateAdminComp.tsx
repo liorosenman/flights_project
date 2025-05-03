@@ -92,8 +92,8 @@ const AdminForm = () => {
 
             <button type="submit">Submit</button>
             {loading && <p>Signing up...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+            {error && <p className='single-object-error '>{error}</p>}
+            {successMessage && <p className='single-object-confirm'>{successMessage}</p>}
         </form>
     );
 };
