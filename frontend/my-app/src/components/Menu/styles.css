@@ -1,0 +1,25 @@
+.menu-link {
+    color: #343a40; 
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .menu-link-hover:hover {
+    background-color: #e9ecef;
+    color: #e11a1a;
+    text-decoration: none;
+  }
+  
+  .menu-hover-effect {
+    transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 0.25rem 0.5rem;     
+    border-radius: 0.25rem;     
+  }
+  
+  .menu-hover-effect:hover {
+    background-color: #e9ecef;
+    color: #e11a1a !important; 
+    text-decoration: none;
+  }

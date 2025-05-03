@@ -12,7 +12,6 @@ import { clearFlightState } from './flightSlice.tsx';
 import FlightFilters from './FlightFilters.tsx'
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 
-
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlightsState).flights;
@@ -108,7 +107,7 @@ const FlightsBoard: React.FC = () => {
   return (
     <div>
       {/* <Menu /> */}
-      <h1>Flight Board</h1>
+      <h1>Flights Board</h1>
       {generalErr &&
         <h4 style={{ color: "red" }}>{generalErr}</h4>
       }
@@ -116,7 +115,7 @@ const FlightsBoard: React.FC = () => {
         <FlightFilters onFilter={handleFilterClick} />
       )}
 
-      <table>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white">
         <thead>
           <tr>
             <th>ID</th>

@@ -1,60 +1,55 @@
-import React, { useEffect } from 'react'
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import loginSlice, { logout, selectLoginState}from '../Login/loginSlice.tsx';
-import { Outlet } from 'react-router-dom';
-import { clearAuthTokens } from '../Login/loginSlice.tsx';
+import { selectLoginState } from '../Login/loginSlice.tsx';
+import './styles.css';
 
 const Menu = () => {
-
   const navigate = useNavigate();
-  const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
-
+  const { roleId } = useAppSelector(selectLoginState);
   const dispatch = useAppDispatch();
 
-  const handleLogout =  (e) => {
+  const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();
-    
-    // await dispatch(logout());
-    // dispatch(clearAuthTokens());
-    const currentToken = localStorage.getItem('access_token');
+    localStorage.removeItem('access_token');
     navigate('/login');
   };
 
-  // if (roleId === null || roleId === undefined) {
-  //   return <p>Loading menu...</p>; // Or return nothing until roleId is available
-  // }
-
   return (
-    <div>
-        <nav style={{ borderBottom: "solid 1px", paddingBottom: "1rem" }}>
-        {roleId === 3 && (
-          <>
-        <Link to="/createcustomer">CustomerSignUp</Link>| {" "}
-        <Link to="/createflight">Flight</Link>|{" "}
-        <Link to="/flightsboard">Board</Link>|{" "}
-        </>
-        )}
-        {roleId === 2 && (
-          <>
-        <Link to="/flightsboard">Board</Link>|{" "}
-        <Link to="/ticketslist">My Tickets</Link>|{" "}
-        <Link to="/updatecustomer">Details</Link>|{" "}
-          </>
-        )}
-        {roleId === 1 && (
-          <>
-          <Link to= "/customerslist">Customers</Link>|{" "}
-          <Link to= "/adminslist">Admins</Link>|{" "}
-          <Link to= "/airlineslist">Airlines</Link>
-          </>)}
-        <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
-          LogOut
+    <div className="bg-primary-subtle py-3 px-4 border-bottom shadow-sm">
+      <nav className="d-flex justify-content-between align-items-center">
+        <div>
+          {roleId === 3 && (
+            <>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createcustomer">Customer Sign Up</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">Flight</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/flightsboard">Board</Link>
+            </>
+          )}
+          {roleId === 2 && (
+            <>
+              <Link className="me-3 text-dark  text-decoration-none fw-semibold" to="/flightsboard">Board</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/ticketslist">My Tickets</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/updatecustomer">Details</Link>
+            </>
+          )}
+          {roleId === 1 && (
+            <>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/customerslist">Customers</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/adminslist">Admins</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/airlineslist">Airlines</Link>
+            </>
+          )}
+        </div>
+        <button
+          className="btn btn-outline-danger btn-lg"
+          onClick={handleLogout}
+        >
+          Log out
         </button>
       </nav>
-     
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

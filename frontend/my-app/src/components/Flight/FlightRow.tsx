@@ -92,7 +92,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
         {roleId === 2 && flight.status === 'active' && (
           <td>
-            <button onClick={(e) => handlePurchase(e, flight.flight_id)}>
+            <button className="buy-ticket-btn" onClick={(e) => handlePurchase(e, flight.flight_id)}>
               Buy ticket
             </button>
           </td>
@@ -104,8 +104,8 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
               <button onClick={(e) => handleRemoval(e, flight.flight_id)}>
                 Deactivate
               </button>
-            </td>
-            <td>
+            
+            
               <button onClick={(e) => openUpdCalendar(e, flight.flight_id)}>
                 +
               </button>

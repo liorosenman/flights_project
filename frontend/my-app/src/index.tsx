@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.ts';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

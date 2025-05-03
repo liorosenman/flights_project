@@ -77,8 +77,9 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
   };
 
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <div className="d-flex flex-wrap align-items-end gap-3 mb-3">
       <select
+        className="form-select form-select-lg mb-3" aria-label="Large select example"
         value={selectedOption}
         onChange={(e) => setSelectedOption(e.target.value as FlightFilterOptions)}
       >
@@ -116,7 +117,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
       {selectedOption === FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS && (
         <>
           <SelectCountryComp
-            label="Origin Country"
+            label="Origin Country fdsgfsdgsd"
             value={originCountry}
             onChange={(e) => setOriginCountry(e.target.value)}
           />
@@ -142,7 +143,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
           />
         )}
 
-      <button onClick={handleFilterClick} style={{ marginLeft: '10px' }}>
+      <button className='btn btn-light' onClick={handleFilterClick} style={{ marginLeft: '10px' }}>
         Filter
       </button>
     </div>
