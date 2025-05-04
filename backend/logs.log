@@ -15485,3 +15485,48 @@ TypeError: get_customer_by_username() missing 1 required positional argument: 'u
 2025-05-03 18:11:47,423 - WARNING - Bad Request: /create_new_admin/
 2025-05-03 18:12:14,792 - WARNING - Unauthorized: /remove_admin/6/
 2025-05-03 18:15:09,614 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-03 18:17:55,889 - WARNING - Unauthorized: /remove_admin/6/
+2025-05-03 18:38:03,039 - WARNING - Unauthorized: /remove_admin/2/
+2025-05-03 19:02:24,929 - WARNING - Unauthorized: /get_all_admins/
+2025-05-04 10:13:48,261 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-04 10:13:48,273 - WARNING - Unauthorized: /get_my_tickets/
+2025-05-04 10:46:37,336 - WARNING - Unauthorized: /get_customer_by_username/liorking4/
+2025-05-04 10:46:37,341 - WARNING - Unauthorized: /get_customer_by_username/liorking4/
+2025-05-04 10:48:49,929 - WARNING - Bad Request: /update_customer/
+2025-05-04 10:51:55,003 - WARNING - Bad Request: /update_customer/
+2025-05-04 10:52:59,647 - WARNING - Bad Request: /update_customer/
+2025-05-04 11:02:41,552 - WARNING - Unauthorized: /get_customer_by_username/liorking4/
+2025-05-04 11:08:08,059 - WARNING - Unauthorized: /get_customer_by_username/liorking4/
+2025-05-04 11:08:08,067 - WARNING - Unauthorized: /get_customer_by_username/liorking4/
+2025-05-04 11:28:24,291 - WARNING - Unauthorized: /remove_admin/6/
+2025-05-04 11:28:47,104 - WARNING - Unauthorized: /remove_customer/4/
+2025-05-04 11:31:55,136 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-04 11:31:59,407 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-04 11:33:16,880 - WARNING - Unauthorized: /remove_customer/4/
+2025-05-04 11:40:56,324 - WARNING - Unauthorized: /remove_customer/6/
+2025-05-04 11:41:29,764 - WARNING - Unauthorized: /remove_customer/6/
+2025-05-04 11:52:08,531 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 11:52:14,197 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 11:53:00,613 - WARNING - Unauthorized: /remove_customer/6/
+2025-05-04 11:54:38,150 - WARNING - Unauthorized: /remove_admin/3/
+2025-05-04 11:54:44,957 - WARNING - Unauthorized: /remove_customer/4/
+2025-05-04 11:57:12,738 - WARNING - Unauthorized: /login/
+2025-05-04 11:57:44,791 - WARNING - Forbidden: /remove_customer/6/
+2025-05-04 12:02:05,964 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 12:02:09,371 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 12:02:13,801 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 12:02:23,535 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-04 12:02:49,288 - WARNING - Unauthorized: /remove_customer/4/
+2025-05-04 12:03:03,774 - WARNING - Unauthorized: /remove_customer/10/
+2025-05-04 12:03:05,490 - WARNING - Unauthorized: /remove_customer/17/
+2025-05-04 12:03:55,343 - WARNING - Unauthorized: /remove_admin/6/
+2025-05-04 12:04:03,068 - WARNING - Unauthorized: /remove_admin/1/
+2025-05-04 12:04:04,279 - WARNING - Unauthorized: /remove_admin/3/
+2025-05-04 12:07:43,627 - WARNING - Unauthorized: /get_all_admins/
+2025-05-04 12:07:43,630 - WARNING - Unauthorized: /get_all_admins/
+2025-05-04 12:08:06,123 - WARNING - Unauthorized: /get_all_admins/
+2025-05-04 12:08:06,129 - WARNING - Unauthorized: /get_all_admins/
+2025-05-04 12:09:04,086 - WARNING - Forbidden: /remove_customer/1/
+2025-05-04 12:48:05,397 - WARNING - Forbidden: /remove_admin/1/
+2025-05-04 12:49:40,218 - WARNING - Forbidden: /remove_airline/1/
+2025-05-04 12:51:52,242 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

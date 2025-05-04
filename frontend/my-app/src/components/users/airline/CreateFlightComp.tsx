@@ -32,8 +32,10 @@ const CreateFlightComp = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await dispatch(createFlight(formData));
+    
   }
-
+ console.log("THE ROLE ID IS IS IS ",  );
+ 
   return (
     <div>
       <form onSubmit={handleSubmit} className="centered-form">

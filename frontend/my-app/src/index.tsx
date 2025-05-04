@@ -17,7 +17,7 @@ root.render(
     <Provider store={store}>   {/* <-- Redux Provider */}
         <App />
     </Provider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 );
 
 

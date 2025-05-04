@@ -99,7 +99,6 @@ def customer_details_input_validation(func):
     # def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
-            print("CCCCCCCCCCCCCCCCCCCCCCCCCCCC")
             data = request.data
             first_name = data.get('first_name', '')
             if not first_name or not first_name.isalpha() or len(first_name) > 50:

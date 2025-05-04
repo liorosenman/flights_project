@@ -15,7 +15,7 @@ export const getAllAdminsService = async (token: string) => {
 };
 
 export const removeAdminService = async (adminId: number, token: string) => {
-  const response = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {
+  const response = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {}, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

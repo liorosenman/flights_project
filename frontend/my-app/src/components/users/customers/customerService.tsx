@@ -13,8 +13,17 @@ export const getAllCustomersService = async (token: string) => {
   return response.data;
 };
 
+// export const removeCustomerService = async (customerId: number, token: string) => {
+//   const response = await axios.put(`${SERVER}/remove_customer/${customerId}/`, {
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
+//   return response.data;
+// };
+
 export const removeCustomerService = async (customerId: number, token: string) => {
-  const response = await axios.put(`${SERVER}/remove_customer/${customerId}/`, {
+  const response = await axios.put(`${SERVER}/remove_customer/${customerId}/`, {}, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

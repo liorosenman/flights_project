@@ -3,9 +3,14 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { clearCustomerState, getCustomerByUsername, selectCustomerState, updateCustomer } from './customersSlice.tsx';
 import { fetchCustomers } from './customersSlice.tsx';
 import { selectLoginState } from '../../Login/loginSlice.tsx';
+import { useLocation } from 'react-router-dom';
 import './styles.css';
 
 const UpdateCustomerDetails = () => {
+    const dispatch = useAppDispatch();
+    const location = useLocation();
+    const { loading, error, successMsg, customer } = useAppSelector(selectCustomerState);
+    const { username } = useAppSelector(selectLoginState);
 
     const [formData, setFormData] = useState({
         password: '',
@@ -17,30 +22,31 @@ const UpdateCustomerDetails = () => {
         credit_card_no: '',
     });
 
+    // Fetch customer data whenever the component mounts or the location changes
     useEffect(() => {
         dispatch(clearCustomerState())
         console.log("THE USERNAME IS ", username);
 
         if (username) {
             dispatch(getCustomerByUsername(username)); // Getting a single customer.
-            console.log(customer);
-            if (customer)
-                setFormData({
-                    password: '', // leave blank for security
-                    email: customer.email,
-                    first_name: customer.first_name,
-                    last_name: customer.last_name,
-                    address: customer.address,
-                    phone_no: customer.phone_no.toString(),
-                    credit_card_no: customer.credit_card_no.toString(),
-                });
         }
-    }, []);
+    }, [dispatch, username, location.key]); // Add location.key to dependencies to refresh on navigation
 
+    // Update form data when customer data changes
+    useEffect(() => {
+        if (customer) {
+            setFormData({
+                password: '', // leave blank for security
+                email: customer.email,
+                first_name: customer.first_name,
+                last_name: customer.last_name,
+                address: customer.address,
+                phone_no: customer.phone_no.toString(),
+                credit_card_no: customer.credit_card_no.toString(),
+            });
+        }
+    }, [customer]);
 
-    const dispatch = useAppDispatch();
-    const { loading, error, successMsg, customer } = useAppSelector(selectCustomerState);
-    const { username } = useAppSelector(selectLoginState);
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };

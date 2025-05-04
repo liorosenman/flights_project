@@ -19,6 +19,9 @@ const AdminTable: React.FC = () => {
   useEffect(() => {
     clearUsersStates(dispatch);
     dispatch(fetchAdmins());
+    const storedRoleId = localStorage.getItem('role_id')
+    console.log("THE ROLE ID IS IS IS ",  );
+    
   }, []);
 
   const handleRemoveAdmin = async (e: React.MouseEvent, adminId: number) => {

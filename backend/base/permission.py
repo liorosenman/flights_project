@@ -30,14 +30,15 @@ def role_required(required_role):
     def decorator(func):
         @wraps(func) 
         def wrapper(request, *args, **kwargs):
+            print(request)
             if not request.user.is_authenticated:
-                return Response({"error":"No authenticated user."}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response({"message":"No authenticated user."}, status=status.HTTP_401_UNAUTHORIZED)
             if not hasattr(request.user, 'role_name'):
-                return Response({"error":'No attribute role_name provided'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"message":'No attribute role_name provided'}, status=status.HTTP_400_BAD_REQUEST)
             current_role_name_id = request.user.role_name.id
             if (required_role != current_role_name_id):
                 permitted_user_role = UserRole.objects.get(id = required_role).role_name
-                return Response({"error": f"Permission denied. Only {permitted_user_role}s are permitted."}, 
+                return Response({"message": f"Permission denied. Only {permitted_user_role}s are permitted."}, 
                                 status=status.HTTP_403_FORBIDDEN)
             return func(request, *args, **kwargs)
         return wrapper

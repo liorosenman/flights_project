@@ -23,10 +23,15 @@ const LoginComp: React.FC = () => {
         const token = resultAction.payload?.token
         // const decoded: any = jwtDecode(token);
         const decoded = jwtDecode<{ role_id: number }>(token);
+        const logged_username = jwtDecode<{ username: string }>(token);
         const roleId = decoded.role_id;
-        localStorage.setItem('access_token', resultAction.payload.access);
+        const username = logged_username.username;
+        console.log(resultAction.payload);
+        
+        localStorage.setItem('access_token', token);
         localStorage.setItem('refresh_token', resultAction.payload.refresh);
         localStorage.setItem('role_id', String(roleId));
+        localStorage.setItem('username', username);
         
         switch (roleId) {
           case UserRole.ADMIN:

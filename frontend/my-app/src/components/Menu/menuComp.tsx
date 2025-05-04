@@ -9,6 +9,8 @@ const Menu = () => {
   // const { roleId } = useAppSelector(selectLoginState);
   const dispatch = useAppDispatch();
   const storedRoleId = Number(localStorage.getItem('role_id'));
+  console.log(storedRoleId);
+  
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();
     localStorage.removeItem('access_token');

@@ -17,7 +17,7 @@ export const createFlightService = async (flightData: Record<string, any>, token
   };
   
   export const removeAirlineService = async (airlineId: number, token: string) => {
-    const response = await axios.put(`${SERVER}/remove_airline/${airlineId}/`, {
+    const response = await axios.put(`${SERVER}/remove_airline/${airlineId}/`, {}, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
