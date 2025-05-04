@@ -10,7 +10,8 @@ const UpdateCustomerDetails = () => {
     const dispatch = useAppDispatch();
     const location = useLocation();
     const { loading, error, successMsg, customer } = useAppSelector(selectCustomerState);
-    const { username } = useAppSelector(selectLoginState);
+    // const { username } = useAppSelector(selectLoginState);
+    const username = localStorage.getItem('username');
 
     const [formData, setFormData] = useState({
         password: '',
