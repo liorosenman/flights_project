@@ -27,6 +27,7 @@ const CustomerTable: React.FC = () => {
     dispatch(setTargetCustomerId(customerId))
     try {
       await dispatch(removeCustomer(customerId)).unwrap();
+      await dispatch(fetchCustomers());
       // await dispatch(getMyFlights({ token }));
       // dispatch(setTargetFlightId(null))
     } catch (error) {

@@ -31,6 +31,7 @@ const AdminTable: React.FC = () => {
     dispatch(setTargetAdminId(adminId))
     try {
       await dispatch(removeAdmin(adminId)).unwrap();
+      await dispatch(fetchAdmins());
     } catch (error) {
       console.error("Admin removal failed.", error);
     }

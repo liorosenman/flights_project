@@ -7,9 +7,11 @@ import { clearTicketsState } from './ticketSlicer.tsx';
 import '../../App.css'
 
 const TicketRow = ({ ticket }) => {
-  const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
+  // const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
   const dispatch = useAppDispatch();
   const { targetTicketId, error, SuccessMessage } = useAppSelector(selectTicketState);
+  const token = localStorage.getItem('access_token')
+  const roleId = Number(localStorage.getItem('role_id'))
   // const [cancelSuccess, setCancelSuccess] = useState<{ [key: number]: string }>({});
   // const [cancelError, setCancelError] = useState<{ [key: number]: string }>({});
 

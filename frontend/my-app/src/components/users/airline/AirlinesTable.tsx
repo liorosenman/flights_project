@@ -26,6 +26,7 @@ const AirlinesTable: React.FC = () => {
     dispatch(setTargetAirlineId(airlineId))
     try {
       await dispatch(removeAirline(airlineId)).unwrap();
+      await dispatch(fetchAirlines());
     } catch (error) {
       console.error("Airline removal failed.", error);
     }

@@ -15,9 +15,10 @@ import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlightsState).flights;
-  const { roleId, userId, token } = useAppSelector(selectLoginState);
+  // const { roleId, userId, token } = useAppSelector(selectLoginState);
+  const token = localStorage.getItem('access_token')
+  const roleId = Number(localStorage.getItem('role_id'))
   const { generalErr } = useAppSelector(selectFlightsState);
-
   const [lastFilters, setLastFilters] = useState({
     type: FlightFilterOptions.GET_ALL_FLIGHTS,
   });
@@ -77,30 +78,24 @@ const FlightsBoard: React.FC = () => {
     }
   };
 
-
-
-
   useEffect(() => {
-    console.log("THe role id is ", roleId);
-
+    console.log("The role id is ", roleId);
+    dispatch(clearFlightState());
     (async () => {
-      if (token) {
-        if (roleId === UserRole.AIRLINE) {
-          await dispatch(getMyFlights({ token }));
-        }
-        if (roleId === UserRole.CUSTOMER) {
-          await dispatch(loadFlights());
-        }
+      if (token && roleId === UserRole.AIRLINE) {
+        await dispatch(getMyFlights({ token }));
+      } else {
+        await dispatch(loadFlights());
       }
-
     })();
-  }, [])
+  }, []);
+  
 
-  useEffect(() => {
-    return () => {
-      dispatch(clearFlightState());
-    };
-  }, [dispatch]);
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch(clearFlightState());
+  //   };
+  // }, [dispatch]);
 
 
 

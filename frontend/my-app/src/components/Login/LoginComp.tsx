@@ -26,7 +26,7 @@ const LoginComp: React.FC = () => {
         const logged_username = jwtDecode<{ username: string }>(token);
         const roleId = decoded.role_id;
         const username = logged_username.username;
-        console.log(resultAction.payload);
+        console.log(resultAction);
         
         localStorage.setItem('access_token', token);
         localStorage.setItem('refresh_token', resultAction.payload.refresh);

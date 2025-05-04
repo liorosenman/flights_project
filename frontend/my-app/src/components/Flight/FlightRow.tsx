@@ -21,7 +21,9 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   // const [successMsg, setSuccessMsg, ]
   const [updDate, setupdDate] = useState('')
   const dispatch = useAppDispatch();
-  const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
+  // const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
+  const token = localStorage.getItem('access_token')
+  const roleId = Number(localStorage.getItem('role_id'))
   const { loading } = useAppSelector(selectFlightsState);
   const { targetFlightId, error, successMsg, toBeUpdatedFlight } = useAppSelector(selectFlightsState);
 

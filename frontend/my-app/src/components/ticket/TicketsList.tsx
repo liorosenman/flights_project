@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Menu from '../Menu/menuComp.tsx'
-import { getMyTickets, selectTicketState } from './ticketSlicer.tsx';
+import { clearTicketsState, getMyTickets, selectTicketState } from './ticketSlicer.tsx';
 import TicketRow from './TicketRow.tsx';
 import { selectLoginState } from '../Login/loginSlice.tsx';
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
@@ -8,12 +8,14 @@ import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
 const TicketsList = () => {
   const dispatch = useAppDispatch();
   const { tickets} = useAppSelector(selectTicketState);
-  const {token} = useAppSelector(selectLoginState);
+  // const {token} = useAppSelector(selectLoginState);
+  const token = localStorage.getItem('access_token');
+
 
   useEffect(() => {
     (async () => {
        await dispatch(getMyTickets({ token }));
-      
+       await dispatch(clearTicketsState());
     })();
   }, [])
   
