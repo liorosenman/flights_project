@@ -15530,3 +15530,5 @@ TypeError: get_customer_by_username() missing 1 required positional argument: 'u
 2025-05-04 12:48:05,397 - WARNING - Forbidden: /remove_admin/1/
 2025-05-04 12:49:40,218 - WARNING - Forbidden: /remove_airline/1/
 2025-05-04 12:51:52,242 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-04 14:57:58,942 - WARNING - Unauthorized: /login/
+2025-05-04 15:30:40,892 - WARNING - Forbidden: /remove_airline/14/

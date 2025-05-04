@@ -16,16 +16,9 @@ const AirlineForm = () => {
         country_id: '',
     });
 
-    // const [countries, setCountries] =  useState<Country[]>([]);
     const { error, loading, successMessage } = useAppSelector(selectUserState);
     const countryError = useAppSelector((state) => state.country.error);
     const dispatch = useDispatch<AppDispatch>();
-
-
-    // useEffect(() => {
-    //     dispatch(fetchCountries());
-
-    //   }, []);
 
 
     const handleChange = (e) => {
@@ -39,8 +32,6 @@ const AirlineForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await dispatch(createAirline(formData));
-        // console.log('Submitted data:', formData);
-        // You can send this data to your backend here
     };
 
     return (

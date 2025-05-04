@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchCustomers, removeCustomer, selectCustomerState, setTargetCustomerId } from './customersSlice.tsx';
-import Menu from '../../Menu/menuComp.tsx';
 import { clearCustomerState } from './customersSlice.tsx'
-import { clearAirlineState } from '../airline/airlineSlicer.tsx';
-import { clearAdminState } from '../admins/adminsSlice.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 import '../../../App.css'
 import { selectLoginState } from '../../Login/loginSlice.tsx';
 
 const CustomerTable: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { customers, loading, error, successMsg, targetCustomerId } = useAppSelector(selectCustomerState);
-  const [search, setSearch] = useState('');
+  const { customers, error, successMsg, targetCustomerId } = useAppSelector(selectCustomerState);
   const { roleId } = useAppSelector(selectLoginState);
 
   useEffect(() => {
@@ -22,24 +18,15 @@ const CustomerTable: React.FC = () => {
 
   const handleRemoveCustomer = async (e: React.MouseEvent, customerId: number) => {
     e.preventDefault();
-    console.log("THE ROLE ID IS " ,roleId);
     dispatch(clearCustomerState())
     dispatch(setTargetCustomerId(customerId))
     try {
       await dispatch(removeCustomer(customerId)).unwrap();
       await dispatch(fetchCustomers());
-      // await dispatch(getMyFlights({ token }));
-      // dispatch(setTargetFlightId(null))
     } catch (error) {
       console.error("Customer removal failed.", error);
     }
   };
-
-  // const filteredCustomers = customers.filter(c =>
-  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.username.toLowerCase().includes(search.toLowerCase())
-  // );
 
   return (
     <div>

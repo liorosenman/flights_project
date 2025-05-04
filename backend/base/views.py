@@ -355,14 +355,3 @@ def get_departure_flights(request, id):
 
 
 
-
-
-
-# -- #############################################################################################################
-
-@api_view(['POST'])
-def create_all_user_roles(request):
-    response = utils.create_all_user_roles()
-    return response
-
-

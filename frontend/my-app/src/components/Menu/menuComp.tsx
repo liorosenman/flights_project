@@ -6,10 +6,8 @@ import './styles.css';
 
 const Menu = () => {
   const navigate = useNavigate();
-  // const { roleId } = useAppSelector(selectLoginState);
   const dispatch = useAppDispatch();
   const storedRoleId = Number(localStorage.getItem('role_id'));
-  console.log(storedRoleId);
   
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();

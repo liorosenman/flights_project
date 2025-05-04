@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { clearCustomerState, getCustomerByUsername, selectCustomerState, updateCustomer } from './customersSlice.tsx';
-import { fetchCustomers } from './customersSlice.tsx';
-import { selectLoginState } from '../../Login/loginSlice.tsx';
 import { useLocation } from 'react-router-dom';
 import './styles.css';
 
@@ -10,7 +8,6 @@ const UpdateCustomerDetails = () => {
     const dispatch = useAppDispatch();
     const location = useLocation();
     const { loading, error, successMsg, customer } = useAppSelector(selectCustomerState);
-    // const { username } = useAppSelector(selectLoginState);
     const username = localStorage.getItem('username');
 
     const [formData, setFormData] = useState({
@@ -26,8 +23,6 @@ const UpdateCustomerDetails = () => {
     // Fetch customer data whenever the component mounts or the location changes
     useEffect(() => {
         dispatch(clearCustomerState())
-        console.log("THE USERNAME IS ", username);
-
         if (username) {
             dispatch(getCustomerByUsername(username)); // Getting a single customer.
         }
@@ -57,7 +52,6 @@ const UpdateCustomerDetails = () => {
         if (!formData.password.trim()) {
             delete (payload as any).password;
         }
-        console.log(payload);
         await dispatch(updateCustomer(payload));
     };
 

@@ -24,7 +24,6 @@ urlpatterns = [
     path('create_country/', country.create_country),
     path('get_all_countries/', views.get_all_countries),
     path('get_country_by_id/<int:id>/', views.get_country_by_id),
-    # path('get_all_airlines/', views.get_all_airlines),
     path('get_airline_by_id/<int:id>/', views.get_airline_by_id),
     path('create_flight/', airline.add_flight),
     path('get_airline_by_username/<str:username>/', views.get_airline_by_username, name='get_airline_by_username'),
@@ -44,7 +43,6 @@ urlpatterns = [
     path('get_flights_by_parameters/', views.get_flights_by_parameters),
     path('get_arrival_flights/<int:id>/', views.get_arrival_flights),
     path('get_departure_flights/<int:id>/', views.get_departure_flights),
-    path('get_user_by_username/<str:username>/', administrator.get_user_by_username),
     path('get_all_customers/', administrator.get_customers_details),
     path('get_flight_by_id/<int:id>/', views.get_flight_by_id),
     path('get_flights_by_airline_id/<int:id>/', views.get_flights_by_airline_id),
@@ -53,14 +51,7 @@ urlpatterns = [
     path('get_all_airlines/', administrator.get_airlines_details),
     path('get_admin_by_username/<str:username>/', administrator.get_admin_by_username),
     path('get_airline_by_username/<str:username>/', administrator.get_airline_by_username),
-         
-    
-    # path('change_allrolenames_to_two/', views.change_rolename_to_admin),
-    # path('create_countries/', views.)
-    # path('create_prime_user/', views.admin_register),
-    # path('create_constant_user_roles/', views.create_all_user_roles),
-    # path('create_prime_admin/', views.create_prime_admin),
-    # path('change_role_to_num/', views.change_role_to_num)
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

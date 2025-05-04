@@ -21,8 +21,6 @@ export const fetchCountries = createAsyncThunk<Country[], void>(
     try {
       const response = await getAllCountries();
       return response.data.countries as Country[];
-      
-      
     } catch (error: any) {
       return thunkAPI.rejectWithValue(
         error.response?.data?.error || 'Unknown error'

@@ -1,6 +1,4 @@
 import axios from 'axios'
-import {FlightData} from '../../models/flightdata.ts'
-import { TicketData } from '../../models/TicketData.ts';
 
 const SERVER = "http://127.0.0.1:8000/";
 

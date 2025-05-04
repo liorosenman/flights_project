@@ -47,11 +47,7 @@ const initialState: CustomerState = {
     if (!token) return rejectWithValue('No access token available.');
 
     try {
-      console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-      
       const result = await removeCustomerService(customerId, token);
-      console.log(result);
-      
       return result;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'Customer removal failed.');
@@ -68,10 +64,8 @@ export const getCustomerByUsername = createAsyncThunk<
   async (username, { getState, rejectWithValue }) => {
     const token = getState().login.token;
     if (!token) return rejectWithValue('No access token');
-
     try {
       const result = await getCustomerByUsernameService(username, token);
-      console.log(result);
       return result;
     } catch (err: any) {
       const errorMsg =
@@ -90,14 +84,9 @@ export const updateCustomer = createAsyncThunk<
   async (formData, { getState, rejectWithValue }) => {
     const token = getState().login.token;
     if (!token) return rejectWithValue('No token provided');
-
     try {
       const result = await updateCustomerService(formData, token);
-      console.log("WHAT IS THE RESULT?");
-      console.log(result);
-      
       return result;
-
     } catch (error: any) {
       console.log(error);
       return rejectWithValue(error.response?.data?.error || 'Update failed');

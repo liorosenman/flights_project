@@ -1,11 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {Country} from '../../models/country.ts'
-import { Airline } from '../../models/airline.ts';
 import { RootState } from '../../app/store.ts';
-import { useAppSelector } from '../../app/hooks.ts';
-import { selectLoginState } from '../Login/loginSlice.tsx';
-import { FlightData } from '../../models/flightdata.ts';
-import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { TicketData } from '../../models/TicketData.ts';
 import {  cancelTicketService, getMyTicketsService } from './ticketService.tsx';
 
@@ -41,21 +35,21 @@ export const getMyTickets = createAsyncThunk(
 );
 
 export const cancelTicket = createAsyncThunk<
-  string, // Return type on success
-  number, // Argument type (ticketId)
+  string,
+  number, 
   { state: RootState }
 >(
   'ticket/cancelTicket',
   async (ticketId, { dispatch, getState, rejectWithValue }) => {
     try {
       dispatch(setTargetTicketId(ticketId))
-      const token = getState().login.token; // adjust if your login slice is different
+      const token = getState().login.token;
       if (!token) {
         return rejectWithValue('No access token available.');
       }
 
       const result = await cancelTicketService(ticketId, token);
-      return result.message; // assuming your Django returns { message: "..." }
+      return result.message;
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || 'Ticket cancelation failed.'

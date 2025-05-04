@@ -4,20 +4,15 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from base.decorators import authorize_customer, customer_details_input_validation, update_airport_user, user_details_input_validation
+from base.decorators import customer_details_input_validation, update_airport_user, user_details_input_validation
 from base.permission import role_required
-from ..models import Airline, Customer, Flight, Roles, RolesEnum, Ticket
-from ..serializer import AirlineSerializer, CustomerSerializer, FlightSerializer
+from ..models import Customer, Flight, Roles, Ticket
+from ..serializer import CustomerSerializer
 from base import decorators
 
 
 logger = logging.getLogger('report_actions')
-# logging.basicConfig(filename="../logs.log",
-#                     level=logging.DEBUG,
-#                     format='%(asctime)s - %(levelname)s - %(message)s',
-#                     filemode='a')
-# logger = logging.getLogger()
-# logger.setLevel(logging.DEBUG)
+
 
 @api_view(['POST'])
 @role_required(Roles.CUSTOMER.value)

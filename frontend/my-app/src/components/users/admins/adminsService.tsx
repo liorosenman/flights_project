@@ -9,8 +9,6 @@ export const getAllAdminsService = async (token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  console.log(response);
-  
   return response.data;
 };
 

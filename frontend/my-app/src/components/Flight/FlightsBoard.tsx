@@ -1,13 +1,9 @@
 // FlightBoard.js
 import React, { useState, useEffect } from 'react';
-import { FlightData } from '../../models/flightdata.ts';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
 import { getArrivalFlights, getDepartureFlights, getFlightById, getFlightsByAirlineId, getFlightsByParameters, getMyFlights, loadFlights, selectFlightsState } from './flightSlice.tsx'
-import { selectLoginState } from '../Login/loginSlice.tsx';
-import { selectUserRoleId } from '../Login/loginSlice.tsx';
 import { UserRole } from '../../models/userRole.ts';
-import Menu from '../Menu/menuComp.tsx';
 import { clearFlightState } from './flightSlice.tsx';
 import FlightFilters from './FlightFilters.tsx'
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
@@ -15,7 +11,6 @@ import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 const FlightsBoard: React.FC = () => {
   const dispatch = useAppDispatch();
   const flights = useAppSelector(selectFlightsState).flights;
-  // const { roleId, userId, token } = useAppSelector(selectLoginState);
   const token = localStorage.getItem('access_token')
   const roleId = Number(localStorage.getItem('role_id'))
   const { generalErr } = useAppSelector(selectFlightsState);
@@ -40,7 +35,6 @@ const FlightsBoard: React.FC = () => {
 
       case FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID:
         if (filters.airlineId != null && filters.airlineId > 0) {
-          console.log("Airline ID filter chosen:", filters.airlineId);
           await dispatch(getFlightsByAirlineId(filters.airlineId))
           setLastFilters({ type: FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID })
         }
@@ -48,7 +42,6 @@ const FlightsBoard: React.FC = () => {
 
       case FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS:
         if (filters.originCountry && filters.destinationCountry && filters.departureDate) {
-          console.log("Parameters filter chosen:", filters);
           await dispatch(getFlightsByParameters({
             origin_country_id: Number(filters.originCountry),
             dest_country_id: Number(filters.destinationCountry),
@@ -79,7 +72,6 @@ const FlightsBoard: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("The role id is ", roleId);
     dispatch(clearFlightState());
     (async () => {
       if (token && roleId === UserRole.AIRLINE) {
@@ -89,19 +81,9 @@ const FlightsBoard: React.FC = () => {
       }
     })();
   }, []);
-  
-
-  // useEffect(() => {
-  //   return () => {
-  //     dispatch(clearFlightState());
-  //   };
-  // }, [dispatch]);
-
-
 
   return (
     <div>
-      {/* <Menu /> */}
       <h1>Flights Board</h1>
       {generalErr &&
         <h4 style={{ color: "red" }}>{generalErr}</h4>

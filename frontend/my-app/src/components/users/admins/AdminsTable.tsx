@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchAdmins, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
-import Menu from '../../Menu/menuComp.tsx';
 import {clearAdminState} from './adminsSlice.tsx'
-import { clearCustomerState } from '../customers/customersSlice.tsx';
-import { clearAirlineState } from '../airline/airlineSlicer.tsx';
 import { clearUsersStates } from './UserManagerComp.tsx';
 import '../../../App.css'
 import { selectLoginState } from '../../Login/loginSlice.tsx';
@@ -12,21 +9,15 @@ import { selectLoginState } from '../../Login/loginSlice.tsx';
 const AdminTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { admins, loading, error, successMsg, targetAdminId } = useAppSelector(selectAdminState);
-  const { roleId } = useAppSelector(selectLoginState);
-  const [search, setSearch] = useState('');
-  
 
   useEffect(() => {
     clearUsersStates(dispatch);
     dispatch(fetchAdmins());
     const storedRoleId = localStorage.getItem('role_id')
-    console.log("THE ROLE ID IS IS IS ",  );
-    
   }, []);
 
   const handleRemoveAdmin = async (e: React.MouseEvent, adminId: number) => {
     e.preventDefault();
-    console.log("THE ROLE ID IS " ,localStorage.getItem('role_id'));
     dispatch(clearAdminState())
     dispatch(setTargetAdminId(adminId))
     try {
@@ -36,12 +27,6 @@ const AdminTable: React.FC = () => {
       console.error("Admin removal failed.", error);
     }
   };
-
-  // const filteredAdmins = admins.filter(c =>
-  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.username.toLowerCase().includes(search.toLowerCase())
-  // );
 
   return (
     <div>

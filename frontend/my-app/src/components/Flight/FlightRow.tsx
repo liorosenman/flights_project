@@ -1,12 +1,9 @@
 // Flight.js
 import React, { useState } from 'react';
-import { selectLoginState } from '../Login/loginSlice.tsx';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { addTicket, getMyFlights, loadFlights, removeFlight, selectFlightsState, updateFlight } from './flightSlice.tsx';
-import { FlightState } from './flightSlice.tsx';
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
-import { setTargetFlightId, setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
-import { FlightData } from '../../models/flightdata.ts';
+import { setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 
 interface FlightRowProps {
@@ -16,12 +13,8 @@ interface FlightRowProps {
 
 
 const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
-  // const [error, setError] = useState<string | null>(null);
-  // const [targetFlightId, setTargetFlightId] = useState<number | null>(null);
-  // const [successMsg, setSuccessMsg, ]
   const [updDate, setupdDate] = useState('')
   const dispatch = useAppDispatch();
-  // const { token, refreshToken, roleId } = useAppSelector(selectLoginState);
   const token = localStorage.getItem('access_token')
   const roleId = Number(localStorage.getItem('role_id'))
   const { loading } = useAppSelector(selectFlightsState);
@@ -46,8 +39,6 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     try {
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
       await onRefilter();
-      // await dispatch(getMyFlights({ token }));
-      // dispatch(setTargetFlightId(null))
     } catch (error) {
       console.error("Flight removal failed.", error);
     }
@@ -55,11 +46,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
   const openUpdCalendar = (e: React.MouseEvent, flightId: number) => {
     dispatch(clearFlightState());
-    console.log("THE SUCCESS IS ", successMsg);
-    console.log("THE ERROR IS ", error);
     dispatch(setToBeUpdFlightId(flightId))
-    console.log("THE UPD FLIGHT IS ", flightId);
-
   }
 
   const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flightId: number) => {
@@ -68,14 +55,12 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       alert('Please select a date and time.');
       return;
     }
-    console.log("BBBBBBBBBBBBBBBB");
     try {
       await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
-      setupdDate(''); // clear after update
+      setupdDate(''); 
     } catch (error) {
       console.error("Flight update failed.")
     }
-    // dispatch(setToBeUpdFlightId(null))
     await dispatch(getMyFlights({ token }));
   };
 
@@ -140,10 +125,8 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
           </td>
         </tr>
       )}
-
     </>
   );
-
 };
 
 export default FlightRow

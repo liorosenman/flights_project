@@ -1,28 +1,19 @@
 import datetime
 import logging
 import re
-from django.db import IntegrityError
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from functools import wraps
-from django.core.exceptions import ObjectDoesNotExist
 from base.models import AirportUser, Customer, Flight, Ticket, UserRole
-from base.serializer import AirportUserSerializer
-from rest_framework_simplejwt.tokens import AccessToken
-from django.utils.timezone import now
-from django.db.models import Q
 from django.utils import timezone
-from django.utils.timezone import localtime, now
 from datetime import datetime, timedelta
-from django.core.exceptions import ValidationError
 from dateutil import parser
 import pytz
 
 logger = logging.getLogger('report_actions')
 
-def conditions_for_booking_a_flight():
+def conditions_for_booking_a_flight(): # A ticket can be created under these conditions.
     def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
@@ -31,11 +22,8 @@ def conditions_for_booking_a_flight():
                 return Response({"error": "This client is not active."}, status=status.HTTP_403_FORBIDDEN)
             flight_id = request.data.get('flight_id')
             flight = get_object_or_404(Flight, id= flight_id)
-            # if not flight.is_active:
             if not flight.status == 'active':
                 return Response({"error": "Canceled or already took off flight."}, status=status.HTTP_400_BAD_REQUEST)
-            # ticket = get_object_or_404(Ticket, flight_id=flight_id, customer_id=customer.id, is_active=True)
-
             ticket = Ticket.objects.filter(flight_id=flight_id, customer_id=customer.id, status='active').first()
             if ticket:
                 return Response({"error": "This customer already has a ticket for this flight."}, status=status.HTTP_409_CONFLICT)
@@ -46,7 +34,7 @@ def conditions_for_booking_a_flight():
     return decorator
 
 
-def conditions_for_cancel_a_ticket():
+def conditions_for_cancel_a_ticket(): # Ticket can be canceled under these conditions.
     def decorator(func):
         @wraps(func)
         def wrapper(request, id, *args, **kwargs):
@@ -70,7 +58,6 @@ def conditions_for_cancel_a_ticket():
 def user_details_input_validation(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
-        print("ZZZZZZZZZZZZZZZZZZZZZZZZZZ")
         data = request.data
         username = data.get('username', '')
         if username:
@@ -79,18 +66,15 @@ def user_details_input_validation(func):
             if not re.match(r'^[a-zA-Z0-9]*$', username) or not any(char.isdigit() for char in username):
                 return Response({'error': 'Username must be unique, contain at least one digit, and have no special characters'},
                                 status=status.HTTP_400_BAD_REQUEST)
-        print("YYYYYYYYYYYYYYYYYYYYYYYY")
         if 'password' in data:  # Only validate if key exists, even if value is empty
             password = data['password']
             if not re.match(r'^[a-zA-Z0-9]*$', password) or len(password) < 4 or not any(char.isdigit() for char in password):
                 return Response({'error': 'Password must include at least one digit, at least four characters, and have no special characters'},
                                 status=status.HTTP_400_BAD_REQUEST)
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXX")
         email = data.get('email', '')
         email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
         if not re.match(email_pattern, email):
             return Response({'error': 'Invalid email format'}, status=status.HTTP_400_BAD_REQUEST)
-        print("BBBBBBBBBBBBBBBBBBBBBBBBb")
         return func(request, *args, **kwargs)
     return wrapper
     
@@ -106,7 +90,6 @@ def customer_details_input_validation(func):
                 {"error": "First name is required, only letters, 50 characters max."}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
-            print("WWWWWWWWWWWWWWWWWWWWWWWWWWWW")
             last_name = data.get('last_name', '')
             if not last_name or not last_name.isalpha() or len(last_name) > 50:
                 return Response(
@@ -176,8 +159,6 @@ def flight_details_input_validation(func):
             )
         
         now = datetime.now()
-        print(now)
-        print(dep_time)
         if (now > dep_time):
                return Response(
                 {"error": "The selected departure time is in the past."},
@@ -191,22 +172,7 @@ def flight_details_input_validation(func):
 )
         land_time = request.data.get('landing_time')
         land_time = parser.parse(land_time)
-        
-            # land_time_str = request.data.get('landing_time')
-            # try:
-            #     if not land_time_str or not isinstance(land_time_str, str):
-            #         return Response(
-            #             {"error": "Landing time is required and must be a valid string."},
-            #             status=status.HTTP_400_BAD_REQUEST
-            #         )
-            #     land_time_str = land_time_str.strip()
-            #     land_time = parser.parse(land_time_str)
-            # except (ValueError, TypeError) as e:
-            #      return Response(
-            #         {"error": "Landing time is in an invalid datetime format."},
-            #         status=status.HTTP_400_BAD_REQUEST
-            #     )
-
+    
         if not land_time >= dep_time + timedelta(hours=1):
                 return Response(
                     {"error": "Landing time must be at least one hour ahead of the departure time."}, 
@@ -221,15 +187,12 @@ def flight_details_input_validation(func):
                     {"error": "Remaining tickets must be an integer number (no decimals allowed)."}, 
                     status=status.HTTP_400_BAD_REQUEST
                 )
-            
-            rem_tickets = int(rem_tickets)  # Convert to integer
-
+            rem_tickets = int(rem_tickets) 
             if rem_tickets <= 0:
                 return Response(
                     {"error": "Remaining tickets field must be a positive integer."}, 
                     status=status.HTTP_400_BAD_REQUEST
                 )
-
         except ValueError:
             return Response(
                 {"error": "Wrong input in remaining tickets field"}, 
@@ -261,8 +224,6 @@ def update_airport_user():
     def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
-            print("I AM IN")
-            # user = request.user
             user_to_update = AirportUser.objects.get(id = request.user.id)
             email = request.data.get('email')
             if 'password' in request.data:
@@ -273,9 +234,6 @@ def update_airport_user():
             return func(request, *args, **kwargs)
         return wrapper
     return decorator
-
-
-
 
 
 def airline_details_input_validation(func):
@@ -291,7 +249,7 @@ def airline_details_input_validation(func):
         return wrapper
 
 
-def authorize_customer():
+def authorize_customer(): # Customer is authorized for his details alone.
     def decorator(func):
         @wraps(func)
         def wrapper(request, id, *args, **kwargs):
@@ -306,7 +264,7 @@ def authorize_customer():
     return decorator
 
 
-def authorize_airline():
+def authorize_airline(): # Airline is authorized on its flights alone.
     def decorator(func):
         @wraps(func)
         def wrapper(request, id, *args, **kwargs):
@@ -320,7 +278,7 @@ def authorize_airline():
         return wrapper
     return decorator
 
-def airline_flight_auth():
+def airline_flight_auth(): # Authorization of flight to its airline.
     def decorator(func):
         @wraps(func)
         def wrapper(request, id, *args, **kwargs):
@@ -336,7 +294,7 @@ def airline_flight_auth():
         return wrapper
     return decorator
 
-def update_flights_status():
+def update_flights_status(): # From 'active' to 'took-off', for example.
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
@@ -352,32 +310,12 @@ def update_flights_status():
                     print(f"Updating flight {flight.id} to 'tookoff'")
                     flight.status = 'tookoff'
                     Ticket.objects.filter(flight_id=flight.id, status='active').update(status='tookoff')
-                    # Ticket.objects.filter(Q(flight_id=flight.id) & Q(status='active')).update(status='tookoff')
                 elif current_time >= flight.landing_time.astimezone(pytz.UTC):
                     flight.status = 'landed'
                     Ticket.objects.filter(flight_id=flight.id).exclude(status='canceled').update(status='landed')
-                    # Ticket.objects.filter(Q(flight_id=flight.id) & ~Q(status = 'canceled')).update(status='landed')
                 flight.save(update_fields=['status'])
             return func(*args, **kwargs)
         return wrapper
     return decorator
-
-            
-
-
-
-
-
-
-# def create_airport_user(func):
-#     @wraps(func)
-#     def wrapper(request, *args, **kwargs):
-#         airport_user_data = request.data.get('airport_user')
-#         if not airport_user_data:
-#             return JsonResponse({"error": "Airport user data is required."}, status=status.HTTP_400_BAD_REQUEST)
-#         user_serializer = AirportUserSerializer(data=airport_user_data)
-#         if not user_serializer.is_valid():
-#             return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#         airport_user = user_serializer.save()
 
 

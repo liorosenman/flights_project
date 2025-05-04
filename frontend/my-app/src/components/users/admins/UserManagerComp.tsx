@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { selectLoginState } from '../../Login/loginSlice';
 import { useAppSelector } from '../../../app/hooks.ts';
 import CustomerTable from '../customers/CustomerTable.tsx';
 import AdminTable from './AdminsTable.tsx';
@@ -8,8 +7,6 @@ import { Link, useParams } from 'react-router-dom';
 import { UserRole } from '../../../models/userRole.ts';
 import customersSlice, { clearCustomerState, fetchCustomers, getCustomerByUsername, selectCustomerState} from '../customers/customersSlice.tsx';
 import { clearAdminState, fetchAdmins, selectAdminState } from './adminsSlice.tsx';
-import { AsyncThunkAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { UnknownAction } from 'redux';
 import { clearAirlineState, fetchAirlines, getAirlineByUsername, selectAirlineState } from '../airline/airlineSlicer.tsx';
 import { useAppDispatch } from '../../../app/hooks.ts'
 import { AppDispatch } from '../../../app/store.ts';
@@ -60,7 +57,6 @@ const UserManagerComp: React.FC = () => {
         await dispatch(getCustomerByUsername(searchUsername));
         break;
       case UserRole.AIRLINE:
-        console.log("I WAS CHOSEN");
         await dispatch(getAirlineByUsername(searchUsername));
         break;
       default:

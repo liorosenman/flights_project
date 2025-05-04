@@ -57,12 +57,6 @@ class FlightStatus(enum.Enum):
     TOOKOFF = "tookoff"
     LANDED = "landed"
 
-# FLIGHT_STATUS_CHOICES = [
-#     (FlightStatus.ACTIVE, 'active'),
-#     (FlightStatus.CANCELED, 'canceled'),
-#     (FlightStatus.TOOKOFF, 'tookoff'),
-#     (FlightStatus.LANDED, 'landed')
-# ]
 
 FLIGHT_STATUS_CHOICES = [
     ('active', 'active'),      
@@ -89,24 +83,6 @@ class AirportUser(AbstractUser):
         """Return True if user has a specific permission (for Django admin)."""
         return self.is_superuser
 
-    
-    # @property
-    # def is_staff(self):
-    #     """Django expects `is_staff` for admin access, so return `is_admin`."""
-    #     return self.is_admin
-
-    # @property
-    # def is_superuser(self):
-    #     """Django expects `is_superuser`, so return `is_admin`."""
-    #     return self.is_admin
-
-    # def has_perm(self, perm, obj=None):
-    #     """Return True if user has a specific permission (for Django admin)."""
-    #     return self.is_admin
-
-    # def has_module_perms(self, app_label):
-    #     """Return True if user has permissions to view the app `app_label`."""
-    #     return self.is_admin
     
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)

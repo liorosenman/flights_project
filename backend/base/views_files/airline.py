@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime
 import logging
 from django.db import connection
 from django.shortcuts import get_object_or_404
@@ -8,8 +8,8 @@ from rest_framework import status
 from base import decorators
 from base.decorators import airline_flight_auth, authorize_airline, flight_details_input_validation
 from base.permission import role_required
-from ..models import Airline, Flight, Roles, RolesEnum, Ticket
-from ..serializer import AirlineSerializer, FlightSerializer
+from ..models import Airline, Flight, Roles, Ticket
+from ..serializer import FlightSerializer
 from django.utils.timezone import now, make_aware, is_naive
 from django.db import connection
 from rest_framework.decorators import api_view
@@ -30,7 +30,6 @@ def add_flight(request):
         print(request.user.id)
     except Airline.DoesNotExist:
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
-    
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
     print(airline_company.id)

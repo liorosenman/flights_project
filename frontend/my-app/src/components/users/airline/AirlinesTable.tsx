@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchAirlines, removeAirline, setTargetAirlineId } from './airlineSlicer.tsx';
-import Menu from '../../Menu/menuComp.tsx';
 import {clearAirlineState} from './airlineSlicer.tsx'
 import { selectAirlineState } from './airlineSlicer.tsx';
-import { clearCustomerState } from '../customers/customersSlice.tsx';
-import { clearAdminState } from '../admins/adminsSlice.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 import '../../../App.css'
 
@@ -31,12 +28,6 @@ const AirlinesTable: React.FC = () => {
       console.error("Airline removal failed.", error);
     }
   };
-
-  // const filteredAdmins = airlines.filter(c =>
-  //   c.first_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.last_name.toLowerCase().includes(search.toLowerCase()) ||
-  //   c.username.toLowerCase().includes(search.toLowerCase())
-  // );
 
   return (
     <div>

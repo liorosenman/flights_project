@@ -34,7 +34,6 @@ const CreateFlightComp = () => {
     await dispatch(createFlight(formData));
     
   }
- console.log("THE ROLE ID IS IS IS ",  );
  
   return (
     <div>

@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
-import { clearFlightState, getFlightById, getFlightsByParameters, loadFlights } from './flightSlice.tsx'
+import { clearFlightState } from './flightSlice.tsx'
 import SelectAirlineComp from '../users/airline/SelectAirlineComp.tsx'
 import '../../App.css';
 
 interface FlightFiltersProps {
-  onFilter: (filters: any) => void; // You can define a better type later
+  onFilter: (filters: any) => void;
 }
 
 export interface FlightSearchParams {
@@ -54,7 +54,6 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
         break;
       case FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS:
         if (originCountry && destinationCountry && departureDate) {
-          console.log("THESE ARE THE PARAMETERS: ", originCountry, destinationCountry, departureDate);
           filters = { type: selectedOption, originCountry, destinationCountry, departureDate };
         }
         break;

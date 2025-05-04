@@ -21,13 +21,10 @@ const LoginComp: React.FC = () => {
       // Check if login succeeded
       if (loginUser.fulfilled.match(resultAction)) {
         const token = resultAction.payload?.token
-        // const decoded: any = jwtDecode(token);
         const decoded = jwtDecode<{ role_id: number }>(token);
         const logged_username = jwtDecode<{ username: string }>(token);
         const roleId = decoded.role_id;
         const username = logged_username.username;
-        console.log(resultAction);
-        
         localStorage.setItem('access_token', token);
         localStorage.setItem('refresh_token', resultAction.payload.refresh);
         localStorage.setItem('role_id', String(roleId));
@@ -36,8 +33,6 @@ const LoginComp: React.FC = () => {
         switch (roleId) {
           case UserRole.ADMIN:
             navigate('/users/1');
-            console.log("THE ROLE ID IS ",roleId);
-            
             break;
           case UserRole.CUSTOMER:
             navigate('/flightsboard');

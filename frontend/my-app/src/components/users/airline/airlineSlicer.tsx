@@ -3,7 +3,6 @@ import { LinkedAirline } from '../../../models/LinkedAirline';
 import { RootState } from '../../../app/store';
 import { getAirlineByUsernameService, getAllAirlinesService } from './airlineService.tsx';
 import { createFlightService, removeAirlineService } from './airlineService.tsx';
-import { getAdminByUsernameService } from '../admins/adminsService.tsx';
 
 
 
@@ -34,7 +33,6 @@ export const createFlight = createAsyncThunk<string, Record<string, any>, { stat
         return rejectWithValue('Authentication token is missing.');
       }
       const response = await createFlightService(FlightData, token);
-      console.log(response);
       return response.data.message;
     } catch (error: any) {
       return rejectWithValue(
@@ -43,20 +41,6 @@ export const createFlight = createAsyncThunk<string, Record<string, any>, { stat
     }
   }
 );
-
-// export const createFlight = createAsyncThunk<string, Record<string, any>>(
-//     'airline/createFlight',
-//     async (FlightData, { rejectWithValue }) => {
-//       try {
-//         const response = await createFlightService(FlightData);
-//         console.log(response);
-//         return response.data.message;
-//       } catch (error:any) { 
-//         return rejectWithValue(error.response?.data?.error  || 'Unknown error');
-//       }
-//     }
-//   );
-
 
 export const fetchAirlines = createAsyncThunk(
   'airline/fetchAirlines',
@@ -72,7 +56,7 @@ export const fetchAirlines = createAsyncThunk(
 
 
 export const removeAirline = createAsyncThunk<
-  { message: string },  // return type
+  { message: string }, 
   number,                               // input: customer ID
   { state: RootState; rejectValue: string }
 >(

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { LinkedCustomer } from '../../../models/LinkedCustomer.ts'
 import { RootState } from '../../../app/store.ts';
 import { getAdminByUsernameService, getAllAdminsService, removeAdminService } from './adminsService.tsx';
 import { LinkedAdmin } from '../../../models/LinkedAdmin.ts';

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { FlightData } from '../../models/flightdata.ts'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
 

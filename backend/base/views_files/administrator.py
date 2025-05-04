@@ -1,23 +1,18 @@
 from django.db import connection
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
-# from base.decorators import role_required
+from rest_framework.decorators import api_view
 from base.decorators import create_airport_user
-from base.models import Admin, Airline, AirportUser, Country, Customer, Flight, Roles, RolesEnum, Ticket, UserRole
-from django.core.exceptions import ObjectDoesNotExist
+from base.models import Admin, Airline, AirportUser, Country, Customer, Roles, Ticket
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
-from rest_framework.permissions import IsAuthenticated
-from base.serializer import CustomerSerializer
 from ..permission import authorize_admin_and_customer, role_required
-from django.db.models import Q
 from ..decorators import *
 from base import decorators
 
 #Create a new admin (user_role_num = 1)
 @api_view(['POST']) 
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @admin_details_input_validation
 @create_airport_user(Roles.ADMINISTRATOR.value)
@@ -46,33 +41,7 @@ def airline_register(request):
     airline.save()
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
 
-@api_view(['GET'])
-@role_required(Roles.ADMINISTRATOR.value)
-def get_user_by_username(request, username):
-    try:
-        with connection.cursor() as cursor:
-             cursor.execute("SELECT * FROM get_user_by_username(%s)", [username])
-             result = cursor.fetchone()
-             if result:
-                columns = [col[0] for col in cursor.description]
-                user = dict(zip(columns,result))
-                if 'is_active' in user:
-                    user['is_active'] = 'active' if user['is_active'] else 'inactive'
-                return Response({
-                    "status": "success",
-                    "message": "User retrieved successfully",
-                    "user": user
-                }, status=200)
-             else:
-                return Response({
-                    "status": "error",
-                    "message": "No user found"
-                }, status=404)
-    except Exception as e:
-        return Response({
-            "status": "error",
-            "message": str(e)
-        }, status=400)
+
     
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
@@ -83,7 +52,6 @@ def get_customers_details(request):
             rows = cursor.fetchall()
             columns = [col[0] for col in cursor.description]
             customers = [dict(zip(columns, row)) for row in rows]
-
         return Response(customers, status=status.HTTP_200_OK)
 
     except Exception as e:

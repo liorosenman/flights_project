@@ -4,14 +4,12 @@ import {airlineSignupService} from './CreateUserService.tsx';
 import { RootState } from '../../app/store';
 
 interface CreateUserState {
-    // user : any[] | null
     error: string | null;
     loading: boolean;
     successMessage: string | null;
   }
   
 const initialState: CreateUserState = {
-  // user : null,
   error : null,
   loading: false,
   successMessage: null
@@ -48,7 +46,6 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
     async (adminData, { rejectWithValue }) => {
       try {
         const response = await adminSignupService(adminData);
-        console.log(response);
         return response.data.message;
       } catch (error:any) { 
         return rejectWithValue(error.response?.data?.error || 'Unknown error');

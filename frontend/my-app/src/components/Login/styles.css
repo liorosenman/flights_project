@@ -1,9 +1,9 @@
 .fullscreen-center-container {
-  height: 100vh; /* full screen height */
+  height: 100vh; 
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
-  background-color: #f9f9f9; /* optional: subtle background */
+  justify-content: center;
+  align-items: center;    
+  background-color: #f9f9f9; 
 }
 
 .login-form-box {

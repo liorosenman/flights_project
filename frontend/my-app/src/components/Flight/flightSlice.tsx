@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addTicketService, fetchFlights, getArrivalFlightsService, getDepartureFlightsService, getFlightsByAirlineIdService, getFlightsByParametersService, removeFlightService, updateFlightService } from './flightService.tsx';
-import { FlightData } from '../../models/flightdata';
 import { AppDispatch, RootState } from '../../app/store.ts';
 import { getMyFlightsService, getFlightByIdService} from './flightService.tsx';
-import axios from 'axios';
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
 
@@ -31,8 +29,6 @@ export interface FlightState {
     'flight/loadFlights',
     async (_, { rejectWithValue }) => {
       try {
-        console.log("BBBBBBBBBBBBBBBBBBB");
-        
         return await fetchFlights();
       } catch (error: any) {
         return rejectWithValue(error.response?.data?.message || 'Failed to fetch flights');
@@ -70,7 +66,6 @@ export const addTicket = createAsyncThunk<
     try {
       dispatch(setTargetFlightId(flight_id));
       const result = await addTicketService(flight_id, token);
-      console.log(result);
       return result;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Ticket purchase failed');
@@ -104,7 +99,6 @@ export const updateFlight = createAsyncThunk<
 >(
   'flight/updateFlight',
   async ({ flightId, newDepTime }, { getState, rejectWithValue }) => {
-    // clearFlightState();
     try {
       const token = getState().login.token;
       if (!token) {
@@ -121,7 +115,7 @@ export const updateFlight = createAsyncThunk<
 );
 
 export const getFlightById = createAsyncThunk<
-  any, // (You can replace 'any' with a FlightData type if you have)
+  any, 
   number,
   { state: RootState }
 >(
@@ -133,7 +127,7 @@ export const getFlightById = createAsyncThunk<
         return rejectWithValue('No access token available.');
       }
       const result = await getFlightByIdService(id, token);
-      return result.flight; // returning only the flight object
+      return result.flight;
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || error.message || 'Flight retrieval failed.'
@@ -143,15 +137,13 @@ export const getFlightById = createAsyncThunk<
 );
 
 export const getFlightsByAirlineId = createAsyncThunk<
-  any,  // (or you can define types if you want stronger typing later)
-  number // airlineId
+  any, 
+  number
 >(
   'flight/getFlightsByAirlineId',
   async (airlineId, { rejectWithValue }) => {
     try {
       const result = await getFlightsByAirlineIdService(airlineId);
-      console.log("FFFFFFFFFFFFFFFFFFFFFFFFF");
-      console.log(result);
       return result.flights; 
     } catch (error: any) {
       return rejectWithValue(
@@ -162,14 +154,14 @@ export const getFlightsByAirlineId = createAsyncThunk<
 );
 
 export const getArrivalFlights = createAsyncThunk<
-  any,    // (You can define a stricter return type later)
+  any,   
   number  // country ID
 >(
   'flight/getArrivalFlights',
   async (countryId, { rejectWithValue }) => {
     try {
       const result = await getArrivalFlightsService(countryId);
-      return result.flights; // backend returns { message, flights }
+      return result.flights; 
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || 'Failed to retrieve arrival flights.'
@@ -196,14 +188,14 @@ export const getFlightsByParameters = createAsyncThunk<
 );
 
 export const getDepartureFlights = createAsyncThunk<
-  any,    // (You can define a stricter return type later)
+  any,    
   number  // country ID
 >(
   'flight/getDepartureFlights',
   async (countryId, { rejectWithValue }) => {
     try {
       const result = await getDepartureFlightsService(countryId);
-      return result.flights; // backend returns { message, flights }
+      return result.flights;
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || 'Failed to retrieve arrival flights.'
@@ -217,7 +209,6 @@ export const getDepartureFlights = createAsyncThunk<
     initialState,
     reducers: {
       clearFlightState: (state) => {
-        // state.flights = [];
         state.loading = false;
         state.error = null;
         state.successMsg = null;
@@ -268,9 +259,6 @@ export const getDepartureFlights = createAsyncThunk<
             state.loading = false;
             state.error = null;
             state.successMsg = action.payload.message as string
-            console.log(state.successMsg);
-            
-            
         })
         .addCase(addTicket.rejected, (state, action) => {
           state.loading = false;
