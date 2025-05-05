@@ -41,7 +41,7 @@ const LoginComp: React.FC = () => {
             navigate('/createflight');
             break;
           default:
-            console.log('Unknown role ID');
+            navigate('/');
         }
       }
     } catch (error) {

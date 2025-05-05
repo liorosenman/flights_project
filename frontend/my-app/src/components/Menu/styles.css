@@ -14,12 +14,15 @@
   
   .menu-hover-effect {
     transition: background-color 0.2s ease, color 0.2s ease;
-    padding: 0.25rem 0.5rem;     
-    border-radius: 0.25rem;     
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
   }
   
+  /* Apply styles only on hover */
   .menu-hover-effect:hover {
-    background-color: #e9ecef;
-    color: #e11a1a !important; 
+    background-color: #ffffff;   /* fill with white */
+    color: #e11a1a !important;   /* text becomes red */
     text-decoration: none;
   }

@@ -67,11 +67,11 @@ const UserManagerComp: React.FC = () => {
 
   return (
     <div>
-      <nav>
+      {/* <nav>
         <Link to="/users/1">Admins</Link> |{" "}
         <Link to="/users/2">Customers</Link> |{" "}
         <Link to="/users/3">Airlines</Link>
-      </nav>
+      </nav> */}
 
       <div style={{ marginTop: '15px' }}>
         <button onClick={handleShowAll}>Show All</button>

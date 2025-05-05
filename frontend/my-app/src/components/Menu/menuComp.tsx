@@ -23,23 +23,24 @@ const Menu = () => {
         <div>
           {storedRoleId === 3 && (
             <>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">My Flights</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/flightsboard">Board</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createflight">Create flight</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/flightsboard">My Flights</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/createflight">Create flight</Link>
             </>
           )}
           {storedRoleId === 2 && (
             <>
-              <Link className="me-3 text-dark  text-decoration-none fw-semibold" to="/flightsboard">Flights Board</Link>
+              <Link className="me-3 text-dark  text-decoration-none fw-semibold menu-hover-effect" to="/flightsboard ">Flights Board</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/ticketslist">My Tickets</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/updatecustomer">Details</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/updatecustomer">Details</Link>
             </>
           )}
           {storedRoleId === 1 && (
             <>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/users/2">Customers</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/users/1">Admins</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/users/3">Airlines</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/2">Customers</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/1">Admins</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/3">Airline</Link>
+              {/* <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createairline">Airline register</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createadmin">Customer register</Link> */}
             </>
           )}
         </div>

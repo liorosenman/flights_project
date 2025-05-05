@@ -18,8 +18,6 @@ import AirlinesTable from './components/users/airline/AirlinesTable.tsx';
 import UserManagerComp from './components/users/admins/UserManagerComp.tsx';
 import UpdateCustomerDetails from './components/users/customers/UpdateCustomerDetails.tsx';
 
-
-
 const App = () => {
   return (
     <div className="bg-primary-subtle min-vh-100">
@@ -30,7 +28,7 @@ const App = () => {
           <Route path="/login" element={<LoginComp />} />
           <Route element={<MenuLayout />}>
             <Route path="/login" element={<LoginComp />} />
-            <Route path="/users" element={<Users />} />
+            {/* <Route path="/users" element={<Users />} /> */}
             <Route path="/adminslist" element={<AdminsTable />} />
             <Route path="/airlineslist" element={<AirlinesTable />} />
             <Route path="/createcustomer" element={<CreateCustomer />} />
@@ -42,12 +40,11 @@ const App = () => {
             <Route path="/customerslist" element={<CustomerTable />} />
             <Route path="/adminslist" element={<AdminsTable />} />
             <Route path="/updatecustomer" element={<UpdateCustomerDetails />} />
+            <Route path="/users/:roleId" element={<UserManagerComp />} />
 
           </Route>
         </Routes>
-        <Routes>
-          <Route path="/users/:roleId" element={<UserManagerComp />} />
-        </Routes>
+
       </Router>
     </div>
   );
