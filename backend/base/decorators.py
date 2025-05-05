@@ -9,6 +9,7 @@ from base.models import AirportUser, Customer, Flight, Ticket, UserRole
 from django.utils import timezone
 from datetime import datetime, timedelta
 from dateutil import parser
+from django.utils.timezone import make_aware, is_naive
 import pytz
 
 logger = logging.getLogger('report_actions')
@@ -143,6 +144,7 @@ def admin_details_input_validation(func):
 def flight_details_input_validation(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
+        print("AAAAAAAAAAAAAAAAAAAAAAAAAA")        
         dep_time_str = request.data.get('departure_time') # The new departure time
         try:
             if not dep_time_str or not isinstance(dep_time_str, str):
@@ -158,7 +160,9 @@ def flight_details_input_validation(func):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        now = datetime.now()
+        now = timezone.now()
+        if is_naive(dep_time):
+            dep_time = make_aware(dep_time)
         if (now > dep_time):
                return Response(
                 {"error": "The selected departure time is in the past."},
@@ -172,7 +176,9 @@ def flight_details_input_validation(func):
 )
         land_time = request.data.get('landing_time')
         land_time = parser.parse(land_time)
-    
+        if is_naive(land_time):
+            land_time = make_aware(land_time)
+
         if not land_time >= dep_time + timedelta(hours=1):
                 return Response(
                     {"error": "Landing time must be at least one hour ahead of the departure time."}, 
@@ -294,26 +300,65 @@ def airline_flight_auth(): # Authorization of flight to its airline.
         return wrapper
     return decorator
 
-def update_flights_status(): # From 'active' to 'took-off', for example.
+# def update_flights_status(): # From 'active' to 'took-off', for example.
+#     def decorator(func):
+#         @wraps(func)
+#         def wrapper(*args, **kwargs):
+#             israel_tz = pytz.timezone('Asia/Jerusalem')
+#             current_time = timezone.localtime(timezone.now(), israel_tz)
+#             # print(current_time)
+#             # print(timezone.now)
+#             # print(datetime.now())
+#             flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
+#                  .filter(departure_time__lt=current_time)
+#             for flight in flights_to_update:
+#                 possible_active_ticket = Ticket.objects.exclude(status='canceled').filter(flight_id=flight.id) # Change get to filter
+#                 if not possible_active_ticket:
+#                     flight.status = 'canceled'
+#                 elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+#                     print(f"Updating flight {flight.id} to 'tookoff'")
+#                     flight.status = 'tookoff'
+#                     Ticket.objects.filter(flight_id=flight.id, status='active').update(status='tookoff')
+#                 elif current_time >= flight.landing_time.astimezone(pytz.UTC):
+#                     flight.status = 'landed'
+#                     Ticket.objects.filter(flight_id=flight.id).exclude(status='canceled').update(status='landed')
+#                 flight.save(update_fields=['status'])
+#             return func(*args, **kwargs)
+#         return wrapper
+#     return decorator
+
+def update_flights_status():
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            current_time = timezone.now() 
-            print(current_time)
+            israel_tz = pytz.timezone('Asia/Jerusalem')
+            current_time = timezone.localtime(timezone.now(), israel_tz)
+
             flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
-                 .filter(departure_time__lt=current_time)
+                                              .filter(departure_time__lt=current_time)
+
             for flight in flights_to_update:
-                possible_active_ticket = Ticket.objects.exclude(status='canceled').filter(flight_id=flight.id) # Change get to filter
-                if not possible_active_ticket:
+                departure = flight.departure_time.astimezone(israel_tz)
+                landing = flight.landing_time.astimezone(israel_tz)
+
+                active_tickets_exist = Ticket.objects.exclude(status='canceled') \
+                                                     .filter(flight_id=flight.id) \
+                                                     .exists()
+
+                if not active_tickets_exist:
                     flight.status = 'canceled'
-                elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
-                    print(f"Updating flight {flight.id} to 'tookoff'")
+                elif departure <= current_time < landing:
                     flight.status = 'tookoff'
-                    Ticket.objects.filter(flight_id=flight.id, status='active').update(status='tookoff')
-                elif current_time >= flight.landing_time.astimezone(pytz.UTC):
+                    Ticket.objects.filter(flight_id=flight.id, status='active') \
+                                  .update(status='tookoff')
+                elif current_time >= landing:
                     flight.status = 'landed'
-                    Ticket.objects.filter(flight_id=flight.id).exclude(status='canceled').update(status='landed')
+                    Ticket.objects.filter(flight_id=flight.id) \
+                                  .exclude(status='canceled') \
+                                  .update(status='landed')
+
                 flight.save(update_fields=['status'])
+
             return func(*args, **kwargs)
         return wrapper
     return decorator

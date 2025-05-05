@@ -190,7 +190,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jerusalem'
 DATE_FORMAT = "d-m-y" 
 TIME_FORMAT = "H:i"
 DATETIME_FORMAT = "d-m-y H:i" 

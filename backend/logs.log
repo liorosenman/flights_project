@@ -15533,3 +15533,336 @@ TypeError: get_customer_by_username() missing 1 required positional argument: 'u
 2025-05-04 14:57:58,942 - WARNING - Unauthorized: /login/
 2025-05-04 15:30:40,892 - WARNING - Forbidden: /remove_airline/14/
 2025-05-04 22:12:54,166 - WARNING - Successful flight creation.
+2025-05-05 10:42:54,620 - WARNING - Unauthorized: /login/
+2025-05-05 13:41:31,360 - WARNING - Unauthorized: /login/
+2025-05-05 13:44:25,826 - WARNING - Successful flight creation.
+2025-05-05 13:55:10,474 - WARNING - Bad Request: /create_flight/
+2025-05-05 13:57:41,951 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:57:48,236 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:57:50,256 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:57:55,427 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:57:58,458 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:58:29,737 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:58:31,806 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:58:38,002 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:58:45,001 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:58:49,122 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:59:29,040 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:59:34,239 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:59:36,375 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:59:39,583 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 13:59:59,446 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:01,499 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:10,603 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:13,693 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:18,870 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:20,918 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:00:22,912 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:02:44,622 - WARNING - Successful flight creation.
+2025-05-05 14:07:38,705 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:07:38,847 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:07:44,626 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:07:44,736 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:07:46,405 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:07:46,555 - ERROR - Internal Server Error: /get_all_flights/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 310, in wrapper
+    elif flight.departure_time.astimezone(pytz.UTC) <= current_time < flight.landing_time.astimezone(pytz.UTC):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 14:13:02,057 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:13:05,195 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:15:42,575 - WARNING - Successful flight creation.
+2025-05-05 14:20:39,842 - WARNING - Bad Request: /create_flight/
+2025-05-05 14:20:58,539 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:21:02,761 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:45:14,902 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-05-05 14:45:19,082 - INFO - C:\LIOR\python\final_project\backend\myproj\settings.py changed, reloading.
+2025-05-05 14:45:56,610 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:46:10,242 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:46:19,268 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:49:00,225 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:49:30,921 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:49:42,336 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:51:32,186 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:53:41,404 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:54:12,571 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:54:41,920 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:54:55,493 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:36,309 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:38,384 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:42,454 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:46,673 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:49,750 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:51,883 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:55:55,969 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:56:34,259 - WARNING - Unauthorized: /get_my_flights/
+2025-05-05 14:56:34,266 - WARNING - Unauthorized: /get_my_flights/
+2025-05-05 14:57:11,924 - WARNING - Unauthorized: /create_flight/
+2025-05-05 14:59:32,519 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 14:59:49,534 - WARNING - Unauthorized: /create_flight/
+2025-05-05 14:59:57,779 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:02,941 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:06,036 - WARNING - Unauthorized: /create_flight/
+2025-05-05 15:00:21,899 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:24,913 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:27,973 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:37,326 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:00:40,354 - WARNING - Unauthorized: /create_flight/
+2025-05-05 15:01:00,506 - WARNING - Unauthorized: /get_my_flights/
+2025-05-05 15:01:00,515 - WARNING - Unauthorized: /get_my_flights/
+2025-05-05 15:01:52,138 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:02:12,045 - ERROR - Internal Server Error: /create_flight/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 182, in wrapper
+    if not land_time >= dep_time + timedelta(hours=1):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes
+2025-05-05 15:04:07,250 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:04:09,351 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-05 15:04:33,052 - WARNING - Successful flight creation.
+2025-05-05 15:06:52,403 - WARNING - Successful flight creation.
+2025-05-05 15:12:08,537 - WARNING - Successful flight creation.
+2025-05-05 15:18:30,376 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:20:33,134 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:20:56,187 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:21:10,830 - WARNING - Successful flight creation.
+2025-05-05 15:27:16,709 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:27:26,848 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:28:15,739 - WARNING - Unauthorized: /create_flight/
+2025-05-05 15:32:17,591 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:34:50,969 - WARNING - Method Not Allowed: /get_my_flights/
+2025-05-05 15:35:37,343 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:35:47,190 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:36:36,741 - WARNING - Successful flight creation.
+2025-05-05 15:38:01,483 - WARNING - Bad Request: /create_flight/
+2025-05-05 15:41:34,271 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:41:45,531 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:42:31,800 - WARNING - Unauthorized: /login/
+2025-05-05 15:42:59,022 - WARNING - Successful flight creation.
+2025-05-05 15:45:51,801 - WARNING - Successful flight creation.
+2025-05-05 15:51:31,180 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:51:33,233 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:51:53,102 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:55:13,095 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:55:15,159 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 15:55:25,535 - INFO - C:\LIOR\python\final_project\backend\base\serializer.py changed, reloading.
+2025-05-05 16:00:28,909 - WARNING - Bad Request: /create_flight/
+2025-05-05 16:00:48,935 - WARNING - Successful flight creation.
+2025-05-05 16:03:22,355 - WARNING - Bad Request: /create_flight/
+2025-05-05 16:04:44,856 - WARNING - Successful flight creation.
