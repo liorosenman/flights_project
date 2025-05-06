@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from ..utils import convert_flight_times_to_israel_timezone
 from base import decorators
 from base.decorators import airline_flight_auth, authorize_airline, flight_details_input_validation
 from base.permission import role_required
@@ -33,6 +34,7 @@ def add_flight(request):
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
     print(airline_company.id)
+    flight_data = convert_flight_times_to_israel_timezone(flight_data)
     serializer = FlightSerializer(data=flight_data)
     print(serializer)
     if serializer.is_valid():
