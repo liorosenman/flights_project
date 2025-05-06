@@ -5,6 +5,25 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework import status
 from django.utils.timezone import now
+import pytz
+from datetime import datetime
+
+
+
+def convert_flight_times_to_israel_timezone(flights_list):
+    israel_tz = pytz.timezone("Asia/Jerusalem")
+    for flight in flights_list:
+        if 'departure_time' in flight and flight['departure_time'] and isinstance(flight['departure_time'], datetime):
+            if flight['departure_time'].tzinfo is None:
+                flight['departure_time'] = pytz.utc.localize(flight['departure_time'])
+            flight['departure_time'] = flight['departure_time'].astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
+        if 'landing_time' in flight and flight['landing_time'] and isinstance(flight['landing_time'], datetime):
+            if flight['landing_time'].tzinfo is None:
+                flight['landing_time'] = pytz.utc.localize(flight['landing_time'])
+            flight['landing_time'] = flight['landing_time'].astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
+    
+    return flights_list
+
 
 
 def create_airport_user(data):

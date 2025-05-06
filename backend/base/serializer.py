@@ -83,7 +83,7 @@ class AirlineSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class FlightSerializer(serializers.ModelSerializer):
+# class FlightSerializer(serializers.ModelSerializer):
 #     departure_time = serializers.DateTimeField(
 #     format="%d-%m-%Y %H:%M",  # output format
 #     input_formats=["%d-%m-%Y %H:%M", "%Y-%m-%dT%H:%M"],  # input formats
@@ -96,9 +96,49 @@ class FlightSerializer(serializers.ModelSerializer):
 #         default_timezone=pytz.timezone("Asia/Jerusalem")
 #     )
 
+#     class Meta:
+#         model = Flight
+#         fields = '__all__'
+
+class FlightSerializer(serializers.ModelSerializer):
+    departure_time = serializers.DateTimeField(
+        format="%d-%m-%Y %H:%M",  # output format
+        input_formats=["%d-%m-%Y %H:%M", "%Y-%m-%dT%H:%M"],  # input formats
+        default_timezone=pytz.timezone("Asia/Jerusalem")
+    )
+    landing_time = serializers.DateTimeField(
+        format="%d-%m-%Y %H:%M",
+        input_formats=["%d-%m-%Y %H:%M", "%Y-%m-%dT%H:%M"],
+        default_timezone=pytz.timezone("Asia/Jerusalem")
+    )
+    
     class Meta:
         model = Flight
         fields = '__all__'
+    
+    def to_representation(self, instance):
+        """Convert UTC times to Israel timezone when sending to client"""
+        representation = super().to_representation(instance)
+        
+        israel_tz = pytz.timezone("Asia/Jerusalem")
+        
+        # Convert departure_time to Israel timezone
+        if instance.departure_time:
+            representation['departure_time'] = instance.departure_time.astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
+            
+        # Convert landing_time to Israel timezone
+        if instance.landing_time:
+            representation['landing_time'] = instance.landing_time.astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
+            
+        return representation
+        
+    def create(self, validated_data):
+        """Ensure timezone info is preserved when creating instances"""
+        return super().create(validated_data)
+        
+    def update(self, instance, validated_data):
+        """Ensure timezone info is preserved when updating instances"""
+        return super().update(instance, validated_data)
 
 
 class TicketSerializer(serializers.ModelSerializer):
