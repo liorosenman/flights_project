@@ -38,7 +38,9 @@ const Menu = () => {
             <>
               <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/2">Customers</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/1">Admins</Link>
-              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/3">Airline</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/users/3">Airlines</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/createairline">+Airline</Link>
+              <Link className="me-3 text-dark text-decoration-none fw-semibold menu-hover-effect" to="/createadmin">+Admin</Link>
               {/* <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createairline">Airline register</Link>
               <Link className="me-3 text-dark text-decoration-none fw-semibold" to="/createadmin">Customer register</Link> */}
             </>

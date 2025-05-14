@@ -1,7 +1,7 @@
 // Flight.js
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { addTicket, getMyFlights, loadFlights, removeFlight, selectFlightsState, updateFlight } from './flightSlice.tsx';
+import { addTicket, clearFlights, getMyFlights, loadFlights, removeFlight, selectFlightsState, updateFlight } from './flightSlice.tsx';
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';

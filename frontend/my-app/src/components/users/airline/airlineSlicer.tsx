@@ -4,8 +4,6 @@ import { RootState } from '../../../app/store';
 import { getAirlineByUsernameService, getAllAirlinesService } from './airlineService.tsx';
 import { createFlightService, removeAirlineService } from './airlineService.tsx';
 
-
-
 export interface AirlineState {
   airlines: LinkedAirline[]
   error: string | null;
@@ -119,6 +117,10 @@ const AirlineSlicer = createSlice({
       state.targetAirlineId = null;
       state.filterError = null;
     },
+    clearMessages: (state) => {
+      state.error = null;
+      state.successMsg = null;
+    },
     setTargetAirlineId: (state, action) => {
       state.targetAirlineId = action.payload;
     }
@@ -188,6 +190,6 @@ const AirlineSlicer = createSlice({
 
 export default AirlineSlicer.reducer;
 export const selectAirlineState = (state: RootState) => state.airline
-export const { clearAirlineState, setTargetAirlineId } = AirlineSlicer.actions;
+export const { clearAirlineState, setTargetAirlineId, clearMessages } = AirlineSlicer.actions;
 
 

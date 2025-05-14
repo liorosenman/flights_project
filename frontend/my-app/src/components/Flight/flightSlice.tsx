@@ -216,7 +216,9 @@ export const getDepartureFlights = createAsyncThunk<
         state.targetFlightId = null;
         state.generalErr = null;
       },
-
+      clearFlights: (state) => {
+        state.flights = []
+      },
       setTargetFlightId: (state, action) => {
         state.targetFlightId = action.payload;
       },
@@ -301,6 +303,7 @@ export const getDepartureFlights = createAsyncThunk<
             state.flights = [action.payload];
         })
         .addCase(getFlightById.rejected, (state, action) => {
+          clearFlightState();
           state.loading = false;
           state.generalErr = action.payload as string || 'Flight loading failure.';
         })
@@ -313,6 +316,8 @@ export const getDepartureFlights = createAsyncThunk<
           state.flights = action.payload;
       })
       .addCase(getFlightsByAirlineId.rejected, (state, action) => {
+        clearFlightState();
+        state.flights = []
         state.loading = false;
         state.generalErr = action.payload as string || 'Flights loading failure.';
       })
@@ -322,10 +327,10 @@ export const getDepartureFlights = createAsyncThunk<
       })
       .addCase(getFlightsByParameters.fulfilled, (state, action) => {
           state.loading = false;
-          
           state.flights = action.payload;
       })
       .addCase(getFlightsByParameters.rejected, (state, action) => {
+        clearFlightState();
         state.loading = false;
         state.generalErr = action.payload as string || 'Flights loading failure.';
       })
@@ -338,6 +343,7 @@ export const getDepartureFlights = createAsyncThunk<
           state.flights = action.payload;
       })
       .addCase(getArrivalFlights.rejected, (state, action) => {
+        clearFlightState();
         state.loading = false;
         state.generalErr = action.payload as string || 'Flights loading failure.';
       })
@@ -350,6 +356,7 @@ export const getDepartureFlights = createAsyncThunk<
           state.flights = action.payload;
       })
       .addCase(getDepartureFlights.rejected, (state, action) => {
+        clearFlightState();
         state.loading = false;
         state.generalErr = action.payload as string || 'Flights loading failure.';
       });
@@ -358,4 +365,4 @@ export const getDepartureFlights = createAsyncThunk<
 
   export default flightSlice.reducer;
   export const selectFlightsState = (state: RootState) => state.flight
-  export const { clearFlightState, setTargetFlightId, setToBeUpdFlightId} = flightSlice.actions;
+  export const { clearFlightState, setTargetFlightId, setToBeUpdFlightId, clearFlights} = flightSlice.actions;

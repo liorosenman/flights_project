@@ -333,7 +333,7 @@ def update_flights_status():
         def wrapper(*args, **kwargs):
             israel_tz = pytz.timezone('Asia/Jerusalem')
             current_time = timezone.localtime(timezone.now(), israel_tz)
-
+            print(current_time)
             flights_to_update = Flight.objects.exclude(status__in=['canceled', 'landed']) \
                                               .filter(departure_time__lt=current_time)
 
@@ -344,7 +344,7 @@ def update_flights_status():
                 active_tickets_exist = Ticket.objects.exclude(status='canceled') \
                                                      .filter(flight_id=flight.id) \
                                                      .exists()
-
+            
                 if not active_tickets_exist:
                     flight.status = 'canceled'
                 elif departure <= current_time < landing:

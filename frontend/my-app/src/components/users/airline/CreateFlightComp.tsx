@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { createFlight, AirlineState } from './airlineSlicer.tsx';
+import React, { useEffect, useState } from 'react'
+import { createFlight, AirlineState, clearMessages } from './airlineSlicer.tsx';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../app/hooks.ts';
 import { AppDispatch, RootState } from '../../../app/store.ts';
@@ -34,6 +34,11 @@ const CreateFlightComp = () => {
     await dispatch(createFlight(formData));
     
   }
+
+  useEffect(() => {
+    dispatch(clearMessages());
+  }, [])
+  
  
   return (
     <div>

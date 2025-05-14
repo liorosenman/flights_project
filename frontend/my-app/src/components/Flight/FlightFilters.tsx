@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
-import { clearFlightState } from './flightSlice.tsx'
+import { clearFlights, clearFlightState } from './flightSlice.tsx'
 import SelectAirlineComp from '../users/airline/SelectAirlineComp.tsx'
 import '../../App.css';
 
@@ -38,6 +38,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
 
     let filters: any = {};
     dispatch(clearFlightState())
+    dispatch(clearFlights())
     switch (selectedOption) {
       case FlightFilterOptions.GET_ALL_FLIGHTS:
         filters = { type: selectedOption };
@@ -118,7 +119,7 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
       {selectedOption === FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS && (
         <>
           <SelectCountryComp
-            label="Origin Country fdsgfsdgsd"
+            label="Origin Country"
             value={originCountry}
             onChange={(e) => setOriginCountry(e.target.value)}
           />

@@ -16161,3 +16161,12 @@ TypeError: list indices must be integers or slices, not str
 2025-05-14 10:57:51,308 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-05-14 10:58:21,067 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
 2025-05-14 10:59:01,498 - INFO - C:\LIOR\python\final_project\backend\base\views.py changed, reloading.
+2025-05-14 13:55:51,191 - WARNING - Not Found: /get_my_tickets/
+2025-05-14 13:55:51,242 - WARNING - Not Found: /get_my_tickets/
+2025-05-14 14:05:18,772 - WARNING - Not Found: /get_flights_by_parameters/
+2025-05-14 14:10:32,467 - WARNING - Successful flight creation.
+2025-05-14 14:28:16,149 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-14 14:28:18,229 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-14 14:28:29,725 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-14 14:28:34,072 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-14 14:28:37,163 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
