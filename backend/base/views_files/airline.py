@@ -26,6 +26,7 @@ logging.basicConfig(filename="./logs.log",
 @role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
         print(request.user.id)
@@ -33,10 +34,12 @@ def add_flight(request):
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
-    print(airline_company.id)
-    flight_data = convert_flight_times_to_israel_timezone(flight_data)
-    serializer = FlightSerializer(data=flight_data)
-    print(serializer)
+    print(flight_data)
+    # flight_data = convert_flight_times_to_israel_timezone(flight_data)
+    flight_data_as_list = convert_flight_times_to_israel_timezone([flight_data])[0]
+    print(flight_data_as_list)
+    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+    serializer = FlightSerializer(data=flight_data_as_list)
     if serializer.is_valid():
         flight = serializer.save() 
         logging.warning("Successful flight creation.")
@@ -125,7 +128,7 @@ def get_my_flights(request):
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [the_airline_id])
             columns = [col[0] for col in cursor.description]  # Extract column names
             flights = [dict(zip(columns, row)) for row in cursor.fetchall()]  # Create list of dicts
-
+            flights = convert_flight_times_to_israel_timezone(flights)
         if not flights:
              return Response(
                     {"message": "No flights found for the given airline ID."},

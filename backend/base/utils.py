@@ -10,18 +10,22 @@ from datetime import datetime
 
 
 
+from datetime import datetime
+import pytz
+
 def convert_flight_times_to_israel_timezone(flights_list):
     israel_tz = pytz.timezone("Asia/Jerusalem")
-    for flight in flights_list:
-        if 'departure_time' in flight and flight['departure_time'] and isinstance(flight['departure_time'], datetime):
-            if flight['departure_time'].tzinfo is None:
-                flight['departure_time'] = pytz.utc.localize(flight['departure_time'])
-            flight['departure_time'] = flight['departure_time'].astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
-        if 'landing_time' in flight and flight['landing_time'] and isinstance(flight['landing_time'], datetime):
-            if flight['landing_time'].tzinfo is None:
-                flight['landing_time'] = pytz.utc.localize(flight['landing_time'])
-            flight['landing_time'] = flight['landing_time'].astimezone(israel_tz).strftime("%d-%m-%Y %H:%M")
     
+    for flight in flights_list:
+        for key in ['departure_time', 'landing_time']:
+            if key in flight and flight[key] and isinstance(flight[key], datetime):
+                dt = flight[key]
+                if dt.tzinfo is None:
+                    # If datetime is naive, treat it as UTC
+                    dt = pytz.utc.localize(dt)
+                # Convert to Israel time
+                flight[key] = dt.astimezone(israel_tz)
+
     return flights_list
 
 

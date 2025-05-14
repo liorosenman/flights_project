@@ -262,6 +262,7 @@ def get_flight_by_id(request, id):
                 )
             columns = [col[0] for col in cursor.description]
             flight = dict(zip(columns, row))
+            flight = convert_flight_times_to_israel_timezone([flight])[0]
             return Response(
                 {"flight": flight},
                 status=status.HTTP_200_OK
@@ -286,6 +287,7 @@ def get_flights_by_airline_id(request, id):
                 )
             columns = [col[0] for col in cursor.description]
             flights = [dict(zip(columns, row)) for row in rows]
+            flights = convert_flight_times_to_israel_timezone(flights)
             return Response(
                 {"message": "Upcoming flights retrieved successfully.", "flights": flights},
                 status=status.HTTP_200_OK
@@ -315,6 +317,7 @@ def get_flights_by_parameters(request):
                 )
             columns = [col[0] for col in cursor.description]
             flights = [dict(zip(columns, row)) for row in rows]
+            flights = convert_flight_times_to_israel_timezone(flights)
             return Response(
                 {"message": "Relevant flights found", "flights": flights},
                 status=status.HTTP_200_OK
@@ -338,6 +341,7 @@ def get_arrival_flights(request, id):
                 for result in results:
                     flight_details = dict(zip(columns, result))
                     flights.append(flight_details)
+                flights = convert_flight_times_to_israel_timezone(flights)
                 return Response(
                     {"message": "Relevant arrival flights found", "flights": flights},
                     status=status.HTTP_200_OK
@@ -366,6 +370,7 @@ def get_departure_flights(request, id):
                 for result in results:
                     flight_details = dict(zip(columns, result))
                     flights.append(flight_details)
+                flights = convert_flight_times_to_israel_timezone(flights)
                 return Response(
                     {"message": "Relevant flights found", "flights": flights},
                     status=status.HTTP_200_OK

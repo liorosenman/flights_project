@@ -104,12 +104,12 @@ class FlightSerializer(serializers.ModelSerializer):
     departure_time = serializers.DateTimeField(
         format="%d-%m-%Y %H:%M",  # output format
         input_formats=["%d-%m-%Y %H:%M", "%Y-%m-%dT%H:%M"],  # input formats
-        default_timezone=pytz.timezone("Asia/Jerusalem")
+        # default_timezone=pytz.timezone("Asia/Jerusalem")
     )
     landing_time = serializers.DateTimeField(
         format="%d-%m-%Y %H:%M",
         input_formats=["%d-%m-%Y %H:%M", "%Y-%m-%dT%H:%M"],
-        default_timezone=pytz.timezone("Asia/Jerusalem")
+        # default_timezone=pytz.timezone("Asia/Jerusalem")
     )
     
     class Meta:
