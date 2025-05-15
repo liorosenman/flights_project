@@ -93,7 +93,7 @@ const CreateFlightComp = () => {
         </div>
 
         <button type="submit">Create Flight</button>
-        {loading && <p>Signing up...</p>}
+        {loading && <p>Processing...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
       </form>

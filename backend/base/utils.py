@@ -9,24 +9,28 @@ import pytz
 from datetime import datetime
 
 
-
-from datetime import datetime
-import pytz
-
 def convert_flight_times_to_israel_timezone(flights_list):
     israel_tz = pytz.timezone("Asia/Jerusalem")
-    
     for flight in flights_list:
         for key in ['departure_time', 'landing_time']:
             if key in flight and flight[key] and isinstance(flight[key], datetime):
                 dt = flight[key]
                 if dt.tzinfo is None:
-                    # If datetime is naive, treat it as UTC
                     dt = pytz.utc.localize(dt)
-                # Convert to Israel time
                 flight[key] = dt.astimezone(israel_tz)
-
     return flights_list
+
+
+def convert_tickets_times_to_israel_timezone(tickets_list):
+    israel_tz = pytz.timezone("Asia/Jerusalem")
+    for ticket in tickets_list:
+        for key in ['departure_time']:
+            if key in ticket and ticket[key] and isinstance(ticket[key], datetime):
+                dt = ticket[key]
+                if dt.tzinfo is None:
+                    dt = pytz.utc.localize(dt)
+                ticket[key] = dt.astimezone(israel_tz)
+    return tickets_list
 
 
 

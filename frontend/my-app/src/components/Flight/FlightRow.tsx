@@ -37,8 +37,8 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     e.preventDefault();
     dispatch(clearFlightState())
     try {
-      await dispatch(removeFlight({ flight_id: flightId })).unwrap();
-      await onRefilter();
+        await dispatch(removeFlight({ flight_id: flightId })).unwrap();
+        await dispatch(getMyFlights({ token }));
     } catch (error) {
       console.error("Flight removal failed.", error);
     }

@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {adminSignupService, customerSignUpService} from './CreateUserService.tsx';
 import {airlineSignupService} from './CreateUserService.tsx';
 import { RootState } from '../../app/store';
+import { clearMessages } from '../users/airline/airlineSlicer.tsx';
 
 interface CreateUserState {
     error: string | null;
@@ -56,7 +57,12 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
   const UserSlicer = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    clearRegisterResponses: (state) => {
+      state.error = null;
+      state.successMessage = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(createCustomer.pending, (state) => {
@@ -106,6 +112,6 @@ export const createCustomer = createAsyncThunk<string, Record<string, any>>(
 
 export default UserSlicer.reducer;
 export const selectUserState = (state: RootState) => state.user;
-
+export const { clearRegisterResponses } = UserSlicer.actions;
 
 

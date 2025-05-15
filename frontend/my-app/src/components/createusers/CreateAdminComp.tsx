@@ -6,6 +6,7 @@ import { fetchCountries } from '../countries/countrySlicer.tsx';
 import { Country } from '../../models/country.ts';
 import { AppDispatch } from '../../app/store.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
+import  {clearRegisterResponses} from '../createusers/createUserSlicer.tsx';
 
 const AdminForm = () => {
     const [formData, setFormData] = useState({
@@ -31,6 +32,12 @@ const AdminForm = () => {
         e.preventDefault();
         await dispatch(createAdmin(formData));
     };
+
+    useEffect(() => {
+        console.log("HERE WE ARE");
+        dispatch(clearRegisterResponses()) // Clear error or success messages.
+    }, [])
+    
 
     return (
         <form className="centered-form" onSubmit={handleSubmit}>

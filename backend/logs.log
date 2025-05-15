@@ -16170,3 +16170,211 @@ TypeError: list indices must be integers or slices, not str
 2025-05-14 14:28:29,725 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-05-14 14:28:34,072 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
 2025-05-14 14:28:37,163 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-14 14:30:40,393 - WARNING - Successful flight creation.
+2025-05-14 14:33:06,108 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:33:06,111 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:35:42,898 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:35:42,901 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:35:47,921 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:35:47,929 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 14:35:56,919 - WARNING - Unauthorized: /login/
+2025-05-14 14:38:14,923 - WARNING - Successful flight creation.
+2025-05-14 14:39:40,844 - WARNING - Not Found: /get_flights_by_airline_id/6/
+2025-05-14 14:39:53,933 - WARNING - Not Found: /get_flights_by_airline_id/6/
+2025-05-14 14:40:28,048 - WARNING - Not Found: /get_flights_by_airline_id/5/
+2025-05-14 14:41:52,481 - WARNING - Not Found: /get_flights_by_airline_id/10/
+2025-05-14 14:47:30,150 - WARNING - Not Found: /get_flights_by_airline_id/9/
+2025-05-14 14:50:00,522 - WARNING - Not Found: /get_flights_by_parameters/
+2025-05-14 14:54:53,523 - WARNING - Not Found: /get_flights_by_airline_id/10/
+2025-05-14 14:56:15,347 - WARNING - Not Found: /get_flights_by_airline_id/12/
+2025-05-14 14:59:59,846 - WARNING - Not Found: /get_flights_by_airline_id/9/
+2025-05-14 15:01:20,065 - WARNING - Not Found: /get_flight_by_id/300/
+2025-05-14 15:11:15,925 - WARNING - Successful flight creation.
+2025-05-14 15:14:38,095 - WARNING - Successful flight creation.
+2025-05-14 15:20:30,091 - WARNING - Bad Request: /create_flight/
+2025-05-14 15:24:46,731 - WARNING - Bad Request: /create_flight/
+2025-05-14 15:25:50,993 - WARNING - Bad Request: /create_flight/
+2025-05-14 15:26:37,185 - WARNING - Successful flight creation.
+2025-05-14 15:31:22,446 - WARNING - Successful flight creation.
+2025-05-14 15:40:49,406 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:40:49,411 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:41:24,636 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:41:24,643 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:43:40,904 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:43:40,909 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:43:42,093 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:43:42,099 - WARNING - Unauthorized: /get_my_flights/
+2025-05-14 15:56:50,985 - WARNING - Not Found: /get_airline_by_username//
+2025-05-14 15:56:51,052 - WARNING - Not Found: /get_airline_by_username//
+2025-05-14 15:56:58,084 - WARNING - Not Found: /get_airline_by_username/asf/
+2025-05-15 14:20:56,532 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 14:21:00,632 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 15:14:52,982 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:16:23,326 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:18:41,732 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:21:32,228 - WARNING - Bad Request: /create_new_airline/
+2025-05-15 15:22:50,353 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:23:33,432 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:23:41,425 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:24:12,428 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:27:25,859 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:33:39,855 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 15:37:30,442 - WARNING - Unauthorized: /login/
+2025-05-15 15:37:55,333 - WARNING - Unauthorized: /login/
+2025-05-15 15:38:11,666 - WARNING - Unauthorized: /login/
+2025-05-15 15:52:01,549 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "base_airportuser_username_key"
+DETAIL:  Key (username)=(nadav95) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 79, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 119, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 219, in wrapper
+    airport_user = AirportUser.objects.create_user(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\models.py", line 26, in create_user
+    user.save(using=self._db)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\contrib\auth\base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "base_airportuser_username_key"
+DETAIL:  Key (username)=(nadav95) already exists.
+
+2025-05-15 15:56:45,961 - WARNING - Not Found: /get_my_flights/
+2025-05-15 15:56:45,996 - WARNING - Not Found: /get_my_flights/
+2025-05-15 15:57:07,205 - WARNING - Not Found: /get_my_flights/
+2025-05-15 15:57:07,266 - WARNING - Not Found: /get_my_flights/
+2025-05-15 15:57:19,414 - WARNING - Unauthorized: /get_my_flights/
+2025-05-15 15:57:19,904 - WARNING - Not Found: /favicon.ico
+2025-05-15 15:57:56,741 - WARNING - Not Found: /get_my_flights/
+2025-05-15 15:57:56,787 - WARNING - Not Found: /get_my_flights/
+2025-05-15 16:00:50,493 - WARNING - Successful flight creation.
+2025-05-15 16:06:54,156 - WARNING - Unauthorized: /login/
+2025-05-15 16:08:07,870 - WARNING - Successful flight creation.
+2025-05-15 16:08:07,949 - WARNING - Successful flight creation.
+2025-05-15 16:14:45,074 - WARNING - Successful flight creation.
+2025-05-15 16:16:22,706 - WARNING - Bad Request: /remove_flight/97/
+2025-05-15 16:23:42,724 - WARNING - Successful flight creation.
+2025-05-15 16:35:38,615 - WARNING - Successful flight creation.
+2025-05-15 16:35:38,674 - WARNING - Successful flight creation.
+2025-05-15 16:37:46,232 - WARNING - Successful flight creation.
+2025-05-15 16:38:54,039 - WARNING - Successful flight creation.
+2025-05-15 16:40:19,117 - WARNING - Successful flight creation.
+2025-05-15 16:44:55,124 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:03,418 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:07,556 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:09,564 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:30,505 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:34,625 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:38,700 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:45:40,752 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:51:02,596 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:51:17,289 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:51:19,304 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 16:51:41,361 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:06:18,210 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:06:22,385 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:06:24,369 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:06:37,944 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:06:55,706 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:09,285 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:11,282 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:14,323 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:19,463 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:31,950 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:45,540 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:51,716 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:55,878 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:07:58,865 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:04,005 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:10,174 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:12,185 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:37,282 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:40,323 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:48,659 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:50,667 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:08:56,907 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:09:06,192 - INFO - C:\LIOR\python\final_project\backend\base\utils.py changed, reloading.
+2025-05-15 17:09:16,604 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:18,605 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:21,470 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:24,477 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:33,714 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:35,694 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:39,796 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:41,875 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:43,877 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:51,149 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:09:55,035 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:10:11,500 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:12:15,141 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.

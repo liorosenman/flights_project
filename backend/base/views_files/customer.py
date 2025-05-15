@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from base.utils import convert_tickets_times_to_israel_timezone
 from base.decorators import customer_details_input_validation, update_airport_user, user_details_input_validation
 from base.permission import role_required
 from ..models import Customer, Flight, Roles, Ticket
@@ -79,6 +80,7 @@ def get_my_tickets(request):
                 )
             columns = [col[0] for col in cursor.description]
             my_tickets = [dict(zip(columns, row)) for row in rows]
+            my_tickets = convert_tickets_times_to_israel_timezone(my_tickets)
             return Response(
                 {"message": "Tickets retrieved successfully.", "tickets": my_tickets},
                 status=status.HTTP_200_OK
