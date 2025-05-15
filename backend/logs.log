@@ -16378,3 +16378,10 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-15 17:09:55,035 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-05-15 17:10:11,500 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
 2025-05-15 17:12:15,141 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-15 17:13:55,212 - WARNING - Successful flight creation.
+2025-05-15 17:15:15,207 - WARNING - Not Found: /get_flights_by_parameters/
+2025-05-15 17:24:37,023 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 17:32:00,882 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 17:32:00,964 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 17:40:07,440 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 17:45:58,003 - WARNING - Unauthorized: /create_new_admin/

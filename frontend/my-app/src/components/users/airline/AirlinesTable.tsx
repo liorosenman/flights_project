@@ -31,8 +31,8 @@ const AirlinesTable: React.FC = () => {
 
   return (
     <div>
-      <h2>Airlines List</h2>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white">
+      <h1 className='heading-thin-center'>Airlines</h1>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
         <thead>
           <tr>
             <th>ID</th>

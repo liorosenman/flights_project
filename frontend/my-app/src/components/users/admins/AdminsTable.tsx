@@ -31,7 +31,7 @@ const AdminTable: React.FC = () => {
   return (
     <div>
       <h2>Admins List</h2>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white">
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
         <thead>
           <tr>
             <th>ID</th>

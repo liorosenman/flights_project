@@ -108,6 +108,16 @@
   cursor: pointer;
 }
 
+.bg-very-light-blue {
+  background-color: #91bcd6;
+  min-height: 100vh;
+}
+
+.heading-thin-center {
+  font-weight: 300;        
+  text-align: center;      
+  margin-top: 1rem;        
+}
 
 
 

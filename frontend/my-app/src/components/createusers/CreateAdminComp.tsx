@@ -34,7 +34,6 @@ const AdminForm = () => {
     };
 
     useEffect(() => {
-        console.log("HERE WE ARE");
         dispatch(clearRegisterResponses()) // Clear error or success messages.
     }, [])
     
