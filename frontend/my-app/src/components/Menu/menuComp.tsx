@@ -3,6 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { selectLoginState } from '../Login/loginSlice.tsx';
 import './styles.css';
+import { clearFlightState } from '../Flight/flightSlice.tsx';
+import { clearTicketsState } from '../ticket/ticketSlicer.tsx';
+import { clearAdminState } from '../users/admins/adminsSlice.tsx';
+import { clearAirlineState } from '../users/airline/airlineSlicer.tsx';
+import { clearCustomerState } from '../users/customers/customersSlice.tsx';
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -14,6 +19,11 @@ const Menu = () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
     localStorage.removeItem('role_id');
+    dispatch(clearFlightState());
+    dispatch(clearTicketsState());
+    dispatch(clearAdminState());
+    dispatch(clearAirlineState());
+    dispatch(clearCustomerState());
     navigate('/login');
   };
 

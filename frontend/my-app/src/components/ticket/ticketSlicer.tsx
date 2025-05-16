@@ -58,13 +58,12 @@ export const cancelTicket = createAsyncThunk<
   }
 );
 
-
-
 const ticketslicer = createSlice({
 name: 'ticket',
 initialState,
 reducers: {
   clearTicketsState: (state) => {
+    state.tickets = [];
     state.loading = false;
     state.error = null;
     state.SuccessMessage = null;

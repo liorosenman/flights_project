@@ -30,7 +30,7 @@ const AdminTable: React.FC = () => {
 
   return (
     <div>
-      <h2>Admins List</h2>
+      <h1 className='heading-thin-center'>Admins</h1>
       <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
         <thead>
           <tr>
@@ -60,7 +60,7 @@ const AdminTable: React.FC = () => {
               </tr>
               {(targetAdminId === a.id) && (error || successMsg) && (
                 <tr>
-                  <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+                  <td colSpan={8} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
                     {error
                       ? (typeof error === 'object' && error !== null ? (error as any).message : error)
                       : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}

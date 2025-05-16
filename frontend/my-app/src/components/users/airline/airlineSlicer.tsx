@@ -111,6 +111,7 @@ const AirlineSlicer = createSlice({
   initialState,
   reducers: {
     clearAirlineState: (state) => {
+      state.airlines = [];
       state.loading = false;
       state.error = null;
       state.successMsg = null;

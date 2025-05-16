@@ -99,6 +99,7 @@ export const updateCustomer = createAsyncThunk<
     initialState,
     reducers: {
       clearCustomerState: (state) => {
+        state.customers = [];
         state.loading = false;
         state.error = null;
         state.successMsg = null;
@@ -148,6 +149,8 @@ export const updateCustomer = createAsyncThunk<
         .addCase(getCustomerByUsername.fulfilled, (state, action) => {
           state.loading = false;
           state.customer = action.payload;
+          console.log(state.customer);
+          
         })
         .addCase(getCustomerByUsername.rejected, (state, action) => {
           state.loading = false;

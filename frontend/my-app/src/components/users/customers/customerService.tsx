@@ -26,7 +26,7 @@ export const getCustomerByUsernameService = async (username: string, token: stri
       Authorization: `Bearer ${token}`,
     },
   });
-  return response.data.customer;
+  return response.data;
 };
 
 export const updateCustomerService = async (data: any, token: string) => {

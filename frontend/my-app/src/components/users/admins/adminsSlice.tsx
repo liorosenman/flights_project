@@ -79,6 +79,7 @@ const adminSlicer = createSlice({
   initialState,
   reducers: {
     clearAdminState: (state) => {
+      state.admins = [];
       state.loading = false;
       state.error = null;
       state.filterError = null;

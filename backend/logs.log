@@ -16441,3 +16441,8 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-16 15:12:01,239 - WARNING - Not Found: /get_my_flights/
 2025-05-16 15:12:59,461 - WARNING - Not Found: /get_my_flights/
 2025-05-16 15:12:59,489 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:26:43,500 - WARNING - Unauthorized: /login/
+2025-05-16 15:51:26,528 - WARNING - Not Found: /get_flights_by_airline_id/1/
+2025-05-16 15:53:39,575 - WARNING - Not Found: /get_departure_flights/6/
+2025-05-16 15:53:43,510 - WARNING - Not Found: /get_departure_flights/4/
+2025-05-16 15:53:45,956 - WARNING - Not Found: /get_departure_flights/2/
