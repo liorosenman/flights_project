@@ -16385,3 +16385,59 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-15 17:32:00,964 - WARNING - Unauthorized: /create_new_admin/
 2025-05-15 17:40:07,440 - WARNING - Unauthorized: /create_new_admin/
 2025-05-15 17:45:58,003 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 19:19:32,763 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 19:20:26,523 - WARNING - Unauthorized: /create_new_admin/
+2025-05-15 19:22:31,011 - WARNING - Bad Request: /create_new_admin/
+2025-05-15 19:24:58,144 - WARNING - Bad Request: /create_new_airline/
+2025-05-15 19:25:36,954 - WARNING - Bad Request: /create_new_airline/
+2025-05-16 13:18:02,186 - WARNING - Successful flight creation.
+2025-05-16 13:20:11,483 - WARNING - Successful flight creation.
+2025-05-16 13:20:20,786 - WARNING - Unauthorized: /login/
+2025-05-16 13:23:07,217 - WARNING - Bad Request: /create_ticket/
+2025-05-16 13:27:35,380 - WARNING - Successful flight creation.
+2025-05-16 13:28:47,007 - WARNING - Forbidden: /remove_flight/107/
+2025-05-16 13:40:41,585 - WARNING - Bad Request: /update_flight/99/
+2025-05-16 13:43:24,138 - WARNING - Bad Request: /update_flight/105/
+2025-05-16 13:43:26,025 - WARNING - Bad Request: /update_flight/105/
+2025-05-16 13:44:18,180 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:44:18,862 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:45:57,030 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:46:46,958 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:46:47,023 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:52:47,466 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:55:06,683 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:56:29,826 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 13:59:39,272 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 14:04:46,850 - WARNING - Unauthorized: /create_flight/
+2025-05-16 14:06:14,766 - WARNING - Successful flight creation.
+2025-05-16 14:06:14,860 - WARNING - Successful flight creation.
+2025-05-16 14:08:27,114 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:11:14,996 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:14:33,152 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
+2025-05-16 14:20:27,030 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:20:27,093 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:20:27,847 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:21:52,934 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:21:55,886 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:22:07,405 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:22:24,817 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:22:47,305 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:27:59,849 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:35:20,696 - WARNING - Unauthorized: /get_my_flights/
+2025-05-16 14:35:20,701 - WARNING - Unauthorized: /get_my_flights/
+2025-05-16 14:35:31,150 - WARNING - Unauthorized: /get_my_flights/
+2025-05-16 14:35:31,154 - WARNING - Unauthorized: /get_my_flights/
+2025-05-16 14:35:48,864 - WARNING - Unauthorized: /create_flight/
+2025-05-16 14:37:37,320 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:37:38,036 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:38:00,139 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:56:48,732 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:57:17,085 - WARNING - Bad Request: /update_flight/109/
+2025-05-16 14:58:28,725 - WARNING - Bad Request: /update_flight/104/
+2025-05-16 15:01:38,625 - WARNING - Bad Request: /update_flight/108/
+2025-05-16 15:11:17,399 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:11:17,429 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:12:01,206 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:12:01,239 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:12:59,461 - WARNING - Not Found: /get_my_flights/
+2025-05-16 15:12:59,489 - WARNING - Not Found: /get_my_flights/

@@ -37,8 +37,8 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     e.preventDefault();
     dispatch(clearFlightState())
     try {
-        await dispatch(removeFlight({ flight_id: flightId })).unwrap();
-        await dispatch(getMyFlights({ token }));
+      await dispatch(removeFlight({ flight_id: flightId })).unwrap();
+      await dispatch(getMyFlights({ token }));
     } catch (error) {
       console.error("Flight removal failed.", error);
     }
@@ -49,20 +49,22 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     dispatch(setToBeUpdFlightId(flightId))
   }
 
-  const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flightId: number) => {
-    e.preventDefault();
-    if (!updDate) {
-      alert('Please select a date and time.');
-      return;
-    }
-    try {
-      await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
-      setupdDate(''); 
-    } catch (error) {
-      console.error("Flight update failed.")
-    }
+const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flightId: number) => {
+  e.preventDefault();
+  if (!updDate) {
+    alert('Please select a date and time.');
+    return;
+  }
+
+  try {
+    await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
+    setupdDate('');
     await dispatch(getMyFlights({ token }));
-  };
+  } catch (error) {
+    console.error("Flight update failed:", error);
+  }
+};
+
 
 
   return (
@@ -119,9 +121,9 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       {(targetFlightId === flight.flight_id || toBeUpdatedFlight === flight.flight_id) && (error || successMsg) && (
         <tr>
           <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-            {error
-              ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-              : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+            {error || successMsg}
+            {/* // ? (typeof error === 'object' && error !== null ? (error as any).message : error)
+              // : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)} */}
           </td>
         </tr>
       )}

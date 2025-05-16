@@ -8,7 +8,7 @@ import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
 export interface FlightState {
     flights: LinkedFlightData[];
     loading: boolean;
-    error: string | null; // Error for a single flights row.
+    error: string | null; // Error for a single flight row.
     generalErr: string | null;
     successMsg: string | null;
     targetFlightId: number | null;
@@ -108,8 +108,8 @@ export const updateFlight = createAsyncThunk<
       return result.message; 
     } catch (error: any) {
       return rejectWithValue(
-        error.response?.data?.message || 'Flight update failed.'
-      );
+        error.response?.data?.message || 'Flight update failed.')
+        // { message: error.response?.data?.message || 'Flight update failed.' });
     }
   }
 );
@@ -209,6 +209,7 @@ export const getDepartureFlights = createAsyncThunk<
     initialState,
     reducers: {
       clearFlightState: (state) => {
+        state.flights = [];
         state.loading = false;
         state.error = null;
         state.successMsg = null;
@@ -251,7 +252,7 @@ export const getDepartureFlights = createAsyncThunk<
         })
         .addCase(getMyFlights.rejected, (state, action) => {
           state.loading = false;
-          state.error = action.payload as string || 'Loading flights failed';
+          state.generalErr = action.payload as string || 'Loading flights failed';
         })
         .addCase(addTicket.pending, (state) => {
           state.loading = true;
@@ -291,8 +292,11 @@ export const getDepartureFlights = createAsyncThunk<
             state.successMsg = action.payload as string
         })
         .addCase(updateFlight.rejected, (state, action) => {
+          console.log(action.payload);
           state.loading = false;
-          state.error = action.payload as string || 'Flight removal failure.';
+          state.error = action.payload as string || 'Flight update failed';
+          console.log(state.error);
+          
         })
         .addCase(getFlightById.pending, (state) => {
           state.loading = true;
@@ -301,6 +305,8 @@ export const getDepartureFlights = createAsyncThunk<
         .addCase(getFlightById.fulfilled, (state, action) => {
             state.loading = false;
             state.flights = [action.payload];
+            console.log(state.flights);
+            
         })
         .addCase(getFlightById.rejected, (state, action) => {
           clearFlightState();
