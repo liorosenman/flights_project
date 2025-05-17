@@ -26,6 +26,8 @@ export const getCustomerByUsernameService = async (username: string, token: stri
       Authorization: `Bearer ${token}`,
     },
   });
+  console.log(response.data);
+  
   return response.data;
 };
 

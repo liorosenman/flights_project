@@ -16446,3 +16446,8 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-16 15:53:39,575 - WARNING - Not Found: /get_departure_flights/6/
 2025-05-16 15:53:43,510 - WARNING - Not Found: /get_departure_flights/4/
 2025-05-16 15:53:45,956 - WARNING - Not Found: /get_departure_flights/2/
+2025-05-16 18:12:54,689 - WARNING - Unauthorized: /login/
+2025-05-16 18:25:58,140 - WARNING - Not Found: /get_admin_by_username/david123/
+2025-05-16 18:26:20,464 - WARNING - Not Found: /get_admin_by_username//
+2025-05-16 18:34:42,821 - WARNING - Not Found: /get_airline_by_username/david123/
+2025-05-16 18:43:04,090 - WARNING - Not Found: /get_customer_by_username/newyork80/

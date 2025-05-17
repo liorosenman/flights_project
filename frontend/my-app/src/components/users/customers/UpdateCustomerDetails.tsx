@@ -20,16 +20,23 @@ const UpdateCustomerDetails = () => {
         credit_card_no: '',
     });
 
-    // Fetch customer data whenever the component mounts or the location changes
-    useEffect(() => {
-        dispatch(clearCustomerState())
+useEffect(() => {
+    const fetchCustomer = async () => {
+        dispatch(clearCustomerState());
         if (username) {
-            dispatch(getCustomerByUsername(username)); // Getting a single customer.
+            await dispatch(getCustomerByUsername(username));
+            console.log("Customer immediately after dispatch:", customer);
         }
-    }, [dispatch, username, location.key]); // Add location.key to dependencies to refresh on navigation
+    };
 
-    // Update form data when customer data changes
+    fetchCustomer();
+    
+}, []); 
+
+
     useEffect(() => {
+        console.log("The first name is ", customer?.first_name || 'not good');
+        
         if (customer) {
             setFormData({
                 password: '', // leave blank for security

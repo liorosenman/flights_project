@@ -66,7 +66,8 @@ export const getCustomerByUsername = createAsyncThunk<
     if (!token) return rejectWithValue('No access token');
     try {
       const result = await getCustomerByUsernameService(username, token);
-      return result;
+      console.log(result);
+      return result.customer;
     } catch (err: any) {
       const errorMsg =
         err.response?.data?.message || err.response?.data?.error || 'Failed to fetch customer';
