@@ -78,78 +78,102 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
     }
   };
 
-  return (
-    <div className="d-flex flex-wrap align-items-end gap-3 mb-3 half-width-select ">
-      <select
-        className="form-select form-select-lg mb-3" aria-label="Large select example"
-        value={selectedOption}
-        onChange={(e) => setSelectedOption(e.target.value as FlightFilterOptions)}
-      >
-        {Object.values(FlightFilterOptions).map((option) => (
-          <option key={option} value={option}>
-            {option.replace(/_/g, ' ').toUpperCase()}
-          </option>
-        ))}
-      </select>
+return (
+  <div className="card shadow-sm p-3 mb-4 bg-body rounded w-100">
+    <div className="row g-3 align-items-end">
+
+      {/* Filter Option Selector */}
+      <div className="col-md-4">
+        <label className="form-label fw-semibold">Select Filter Type</label>
+        <select
+          className="form-select"
+          value={selectedOption}
+          onChange={(e) => setSelectedOption(e.target.value as FlightFilterOptions)}
+        >
+          {Object.values(FlightFilterOptions).map((option) => (
+            <option key={option} value={option}>
+              {option.replace(/_/g, ' ').toUpperCase()}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {selectedOption === FlightFilterOptions.GET_FLIGHT_BY_ID && (
-        <input
-          type="text"
-          placeholder="Enter Flight ID"
-          value={flightId !== null ? flightId : ''}
-          onChange={(e) => handlePositiveIntegerInput(e, setFlightId)}
-        />
+        <div className="col-md-3">
+          <label className="form-label fw-semibold">Flight ID</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter Flight ID"
+            value={flightId !== null ? flightId : ''}
+            onChange={(e) => handlePositiveIntegerInput(e, setFlightId)}
+          />
+        </div>
       )}
 
       {selectedOption === FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID && (
-        <SelectAirlineComp
-          label="Airlines:"
-          value={airlineId !== null ? airlineId.toString() : ''}
-          onChange={(e) => {
-            const value = e.target.value;
-            if (value === '') {
-              setAirlineId(null);
-            } else {
-              setAirlineId(Number(value));
-            }
-          }}
-        />
+        <div className="col-md-4">
+          <SelectAirlineComp
+            label="Airline"
+            value={airlineId !== null ? airlineId.toString() : ''}
+            onChange={(e) => {
+              const value = e.target.value;
+              setAirlineId(value === '' ? null : Number(value));
+            }}
+          />
+        </div>
       )}
 
       {selectedOption === FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS && (
         <>
-          <SelectCountryComp
-            label="Origin Country"
-            value={originCountry}
-            onChange={(e) => setOriginCountry(e.target.value)}
-          />
-          <SelectCountryComp
-            label="Destination Country"
-            value={destinationCountry}
-            onChange={(e) => setDestinationCountry(e.target.value)}
-          />
-          <input
-            type="date"
-            value={departureDate}
-            onChange={(e) => setDepartureDate(e.target.value)}
-          />
+          <div className="col-md-3">
+            <SelectCountryComp
+              label="Origin Country"
+              value={originCountry}
+              onChange={(e) => setOriginCountry(e.target.value)}
+            />
+          </div>
+          <div className="col-md-3">
+            <SelectCountryComp
+              label="Destination Country"
+              value={destinationCountry}
+              onChange={(e) => setDestinationCountry(e.target.value)}
+            />
+          </div>
+          <div className="col-md-3">
+            <label className="form-label fw-semibold">Departure Date</label>
+            <input
+              type="date"
+              className="form-control"
+              value={departureDate}
+              onChange={(e) => setDepartureDate(e.target.value)}
+            />
+          </div>
         </>
       )}
 
       {(selectedOption === FlightFilterOptions.GET_ARRIVAL_FLIGHTS ||
         selectedOption === FlightFilterOptions.GET_DEPARTURE_FLIGHTS) && (
-          <SelectCountryComp
-            label="Country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          />
+          <div className="col-md-3">
+            <SelectCountryComp
+              label="Country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            />
+          </div>
         )}
 
-      <button className='btn btn-light' onClick={handleFilterClick} style={{ marginLeft: '10px' }}>
-        Filter
-      </button>
+      <div className="col-md-auto">
+        <button
+          className="btn btn-outline-primary px-4 fw-semibold"
+          onClick={handleFilterClick}
+        >
+          Filter
+        </button>
+      </div>
     </div>
-  );
-};
+  </div>
+)};
+
 
 export default FlightFilters;

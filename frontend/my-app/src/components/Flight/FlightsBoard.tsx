@@ -82,18 +82,26 @@ const FlightsBoard: React.FC = () => {
     })();
   }, []);
 
-  return (
-    <div>
-      <h1>Flights Board</h1>
-      {generalErr &&
-        <h4 style={{ color: "red" }}>{generalErr}</h4>
-      }
-      {roleId === 2 && (
-        <FlightFilters onFilter={handleFilterClick} />
-      )}
 
-      <table className="table table-bordered table-striped table-hover flight-table bg-white">
-        <thead>
+  return (
+  <div className="container py-4">
+    <h1 className="text-center mb-4 fw-bold text-primary">Flights Board</h1>
+
+    {generalErr && (
+      <div className="text-center text-danger fw-semibold mb-3">
+        <h4>{generalErr}</h4>
+      </div>
+    )}
+
+    {roleId === 2 && (
+      <div className="mb-4">
+        <FlightFilters onFilter={handleFilterClick} />
+      </div>
+    )}
+
+    <div className="table-responsive">
+      <table className="table table-bordered table-hover bg-white shadow-sm rounded text-center align-middle" style={{ maxWidth: '95%', margin: '0 auto' }}>
+        <thead className="table-light">
           <tr>
             <th>ID</th>
             <th>Airline</th>
@@ -107,14 +115,13 @@ const FlightsBoard: React.FC = () => {
         </thead>
         <tbody>
           {flights.map(flight => (
-            <FlightRow flight={flight} onRefilter={() => handleFilterClick(lastFilters)} />
+            <FlightRow key={flight.flight_id} flight={flight} onRefilter={() => handleFilterClick(lastFilters)} />
           ))}
         </tbody>
       </table>
     </div>
-  );
-};
+  </div>
+)};
 
 export default FlightsBoard;
-
 

@@ -16451,3 +16451,5 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-16 18:26:20,464 - WARNING - Not Found: /get_admin_by_username//
 2025-05-16 18:34:42,821 - WARNING - Not Found: /get_airline_by_username/david123/
 2025-05-16 18:43:04,090 - WARNING - Not Found: /get_customer_by_username/newyork80/
+2025-05-17 20:49:27,191 - WARNING - Bad Request: /update_customer/
+2025-05-17 20:50:34,583 - WARNING - Bad Request: /update_customer/
