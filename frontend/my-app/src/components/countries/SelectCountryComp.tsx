@@ -21,7 +21,7 @@ const SelectCountryComp: React.FC<Props> = ({ value, onChange }) => {
   return (
     <div>
       <label>Country:</label>
-      <select name="country_id" value={value} onChange={onChange} required>
+      <select name="country_id" value={value} onChange={onChange} className="form-select" required>
         <option value="">Select Country</option>
         {loading && <option>Loading...</option>}
         {countryList.map((country) => (

@@ -47,7 +47,9 @@ export const removeAdmin = createAsyncThunk<
       const result = await removeAdminService(adminId, token);
       return result;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || 'Admin removal failed.');
+      const message = error.response?.data?.message || 'Admin removal failed.';
+      return rejectWithValue(message);
+
     }
   }
 );
@@ -72,7 +74,6 @@ export const getAdminByUsername = createAsyncThunk<
     }
   }
 );
-
 
 const adminSlicer = createSlice({
   name: 'admin',
@@ -113,13 +114,12 @@ const adminSlicer = createSlice({
         state.loading = false;
         state.successMsg = action.payload.message as string;
       })
-      .addCase(removeAdmin.rejected, (state, action) => {
-        state.loading = false;
-        // state.error = action.payload as string;
-        state.error = action.payload as string || action.error.message || 'Removal failed';
-        console.log(state.error);
-        
+        .addCase(removeAdmin.rejected, (state, action) => {
+          state.loading = false;
+          state.error = action.payload as string || 'Admin removal failure.';
+          console.log(state.error);
       })
+      
       .addCase(getAdminByUsername.pending, (state) => {
         state.loading = true;
         state.error = null;

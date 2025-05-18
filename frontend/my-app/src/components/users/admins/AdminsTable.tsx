@@ -13,12 +13,11 @@ const AdminTable: React.FC = () => {
   useEffect(() => {
     clearUsersStates(dispatch);
     dispatch(fetchAdmins());
-    const storedRoleId = localStorage.getItem('role_id')
   }, []);
 
   const handleRemoveAdmin = async (e: React.MouseEvent, adminId: number) => {
     e.preventDefault();
-    dispatch(clearAdminState())
+    // dispatch(clearAdminState())
     dispatch(setTargetAdminId(adminId))
     try {
       await dispatch(removeAdmin(adminId)).unwrap();
@@ -58,12 +57,12 @@ const AdminTable: React.FC = () => {
                   <button className='remove-user-btn' onClick={(e) => handleRemoveAdmin(e, a.id)}>REMOVE</button>
                 </td>
               </tr>
-              {(targetAdminId === a.id) && (error || successMsg) && (
+              {((targetAdminId === a.id) && (error || successMsg)) && (
                 <tr>
                   <td colSpan={8} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-                    {error
-                      ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-                      : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+                    {error || successMsg}
+                      {/* // ? (typeof error === 'object' && error !== null ? (error as any).message : error)
+                      // : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)} */}
                   </td>
                 </tr>
               )}

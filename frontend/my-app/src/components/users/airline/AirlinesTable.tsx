@@ -19,7 +19,7 @@ const AirlinesTable: React.FC = () => {
 
   const handleRemoveAirline = async (e: React.MouseEvent, airlineId: number) => {
     e.preventDefault();
-    dispatch(clearAirlineState())
+    // dispatch(clearAirlineState())
     dispatch(setTargetAirlineId(airlineId))
     try {
       await dispatch(removeAirline(airlineId)).unwrap();
@@ -62,9 +62,7 @@ const AirlinesTable: React.FC = () => {
               {(targetAirlineId === a.id) && (error || successMsg) && (
                 <tr>
                   <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-                    {error
-                      ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-                      : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+                    {error || successMsg}
                   </td>
                 </tr>
               )}

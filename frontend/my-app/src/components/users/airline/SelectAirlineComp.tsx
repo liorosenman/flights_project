@@ -21,7 +21,7 @@ const SelectAirlineComp: React.FC<Props> = ({ value, onChange }) => {
   return (
     <div>
       <label>Airlines:</label>
-      <select name="airline_id" value={value} onChange={onChange} required>
+      <select name="airline_id" value={value} onChange={onChange} className="form-select" required>
         <option value="">Select Airline</option>
         {loading && <option>Loading...</option>}
         {airlinesList.map((airline) => (
