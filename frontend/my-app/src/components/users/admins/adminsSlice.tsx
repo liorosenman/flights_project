@@ -35,8 +35,8 @@ export const fetchAdmins = createAsyncThunk(
 );
 
 export const removeAdmin = createAsyncThunk<
-  { message: string },  // return type
-  number,                               // input: customer ID
+  { message: string },  
+  number,                             
   { state: RootState; rejectValue: string }
 >(
   'admin/removeAdmin',
@@ -115,7 +115,10 @@ const adminSlicer = createSlice({
       })
       .addCase(removeAdmin.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string;
+        // state.error = action.payload as string;
+        state.error = action.payload as string || action.error.message || 'Removal failed';
+        console.log(state.error);
+        
       })
       .addCase(getAdminByUsername.pending, (state) => {
         state.loading = true;

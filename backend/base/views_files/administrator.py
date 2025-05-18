@@ -138,6 +138,7 @@ def remove_customer(request, id):
 @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
+          print("AAAAAAAAAAAAAAAAAAAAAAAAA")
           return Response({
             "message": "Prime admin must not be removed!"
         }, status=status.HTTP_403_FORBIDDEN)

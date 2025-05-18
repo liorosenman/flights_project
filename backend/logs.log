@@ -16453,3 +16453,38 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-16 18:43:04,090 - WARNING - Not Found: /get_customer_by_username/newyork80/
 2025-05-17 20:49:27,191 - WARNING - Bad Request: /update_customer/
 2025-05-17 20:50:34,583 - WARNING - Bad Request: /update_customer/
+2025-05-18 12:27:51,159 - WARNING - Unauthorized: /login/
+2025-05-18 12:28:45,990 - WARNING - Forbidden: /create_flight/
+2025-05-18 12:29:23,092 - WARNING - Unauthorized: /create_flight/
+2025-05-18 14:26:38,989 - WARNING - Conflict: /create_ticket/
+2025-05-18 14:42:21,015 - WARNING - Unauthorized: /login/
+2025-05-18 14:42:25,317 - WARNING - Unauthorized: /login/
+2025-05-18 15:23:39,259 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:27:53,824 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:30:36,239 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:36:33,922 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:41:00,369 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:50:10,963 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:11,019 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:12,956 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:12,963 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:19,092 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:19,100 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:21,700 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:23,121 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:24,845 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:28,907 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:28,915 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:30,281 - WARNING - Unauthorized: /get_all_customers/
+2025-05-18 15:50:30,289 - WARNING - Unauthorized: /get_all_customers/
+2025-05-18 15:50:38,577 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:38,585 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:41,314 - WARNING - Unauthorized: /get_all_customers/
+2025-05-18 15:50:41,321 - WARNING - Unauthorized: /get_all_customers/
+2025-05-18 15:50:44,597 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:50:44,606 - WARNING - Unauthorized: /get_all_admins/
+2025-05-18 15:51:14,860 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:57:04,999 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 15:58:31,992 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 16:05:18,998 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-18 16:05:23,576 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

@@ -168,7 +168,7 @@ const AirlineSlicer = createSlice({
       })
       .addCase(removeAirline.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string || action.error.message || 'Register failed';
+        state.error = action.payload as string || action.error.message || 'Removal failed';
         console.log("THE WROMG IS:",state.error);
         state.successMsg = null;
       })
