@@ -100,6 +100,7 @@ def remove_airline(request, id):
             results = cursor.fetchall()
             if not results:
                 # airline = Airline.objects.get(id=id)
+                Flight.objects.filter(status = 'active').update(status = 'canceled')
                 AirportUser.objects.filter(id = airline.airport_user_id).update(is_active = False)
                 return Response({
                     "message": "Airline was removed successfully."

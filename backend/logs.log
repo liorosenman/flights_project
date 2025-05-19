@@ -16500,3 +16500,129 @@ DETAIL:  Key (username)=(nadav95) already exists.
 2025-05-18 18:06:45,567 - WARNING - Forbidden: /remove_airline/19/
 2025-05-18 18:12:23,722 - WARNING - Forbidden: /remove_airline/17/
 2025-05-18 18:16:01,776 - WARNING - Forbidden: /remove_airline/17/
+2025-05-18 20:23:38,121 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:25:59,972 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:30:41,705 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:37:58,032 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:45:16,911 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:45:17,013 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:45:26,607 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:46:11,800 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:51:35,505 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:54:18,498 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:57:59,030 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 20:59:07,737 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 21:00:04,523 - WARNING - Forbidden: /remove_admin/1/
+2025-05-18 21:03:38,773 - WARNING - Unauthorized: /remove_airline/17/
+2025-05-18 21:03:43,119 - WARNING - Unauthorized: /remove_airline/12/
+2025-05-19 11:41:33,650 - ERROR - Internal Server Error: /create_new_airline/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "base_airportuser_username_key"
+DETAIL:  Key (username)=(airlinetest1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 79, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 254, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 219, in wrapper
+    airport_user = AirportUser.objects.create_user(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\models.py", line 26, in create_user
+    user.save(using=self._db)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\contrib\auth\base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "base_airportuser_username_key"
+DETAIL:  Key (username)=(airlinetest1) already exists.
+
+2025-05-19 11:43:50,457 - WARNING - Forbidden: /remove_airline/17/
+2025-05-19 11:45:15,095 - WARNING - Unauthorized: /login/
+2025-05-19 11:45:32,028 - WARNING - Unauthorized: /login/
+2025-05-19 11:46:14,779 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 11:47:07,426 - WARNING - Bad Request: /create_new_airline/
+2025-05-19 11:48:48,418 - WARNING - Successful flight creation.
+2025-05-19 12:13:52,343 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:12,292 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:14,271 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:19,368 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:23,487 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:33,830 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:35,842 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:42,008 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:14:49,051 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:15:17,285 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:15:51,847 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:15:54,796 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:16:19,933 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:16:24,017 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:16:26,025 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:16:30,152 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:16:33,209 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
