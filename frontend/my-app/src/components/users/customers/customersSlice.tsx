@@ -48,9 +48,11 @@ const initialState: CustomerState = {
 
     try {
       const result = await removeCustomerService(customerId, token);
+      console.log(result);
+      
       return result;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || 'Customer removal failed.');
+      return rejectWithValue(error.response?.data?.error || 'Customer removal failed.');
     }
   }
 );
@@ -140,7 +142,9 @@ export const updateCustomer = createAsyncThunk<
         })
         .addCase(removeCustomer.rejected, (state, action) => {
           state.loading = false;
-          state.error = action.payload as string;
+          state.error = action.payload as string || action.error.message || 'Removal failed';
+          console.log("THE ERROR IS ", state.error);
+          
           state.filterError = null;
         })
         .addCase(getCustomerByUsername.pending, (state) => {

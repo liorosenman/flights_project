@@ -16626,3 +16626,73 @@ DETAIL:  Key (username)=(airlinetest1) already exists.
 2025-05-19 12:16:26,025 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-19 12:16:30,152 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-19 12:16:33,209 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 12:17:36,235 - WARNING - Unauthorized: /login/
+2025-05-19 12:17:44,977 - WARNING - Unauthorized: /login/
+2025-05-19 12:18:02,464 - WARNING - Unauthorized: /login/
+2025-05-19 12:19:23,387 - WARNING - Bad Request: /create_new_airline/
+2025-05-19 12:21:42,538 - WARNING - Not Found: /get_my_flights/
+2025-05-19 12:21:42,569 - WARNING - Not Found: /get_my_flights/
+2025-05-19 12:24:11,951 - WARNING - Successful flight creation.
+2025-05-19 12:28:52,656 - WARNING - Not Found: /get_my_flights/
+2025-05-19 12:28:52,690 - WARNING - Not Found: /get_my_flights/
+2025-05-19 12:29:25,516 - WARNING - Successful flight creation.
+2025-05-19 12:30:28,510 - WARNING - Forbidden: /remove_airline/23/
+2025-05-19 12:39:05,477 - WARNING - Unauthorized: /login/
+2025-05-19 12:39:15,686 - WARNING - Unauthorized: /login/
+2025-05-19 12:40:35,246 - WARNING - Successful flight creation.
+2025-05-19 12:44:01,061 - WARNING - Forbidden: /remove_airline/24/
+2025-05-19 12:50:02,074 - WARNING - Conflict: /create_new_airline/
+2025-05-19 12:50:02,158 - WARNING - Conflict: /create_new_airline/
+2025-05-19 12:51:28,969 - WARNING - Successful flight creation.
+2025-05-19 12:51:43,949 - WARNING - Unauthorized: /login/
+2025-05-19 14:12:01,628 - WARNING - Successful flight creation.
+2025-05-19 14:15:58,123 - WARNING - Forbidden: /remove_airline/26/
+2025-05-19 14:16:28,991 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:27:51,083 - WARNING - Unauthorized: /login/
+2025-05-19 14:28:53,653 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:29:06,803 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:31:35,466 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:31:59,640 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:35:48,921 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:36:25,038 - WARNING - Unauthorized: /login/
+2025-05-19 14:36:40,387 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 14:37:34,617 - WARNING - Forbidden: /remove_airline/26/
+2025-05-19 14:59:54,503 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 15:00:42,403 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 15:01:23,526 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 15:01:41,213 - WARNING - Unauthorized: /remove_airline/26/
+2025-05-19 15:02:04,982 - WARNING - Unauthorized: /get_all_customers/
+2025-05-19 15:02:04,989 - WARNING - Unauthorized: /get_all_customers/
+2025-05-19 15:02:07,669 - WARNING - Unauthorized: /get_all_admins/
+2025-05-19 15:02:07,676 - WARNING - Unauthorized: /get_all_admins/
+2025-05-19 15:03:44,422 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 15:08:06,178 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 15:08:15,539 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 15:08:52,244 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 15:08:59,575 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 15:10:58,229 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 15:15:39,006 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 15:23:24,978 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 16:00:39,876 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 16:02:02,972 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:02:03,019 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:03:34,094 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:03:38,293 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:03:47,673 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:05:04,603 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:05:11,818 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:05:13,847 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:05:20,050 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:07:10,207 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:07:37,431 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:07:41,110 - WARNING - Bad Request: /remove_admin/10/
+2025-05-19 16:11:04,471 - WARNING - Bad Request: /remove_admin/5/
+2025-05-19 16:11:09,929 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:14:27,247 - WARNING - Forbidden: /remove_airline/26/
+2025-05-19 16:17:40,789 - WARNING - Bad Request: /remove_customer/2/
+2025-05-19 16:17:48,694 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 16:17:55,737 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:19:10,616 - WARNING - Forbidden: /remove_admin/1/
+2025-05-19 16:19:51,592 - WARNING - Bad Request: /remove_admin/3/
+2025-05-19 16:20:33,387 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:20:35,345 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

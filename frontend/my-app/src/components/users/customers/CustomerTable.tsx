@@ -18,11 +18,13 @@ const CustomerTable: React.FC = () => {
 
   const handleRemoveCustomer = async (e: React.MouseEvent, customerId: number) => {
     e.preventDefault();
-    dispatch(clearCustomerState())
+    // dispatch(clearCustomerState())
     dispatch(setTargetCustomerId(customerId))
     try {
       await dispatch(removeCustomer(customerId)).unwrap();
       await dispatch(fetchCustomers());
+      console.log(customers);
+      
     } catch (error) {
       console.error("Customer removal failed.", error);
     }
@@ -65,9 +67,7 @@ const CustomerTable: React.FC = () => {
               {(targetCustomerId === c.id) && (error || successMsg) && (
                 <tr>
                   <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
-                    {error
-                      ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-                      : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)}
+                    {error || successMsg}
                   </td>
                 </tr>
               )}

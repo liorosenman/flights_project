@@ -121,8 +121,8 @@ def remove_customer(request, id):
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
     if not airport_user.is_active:
         return Response({
-            "message": "This customer is already inactive."
-        }, status=status.HTTP_200_OK)
+            "error": "This customer is already inactive."
+        }, status=status.HTTP_400_BAD_REQUEST)
     tickets = Ticket.objects.filter(customer_id_id = id, status__in=["active", "tookoff"])
     if not tickets.exists():
         airport_user.is_active = False
@@ -131,7 +131,7 @@ def remove_customer(request, id):
             "message": "The customer was removed successfully."
         }, status=status.HTTP_200_OK)
     return Response({
-        "message": "There are active tickets. Customer removal is forbidden."
+        "error": "There are active tickets. Customer removal is forbidden."
     }, status=status.HTTP_403_FORBIDDEN)
 
 
@@ -139,16 +139,15 @@ def remove_customer(request, id):
 @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
-          print("AAAAAAAAAAAAAAAAAAAAAAAAA")
           return Response({
-            "message": "Prime admin must not be removed!"
+            "error": "Prime admin must not be removed!"
         }, status=status.HTTP_403_FORBIDDEN)
     admin = get_object_or_404(Admin, id = id)
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
     if not airport_user.is_active:
           return Response({
-            "message": "This admin is already inactive."
-        }, status=status.HTTP_200_OK)
+            "error": "This admin is already inactive."
+        }, status = status.HTTP_400_BAD_REQUEST)
     airport_user.is_active = False
     airport_user.save()
     return Response({

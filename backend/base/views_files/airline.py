@@ -26,7 +26,6 @@ logging.basicConfig(filename="./logs.log",
 @role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
         print(request.user.id)
@@ -38,7 +37,6 @@ def add_flight(request):
     # flight_data = convert_flight_times_to_israel_timezone(flight_data)
     flight_data_as_list = convert_flight_times_to_israel_timezone([flight_data])[0]
     print(flight_data_as_list)
-    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
     serializer = FlightSerializer(data=flight_data_as_list)
     if serializer.is_valid():
         flight = serializer.save() 

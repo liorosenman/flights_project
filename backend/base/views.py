@@ -20,6 +20,7 @@ from django.db.models import F
 from rest_framework.exceptions import AuthenticationFailed
 import logging
 from .utils import convert_flight_times_to_israel_timezone
+
 logger = logging.getLogger('report_actions')
 
 def index(req):
