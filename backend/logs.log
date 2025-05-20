@@ -16698,3 +16698,202 @@ DETAIL:  Key (username)=(airlinetest1) already exists.
 2025-05-19 16:20:35,345 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-19 16:23:17,600 - WARNING - Forbidden: /remove_customer/15/
 2025-05-19 16:23:21,481 - WARNING - Bad Request: /remove_customer/2/
+2025-05-20 12:09:37,978 - WARNING - Unauthorized: /login/
+2025-05-20 12:10:52,645 - WARNING - Forbidden: /remove_customer/15/
+2025-05-20 12:11:12,563 - WARNING - Bad Request: /remove_customer/3/
+2025-05-20 12:11:56,206 - WARNING - Unauthorized: /login/
+2025-05-20 12:12:03,296 - WARNING - Unauthorized: /login/
+2025-05-20 12:13:36,142 - ERROR - Internal Server Error: /create_new_customer/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "base_customer_credit_card_no_key"
+DETAIL:  Key (credit_card_no)=(44442121) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 79, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 119, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 225, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views.py", line 43, in customer_register
+    customer = Customer.objects.create(first_name=first_name, last_name=last_name,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "base_customer_credit_card_no_key"
+DETAIL:  Key (credit_card_no)=(44442121) already exists.
+
+2025-05-20 12:15:43,974 - WARNING - Bad Request: /create_new_customer/
+2025-05-20 12:16:03,981 - WARNING - Conflict: /create_new_customer/
+2025-05-20 12:22:27,028 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 362, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\customer.py", line 71, in get_my_tickets
+    the_customer_id = Customer.objects.get(airport_user=request.user).id
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Customer.DoesNotExist: Customer matching query does not exist.
+2025-05-20 12:22:27,181 - ERROR - Internal Server Error: /get_my_tickets/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 20, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 362, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\views_files\customer.py", line 71, in get_my_tickets
+    the_customer_id = Customer.objects.get(airport_user=request.user).id
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Customer.DoesNotExist: Customer matching query does not exist.
+2025-05-20 12:24:01,248 - WARNING - Not Found: /get_user_by_username/liorking5/
+2025-05-20 12:24:31,699 - WARNING - Not Found: /get_user_by_username/padmin/
+2025-05-20 12:26:50,155 - WARNING - Not Found: /get_customer_by_username/liorking5/
+2025-05-20 12:27:11,463 - WARNING - Not Found: /get_customer_by_username/liorking/
+2025-05-20 12:27:21,353 - WARNING - Not Found: /get_customer_by_username/liorking5/
+2025-05-20 12:36:43,127 - WARNING - Successful flight creation.
+2025-05-20 12:43:11,178 - WARNING - Successful flight creation.
+2025-05-20 12:44:17,932 - WARNING - Forbidden: /remove_customer/22/
+2025-05-20 12:44:18,044 - WARNING - Forbidden: /remove_customer/22/
+2025-05-20 12:45:40,162 - WARNING - Successful flight creation.
+2025-05-20 12:52:47,797 - WARNING - Successful flight creation.
+2025-05-20 12:55:05,988 - WARNING - Unauthorized: /login/
+2025-05-20 12:58:59,793 - WARNING - Successful flight creation.
+2025-05-20 13:00:45,055 - WARNING - Successful flight creation.
+2025-05-20 13:14:15,602 - WARNING - Unauthorized: /login/
+2025-05-20 13:16:11,774 - WARNING - Successful flight creation.
