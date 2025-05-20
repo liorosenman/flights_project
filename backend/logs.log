@@ -16696,3 +16696,5 @@ DETAIL:  Key (username)=(airlinetest1) already exists.
 2025-05-19 16:19:51,592 - WARNING - Bad Request: /remove_admin/3/
 2025-05-19 16:20:33,387 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-19 16:20:35,345 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-19 16:23:17,600 - WARNING - Forbidden: /remove_customer/15/
+2025-05-19 16:23:21,481 - WARNING - Bad Request: /remove_customer/2/
