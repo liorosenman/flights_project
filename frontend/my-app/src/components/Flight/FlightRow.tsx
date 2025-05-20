@@ -44,8 +44,10 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     }
   };
 
-  const openUpdCalendar = (e: React.MouseEvent, flightId: number) => {
+  const openUpdCalendar = async (e: React.MouseEvent, flightId: number) => {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
     dispatch(clearFlightState());
+    await dispatch(getMyFlights({ token }));
     dispatch(setToBeUpdFlightId(flightId))
   }
 
@@ -91,11 +93,14 @@ const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flight
           <>
             <td>
               <button onClick={(e) => handleRemoval(e, flight.flight_id)}>
+                
                 Deactivate
               </button>
 
-
-              <button onClick={(e) => openUpdCalendar(e, flight.flight_id)}>
+              <button onClick={(e) => {
+                console.log("CLICKED");
+                openUpdCalendar(e, flight.flight_id);
+              }}>
                 +
               </button>
             </td>

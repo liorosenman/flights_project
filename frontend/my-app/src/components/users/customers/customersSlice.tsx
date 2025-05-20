@@ -153,7 +153,7 @@ export const updateCustomer = createAsyncThunk<
         })
         .addCase(getCustomerByUsername.fulfilled, (state, action) => {
           state.loading = false;
-          state.customer = action.payload;
+          state.customers = [action.payload];
           console.log(state.customer);
           
         })

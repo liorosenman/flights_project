@@ -19,8 +19,8 @@ const TicketsList = () => {
 
   return (
     <div>
-      <h1>My bookings</h1>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white">
+        <h1 className='heading-thin-center'>My bookings</h1>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
         <thead>
           <tr>
             <th>ID</th>
