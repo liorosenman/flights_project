@@ -51,13 +51,13 @@ def airline_register(request):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_customers_details(request):
+    logger.info(f"Customers list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_customers_details()")
             rows = cursor.fetchall()
             columns = [col[0] for col in cursor.description]
             customers = [dict(zip(columns, row)) for row in rows]
-        logger.info(f"Customers list was requested.")
         return Response(customers, status=status.HTTP_200_OK)
 
     except Exception as e:
@@ -70,6 +70,7 @@ def get_customers_details(request):
 @api_view(['GET'])
 @authorize_admin_and_customer()
 def get_customer_by_username(request, username):
+    logger.info(f"The details of the customer {username} were requested.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_customer_data_by_username(%s)", [username])
@@ -77,7 +78,6 @@ def get_customer_by_username(request, username):
             result = cursor.fetchone()
             if result:
                 customer_details = dict(zip(columns,result))
-                logger.info(f"The details of the user {username} were requested.")
                 return Response({
                     "customer": customer_details
                 }, status=status.HTTP_200_OK)
@@ -97,6 +97,7 @@ def get_customer_by_username(request, username):
 def remove_airline(request, id):
     airline = get_object_or_404(Airline, id = id)
     airport_user = AirportUser.objects.get(id = airline.airport_user_id)
+    logger.info(f"The removal of the airline {airport_user.username} is requested by admin {request.user.username}")
     if not airport_user.is_active:
         return Response({
             "message": "This airline is already inactive."
@@ -126,6 +127,7 @@ def remove_airline(request, id):
 def remove_customer(request, id):
     customer = get_object_or_404(Customer, id = id)
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
+    logger.info(f"The removal of the customer {airport_user.username} is requested by admin {request.user.username}")
     if not airport_user.is_active:
         return Response({
             "error": "This customer is already inactive."
@@ -146,13 +148,13 @@ def remove_customer(request, id):
 @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
-          logger.warning("A request was made to remove prime admin")
-          print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+          logger.warning(f"A request was made to remove prime admin by admin {request.user.username} ")
           return Response({
             "error": "Prime admin must not be removed!"
         }, status=status.HTTP_403_FORBIDDEN)
     admin = get_object_or_404(Admin, id = id)
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
+    logger.info(f"The removal of the admin {airport_user.username} is requested by admin {request.user.username}")
     if not airport_user.is_active:
           return Response({
             "error": "This admin is already inactive."
@@ -166,6 +168,7 @@ def remove_admin(request, id):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_admins_details(request):
+    logger.info(f"Admins list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_admins_details()")
@@ -182,8 +185,9 @@ def get_admins_details(request):
         )
 
 @api_view(['GET'])
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 def get_airlines_details(request):
+    logger.info(f"Airlines list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_airlines_details()")
@@ -203,6 +207,7 @@ def get_airlines_details(request):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_admin_by_username(request, username):
+    logger.info(f"The details of the admin {username} were requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_admin_data_by_username(%s)", [username])
@@ -225,6 +230,7 @@ def get_admin_by_username(request, username):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_airline_by_username(request, username):
+    logger.info(f"The details of the airline {username} were requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_airline_data_by_username(%s)", [username])
