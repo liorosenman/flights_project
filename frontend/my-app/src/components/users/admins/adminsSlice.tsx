@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../../app/store.ts';
 import { getAdminByUsernameService, getAllAdminsService, removeAdminService } from './adminsService.tsx';
 import { LinkedAdmin } from '../../../models/LinkedAdmin.ts';
+import { logout } from '../../Login/loginSlice.tsx';
 
 interface CustomerState {
   admins: LinkedAdmin[];
@@ -41,9 +42,12 @@ export const removeAdmin = createAsyncThunk<
 >(
   'admin/removeAdmin',
   async (adminId, { getState, rejectWithValue }) => {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    
     const token = getState().login.token;
     if (!token) return rejectWithValue('No access token available.');
     try {
+      console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCC");
       const result = await removeAdminService(adminId, token);
       console.log(result);
       

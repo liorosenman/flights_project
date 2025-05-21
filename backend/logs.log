@@ -16923,3 +16923,210 @@ base.models.Customer.DoesNotExist: Customer matching query does not exist.
 2025-05-21 14:22:11,808 - WARNING - Bad Request: /create_ticket/
 2025-05-21 14:23:27,771 - WARNING - Successful flight creation.
 2025-05-21 14:23:59,537 - WARNING - Not Found: /get_flight_by_id/1280/
+2025-05-21 14:52:39,513 - WARNING - Bad Request: /update_customer/
+2025-05-21 14:53:14,608 - WARNING - Unauthorized: /login/
+2025-05-21 14:58:11,128 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:00:30,515 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:02:46,416 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:33:19,354 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:41:42,970 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:44:56,965 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:46:28,980 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 15:46:34,259 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 15:46:36,262 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 15:46:39,478 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 15:46:52,833 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:48:05,933 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:48:36,882 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:53:42,215 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:54:59,880 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 15:58:45,707 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 16:03:14,456 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 16:05:11,081 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 16:05:11,200 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 16:05:24,355 - WARNING - Bad Request: /remove_admin/2/
+2025-05-21 16:06:09,951 - WARNING - Bad Request: /remove_admin/2/
+2025-05-21 16:11:18,846 - WARNING - Unauthorized: /login/
+2025-05-21 16:58:48,665 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 16:58:55,463 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 16:59:18,470 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 16:59:20,458 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:00,200 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:03,251 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:05,239 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:08,229 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:10,221 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:12,265 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:15,101 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:17,127 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:39,223 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:42,293 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:54,729 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:00:57,761 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:01:33,875 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 17:02:15,062 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:02:18,156 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:02:28,525 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:03:49,323 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:03:53,585 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:03:55,568 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:03:58,584 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:02,681 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:06,789 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:08,849 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:34,939 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:45,328 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:47,141 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:56,246 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:04:58,272 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:05:00,253 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:06:09,736 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:06:13,861 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:06:18,957 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:06:26,139 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:06:58,525 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:07:04,690 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:07:15,051 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:23,486 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:28,588 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:30,607 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:40,965 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:42,962 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:08:49,175 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:09:03,750 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:09:08,950 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:09:48,734 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:09:56,950 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:08,454 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:12,521 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:19,536 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:24,684 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:29,910 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:10:31,911 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:11:16,941 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:11:29,385 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:13:28,787 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:16:39,505 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:22:58,909 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:23:51,271 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:24:44,672 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:24:46,681 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:24:48,625 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:25:00,056 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:25:11,496 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:25:13,459 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:26:33,232 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:27:02,437 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:27:04,580 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:27:08,633 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:27:16,958 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:28:34,951 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:28:36,934 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:28:45,135 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:28:47,152 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:00,665 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:05,808 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:08,896 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:10,841 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:13,904 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:30:34,025 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:32:25,867 - WARNING - Unauthorized: /login/
+2025-05-21 17:33:08,781 - ERROR - Internal Server Error: /remove_admin/1/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 15, in wrapper
+    user_role_name = request.user.role.role_name
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'AirportUser' object has no attribute 'role'
+2025-05-21 17:33:50,680 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:34:13,157 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 17:35:10,283 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:14,420 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:16,392 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:19,449 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:22,525 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:24,589 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:33,917 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:36,994 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:45,227 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:47,199 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:35:56,494 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:36:03,900 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:36:05,864 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:36:19,152 - ERROR - Internal Server Error: /remove_admin/1/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 15, in wrapper
+    user_role_name = request.user.role_name.role_name
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role_name'
+2025-05-21 17:36:44,662 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:36:55,553 - INFO - C:\LIOR\python\final_project\backend\base\permission.py changed, reloading.
+2025-05-21 17:36:59,534 - WARNING - Unauthorized: /remove_admin/1/
+2025-05-21 17:39:31,344 - WARNING - Forbidden: /get_all_customers/
+2025-05-21 17:43:06,202 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:14,457 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:17,292 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:19,128 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:24,055 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:45,733 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:52,738 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:55,768 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:57,562 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:43:59,542 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:02,551 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:07,699 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:14,858 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:17,886 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:21,947 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:27,136 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:44:49,036 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 17:45:23,479 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.

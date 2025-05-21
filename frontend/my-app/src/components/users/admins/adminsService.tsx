@@ -28,8 +28,12 @@ export const removeAdminService = async (adminId: number, token: string) => {
         Authorization: `Bearer ${token}`
       }
     });
+    console.log("DDDDDDDDDDDDDDDDDDDDDDDDDD");
+    console.log(res);
     return res.data;
   } catch (err: any) {
+    console.log("EEEEEEEEEEEEEEEEEEEEEEEEE");
+    
     if (err.response && err.response.data && err.response.data.message) {
       throw new Error(err.response.data.message);
     }

@@ -39,3 +39,16 @@
 2025-05-21 14:32:03,051 - INFO - Shalom Shalom
 2025-05-21 14:33:18,965 - INFO - Shalom Shalom
 2025-05-21 14:33:19,015 - INFO - Shalom Shalom
+2025-05-21 14:49:06,576 - INFO - Shalom Shalom
+2025-05-21 14:49:06,622 - INFO - Shalom Shalom
+2025-05-21 14:53:21,221 - INFO - Shalom Shalom
+2025-05-21 14:53:21,290 - INFO - Shalom Shalom
+2025-05-21 16:11:27,568 - INFO - Shalom Shalom
+2025-05-21 16:11:27,617 - INFO - Shalom Shalom
+2025-05-21 16:21:56,272 - INFO - Shalom Shalom
+2025-05-21 16:21:56,344 - INFO - Shalom Shalom
+2025-05-21 17:01:33,874 - WARNING - Prime admin was requested to be deleted
+2025-05-21 17:05:49,242 - INFO - New admin was admin6 registered.
+2025-05-21 17:34:13,157 - WARNING - Function 'remove_admin' is being called by the customer liorking8
+2025-05-21 17:36:59,534 - WARNING - Function 'remove_admin' is being called by a guest.
+2025-05-21 17:39:31,344 - WARNING - Function 'get_customers_details' is being called by the customer liorking8

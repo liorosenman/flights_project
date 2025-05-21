@@ -9,6 +9,9 @@ from django.contrib.auth.hashers import make_password
 from ..permission import authorize_admin_and_customer, role_required
 from ..decorators import *
 from base import decorators
+import logging
+
+logger = logging.getLogger('report_actions')
 
 #Create a new admin (user_role_num = 1)
 @api_view(['POST']) 
@@ -23,6 +26,7 @@ def admin_register(request): #Create a new admin
     last_name = request.data['last_name']
     admin = Admin.objects.create(first_name=first_name, last_name=last_name, airport_user=airport_user)
     admin.save()
+    logger.info(f"New admin, {username}, was  registered.")
     return Response({"message": "Admin registered successfully."}, status=status.HTTP_201_CREATED)
 
 
@@ -39,6 +43,7 @@ def airline_register(request):
     name = request.data['name']
     airline = Airline.objects.create(name = name, country_id=country, airport_user = airport_user)
     airline.save()
+    logger.info(f"New airline, {username}, was  registered.")
     return Response({"message": "Airline registered successfully."}, status=status.HTTP_201_CREATED)
 
 
@@ -52,6 +57,7 @@ def get_customers_details(request):
             rows = cursor.fetchall()
             columns = [col[0] for col in cursor.description]
             customers = [dict(zip(columns, row)) for row in rows]
+        logger.info(f"Customers list was requested.")
         return Response(customers, status=status.HTTP_200_OK)
 
     except Exception as e:
@@ -71,6 +77,7 @@ def get_customer_by_username(request, username):
             result = cursor.fetchone()
             if result:
                 customer_details = dict(zip(columns,result))
+                logger.info(f"The details of the user {username} were requested.")
                 return Response({
                     "customer": customer_details
                 }, status=status.HTTP_200_OK)
@@ -139,6 +146,8 @@ def remove_customer(request, id):
 @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
     if (id == 1):
+          logger.warning("A request was made to remove prime admin")
+          print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
           return Response({
             "error": "Prime admin must not be removed!"
         }, status=status.HTTP_403_FORBIDDEN)
