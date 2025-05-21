@@ -19,24 +19,24 @@ const FlightsBoard: React.FC = () => {
   });
 
   const handleFilterClick = async (filters: any) => {
-
+    setLastFilters(filters);
     switch (filters.type) {
       case FlightFilterOptions.GET_ALL_FLIGHTS:
         await dispatch(loadFlights());
-        setLastFilters({ type: FlightFilterOptions.GET_ALL_FLIGHTS })
+        // setLastFilters({ type: FlightFilterOptions.GET_ALL_FLIGHTS })
         break;
 
       case FlightFilterOptions.GET_FLIGHT_BY_ID:
         if (filters.flightId != null && filters.flightId > 0) {
           await dispatch(getFlightById(filters.flightId));
-          setLastFilters({ type: FlightFilterOptions.GET_FLIGHT_BY_ID })
+          // setLastFilters({ type: FlightFilterOptions.GET_FLIGHT_BY_ID })
         }
         break;
 
       case FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID:
         if (filters.airlineId != null && filters.airlineId > 0) {
           await dispatch(getFlightsByAirlineId(filters.airlineId))
-          setLastFilters({ type: FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID })
+          // setLastFilters({ type: FlightFilterOptions.GET_FLIGHTS_BY_AIRLINE_ID })
         }
         break;
 
@@ -47,21 +47,21 @@ const FlightsBoard: React.FC = () => {
             dest_country_id: Number(filters.destinationCountry),
             dep_date: filters.departureDate
           }));
-          setLastFilters({ type: FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS })
+          // setLastFilters({ type: FlightFilterOptions.GET_FLIGHTS_BY_PARAMETERS })
         }
         break;
 
       case FlightFilterOptions.GET_ARRIVAL_FLIGHTS:
         if (filters.country) {
           await dispatch(getArrivalFlights(filters.country))
-          setLastFilters({ type: FlightFilterOptions.GET_ARRIVAL_FLIGHTS })
+          // setLastFilters({ type: FlightFilterOptions.GET_ARRIVAL_FLIGHTS })
         }
         break;
 
       case FlightFilterOptions.GET_DEPARTURE_FLIGHTS:
         if (filters.country) {
           await dispatch(getDepartureFlights(filters.country))
-          setLastFilters({ type: FlightFilterOptions.GET_DEPARTURE_FLIGHTS })
+          // setLastFilters({ type: FlightFilterOptions.GET_DEPARTURE_FLIGHTS })
         }
         break;
 

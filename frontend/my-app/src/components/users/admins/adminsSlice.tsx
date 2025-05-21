@@ -45,6 +45,8 @@ export const removeAdmin = createAsyncThunk<
     if (!token) return rejectWithValue('No access token available.');
     try {
       const result = await removeAdminService(adminId, token);
+      console.log(result);
+      
       return result;
     } catch (error: any) {
       const errMsg = error.response?.data?.error || 'Admin removal failed.';

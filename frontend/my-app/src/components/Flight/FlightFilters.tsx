@@ -28,11 +28,11 @@ const FlightFilters: React.FC<FlightFiltersProps> = ({ onFilter }) => {
   const dispatch = useAppDispatch();
   const [lastFilters, setLastFilters] = useState<any>(null);
 
-  interface FlightSearchParams {
-    origin_country_id: number;
-    dest_country_id: number;
-    dep_date: string;
-  }
+  // interface FlightSearchParams {
+  //   origin_country_id: number;
+  //   dest_country_id: number;
+  //   dep_date: string;
+  // }
 
   const handleFilterClick = async () => {
 

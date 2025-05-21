@@ -16897,3 +16897,29 @@ base.models.Customer.DoesNotExist: Customer matching query does not exist.
 2025-05-20 13:00:45,055 - WARNING - Successful flight creation.
 2025-05-20 13:14:15,602 - WARNING - Unauthorized: /login/
 2025-05-20 13:16:11,774 - WARNING - Successful flight creation.
+2025-05-20 17:14:02,718 - WARNING - Forbidden: /remove_admin/1/
+2025-05-20 17:14:11,041 - WARNING - Forbidden: /remove_customer/22/
+2025-05-20 17:48:35,186 - WARNING - Unauthorized: /get_my_flights/
+2025-05-20 17:48:35,198 - WARNING - Unauthorized: /get_my_flights/
+2025-05-20 17:48:39,777 - WARNING - Unauthorized: /get_my_flights/
+2025-05-20 17:48:39,791 - WARNING - Unauthorized: /get_my_flights/
+2025-05-20 18:03:11,809 - WARNING - Bad Request: /update_flight/118/
+2025-05-20 18:04:53,690 - WARNING - Forbidden: /remove_admin/1/
+2025-05-20 18:04:55,824 - WARNING - Bad Request: /remove_admin/7/
+2025-05-20 18:12:17,897 - WARNING - Bad Request: /remove_customer/8/
+2025-05-20 18:14:32,414 - WARNING - Bad Request: /remove_customer/6/
+2025-05-20 18:14:36,885 - WARNING - Forbidden: /remove_customer/22/
+2025-05-20 18:16:20,490 - WARNING - Successful flight creation.
+2025-05-20 21:26:14,415 - WARNING - Unauthorized: /login/
+2025-05-20 21:27:20,252 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 11:59:51,974 - WARNING - Unauthorized: /login/
+2025-05-21 12:02:52,913 - WARNING - Successful flight creation.
+2025-05-21 12:04:35,874 - WARNING - Conflict: /create_ticket/
+2025-05-21 12:39:32,033 - WARNING - Successful flight creation.
+2025-05-21 12:41:17,254 - WARNING - Conflict: /create_ticket/
+2025-05-21 14:13:03,833 - WARNING - Successful flight creation.
+2025-05-21 14:16:05,846 - WARNING - Bad Request: /create_ticket/
+2025-05-21 14:19:30,876 - WARNING - Successful flight creation.
+2025-05-21 14:22:11,808 - WARNING - Bad Request: /create_ticket/
+2025-05-21 14:23:27,771 - WARNING - Successful flight creation.
+2025-05-21 14:23:59,537 - WARNING - Not Found: /get_flight_by_id/1280/

@@ -30,7 +30,6 @@ useEffect(() => {
     };
 
     fetchCustomer();
-    
 }, []); 
 
 
