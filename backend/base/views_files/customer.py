@@ -29,6 +29,7 @@ def add_ticket(request):
             flight_id=flight,
             customer_id=customer,
     )
+    logger.info(f"The customer {request.user.username} successfully purchased a ticket to flight {flight_id}")
     return Response(
         {"message": "Ticket successfully created", "remaining_tickets": flight.remaining_tickets},
         status=status.HTTP_200_OK)
@@ -45,7 +46,9 @@ def remove_ticket(request, id):
     flight.remaining_tickets += 1
     flight.save()
     ticket.save()
-    return Response({"message": "Ticket removed", "ticket_id": id, "remaining_tickets" : flight.remaining_tickets}, status=status.HTTP_200_OK)
+    logger.info(f"The customer {request.user.username} successfully canceled the ticket {ticket.id} to flight {flight.id}")
+    return Response({"message": "Ticket removed", "ticket_id": id, "remaining_tickets" :
+                      flight.remaining_tickets}, status=status.HTTP_200_OK)
 
 
 @api_view(['PUT'])
@@ -60,6 +63,7 @@ def update_customer(request):
     serializer = CustomerSerializer(customer, data=request.data, partial=True)
     if serializer.is_valid():
         serializer.save()
+        logger.info(f"Customer {request.user.username} has successfully updated his personal details.")
         return Response({"message":"The customer was updated successfully."})
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -68,6 +72,7 @@ def update_customer(request):
 @role_required(Roles.CUSTOMER.value)
 @decorators.update_flights_status()
 def get_my_tickets(request):
+    logger.info(f"The customer {request.user.username} is requesting his bookings.")
     the_customer_id = Customer.objects.get(airport_user=request.user).id
     try:
         with connection.cursor() as cursor:
@@ -81,6 +86,7 @@ def get_my_tickets(request):
             columns = [col[0] for col in cursor.description]
             my_tickets = [dict(zip(columns, row)) for row in rows]
             my_tickets = convert_tickets_times_to_israel_timezone(my_tickets)
+            logger.info(f"The customer {request.user.username} has successfully fetched his bookings.")
             return Response(
                 {"message": "Tickets retrieved successfully.", "tickets": my_tickets},
                 status=status.HTTP_200_OK

@@ -52,3 +52,47 @@
 2025-05-21 17:34:13,157 - WARNING - Function 'remove_admin' is being called by the customer liorking8
 2025-05-21 17:36:59,534 - WARNING - Function 'remove_admin' is being called by a guest.
 2025-05-21 17:39:31,344 - WARNING - Function 'get_customers_details' is being called by the customer liorking8
+2025-05-21 21:05:47,604 - INFO - Shalom Shalom
+2025-05-21 21:05:47,653 - INFO - Shalom Shalom
+2025-05-21 21:21:00,334 - INFO - Shalom Shalom
+2025-05-21 21:21:00,377 - INFO - Shalom Shalom
+2025-05-21 21:22:55,545 - INFO - Shalom Shalom
+2025-05-21 21:22:55,606 - INFO - Shalom Shalom
+2025-05-21 21:27:51,059 - INFO - Shalom Shalom
+2025-05-21 21:27:51,113 - INFO - Shalom Shalom
+2025-05-21 22:29:16,724 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:29:16,786 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:29:19,206 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-21 22:35:23,215 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:35:23,257 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:35:34,694 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-21 22:35:47,063 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:35:47,100 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:35:49,686 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-21 22:35:58,534 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:35:58,575 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:05,999 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:06,053 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:09,789 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:09,836 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:13,504 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:13,549 - INFO - Admins list was requested by admin padmin.
+2025-05-21 22:37:26,666 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-22 12:25:39,791 - INFO - Shalom Shalom
+2025-05-22 12:25:39,838 - INFO - Shalom Shalom
+2025-05-22 12:25:42,041 - INFO - The details of the customer liorking8 were requested.
+2025-05-22 12:25:42,099 - INFO - The details of the customer liorking8 were requested.
+2025-05-22 12:25:50,552 - INFO - The customer liorking8 is requesting his bookings.
+2025-05-22 12:25:50,560 - INFO - The customer liorking8 has successfully fetched his bookings.
+2025-05-22 12:25:50,629 - INFO - The customer liorking8 is requesting his bookings.
+2025-05-22 12:25:50,635 - INFO - The customer liorking8 has successfully fetched his bookings.
+2025-05-22 12:45:50,693 - INFO - The airline texas80 is requesting to create a flight.
+2025-05-22 12:45:51,103 - INFO - The airline texas80 has successfully created the flight 130
+2025-05-22 13:14:25,890 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-22 13:14:25,895 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-22 13:14:25,944 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-22 13:14:25,946 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-22 13:15:00,890 - INFO - Shalom Shalom
+2025-05-22 13:15:00,964 - INFO - Shalom Shalom
+2025-05-22 13:15:25,570 - INFO - Admins list was requested by admin padmin.
+2025-05-22 13:15:25,620 - INFO - Admins list was requested by admin padmin.

@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from functools import wraps
-from base.models import AirportUser, Customer, Flight, Ticket, UserRole
+from base.models import Airline, AirportUser, Customer, Flight, Ticket, UserRole
 from django.utils import timezone
 from datetime import datetime, timedelta
 from dateutil import parser
@@ -41,10 +41,11 @@ def conditions_for_cancel_a_ticket(): # Ticket can be canceled under these condi
         def wrapper(request, id, *args, **kwargs):
             ticket = get_object_or_404(Ticket, id = id)
             current_customer = request.user.customers
+            current_airport_user = AirportUser.objects.get(id = current_customer.airport_user_id)
             current_customer_id = current_customer.id
+            current_customer_username = current_airport_user.username
             if ticket.customer_id_id != current_customer_id:
-                # logging.debug(f"User {current_customer_id} tried to remove a ticket of another user")
-                logger.warning(f"User {current_customer_id} tried to remove a ticket of another user")
+                logger.warning(f"User {current_customer_username} requested to remove the ticket {ticket.id} of another user")
                 return Response(
                     {'message': 'This is a ticket of another customer.'}, 
                     status=status.HTTP_403_FORBIDDEN
@@ -293,6 +294,9 @@ def airline_flight_auth(): # Authorization of flight to its airline.
             logged_airline = request.user.airlines
             logged_airline_id = logged_airline.id
             if flight_airline_id != logged_airline_id:
+                target_airline = Airline.objects.get(id == flight_airline_id)
+                target_airline_airportuser = AirportUser.objects.get(id == target_airline.airport_user_id)
+                logger.warning(f"The airline {request.user.username} requests to execute '{func.__name__}' on the airline {target_airline_airportuser.username}")
                 return Response(
                 {"error": "Airline cannot update the details of another airline."}, 
                 status=status.HTTP_403_FORBIDDEN)

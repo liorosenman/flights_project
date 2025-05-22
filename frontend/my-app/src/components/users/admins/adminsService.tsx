@@ -23,14 +23,14 @@ export const getAllAdminsService = async (token: string) => {
 
 export const removeAdminService = async (adminId: number, token: string) => {
   try {
-    const res = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {}, {
+    const response = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
     console.log("DDDDDDDDDDDDDDDDDDDDDDDDDD");
-    console.log(res);
-    return res.data;
+    console.log(response);
+    return response.data;
   } catch (err: any) {
     console.log("EEEEEEEEEEEEEEEEEEEEEEEEE");
     

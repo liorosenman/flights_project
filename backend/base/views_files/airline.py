@@ -16,16 +16,18 @@ from django.db import connection
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-logging.basicConfig(filename="./logs.log",
-                    format='%(asctime)s - %(levelname)s - %(message)s',
-                    filemode='a',
-                    level=logging.DEBUG)
+# logging.basicConfig(filename="./logs.log",
+#                     format='%(asctime)s - %(levelname)s - %(message)s',
+#                     filemode='a',
+#                     level=logging.DEBUG)
 
+logger = logging.getLogger('report_actions')
 
 @api_view(['POST'])
 @role_required(Roles.AIRLINE.value)
 @flight_details_input_validation
 def add_flight(request):
+    logger.info(f"The airline {request.user.username} is requesting to create a flight.")
     try:
         airline_company = Airline.objects.get(airport_user_id=request.user.id)
         print(request.user.id)
@@ -33,13 +35,11 @@ def add_flight(request):
         return Response({'error': 'Airline company not found for the user'}, status=status.HTTP_404_NOT_FOUND)
     flight_data = request.data.copy()
     flight_data['airline_company_id'] = airline_company.id
-    print(flight_data)
-    # flight_data = convert_flight_times_to_israel_timezone(flight_data)
     flight_data_as_list = convert_flight_times_to_israel_timezone([flight_data])[0]
-    print(flight_data_as_list)
     serializer = FlightSerializer(data=flight_data_as_list)
     if serializer.is_valid():
         flight = serializer.save() 
+        logger.info(f"The airline {request.user.username} has successfully created the flight {flight.id}")
         logging.warning("Successful flight creation.")
         return Response({"message": "The flight was created successfully."}, status=status.HTTP_201_CREATED)   
     
@@ -52,6 +52,7 @@ def add_flight(request):
 @decorators.update_flights_status()
 def update_flight(request, id):
     flight = get_object_or_404(Flight, id = id)
+    logger.info(f"Airline {request.user.username} is requesting to update flight {id}")
     if not flight.status == 'active':
         return Response(
             {"message": "Only active flights can be updated."},
@@ -87,6 +88,7 @@ def update_flight(request, id):
     flight.departure_time = new_dep_time
     flight.landing_time = new_land_time
     flight.save()
+    logger.info(f"Airline {request.user.username} has successfully updated the flight {id}")
     return Response(
         {"message": "The flight has been updated successfully."},
         status=status.HTTP_200_OK
@@ -98,6 +100,7 @@ def update_flight(request, id):
 @decorators.update_flights_status()
 def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
    flight = get_object_or_404(Flight, id = id)
+   logger.info(f"Airline {request.user.username} is requesting to remove the flight {id}")
    if not flight.status == 'active':
       return Response(
             {"error": "This flight cannot be deactivated because it is already inactive."},
@@ -111,6 +114,7 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
         )
    flight.status = 'canceled'
    flight.save()
+   logger.info(f"Airline {request.user.username} has successfully canceled the flight {id}")
    return Response(
         {"message": "Flight has been successfully canceled."},
         status=status.HTTP_200_OK
@@ -121,6 +125,7 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
 @decorators.update_flights_status()
 def get_my_flights(request):
     the_airline_id = Airline.objects.get(airport_user=request.user).id
+    logger.info(f"Airline {request.user.username} is requesting to fetch the details of its flights.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_flights_by_airline_id(%s)", [the_airline_id])
@@ -132,7 +137,7 @@ def get_my_flights(request):
                     {"message": "No flights found for the given airline ID."},
                     status=status.HTTP_404_NOT_FOUND
                 )
-
+        logger.info(f"Airline {request.user.username} has successfully fetched its flights.")
         return Response(
                 {"message": "Flights retrieved successfully.", "flights": flights},
                 status=status.HTTP_200_OK

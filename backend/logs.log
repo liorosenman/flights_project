@@ -17130,3 +17130,271 @@ AttributeError: 'AnonymousUser' object has no attribute 'role_name'
 2025-05-21 17:44:27,136 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-21 17:44:49,036 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
 2025-05-21 17:45:23,479 - INFO - C:\LIOR\python\final_project\backend\base\views_files\administrator.py changed, reloading.
+2025-05-21 21:05:31,680 - WARNING - Successful flight creation.
+2025-05-21 21:05:43,038 - WARNING - Unauthorized: /login/
+2025-05-21 21:14:03,356 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:11,584 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:20,464 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:22,416 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:24,488 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:32,724 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:41,970 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:14:52,342 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:18,374 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:24,554 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:34,576 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:36,500 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:39,539 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:43,602 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:15:50,884 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:16:13,371 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:16:15,276 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:16:40,241 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:11,599 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:13,578 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:15,623 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:18,635 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:20,680 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:25,787 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:17:35,088 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:18:19,244 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:18:30,626 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:18:33,550 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:18:42,890 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:18:47,966 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:18:49,878 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:19:17,005 - INFO - C:\LIOR\python\final_project\backend\base\views_files\customer.py changed, reloading.
+2025-05-21 21:20:55,212 - WARNING - Unauthorized: /login/
+2025-05-21 21:21:15,472 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 363, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 21, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:21:24,952 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 363, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 21, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:21:36,331 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 363, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 21, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:22:58,913 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 363, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 21, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:28:49,059 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 363, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 21, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:29:24,034 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:29:31,258 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:29:32,883 - ERROR - Internal Server Error: /create_ticket/
+Traceback (most recent call last):
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\myenv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\permission.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 364, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\LIOR\python\final_project\backend\base\decorators.py", line 22, in wrapper
+    logger.info(f"The customer {request.user.username} intends to purchase a ticket to flight {flight_id}")
+                                                                                               ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'flight_id' where it is not associated with a value
+2025-05-21 21:29:53,234 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:30:17,132 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 21:30:28,536 - INFO - C:\LIOR\python\final_project\backend\base\decorators.py changed, reloading.
+2025-05-21 22:29:19,206 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 22:35:34,694 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 22:35:49,687 - WARNING - Forbidden: /remove_admin/1/
+2025-05-21 22:37:26,667 - WARNING - Forbidden: /remove_admin/1/
+2025-05-22 12:25:32,772 - WARNING - Unauthorized: /login/
+2025-05-22 12:40:41,580 - INFO - C:\LIOR\python\final_project\backend\base\views_files\airline.py changed, reloading.
