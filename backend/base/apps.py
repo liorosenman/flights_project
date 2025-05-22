@@ -3,6 +3,7 @@ from django.apps import AppConfig
 from django.conf import settings
 from django.db.models.signals import post_migrate
 
+
 # class BaseConfig(AppConfig):
 #     default_auto_field = 'django.db.models.BigAutoField'
 #     name = 'base'
@@ -29,4 +30,5 @@ class YourAppConfig(AppConfig):
     name = 'base'
 
     def ready(self):
-        post_migrate.connect(create_countries, sender=self)
+        # post_migrate.connect(create_countries, sender=self)
+        import base.signals

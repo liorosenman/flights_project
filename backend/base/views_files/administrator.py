@@ -149,9 +149,7 @@ def remove_customer(request, id):
 def remove_admin(request, id):
     if (id == 1):
           logger.warning(f"A request was made to remove prime admin by admin {request.user.username} ")
-          return Response({
-            "error": "Prime admin must not be removed!"
-        }, status=status.HTTP_403_FORBIDDEN)
+          return Response({"error": "Prime admin must not be removed!"}, status=status.HTTP_403_FORBIDDEN)
     admin = get_object_or_404(Admin, id = id)
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
     logger.info(f"The removal of the admin {airport_user.username} is requested by admin {request.user.username}")

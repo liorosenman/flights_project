@@ -42,18 +42,13 @@ export const removeAdmin = createAsyncThunk<
 >(
   'admin/removeAdmin',
   async (adminId, { getState, rejectWithValue }) => {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    
     const token = getState().login.token;
     if (!token) return rejectWithValue('No access token available.');
     try {
-      console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCC");
       const result = await removeAdminService(adminId, token);
-      console.log(result);
-      
       return result;
     } catch (error: any) {
-      const errMsg = error.response?.data?.error || 'Admin removal failed.';
+      const errMsg = error.response?.data.error || 'Admin removal failed.';
       return rejectWithValue(errMsg);
     }
   }

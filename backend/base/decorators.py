@@ -145,7 +145,6 @@ def admin_details_input_validation(func):
 def flight_details_input_validation(func):
     @wraps(func)
     def wrapper(request, *args, **kwargs):
-        print("AAAAAAAAAAAAAAAAAAAAAAAAAA")        
         dep_time_str = request.data.get('departure_time') # The new departure time
         try:
             if not dep_time_str or not isinstance(dep_time_str, str):
@@ -366,5 +365,8 @@ def update_flights_status():
             return func(*args, **kwargs)
         return wrapper
     return decorator
+
+
+
 
 

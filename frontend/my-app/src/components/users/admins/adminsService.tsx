@@ -12,35 +12,14 @@ export const getAllAdminsService = async (token: string) => {
   return response.data;
 };
 
-// export const removeAdminService = async (adminId: number, token: string) => {
-//   const response = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {}, {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-//   return response.data;
-// };
-
 export const removeAdminService = async (adminId: number, token: string) => {
-  try {
     const response = await axios.put(`${SERVER}/remove_admin/${adminId}/`, {}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    console.log("DDDDDDDDDDDDDDDDDDDDDDDDDD");
-    console.log(response);
     return response.data;
-  } catch (err: any) {
-    console.log("EEEEEEEEEEEEEEEEEEEEEEEEE");
-    
-    if (err.response && err.response.data && err.response.data.message) {
-      throw new Error(err.response.data.message);
-    }
-    throw new Error('Failed to remove admin.');
-  }
-};
-
+  } 
 
 export const getAdminByUsernameService = async (username: string, token: string) => {
   const response = await axios.get(`${SERVER}/get_admin_by_username/${username}/`, {
