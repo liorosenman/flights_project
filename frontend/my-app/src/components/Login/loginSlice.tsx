@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, isAction } from '@reduxjs/toolkit';
 import { loginRequest} from './loginService.tsx';
 import { AppDispatch, RootState } from '../../app/store.ts';
 import { jwtDecode } from 'jwt-decode';
+import { clearMessages } from '../users/airline/airlineSlicer.tsx';
 
 const accessToken = localStorage.getItem('access_token');
 let roleId = null;
@@ -67,12 +68,14 @@ const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-
     clearAuthTokens: (state) => {
       state.token = null;
       state.refreshToken = null;
       state.roleId = null;
       state.userId = null;
+    },
+    clearError: (state) => {
+      state.error = null;
     }
   },
 
@@ -133,5 +136,5 @@ const loginSlice = createSlice({
 
 export default loginSlice.reducer;
 export const selectLoginState = (state: RootState) => state.login;
-export const { clearAuthTokens } = loginSlice.actions;
+export const { clearAuthTokens, clearError } = loginSlice.actions;
 export const selectUserRoleId = (state: RootState) => state.login.roleId;

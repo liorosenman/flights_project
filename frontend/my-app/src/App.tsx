@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginComp from '../src/components/Login/LoginComp.tsx';
 import Users from './pages/Users.tsx';
-import ClientPg from './components/clientPg.tsx';
 // import AirlinePg from './components/users/airline/';
 import CreateCustomer from './components/createusers/CreateCustomerComp.tsx';
 import CreateAirline from './components/createusers/CreateAirlineComp.tsx';

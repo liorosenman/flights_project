@@ -28,7 +28,7 @@ export const getCustomerByUsernameService = async (username: string, token: stri
   });
   console.log(response.data);
   
-  return response.data;
+  return response.data.customer;
 };
 
 export const updateCustomerService = async (data: any, token: string) => {

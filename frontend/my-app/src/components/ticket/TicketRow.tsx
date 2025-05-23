@@ -43,7 +43,7 @@ const TicketRow = ({ ticket }) => {
 
       {((targetTicketId === ticket.ticket_id) && (error || SuccessMessage)) && (
         <tr>
-          <td colSpan={9} className={error ? 'single-object-error' : 'single-object-confirm'}>
+          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
             {error || SuccessMessage}
           </td>
         </tr>

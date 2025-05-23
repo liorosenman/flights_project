@@ -12,13 +12,16 @@ import { clearCustomerState } from '../users/customers/customersSlice.tsx';
 const Menu = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const storedRoleId = Number(localStorage.getItem('role_id'));
+  const storedRoleIdRaw = localStorage.getItem('role_id');
+  const storedRoleId = storedRoleIdRaw !== null ? Number(storedRoleIdRaw) : null;
+
   
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
     localStorage.removeItem('role_id');
+    localStorage.removeItem('username');
     dispatch(clearFlightState());
     dispatch(clearTicketsState());
     dispatch(clearAdminState());
@@ -56,14 +59,16 @@ const Menu = () => {
             </>
           )}
         </div>
-        {storedRoleId !== null && (
+        {storedRoleId !== null ? (
           <button
             className="btn btn-outline-danger btn-lg"
             onClick={handleLogout}
           >
             Log out
           </button>
-        )}
+        ) : (<button className="btn btn-outline-secondary btn-lg"
+                     onClick={() => navigate('/login')}
+            >Back</button>)}
       </nav>
     </div>
   );
