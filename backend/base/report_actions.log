@@ -187,3 +187,182 @@
 2025-05-22 20:19:08,415 - INFO - Admins list was requested by admin padmin.
 2025-05-22 20:19:11,607 - INFO - Admins list was requested by admin padmin.
 2025-05-22 20:19:11,651 - INFO - Admins list was requested by admin padmin.
+2025-05-22 20:35:15,772 - INFO - Admins list was requested by admin padmin.
+2025-05-22 20:35:15,822 - INFO - Admins list was requested by admin padmin.
+2025-05-22 20:35:44,674 - INFO - New airline, newyork80, was  registered.
+2025-05-22 20:38:35,776 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-22 20:38:36,684 - INFO - The airline newyork80 has successfully created the flight 1
+2025-05-22 20:38:46,581 - INFO - Shalom Shalom
+2025-05-22 20:38:46,617 - INFO - Shalom Shalom
+2025-05-22 20:38:51,859 - INFO - The customer liorking1 successfully purchased a ticket to flight 1
+2025-05-22 20:38:51,910 - INFO - Shalom Shalom
+2025-05-22 20:38:56,726 - INFO - The customer liorking1 is requesting his bookings.
+2025-05-22 20:38:56,735 - INFO - The customer liorking1 has successfully fetched his bookings.
+2025-05-22 20:38:56,783 - INFO - The customer liorking1 is requesting his bookings.
+2025-05-22 20:38:56,791 - INFO - The customer liorking1 has successfully fetched his bookings.
+2025-05-22 20:42:31,155 - INFO - The customer liorking1 is requesting his bookings.
+2025-05-22 20:42:31,158 - INFO - The customer liorking1 has successfully fetched his bookings.
+2025-05-22 20:45:01,014 - INFO - Shalom Shalom
+2025-05-22 20:45:01,085 - INFO - Shalom Shalom
+2025-05-23 13:27:05,029 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:27:05,091 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:27:12,939 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:27:12,996 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:27:15,038 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:27:15,098 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:27:16,631 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:27:16,636 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:27:22,802 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:27:22,858 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:28:44,184 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-23 13:28:44,186 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-23 13:28:44,229 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-23 13:28:44,231 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-23 13:28:55,280 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:28:55,308 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:28:59,015 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:28:59,022 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:29:05,531 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:29:20,646 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:29:20,677 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:29:21,648 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:29:21,688 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:29:22,855 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:29:22,863 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:32:09,184 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 13:33:06,903 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:33:06,933 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:33:09,284 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:33:09,290 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:12,203 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:12,206 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:51,461 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:51,464 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:54,490 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:54,493 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:57,136 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:35:57,138 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:37:11,993 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:37:12,066 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:37:58,145 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:37:58,184 - INFO - Customers list was requested by admin padmin.
+2025-05-23 13:38:04,836 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:38:04,845 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:43:24,921 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:43:24,978 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:43:28,872 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:43:28,880 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:47:03,970 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:47:04,018 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:47:47,891 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:47:47,896 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:48:47,803 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:48:47,865 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:48:48,888 - INFO - Airlines list was requested by admin .
+2025-05-23 13:48:48,931 - INFO - Airlines list was requested by admin .
+2025-05-23 13:49:08,669 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:49:08,672 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:50:43,310 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:50:43,373 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:50:45,258 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:50:45,262 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:51:19,402 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:51:19,444 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:52:58,388 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:52:58,394 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:53:34,219 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:53:34,261 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:53:47,622 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:53:47,628 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:56:15,888 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:56:15,894 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:56:38,982 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:56:38,986 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:57:04,596 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:57:04,634 - INFO - Admins list was requested by admin padmin.
+2025-05-23 13:57:05,361 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:57:05,368 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-23 13:58:13,814 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-23 13:58:14,354 - INFO - The airline newyork80 has successfully created the flight 2
+2025-05-23 13:58:17,714 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-23 13:58:17,717 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-23 13:58:17,761 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-23 13:58:17,763 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-23 14:01:29,960 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:01:29,997 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:01:58,227 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:01:58,291 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:02:57,681 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:02:57,720 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:04:52,166 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:04:52,210 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:04:55,046 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:04:55,089 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:07:42,677 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:07:42,711 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:08:48,018 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:08:48,071 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:20:35,108 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:20:35,151 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:20:39,354 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:20:39,385 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:20:50,056 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:20:50,105 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:22:06,018 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:22:06,049 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:22:06,980 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:22:07,023 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:22:58,803 - INFO - New airline, texas80, was  registered.
+2025-05-23 14:23:06,336 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:23:06,397 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:23:25,140 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:23:28,429 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:23:28,488 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:23:30,184 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:23:30,246 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:23:33,286 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:23:33,326 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:24:56,821 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:24:56,878 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:24:59,011 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:24:59,066 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:25:07,951 - INFO - The details of the customer liorking2 were requested.
+2025-05-23 14:25:13,084 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:25:13,143 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:25:24,575 - INFO - The details of the customer liorking2 were requested.
+2025-05-23 14:25:27,500 - INFO - The details of the customer liorking1 were requested.
+2025-05-23 14:25:28,452 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:25:28,514 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:26:16,763 - INFO - The details of the customer liorking1 were requested.
+2025-05-23 14:26:37,245 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:26:37,304 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:26:38,760 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:26:38,829 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:26:50,825 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 14:26:51,781 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:26:51,833 - INFO - Admins list was requested by admin padmin.
+2025-05-23 14:26:57,360 - INFO - The details of the admin admin2 were requested by admin padmin.
+2025-05-23 14:26:58,918 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:26:58,968 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:27:12,571 - INFO - The details of the customer liorking2 were requested.
+2025-05-23 14:29:23,511 - INFO - The details of the customer liorking2 were requested.
+2025-05-23 14:31:25,383 - INFO - The details of the customer liorking2 were requested.
+2025-05-23 14:31:50,056 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:31:50,111 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:32:05,027 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:32:05,081 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:32:50,566 - INFO - The details of the customer liorking1 were requested.
+2025-05-23 14:33:28,272 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:33:28,292 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:33:31,164 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:33:31,187 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:33:34,203 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:33:34,227 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:34:06,334 - INFO - The details of the customer liorking1 were requested.
+2025-05-23 14:34:25,881 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:34:25,934 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:35:28,515 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:35:28,586 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:35:30,685 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:35:30,734 - INFO - Customers list was requested by admin padmin.
+2025-05-23 14:45:55,428 - INFO - The details of the customer liorking1 were requested.

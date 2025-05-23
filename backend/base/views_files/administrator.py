@@ -185,6 +185,7 @@ def get_admins_details(request):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_airlines_details(request):
+    print(request.user.username)
     logger.info(f"Airlines list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:

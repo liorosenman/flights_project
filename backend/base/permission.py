@@ -10,7 +10,6 @@ def role_required(required_role):
     def decorator(func):
         @wraps(func) 
         def wrapper(request, *args, **kwargs):
-            print(request)
             if not request.user.is_authenticated:
                 logger.warning(f"Function '{func.__name__}' is being called by a guest.")
                 return Response({"message":"No authenticated user."}, status=status.HTTP_401_UNAUTHORIZED)

@@ -69,7 +69,7 @@ export const getCustomerByUsername = createAsyncThunk<
     try {
       const result = await getCustomerByUsernameService(username, token);
       console.log(result);
-      return result.customer;
+      return result;
     } catch (err: any) {
       const errorMsg =
         err.response?.data?.message || err.response?.data?.error || 'Failed to fetch customer';
