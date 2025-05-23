@@ -547,3 +547,241 @@
 2025-05-23 19:43:12,179 - INFO - The customer liorking4 is requesting his bookings.
 2025-05-23 19:43:13,541 - INFO - Shalom Shalom
 2025-05-23 19:43:13,612 - INFO - Shalom Shalom
+2025-05-23 19:54:19,597 - INFO - Shalom Shalom
+2025-05-23 19:54:19,672 - INFO - Shalom Shalom
+2025-05-23 19:54:28,504 - INFO - The customer liorking5 is requesting his bookings.
+2025-05-23 19:54:28,587 - INFO - The customer liorking5 is requesting his bookings.
+2025-05-23 19:55:13,066 - INFO - The airline texas80 is requesting to create a flight.
+2025-05-23 19:55:13,095 - INFO - The airline texas80 has successfully created the flight 5
+2025-05-23 19:55:22,786 - INFO - Shalom Shalom
+2025-05-23 19:55:22,851 - INFO - Shalom Shalom
+2025-05-23 19:55:27,313 - INFO - The customer liorking5 successfully purchased a ticket to flight 5
+2025-05-23 19:55:27,368 - INFO - Shalom Shalom
+2025-05-23 19:55:29,559 - INFO - The customer liorking5 is requesting his bookings.
+2025-05-23 19:55:29,569 - INFO - The customer liorking5 has successfully fetched his bookings.
+2025-05-23 19:55:29,640 - INFO - The customer liorking5 is requesting his bookings.
+2025-05-23 19:55:29,646 - INFO - The customer liorking5 has successfully fetched his bookings.
+2025-05-23 19:55:31,743 - INFO - The customer liorking5 successfully canceled the ticket 5 to flight 5
+2025-05-23 19:55:31,800 - INFO - The customer liorking5 is requesting his bookings.
+2025-05-23 19:55:31,804 - INFO - The customer liorking5 has successfully fetched his bookings.
+2025-05-23 21:17:21,473 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:17:21,516 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:18:28,084 - INFO - New admin, admin3, was  registered.
+2025-05-23 21:18:33,178 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:18:33,219 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:18:41,258 - INFO - The removal of the admin admin3 is requested by admin padmin
+2025-05-23 21:18:41,328 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:19:59,587 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:19:59,637 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:20:03,240 - INFO - The removal of the airline texas80 is requested by admin padmin
+2025-05-23 21:20:03,611 - INFO - The removal of the airline texas80 is requested by admin padmin
+2025-05-23 21:20:44,774 - INFO - New airline, helsinki80, was  registered.
+2025-05-23 21:20:47,118 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:20:47,158 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:20:54,574 - INFO - The removal of the airline helsinki80 is requested by admin padmin
+2025-05-23 21:20:54,634 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:21:01,200 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:21:01,263 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:21:02,432 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:21:02,495 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:22:22,315 - INFO - Customers list was requested by admin padmin.
+2025-05-23 21:22:22,371 - INFO - Customers list was requested by admin padmin.
+2025-05-23 21:22:26,280 - INFO - The removal of the customer liorking5 is requested by admin padmin
+2025-05-23 21:22:26,329 - INFO - Customers list was requested by admin padmin.
+2025-05-23 21:23:13,911 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:23:13,954 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:23:16,645 - INFO - Customers list was requested by admin padmin.
+2025-05-23 21:23:16,689 - INFO - Customers list was requested by admin padmin.
+2025-05-23 21:23:24,355 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:23:24,398 - INFO - Admins list was requested by admin padmin.
+2025-05-23 21:23:30,012 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:23:30,058 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 21:24:00,668 - INFO - Shalom Shalom
+2025-05-23 21:24:00,716 - INFO - Shalom Shalom
+2025-05-23 21:24:04,182 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:24:04,246 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:24:07,436 - INFO - Shalom Shalom
+2025-05-23 21:24:07,500 - INFO - Shalom Shalom
+2025-05-23 21:26:29,953 - INFO - Shalom Shalom
+2025-05-23 21:38:48,559 - INFO - Shalom Shalom
+2025-05-23 21:38:48,672 - INFO - Shalom Shalom
+2025-05-23 21:42:44,706 - INFO - Shalom Shalom
+2025-05-23 21:42:44,770 - INFO - Shalom Shalom
+2025-05-23 21:44:31,200 - INFO - Shalom Shalom
+2025-05-23 21:44:31,247 - INFO - Shalom Shalom
+2025-05-23 21:45:09,533 - INFO - Shalom Shalom
+2025-05-23 21:45:09,586 - INFO - Shalom Shalom
+2025-05-23 21:51:15,843 - INFO - Shalom Shalom
+2025-05-23 21:51:15,941 - INFO - Shalom Shalom
+2025-05-23 21:52:36,542 - INFO - The airline texas80 is requesting to create a flight.
+2025-05-23 21:52:36,565 - INFO - The airline texas80 has successfully created the flight 6
+2025-05-23 21:52:39,462 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 21:52:39,467 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 21:52:39,520 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 21:52:39,523 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 21:52:47,548 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 21:52:47,551 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 21:53:11,316 - INFO - Shalom Shalom
+2025-05-23 21:53:11,393 - INFO - Shalom Shalom
+2025-05-23 21:53:31,651 - INFO - The customer liorking4 successfully purchased a ticket to flight 6
+2025-05-23 21:53:31,732 - INFO - Shalom Shalom
+2025-05-23 21:54:00,765 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:54:00,771 - INFO - The customer liorking4 has successfully fetched his bookings.
+2025-05-23 21:54:00,859 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:54:00,866 - INFO - The customer liorking4 has successfully fetched his bookings.
+2025-05-23 21:59:10,902 - INFO - Shalom Shalom
+2025-05-23 21:59:10,993 - INFO - Shalom Shalom
+2025-05-23 21:59:24,808 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:59:24,817 - INFO - The customer liorking4 has successfully fetched his bookings.
+2025-05-23 21:59:24,893 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:59:24,900 - INFO - The customer liorking4 has successfully fetched his bookings.
+2025-05-23 21:59:26,496 - INFO - The customer liorking4 successfully canceled the ticket 6 to flight 6
+2025-05-23 21:59:26,592 - INFO - The customer liorking4 is requesting his bookings.
+2025-05-23 21:59:26,599 - INFO - The customer liorking4 has successfully fetched his bookings.
+2025-05-23 21:59:29,271 - INFO - Shalom Shalom
+2025-05-23 21:59:29,362 - INFO - Shalom Shalom
+2025-05-23 22:02:26,263 - INFO - The airline texas80 is requesting to create a flight.
+2025-05-23 22:02:26,279 - INFO - The airline texas80 has successfully created the flight 7
+2025-05-23 22:02:28,564 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:02:28,569 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:02:28,629 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:02:28,633 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:02:58,201 - INFO - Shalom Shalom
+2025-05-23 22:02:58,257 - INFO - Shalom Shalom
+2025-05-23 22:03:22,144 - INFO - The customer liorking3 successfully purchased a ticket to flight 7
+2025-05-23 22:03:22,199 - INFO - Shalom Shalom
+2025-05-23 22:07:02,611 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:07:02,619 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:07:02,685 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:07:02,691 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:07:04,120 - INFO - The customer liorking3 successfully canceled the ticket 7 to flight 7
+2025-05-23 22:07:04,175 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:07:04,178 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:07:09,712 - INFO - Shalom Shalom
+2025-05-23 22:07:09,804 - INFO - Shalom Shalom
+2025-05-23 22:07:21,147 - INFO - The customer liorking3 successfully purchased a ticket to flight 7
+2025-05-23 22:07:21,215 - INFO - Shalom Shalom
+2025-05-23 22:08:17,781 - INFO - Shalom Shalom
+2025-05-23 22:08:53,118 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:08:53,123 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:08:53,173 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:08:53,178 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:09:38,968 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:09:38,971 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:09:56,961 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:09:56,965 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:13:21,972 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:13:21,976 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:13:22,014 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:13:22,017 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:16:17,934 - INFO - Shalom Shalom
+2025-05-23 22:16:18,012 - INFO - Shalom Shalom
+2025-05-23 22:18:03,065 - INFO - Shalom Shalom
+2025-05-23 22:18:03,129 - INFO - Shalom Shalom
+2025-05-23 22:18:12,952 - INFO - Shalom Shalom
+2025-05-23 22:18:20,757 - INFO - Shalom Shalom
+2025-05-23 22:18:20,815 - INFO - Shalom Shalom
+2025-05-23 22:18:42,132 - INFO - Shalom Shalom
+2025-05-23 22:18:42,211 - INFO - Shalom Shalom
+2025-05-23 22:18:52,028 - INFO - Shalom Shalom
+2025-05-23 22:18:52,119 - INFO - Shalom Shalom
+2025-05-23 22:19:45,970 - INFO - Shalom Shalom
+2025-05-23 22:19:50,973 - INFO - Shalom Shalom
+2025-05-23 22:19:52,947 - INFO - Shalom Shalom
+2025-05-23 22:19:55,947 - INFO - Shalom Shalom
+2025-05-23 22:20:00,959 - INFO - Shalom Shalom
+2025-05-23 22:20:05,995 - INFO - Shalom Shalom
+2025-05-23 22:20:06,036 - INFO - Shalom Shalom
+2025-05-23 22:20:07,951 - INFO - Shalom Shalom
+2025-05-23 22:20:20,953 - INFO - Shalom Shalom
+2025-05-23 22:20:41,989 - INFO - Shalom Shalom
+2025-05-23 22:20:46,970 - INFO - Shalom Shalom
+2025-05-23 22:20:49,956 - INFO - Shalom Shalom
+2025-05-23 22:20:52,959 - INFO - Shalom Shalom
+2025-05-23 22:20:54,968 - INFO - Shalom Shalom
+2025-05-23 22:21:02,966 - INFO - Shalom Shalom
+2025-05-23 22:22:37,957 - INFO - Shalom Shalom
+2025-05-23 22:22:39,990 - INFO - Shalom Shalom
+2025-05-23 22:23:08,554 - INFO - Shalom Shalom
+2025-05-23 22:23:08,644 - INFO - Shalom Shalom
+2025-05-23 22:23:14,235 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:23:14,243 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:23:14,334 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:23:14,341 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:23:22,655 - INFO - The customer liorking3 successfully canceled the ticket 8 to flight 7
+2025-05-23 22:23:22,740 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:23:22,746 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:23:48,620 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:23:48,690 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:24:04,735 - INFO - Shalom Shalom
+2025-05-23 22:24:04,810 - INFO - Shalom Shalom
+2025-05-23 22:24:07,019 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:24:07,052 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:24:24,855 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:24:24,863 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:24:24,952 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:24:24,960 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:24:27,385 - INFO - Shalom Shalom
+2025-05-23 22:24:27,478 - INFO - Shalom Shalom
+2025-05-23 22:25:00,107 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:25:00,112 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:25:00,210 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:25:00,213 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:25:39,062 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:25:39,066 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:25:53,841 - INFO - Airline texas80 is requesting to update flight 7
+2025-05-23 22:25:53,847 - INFO - Airline texas80 has successfully updated the flight 7
+2025-05-23 22:25:53,905 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:25:53,908 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:28:57,718 - INFO - Airline texas80 is requesting to update flight 7
+2025-05-23 22:28:57,721 - INFO - Airline texas80 has successfully updated the flight 7
+2025-05-23 22:28:57,778 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-23 22:28:57,781 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-23 22:30:26,504 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:30:26,565 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:34:32,934 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:34:34,944 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:14,933 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:17,930 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:32,952 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:33,944 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:55,941 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:37:57,939 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:38:13,887 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 22:38:13,946 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 22:38:14,929 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:38:14,989 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:38:46,933 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:39:08,938 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:40:59,896 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:40:59,939 - INFO - Customers list was requested by admin padmin.
+2025-05-23 22:43:41,596 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 22:43:41,630 - INFO - Airlines list was requested by admin padmin.
+2025-05-23 22:43:44,139 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:43:44,191 - INFO - Admins list was requested by admin padmin.
+2025-05-23 22:44:17,352 - INFO - Shalom Shalom
+2025-05-23 22:44:17,434 - INFO - Shalom Shalom
+2025-05-23 22:44:31,220 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:44:31,226 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:44:31,327 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:44:31,335 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:44:36,844 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:44:36,884 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:44:43,253 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:44:43,259 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:44:43,316 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:44:43,321 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:44:44,376 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:44:44,432 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:48:56,946 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:50:36,827 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:50:36,864 - INFO - The details of the customer liorking3 were requested.
+2025-05-23 22:51:01,483 - WARNING - Function 'get_customer_by_username' is being called by a guest.
+2025-05-23 22:51:17,614 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:51:17,623 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:51:17,705 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-23 22:51:17,712 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-23 22:51:19,598 - INFO - Shalom Shalom
+2025-05-23 22:51:19,659 - INFO - Shalom Shalom
+2025-05-23 22:59:31,236 - INFO - Shalom Shalom
+2025-05-23 22:59:31,310 - INFO - Shalom Shalom

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {LinkedCustomer} from '../../../models/LinkedCustomer.ts'
 import { RootState } from '../../../app/store.ts';
-import { getAllCustomersService, getCustomerByUsernameService, removeCustomerService, updateCustomerService } from './customerService.tsx';
+import { getAllCustomersService, getCustomerByUserIdService, getCustomerByUsernameService, removeCustomerService, updateCustomerService } from './customerService.tsx';
 
 interface CustomerState {
     customers: LinkedCustomer[]
@@ -97,6 +97,19 @@ export const updateCustomer = createAsyncThunk<
   }
 );
 
+export const getCustomerByUserId = createAsyncThunk<
+  LinkedCustomer,
+  string,
+  { rejectValue: string }
+>('customer/getCustomerByUserId', async (token, { rejectWithValue }) => {
+  try {
+    const customer = await getCustomerByUserIdService(token);
+    return customer;
+  } catch (err: any) {
+    return rejectWithValue(err.response?.data?.error || 'Failed to fetch customer data');
+  }
+});
+
   const customersSlice = createSlice({
     name: 'customers',
     initialState,
@@ -177,8 +190,20 @@ export const updateCustomer = createAsyncThunk<
           state.loading = false;
           state.error = action.payload as string;
           state.successMsg = null
-        });
-
+        })
+        .addCase(getCustomerByUserId.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.successMsg = null;
+      })
+      .addCase(getCustomerByUserId.fulfilled, (state, action) => {
+        state.customer = action.payload;
+        state.loading = false;
+      })
+      .addCase(getCustomerByUserId.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || 'Unknown error';
+      });
     },
   });
 

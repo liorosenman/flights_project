@@ -18,7 +18,7 @@ const TicketRow = ({ ticket }) => {
       await dispatch(cancelTicket(ticketId)).unwrap();
     } catch (error) {
       console.error("Ticket removal failed.");
-      
+
     }
     await dispatch(getMyTickets({ token }));
   };
@@ -31,14 +31,18 @@ const TicketRow = ({ ticket }) => {
         <td>{ticket.origin_country}</td>
         <td>{ticket.destination_country}</td>
         <td>{formatDateTime(ticket.departure_time)}</td>
-        <td>{ticket.status}</td>
-        {roleId === 2 && ticket.status === 'active' && (
-          <td>
-            <button className='cancel-ticket-btn' onClick={(e) => handleRemoval(e, ticket.ticket_id)}>
+        <td>
+          {ticket.status !== 'active' ? (
+            ticket.status
+          ) : (
+            <button
+              className="cancel-ticket-btn"
+              onClick={(e) => handleRemoval(e, ticket.ticket_id)}
+            >
               Cancel
             </button>
-          </td>
-        )}
+          )}
+        </td>
       </tr>
 
       {((targetTicketId === ticket.ticket_id) && (error || SuccessMessage)) && (

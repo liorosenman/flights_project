@@ -51,21 +51,21 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     dispatch(setToBeUpdFlightId(flightId))
   }
 
-const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flightId: number) => {
-  e.preventDefault();
-  if (!updDate) {
-    alert('Please select a date and time.');
-    return;
-  }
+  const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flightId: number) => {
+    e.preventDefault();
+    if (!updDate) {
+      alert('Please select a date and time.');
+      return;
+    }
 
-  try {
-    await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
-    setupdDate('');
-    await dispatch(getMyFlights({ token }));
-  } catch (error) {
-    console.error("Flight update failed:", error);
-  }
-};
+    try {
+      await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
+      setupdDate('');
+      await dispatch(getMyFlights({ token }));
+    } catch (error) {
+      console.error("Flight update failed:", error);
+    }
+  };
 
 
 
@@ -78,34 +78,53 @@ const handleUpdateFlight = async (e: React.MouseEvent<HTMLButtonElement>, flight
         <td>{flight.destination_country_name}</td>
         <td>{formatDateTime(flight.departure_time)}</td>
         <td>{formatDateTime(flight.landing_time)}</td>
-        <td>{flight.remaining_tickets}</td>
-        <td>{flight.status}</td>
+        <td>
+          {flight.status !== 'active' ? (
+            '---'
+          ) : flight.remaining_tickets > 0 ? (
+            flight.remaining_tickets
+          ) : (
+            'Sold-out!'
+          )}
+        </td>
 
-        {roleId === 2 && flight.status === 'active' ? (
-          <td>
-            <button className="buy-ticket-btn" onClick={(e) => handlePurchase(e, flight.flight_id)}>
+        {/* <td>{flight.status}</td> */}
+        <td>
+          {flight.status !== 'active' ? (
+            flight.status
+          ) : roleId === 2 ? (
+            <button
+              className="buy-ticket-btn"
+              disabled={flight.remaining_tickets === 0}
+              style={{
+                backgroundColor: flight.remaining_tickets === 0 ? '#ccc' : undefined,
+                cursor: flight.remaining_tickets === 0 ? 'not-allowed' : 'pointer'
+              }}
+              onClick={(e) => handlePurchase(e, flight.flight_id)}
+            >
               Buy ticket
             </button>
-          </td>
-        ) : null}
-
-        {roleId === 3 && flight.status === 'active' && (
-          <>
-            <td>
-              <button onClick={(e) => handleRemoval(e, flight.flight_id)}>
-                
+          ) : roleId === 3 ? (
+            <>
+              <button className="btn btn-danger" onClick={(e) => handleRemoval(e, flight.flight_id)}>
                 Deactivate
               </button>
-
-              <button onClick={(e) => {
-                console.log("CLICKED");
-                openUpdCalendar(e, flight.flight_id);
-              }}>
+              <button
+                className="btn btn-primary"
+                onClick={(e) => {
+                  console.log("CLICKED");
+                  openUpdCalendar(e, flight.flight_id);
+                }}
+              >
                 +
               </button>
-            </td>
-          </>
-        )}
+            </>
+          ) : (
+            flight.status
+          )}
+        </td>
+
+
       </tr>
 
       {toBeUpdatedFlight === flight.flight_id && (

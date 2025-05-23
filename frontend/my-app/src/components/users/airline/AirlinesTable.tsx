@@ -41,7 +41,7 @@ const AirlinesTable: React.FC = () => {
             <th>Country</th>
             <th>Email</th>
             <th>Airport ID</th>
-            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -54,10 +54,7 @@ const AirlinesTable: React.FC = () => {
                 <td>{a.country}</td>
                 <td>{a.email}</td>
                 <td>{a.airport_id}</td>
-                <td>{a.status ? 'Active' : 'Inactive'}</td>
-                <td>
-                  <button className='remove-user-btn' onClick={(e) => handleRemoveAirline(e, a.id)}>REMOVE</button>
-                </td>
+                <td>{a.status ? <button className='remove-user-btn' onClick={(e) => handleRemoveAirline(e, a.id)}>REMOVE</button> : 'Inactive'}</td>
               </tr>
               {(targetAirlineId === a.id) && (error || successMsg) && (
                 <tr>

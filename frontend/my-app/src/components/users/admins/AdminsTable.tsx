@@ -39,7 +39,7 @@ const AdminTable: React.FC = () => {
             <th>Last Name</th>
             <th>Email</th>
             <th>Airport ID</th>
-            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -52,9 +52,8 @@ const AdminTable: React.FC = () => {
                 <td>{a.last_name}</td>
                 <td>{a.email}</td>
                 <td>{a.airport_id}</td>
-                <td>{a.status ? 'Active' : 'Inactive'}</td>
+                <td>{a.status ? (<button className='remove-user-btn' onClick={(e) => handleRemoveAdmin(e, a.id)}>REMOVE</button>) : 'Inactive'}</td>
                 <td>
-                  <button className='remove-user-btn' onClick={(e) => handleRemoveAdmin(e, a.id)}>REMOVE</button>
                 </td>
               </tr>
               {((targetAdminId === a.id) && (error || successMsg)) && (

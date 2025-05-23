@@ -1,0 +1,28 @@
+.user-manager-controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+
+.user-manager-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.user-manager-button {
+  padding: 6px 12px;
+}
+
+.user-manager-error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

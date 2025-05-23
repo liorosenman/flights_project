@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
-import { clearCustomerState, getCustomerByUsername, selectCustomerState, updateCustomer } from './customersSlice.tsx';
+import { clearCustomerState, getCustomerByUserId, getCustomerByUsername, selectCustomerState, updateCustomer } from './customersSlice.tsx';
 import { useLocation } from 'react-router-dom';
 import './styles.css';
 
@@ -9,7 +9,7 @@ const UpdateCustomerDetails = () => {
     const location = useLocation();
     const { loading, error, successMsg, customer } = useAppSelector(selectCustomerState);
     const username = localStorage.getItem('username');
-
+    const token = localStorage.getItem('access_token')
     const [formData, setFormData] = useState({
         password: '',
         email: '',
@@ -22,15 +22,16 @@ const UpdateCustomerDetails = () => {
 
 useEffect(() => {
     const fetchCustomer = async () => {
-        dispatch(clearCustomerState());
-        if (username) {
-            await dispatch(getCustomerByUsername(username));
-            console.log("Customer immediately after dispatch:", customer);
+        if (token) {
+            dispatch(clearCustomerState());
+            await dispatch(getCustomerByUserId(token));
+        } else {
+            console.error("Token is must.");
         }
     };
-
     fetchCustomer();
-}, []); 
+}, []);
+
 
 
     useEffect(() => {
@@ -77,7 +78,7 @@ useEffect(() => {
                         />
                     </div>
                 ))}
-                <button className="btn btn-light update-btn" type="submit" style={{ marginLeft: '0', fontSize: '1.2rem', padding: '0.6rem 1.2rem' }}
+                <button className="btn btn-light update-btn" type="submit" style={{ fontSize: '1.2rem', padding: '0.6rem 1.2rem' }}
                 >Update
                 </button>
                 {loading && <p>Loading</p>}

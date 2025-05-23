@@ -41,3 +41,12 @@ export const updateCustomerService = async (data: any, token: string) => {
   return response.data;
 };
 
+export const getCustomerByUserIdService = async (token: string) => {
+  const response = await axios.get(`${SERVER}/get_customer_by_user_id/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data.customer;
+};
+

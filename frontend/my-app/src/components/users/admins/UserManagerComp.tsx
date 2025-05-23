@@ -5,12 +5,14 @@ import AdminTable from './AdminsTable.tsx';
 import AirlinesTable from '../airline/AirlinesTable.tsx';
 import { Link, useParams } from 'react-router-dom';
 import { UserRole } from '../../../models/userRole.ts';
-import customersSlice, { clearCustomerState, fetchCustomers, getCustomerByUsername, selectCustomerState} from '../customers/customersSlice.tsx';
+import customersSlice, { clearCustomerState, fetchCustomers, getCustomerByUsername, selectCustomerState } from '../customers/customersSlice.tsx';
 import { clearAdminState, fetchAdmins, selectAdminState } from './adminsSlice.tsx';
 import { clearAirlineState, fetchAirlines, getAirlineByUsername, selectAirlineState } from '../airline/airlineSlicer.tsx';
 import { useAppDispatch } from '../../../app/hooks.ts'
 import { AppDispatch } from '../../../app/store.ts';
-import {getAdminByUsername} from '../admins/adminsSlice.tsx';
+import { getAdminByUsername } from '../admins/adminsSlice.tsx';
+import './managingUsersStyle.css';
+
 
 export const clearUsersStates = (dispatch: AppDispatch) => {
   dispatch(clearAirlineState());
@@ -67,25 +69,23 @@ const UserManagerComp: React.FC = () => {
 
   return (
     <div>
-      {/* <nav>
-        <Link to="/users/1">Admins</Link> |{" "}
-        <Link to="/users/2">Customers</Link> |{" "}
-        <Link to="/users/3">Airlines</Link>
-      </nav> */}
-
-      <div style={{ marginTop: '15px' }}>
-        <button onClick={handleShowAll}>Show All</button>
+      <div className="user-manager-controls">
+        <button onClick={handleShowAll} className="user-manager-button">
+          Show All
+        </button>
         <input
           type="text"
           placeholder="Enter username"
           value={searchUsername}
           onChange={(e) => setSearchUsername(e.target.value)}
-          style={{ marginLeft: '10px', marginRight: '5px' }}
+          className="user-manager-input"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} className="user-manager-button">
+          Search
+        </button>
       </div>
       {displayedError && (
-        <div style={{ color: 'red' }}>
+        <div className="user-manager-error">
           <h3>{displayedError}</h3>
         </div>
       )}

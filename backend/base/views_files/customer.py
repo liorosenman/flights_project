@@ -97,3 +97,26 @@ def get_my_tickets(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
+@api_view(['GET'])
+@role_required(Roles.CUSTOMER.value)
+def get_customer_by_user_id(request):
+    # logger.info(f"The details of the customer {username} were requested.")
+    try:
+        target_id = request.user.id
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM get_customer_data_by_user_id(%s)", [target_id])
+            columns = [col[0] for col in cursor.description]
+            result = cursor.fetchone()
+            if result:
+                customer_details = dict(zip(columns,result))
+                return Response({
+                    "customer": customer_details
+                }, status=status.HTTP_200_OK)
+            else:
+                return Response({
+                "message": "No customer found for the given user ID."
+            }, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({
+            "error": f"An error occurred while retrieving the customer: {str(e)}"
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -44,7 +44,7 @@ const CustomerTable: React.FC = () => {
             <th>Phone</th>
             <th>Email</th>
             <th>Airport ID</th>
-            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -59,10 +59,7 @@ const CustomerTable: React.FC = () => {
                 <td>{c.phone_no}</td>
                 <td>{c.email}</td>
                 <td>{c.airport_id}</td>
-                <td>{c.status ? 'Active' : 'Inactive'}</td>
-                <td>
-                  <button className='remove-user-btn' onClick={(e) => handleRemoveCustomer(e, c.id)}>REMOVE</button>
-                </td>
+                <td>{c.status ? <button className='remove-user-btn' onClick={(e) => handleRemoveCustomer(e, c.id)}>REMOVE</button> : 'Inactive'}</td>
               </tr>
               {(targetCustomerId === c.id) && (error || successMsg) && (
                 <tr>

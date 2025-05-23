@@ -34,7 +34,7 @@ RETURNS TABLE (
     first_name VARCHAR,
     last_name VARCHAR,
     address VARCHAR,
-    phone_no INTEGER,,
+    phone_no INTEGER,
     credit_card_no INTEGER,
     email VARCHAR,
     airport_id BIGINT,
@@ -58,7 +58,38 @@ BEGIN
     WHERE u.username = input_username AND u.role_name_id = 2;
 END;
 $$ LANGUAGE plpgsql;
-
+--############################################################################
+CREATE OR REPLACE FUNCTION get_customer_data_by_user_id(user_id BIGINT)
+RETURNS TABLE (
+    id BIGINT,
+    username VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    address VARCHAR,
+    phone_no INTEGER,,
+    credit_card_no INTEGER,
+    email VARCHAR,
+    airport_id BIGINT,
+    status BOOLEAN
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        c.id::BIGINT AS CustomerID,
+        u.username::VARCHAR AS username,
+        c.first_name::VARCHAR AS first_name,
+        c.last_name::VARCHAR AS last_name,
+        c.address::VARCHAR AS address,
+        c.phone_no::INTEGER AS phone_no,
+        c.credit_card_no::INTEGER AS credit_card_no,
+        u.email::VARCHAR AS email,
+        u.id::BIGINT AS airport_id,
+        u.is_active::BOOLEAN AS status,
+    FROM base_customer AS c
+    JOIN base_airportuser AS u ON c.airport_user_id = u.id
+    WHERE u.id = user_id
+END;
+$$ LANGUAGE plpgsql;
 --##########################################################################
 CREATE OR REPLACE FUNCTION get_admin_data_by_username(input_username TEXT)
 RETURNS TABLE (

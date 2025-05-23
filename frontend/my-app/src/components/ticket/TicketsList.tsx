@@ -28,7 +28,7 @@ const TicketsList = () => {
             <th>Origin Country</th>
             <th>Destination Country</th>
             <th>Departure Time</th>
-            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

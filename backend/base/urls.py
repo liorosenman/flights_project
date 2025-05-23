@@ -51,6 +51,7 @@ urlpatterns = [
     path('get_all_airlines/', administrator.get_airlines_details),
     path('get_admin_by_username/<str:username>/', administrator.get_admin_by_username),
     path('get_airline_by_username/<str:username>/', administrator.get_airline_by_username),
+    path('get_customer_by_user_id/', customer.get_customer_by_user_id)
 
 ]
 
