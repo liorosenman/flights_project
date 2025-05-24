@@ -7,12 +7,13 @@ export const customerSignUpService = async (customerData) => {
 }
 
 export const airlineSignupService = async (airlineData) => {
-    return await axios.post(SERVER + 'create_new_airline/', airlineData);
-}
-
-// export const adminSignupService = async (adminData) => {
-//     return await axios.post(SERVER + 'create_new_admin/', adminData);
-// }
+    const token = localStorage.getItem('access_token');
+    return await axios.post(SERVER + 'create_new_airline/', airlineData, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+});
+};
 
 export const adminSignupService = async (adminData) => {
     const token = localStorage.getItem('access_token');

@@ -37,6 +37,8 @@ export const createAirline = createAsyncThunk<string, Record<string, any>>(
       const response = await airlineSignupService(airlineData);
       return response.data.message;
     } catch (error: any) {
+      console.log(error);
+      
       const backendMessage =
         error.response?.data?.message || error.response?.data?.error || 'Unknown error';
       return rejectWithValue(backendMessage);

@@ -928,3 +928,53 @@
 2025-05-24 15:50:42,174 - INFO - Airlines list was requested by admin liorking3.
 2025-05-24 16:00:04,808 - INFO - Airlines list was requested by admin liorking3.
 2025-05-24 16:00:04,854 - INFO - Airlines list was requested by admin liorking3.
+2025-05-24 16:23:26,662 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:23:26,667 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:23:26,751 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:23:26,756 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:23:41,374 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:23:41,379 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:27:39,893 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:27:39,897 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:27:39,972 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:27:39,978 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:27:41,019 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:27:41,024 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:29:46,084 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:29:46,086 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:29:46,118 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:29:46,121 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 16:29:48,424 - INFO - Airline texas80 is requesting to fetch the details of its flights.
+2025-05-24 16:29:48,427 - INFO - Airline texas80 has successfully fetched its flights.
+2025-05-24 17:01:44,325 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-24 17:02:29,371 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-24 17:02:29,378 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-24 17:02:29,439 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-24 17:02:29,444 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-24 17:03:01,416 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:03:01,477 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:03:09,072 - INFO - Customers list was requested by admin padmin.
+2025-05-24 17:03:09,121 - INFO - Customers list was requested by admin padmin.
+2025-05-24 17:03:13,188 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:03:13,251 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:04:20,216 - WARNING - Function 'airline_register' is being called by a guest.
+2025-05-24 17:05:56,006 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:05:56,048 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:06:52,633 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:06:52,682 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:07:33,236 - WARNING - Function 'airline_register' is being called by a guest.
+2025-05-24 17:08:55,517 - INFO - New admin, admin5, was  registered.
+2025-05-24 17:08:58,497 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:08:58,551 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:11:30,106 - INFO - New airline, toronto80, was  registered.
+2025-05-24 17:14:04,293 - WARNING - Function 'airline_register' is being called by a guest.
+2025-05-24 17:14:51,991 - WARNING - Function 'airline_register' is being called by a guest.
+2025-05-24 17:22:14,917 - INFO - Customers list was requested by admin padmin.
+2025-05-24 17:22:14,978 - INFO - Customers list was requested by admin padmin.
+2025-05-24 17:22:16,748 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:22:16,807 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:23:04,877 - INFO - New airline, berlin80, was  registered.
+2025-05-24 17:23:56,191 - INFO - New admin, admin6, was  registered.
+2025-05-24 17:24:01,007 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:24:01,062 - INFO - Admins list was requested by admin padmin.
+2025-05-24 17:29:54,059 - WARNING - Function 'airline_register' is being called by a guest.
