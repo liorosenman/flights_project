@@ -40,19 +40,19 @@ export const createFlight = createAsyncThunk<string, Record<string, any>, { stat
   }
 );
 
+
 export const fetchAirlines = createAsyncThunk(
   'airline/fetchAirlines',
-  async (_, { getState, rejectWithValue }) => {
-    const token = (getState() as RootState).login.token;
-     if (!token) return rejectWithValue('No token');
+  async (_, { rejectWithValue }) => {
     try {
-      const data = await getAllAirlinesService(token);
+      const data = await getAllAirlinesService(); // no token needed
       return data;
     } catch (err: any) {
       return rejectWithValue(err.response?.data?.message || 'Failed to fetch airlines');
     }
   }
 );
+
 
 
 export const removeAirline = createAsyncThunk<

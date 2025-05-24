@@ -16,14 +16,9 @@ export const createFlightService = async (flightData: Record<string, any>, token
   //   return response.data;
   // };
 
-  export const getAllAirlinesService = async (token: string) => {
+  export const getAllAirlinesService = async () => {
   const response = await axios.get(`${SERVER}/get_all_airlines/`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
   });
-  console.log(response.data);
-  
   return response.data;
 };
 

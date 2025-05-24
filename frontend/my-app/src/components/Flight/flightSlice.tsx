@@ -122,13 +122,9 @@ export const getFlightById = createAsyncThunk<
   'flight/getFlightById',
   async (id, { getState, rejectWithValue }) => {
     try {
-      const token = getState().login.token;
-      if (!token) {
-        return rejectWithValue('No access token available.');
-      }
-      const result = await getFlightByIdService(id, token);
+      const result = await getFlightByIdService(id);
       return result.flight;
-    } catch (error: any) {
+    }catch(error:any){
       return rejectWithValue(
         error.response?.data?.message || error.message || 'Flight retrieval failed.'
       );

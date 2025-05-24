@@ -8,11 +8,11 @@ services:
       POSTGRES_DB: airport
       POSTGRES_TZ: Asia/Jerusalem
     volumes: 
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # how to get to the init.sql file
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
     ports:
       - "5432:5432"
     networks:
-      pg_network:  # Changed from a list to a dictionary format
+      pg_network:  
         ipv4_address: 172.19.0.2
 
   pgadmin:
@@ -23,7 +23,7 @@ services:
     ports:
       - "8080:80"
     networks:
-      pg_network:  # Changed from a list to a dictionary format
+      pg_network:
         ipv4_address: 172.19.0.3
 
 networks:

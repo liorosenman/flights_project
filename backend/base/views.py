@@ -194,37 +194,10 @@ def get_airline_by_username(request, username):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-# Get all flights. Updating flights' status in advance.
-# @api_view(['GET'])
-# @decorators.update_flights_status()
-# def get_all_flights(request): 
-#     logger.info("Shalom Shalom")
-#     try:
-#         with connection.cursor() as cursor:
-#             cursor.execute("SELECT * FROM get_all_flights()")
-#             rows = cursor.fetchall()
-#             if not rows:
-#                 return Response(
-#                     {"message": "No flights found in the system."},
-#                     status=status.HTTP_404_NOT_FOUND
-#                 )
-#             columns = [col[0] for col in cursor.description]
-#             flights = [dict(zip(columns, row)) for row in rows]
-#             return Response(
-#                 {"message": "All flights retrieved successfully.", "flights": flights},
-#                 status=status.HTTP_200_OK
-#             )
-#     except Exception as e:
-#         return Response(
-#             {"message": "An error occurred while retrieving flights.", "error": str(e)},
-#             status=status.HTTP_500_INTERNAL_SERVER_ERROR
-#         )
-
 
 @api_view(['GET'])
 @decorators.update_flights_status()
 def get_all_flights(request): 
-    logger.info("Shalom Shalom")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_all_flights()")

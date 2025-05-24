@@ -5,6 +5,7 @@ import { addTicket, clearFlights, getMyFlights, loadFlights, removeFlight, selec
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
+import './style.css';
 
 interface FlightRowProps {
   flight: LinkedFlightData;
@@ -134,10 +135,10 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
               type="datetime-local"
               value={updDate}
               onChange={(e) => setupdDate(e.target.value)}
-              style={{ marginRight: '10px' }}
+              className='datetime-input'
               required
             />
-            <button onClick={(e) => handleUpdateFlight(e, flight.flight_id)}>Update</button>
+            <button className='update-button' onClick={(e) => handleUpdateFlight(e, flight.flight_id)}>Update</button>
           </td>
         </tr>
       )}

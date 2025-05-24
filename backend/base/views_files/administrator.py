@@ -32,7 +32,7 @@ def admin_register(request): #Create a new admin
 
 # Create a new airline (user_role_num = 2)
 @api_view(['POST']) 
-# @role_required(Roles.ADMINISTRATOR.value)
+@role_required(Roles.ADMINISTRATOR.value)
 @user_details_input_validation
 @airline_details_input_validation
 @create_airport_user(Roles.AIRLINE.value)
@@ -68,7 +68,7 @@ def get_customers_details(request):
 
 # Managing for admin, load details to update for customer.
 @api_view(['GET'])
-@authorize_admin_and_customer()
+@role_required(Roles.ADMINISTRATOR.value)
 def get_customer_by_username(request, username):
     logger.info(f"The details of the customer {username} were requested.")
     try:
@@ -183,10 +183,9 @@ def get_admins_details(request):
         )
 
 @api_view(['GET'])
-@role_required(Roles.ADMINISTRATOR.value)
+# @role_required(Roles.ADMINISTRATOR.value)
 def get_airlines_details(request):
-    print(request.user.username)
-    logger.info(f"Airlines list was requested by admin {request.user.username}.")
+    # logger.info(f"Airlines list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_airlines_details()")

@@ -57,23 +57,18 @@ export const addTicketService = async (flight_id: number, token: string) => {
   };
 
   // flightService.ts
-export const getFlightByIdService = async (id: number, token: string) => {
-  const response = await axios.get(`${SERVER}/get_flight_by_id/${id}/`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+export const getFlightByIdService = async (flightId: number) => {
+  const response = await axios.get(`${SERVER}/get_flight_by_id/${flightId}/`);
   return response.data;
 };
+
 
 
 export const getFlightsByAirlineIdService = async (airlineId: number) => {
-  console.log("THE ID OF THE AIRLINE IS ", airlineId);
   const response = await axios.get(`${SERVER}/get_flights_by_airline_id/${airlineId}/`);
-  console.log("EEEEEEEEEEEEEEEEEEEEEEE");
-  console.log(response);
   return response.data;
 };
+
 
 
 export const getAllAirlinesService = async () => {
