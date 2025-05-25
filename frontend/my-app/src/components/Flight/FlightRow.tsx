@@ -36,13 +36,20 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
   const handleRemoval = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
-    dispatch(clearFlightState())
     try {
+      dispatch(clearFlightState())
+      console.log('AAAAAAAAAAAAAAAA');
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
-      await dispatch(getMyFlights({ token }));
+      console.log(error);
+      
+      console.log("BBBBBBBBBBBBBBBBB");
+      console.log("CCCCCCCCCCCCCCCC");
+
     } catch (error) {
       console.error("Flight removal failed.", error);
     }
+    
+    await dispatch(getMyFlights({ token })).unwrap();
   };
 
   const openUpdCalendar = async (e: React.MouseEvent, flightId: number) => {
@@ -58,7 +65,6 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       alert('Please select a date and time.');
       return;
     }
-
     try {
       await dispatch(updateFlight({ flightId, newDepTime: updDate })).unwrap();
       setupdDate('');

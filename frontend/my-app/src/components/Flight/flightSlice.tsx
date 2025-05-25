@@ -280,6 +280,8 @@ export const getDepartureFlights = createAsyncThunk<
         .addCase(removeFlight.rejected, (state, action) => {
           state.loading = false;
           state.error = action.payload as string || 'Flight removal failure.';
+          console.log(state.error);
+          
         })
         .addCase(updateFlight.pending, (state) => {
           state.loading = true;

@@ -984,3 +984,429 @@
 2025-05-24 23:20:44,687 - INFO - Customers list was requested by admin padmin.
 2025-05-24 23:20:47,939 - INFO - Admins list was requested by admin padmin.
 2025-05-24 23:20:48,006 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:05:46,335 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:05:46,373 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:06:23,855 - INFO - New airline, jerus80, was  registered.
+2025-05-25 12:06:54,385 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:06:54,430 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:07:33,003 - INFO - New admin, admin7, was  registered.
+2025-05-25 12:07:47,080 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:07:47,126 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:08:03,501 - INFO - The details of the admin admin5 were requested by admin padmin.
+2025-05-25 12:08:23,118 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:08:36,301 - INFO - The details of the admin aaa were requested by admin padmin.
+2025-05-25 12:08:43,314 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:08:43,361 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:09:49,117 - INFO - The details of the customer liorking4 were requested.
+2025-05-25 12:10:03,974 - INFO - The details of the customer liork were requested.
+2025-05-25 12:10:16,490 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:10:46,298 - INFO - The details of the customer liorking4 were requested.
+2025-05-25 12:10:49,712 - INFO - The removal of the customer liorking4 is requested by admin padmin
+2025-05-25 12:10:49,746 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:11:15,109 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:11:15,159 - INFO - Admins list was requested by admin padmin.
+2025-05-25 12:11:16,191 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:11:16,233 - INFO - Customers list was requested by admin padmin.
+2025-05-25 12:19:16,549 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 12:19:16,577 - INFO - The airline jerus80 has successfully created the flight 9
+2025-05-25 12:19:20,084 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:19:20,089 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:19:20,133 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:19:20,135 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:19:25,014 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:19:25,016 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:21:50,682 - INFO - The customer liorking3 successfully purchased a ticket to flight 9
+2025-05-25 12:22:50,809 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:22:50,813 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:22:50,855 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:22:50,859 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:24:18,709 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:24:18,715 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:24:18,773 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:24:18,778 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:25:05,342 - INFO - The customer liorking3 successfully canceled the ticket 10 to flight 9
+2025-05-25 12:25:05,402 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:25:05,406 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:28:39,654 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 12:28:39,664 - INFO - The airline jerus80 has successfully created the flight 10
+2025-05-25 12:28:41,818 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:28:41,821 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:28:41,870 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:28:41,872 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:32:32,889 - INFO - The customer liorking3 successfully purchased a ticket to flight 10
+2025-05-25 12:36:32,356 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:36:32,359 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:36:32,405 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:36:32,410 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:38:22,529 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 12:38:22,548 - INFO - The airline jerus80 has successfully created the flight 11
+2025-05-25 12:38:43,848 - INFO - The customer liorking3 successfully purchased a ticket to flight 11
+2025-05-25 12:38:46,361 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:38:46,366 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:38:46,401 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:38:46,405 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:42:03,611 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:42:03,615 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:46:20,558 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:46:20,562 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:46:20,647 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:46:20,651 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:47:42,607 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 12:47:42,634 - INFO - The airline jerus80 has successfully created the flight 12
+2025-05-25 12:47:44,695 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:47:44,700 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:47:44,791 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:47:44,794 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:49:20,311 - INFO - The customer liorking3 successfully purchased a ticket to flight 12
+2025-05-25 12:49:30,376 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:49:30,380 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:49:30,442 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:49:30,445 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:53:19,765 - INFO - Airline jerus80 is requesting to remove the flight 12
+2025-05-25 12:54:39,751 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:54:39,756 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:54:39,806 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:54:39,810 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:56:53,836 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:56:53,845 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:56:53,911 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 12:56:53,920 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 12:57:12,261 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:57:12,266 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 12:57:12,345 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 12:57:12,350 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:01:03,013 - INFO - Airline jerus80 is requesting to remove the flight 12
+2025-05-25 13:01:23,995 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:01:23,998 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:01:24,076 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:01:24,080 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:02:25,782 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:02:25,811 - INFO - The airline jerus80 has successfully created the flight 13
+2025-05-25 13:02:28,823 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:02:28,830 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:02:28,912 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:02:28,914 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:02:43,919 - INFO - Airline jerus80 is requesting to remove the flight 13
+2025-05-25 13:02:43,926 - INFO - Airline jerus80 has successfully canceled the flight 13
+2025-05-25 13:02:44,003 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:02:44,007 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:08:21,711 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:08:21,718 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:08:21,779 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:08:21,783 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:08:45,666 - INFO - Airline jerus80 is requesting to remove the flight 9
+2025-05-25 13:08:45,673 - INFO - Airline jerus80 has successfully canceled the flight 9
+2025-05-25 13:08:45,755 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:08:45,759 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:09:21,548 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:09:21,552 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:09:21,621 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:09:21,625 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:10:32,590 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:10:32,606 - INFO - The airline jerus80 has successfully created the flight 14
+2025-05-25 13:10:35,122 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:10:35,126 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:10:35,209 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:10:35,213 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:10:37,286 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:10:37,290 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:10:45,461 - INFO - Airline jerus80 is requesting to update flight 14
+2025-05-25 13:10:45,467 - INFO - Airline jerus80 has successfully updated the flight 14
+2025-05-25 13:10:45,550 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:10:45,554 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:11:10,438 - INFO - Airline jerus80 is requesting to remove the flight 14
+2025-05-25 13:11:10,444 - INFO - Airline jerus80 has successfully canceled the flight 14
+2025-05-25 13:11:10,515 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:11:10,518 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:12:45,251 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:12:45,256 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:12:45,339 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:12:45,342 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:13:08,916 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:13:08,939 - INFO - The airline jerus80 has successfully created the flight 15
+2025-05-25 13:13:11,596 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:13:11,600 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:13:11,678 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:13:11,684 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:13:33,522 - INFO - Airline jerus80 is requesting to remove the flight 15
+2025-05-25 13:13:33,526 - INFO - Airline jerus80 has successfully canceled the flight 15
+2025-05-25 13:13:33,558 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:13:33,560 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:20:21,636 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:20:21,639 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:20:21,693 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:20:21,700 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:20:47,758 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:20:47,784 - INFO - The airline jerus80 has successfully created the flight 16
+2025-05-25 13:21:06,813 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:21:06,818 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:21:06,870 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:21:06,873 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:21:20,891 - INFO - Airline jerus80 is requesting to remove the flight 16
+2025-05-25 13:21:20,896 - INFO - Airline jerus80 has successfully canceled the flight 16
+2025-05-25 13:21:20,970 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:21:20,973 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:46,245 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:46,248 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:46,284 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:46,286 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:50,365 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:50,370 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:50,418 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:50,423 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:53,698 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:53,705 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:53,759 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:53,763 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:54,798 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:54,803 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:23:54,857 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:23:54,861 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:24:20,297 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:24:20,313 - INFO - The airline jerus80 has successfully created the flight 17
+2025-05-25 13:24:23,132 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:24:23,138 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:24:23,208 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:24:23,213 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:24:30,688 - INFO - Airline jerus80 is requesting to remove the flight 17
+2025-05-25 13:24:30,696 - INFO - Airline jerus80 has successfully canceled the flight 17
+2025-05-25 13:24:30,762 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:24:30,766 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:25,228 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:25,231 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:25,274 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:25,280 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:40,485 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:40,488 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:40,552 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:40,557 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:42,099 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:42,104 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:42,162 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:42,165 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:55,019 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:55,022 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:25:55,059 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:25:55,062 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:26:08,141 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:26:08,144 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:26:08,183 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:26:08,185 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:26:22,230 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:26:22,233 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:26:22,331 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:26:22,334 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:28:11,591 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:28:11,596 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:28:11,678 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:28:11,683 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:28:30,069 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:28:30,081 - INFO - The airline jerus80 has successfully created the flight 18
+2025-05-25 13:28:42,813 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:28:42,818 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:28:42,900 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:28:42,903 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:28:47,202 - INFO - Airline jerus80 is requesting to remove the flight 18
+2025-05-25 13:28:47,209 - INFO - Airline jerus80 has successfully canceled the flight 18
+2025-05-25 13:28:47,262 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:28:47,264 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:29:48,271 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:29:48,277 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:29:48,368 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:29:48,373 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:30:29,998 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:30:30,024 - INFO - The airline jerus80 has successfully created the flight 19
+2025-05-25 13:30:30,075 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:30:30,102 - INFO - The airline jerus80 has successfully created the flight 20
+2025-05-25 13:31:19,312 - INFO - The customer liorking3 successfully purchased a ticket to flight 19
+2025-05-25 13:32:33,700 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:32:33,703 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:32:33,765 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:32:33,771 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:09,150 - INFO - Airline jerus80 is requesting to remove the flight 19
+2025-05-25 13:36:16,759 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:16,763 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:16,807 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:16,809 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:24,430 - INFO - Airline jerus80 is requesting to remove the flight 20
+2025-05-25 13:36:24,434 - INFO - Airline jerus80 has successfully canceled the flight 20
+2025-05-25 13:36:24,469 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:24,471 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:41,960 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:41,968 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:42,030 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:42,033 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:43,905 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:43,909 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:43,954 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:43,956 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:48,107 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:48,110 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:48,155 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:48,157 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:53,746 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:53,753 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:36:53,811 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:36:53,814 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:37:37,722 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:37:37,743 - INFO - The airline jerus80 has successfully created the flight 21
+2025-05-25 13:37:51,342 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:37:51,348 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:37:51,432 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:37:51,437 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:38:02,341 - INFO - Airline jerus80 is requesting to remove the flight 21
+2025-05-25 13:38:02,348 - INFO - Airline jerus80 has successfully canceled the flight 21
+2025-05-25 13:38:02,399 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:38:02,402 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:38:52,535 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:38:52,564 - INFO - The airline jerus80 has successfully created the flight 22
+2025-05-25 13:38:55,055 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:38:55,060 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:38:55,147 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:38:55,152 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:41:09,761 - INFO - Airline jerus80 is requesting to remove the flight 22
+2025-05-25 13:43:21,198 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:21,204 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:43:21,278 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:21,282 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:43:22,737 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:22,740 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:43:22,829 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:22,835 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:43:25,026 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:25,032 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:43:25,078 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:43:25,081 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:44:47,658 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:44:47,662 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:44:47,715 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:44:47,721 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:45:37,834 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:45:37,864 - INFO - The airline jerus80 has successfully created the flight 23
+2025-05-25 13:45:47,091 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:45:47,096 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:45:47,151 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:45:47,156 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:48:04,710 - INFO - Airline jerus80 is requesting to remove the flight 23
+2025-05-25 13:48:54,553 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:48:54,557 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:48:54,612 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:48:54,616 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:48:59,669 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:48:59,675 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:48:59,727 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:48:59,732 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:02,906 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:02,912 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:02,981 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:02,983 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:09,017 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:09,024 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:09,088 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:09,092 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:40,435 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 13:49:40,446 - INFO - The airline jerus80 has successfully created the flight 24
+2025-05-25 13:49:42,359 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:42,362 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:49:42,418 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 13:49:42,420 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 13:52:03,867 - INFO - Airline jerus80 is requesting to remove the flight 24
+2025-05-25 15:03:54,068 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:03:54,071 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:03:54,113 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:03:54,116 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:04:18,733 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 15:04:18,764 - INFO - The airline jerus80 has successfully created the flight 25
+2025-05-25 15:04:18,778 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 15:04:18,794 - INFO - The airline jerus80 has successfully created the flight 26
+2025-05-25 15:04:27,600 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:04:27,605 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:04:27,686 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:04:27,691 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:07:11,620 - INFO - Airline jerus80 is requesting to remove the flight 25
+2025-05-25 15:08:51,156 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:08:51,161 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:08:51,216 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:08:51,219 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:15:25,605 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:15:25,611 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:15:25,669 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:15:25,673 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:15:30,454 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:15:30,462 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:15:30,527 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:15:30,529 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:16:09,492 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 15:16:09,517 - INFO - The airline jerus80 has successfully created the flight 27
+2025-05-25 15:16:11,917 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:16:11,922 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:16:11,994 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:16:11,998 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:18:02,280 - INFO - Airline jerus80 is requesting to remove the flight 27
+2025-05-25 15:23:30,306 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:23:30,310 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:23:30,375 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:23:30,379 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:23:48,792 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-25 15:23:48,805 - INFO - The airline jerus80 has successfully created the flight 28
+2025-05-25 15:24:07,101 - INFO - The customer liorking3 successfully purchased a ticket to flight 28
+2025-05-25 15:24:30,986 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:24:30,992 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:24:31,062 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:24:31,066 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:24:36,522 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:27:26,929 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:27:26,931 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:27:26,978 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:27:26,980 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:34:44,518 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:34:44,523 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:34:44,578 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:34:44,581 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:35:20,383 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:38:03,896 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 15:38:03,901 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 15:38:03,941 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 15:38:03,946 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 15:38:07,550 - INFO - The customer liorking3 successfully canceled the ticket 15 to flight 28
+2025-05-25 15:38:07,634 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 15:38:07,641 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 15:39:46,068 - INFO - The customer liorking3 successfully purchased a ticket to flight 28
+2025-05-25 15:40:15,463 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:40:15,467 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:40:15,543 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:40:15,548 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:40:18,716 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:40:18,804 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:40:18,806 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:41:19,735 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:41:19,742 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:41:21,730 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:41:21,782 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:41:21,785 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:42:47,634 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:42:47,730 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:42:47,736 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 15:50:55,184 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 15:50:55,220 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 15:50:55,222 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:06:17,920 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 16:06:17,925 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:06:17,980 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 16:06:17,985 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:06:40,802 - INFO - Airline jerus80 is requesting to remove the flight 28
+2025-05-25 16:06:40,877 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 16:06:40,880 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:06:58,506 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 16:06:58,509 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:10:07,866 - INFO - Airline jerus80 is requesting to fetch the details of its flights.
+2025-05-25 16:10:07,868 - INFO - Airline jerus80 has successfully fetched its flights.
+2025-05-25 16:12:18,788 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 16:12:18,795 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 16:12:18,855 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 16:12:18,866 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 16:12:24,525 - INFO - The customer liorking3 successfully canceled the ticket 16 to flight 28
+2025-05-25 16:12:24,607 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-25 16:12:24,611 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-25 18:45:04,282 - INFO - Admins list was requested by admin padmin.
+2025-05-25 18:45:04,335 - INFO - Admins list was requested by admin padmin.

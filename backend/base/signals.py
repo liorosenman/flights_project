@@ -2,16 +2,11 @@ import enum
 import os
 from django.apps import apps
 from django.db import connection, models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import PermissionsMixin
-from django.db import models
-from datetime import datetime
 from django.contrib.auth.models import BaseUserManager
 from django.dispatch import receiver
 from django.db.models.signals import post_migrate
 from django.utils.timezone import now
-from .models import Country, Roles, RolesEnum, UserRole
+from .models import Country, Roles, RolesEnum, UserRole, Admin, AirportUser
 from myproj import settings
 from django.contrib.auth.hashers import make_password
 
@@ -57,7 +52,6 @@ def create_default_countries(sender, **kwargs):
 
 
     
-    from .models import Admin, AirportUser
     if Admin.objects.exists():
         return 
     user_role = UserRole.objects.get(id = Roles.ADMINISTRATOR.value)

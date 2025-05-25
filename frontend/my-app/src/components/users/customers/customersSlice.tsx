@@ -166,11 +166,7 @@ export const getCustomerByUserId = createAsyncThunk<
         })
         .addCase(getCustomerByUsername.fulfilled, (state, action) => {
           state.loading = false;
-          // state.customers = [action.payload];
-          // state.customer = [action.payload];
           state.customers = Array.isArray(action.payload) ? action.payload : [action.payload];
-          console.log(state.customers);
-          
         })
         .addCase(getCustomerByUsername.rejected, (state, action) => {
           state.loading = false;
