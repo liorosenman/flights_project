@@ -85,8 +85,11 @@ export const removeFlight = createAsyncThunk<
     try {
       dispatch(setTargetFlightId(flight_id)); 
       const response = await removeFlightService(flight_id, token); 
-      return response;
+      console.log(response);
+      return response.message;
     } catch (error: any) {
+      console.log(error);
+      console.log(error.response?.data?.error)
       return rejectWithValue(error.response?.data?.error || 'Failed to remove flight.');
     }
   }
