@@ -1,7 +1,7 @@
 // src/components/SignupForm.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createCustomer, selectUserState} from './createUserSlicer.tsx'
+import { clearRegisterResponses, createCustomer, selectUserState} from './createUserSlicer.tsx'
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { AppDispatch } from '../../app/store.ts';
 import Menu from '../Menu/menuComp.tsx';
@@ -29,6 +29,11 @@ const CustomerSignupForm = () => {
         e.preventDefault();
         await dispatch(createCustomer(formData));
     };
+
+    useEffect(() => {
+        dispatch(clearRegisterResponses())
+    }, [])
+    
 
     return (
         <div>

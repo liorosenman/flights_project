@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
-import { fetchAdmins, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
+import { fetchAdmins, getAdminByUsername, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
 import {clearAdminState} from './adminsSlice.tsx'
 import { clearUsersStates } from './UserManagerComp.tsx';
 import '../../../App.css'
@@ -9,7 +9,7 @@ import { selectLoginState } from '../../Login/loginSlice.tsx';
 const AdminTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { admins, loading, error, successMsg, targetAdminId } = useAppSelector(selectAdminState);
-
+  
   useEffect(() => {
     clearUsersStates(dispatch);
     dispatch(fetchAdmins());
@@ -21,8 +21,11 @@ const AdminTable: React.FC = () => {
     dispatch(setTargetAdminId(adminId))
     try {
       await dispatch(removeAdmin(adminId)).unwrap();
-      await dispatch(fetchAdmins());
-    } catch (error) {
+      if (admins.length === 1){
+        await dispatch(getAdminByUsername(admins[0].username))
+      }else{
+        await dispatch(fetchAdmins());
+    }} catch (error) {
       console.error("Admin removal failed.", error);
     }
   };

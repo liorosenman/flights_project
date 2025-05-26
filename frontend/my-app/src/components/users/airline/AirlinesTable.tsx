@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
-import { fetchAirlines, removeAirline, setTargetAirlineId } from './airlineSlicer.tsx';
-import {clearAirlineState} from './airlineSlicer.tsx'
+import { fetchAirlines, getAirlineByUsername, removeAirline, setTargetAirlineId } from './airlineSlicer.tsx';
+import { clearAirlineState } from './airlineSlicer.tsx'
 import { selectAirlineState } from './airlineSlicer.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 import '../../../App.css'
@@ -10,7 +10,7 @@ const AirlinesTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { airlines, loading, error, successMsg, targetAirlineId } = useAppSelector(selectAirlineState);
   const [search, setSearch] = useState('');
-  
+
 
   useEffect(() => {
     clearUsersStates(dispatch);
@@ -23,7 +23,12 @@ const AirlinesTable: React.FC = () => {
     dispatch(setTargetAirlineId(airlineId))
     try {
       await dispatch(removeAirline(airlineId)).unwrap();
-      await dispatch(fetchAirlines());
+      if (airlines.length === 1) {
+        await dispatch(getAirlineByUsername(airlines[0].username))
+      } else {
+        await dispatch(fetchAirlines());
+      }
+
     } catch (error) {
       console.error("Airline removal failed.", error);
     }
@@ -32,12 +37,12 @@ const AirlinesTable: React.FC = () => {
   return (
     <div>
       <h1 className='heading-thin-center'>Airlines</h1>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{ width: '90%' }}>
         <thead>
           <tr>
             <th>ID</th>
             <th>Username</th>
-            <th>|Name</th>
+            <th>Name</th>
             <th>Country</th>
             <th>Email</th>
             <th>Airport ID</th>

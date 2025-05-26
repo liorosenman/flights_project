@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
-import { fetchCustomers, removeCustomer, selectCustomerState, setTargetCustomerId } from './customersSlice.tsx';
+import { fetchCustomers, getCustomerByUserId, getCustomerByUsername, removeCustomer, selectCustomerState, setTargetCustomerId } from './customersSlice.tsx';
 import { clearCustomerState } from './customersSlice.tsx'
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
 import '../../../App.css'
@@ -22,8 +22,12 @@ const CustomerTable: React.FC = () => {
     dispatch(setTargetCustomerId(customerId))
     try {
       await dispatch(removeCustomer(customerId)).unwrap();
-      await dispatch(fetchCustomers());
-      console.log(customers);
+      if (customers.length === 1){
+        await dispatch(getCustomerByUsername(customers[0].username))
+      }else{
+        await dispatch(fetchCustomers());
+      }
+      // await dispatch(fetchCustomers());
       
     } catch (error) {
       console.error("Customer removal failed.", error);

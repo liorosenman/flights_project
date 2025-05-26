@@ -150,13 +150,21 @@ def remove_admin(request, id):
     if (id == 1):
           logger.warning(f"A request was made to remove prime admin by admin {request.user.username} ")
           return Response({"error": "Prime admin must not be removed!"}, status=status.HTTP_403_FORBIDDEN)
-    admin = get_object_or_404(Admin, id = id)
+    admin = get_object_or_404(Admin, id = id) # Admin to be deleted
     airport_user = AirportUser.objects.get(id = admin.airport_user_id)
+    logged_admin_id = Admin.objects.get(airport_user_id = request.user.id).id # The ID of the logged-in admin.
     logger.info(f"The removal of the admin {airport_user.username} is requested by admin {request.user.username}")
     if not airport_user.is_active:
           return Response({
             "error": "This admin is already inactive."
         }, status = status.HTTP_400_BAD_REQUEST)
+    print(id)
+    print(admin.id)
+    if id == logged_admin_id:
+        return Response({
+            "error": "Admin cannot remove himself."
+        }, status=status.HTTP_403_FORBIDDEN)
+          
     airport_user.is_active = False
     airport_user.save()
     return Response({
