@@ -4,7 +4,7 @@ import CustomerTable from '../customers/CustomerTable.tsx';
 import AdminTable from './AdminsTable.tsx';
 import AirlinesTable from '../airline/AirlinesTable.tsx';
 import { Link, useParams } from 'react-router-dom';
-import { UserRole } from '../../../models/userRole.ts';
+import { UserRole } from '../../../models/UserRole.ts';
 import customersSlice, { clearCustomerState, fetchCustomers, getCustomerByUsername, selectCustomerState } from '../customers/customersSlice.tsx';
 import { clearAdminState, fetchAdmins, selectAdminState } from './adminsSlice.tsx';
 import { clearAirlineState, fetchAirlines, getAirlineByUsername, selectAirlineState } from '../airline/airlineSlicer.tsx';

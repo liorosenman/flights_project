@@ -28,12 +28,13 @@ const TicketRow = ({ ticket }) => {
       <tr>
         <td>{ticket.ticket_id}</td>
         <td>{ticket.flight_id}</td>
+        <td>{ticket.al_name}</td>
         <td>{ticket.origin_country}</td>
         <td>{ticket.destination_country}</td>
         <td>{formatDateTime(ticket.departure_time)}</td>
         <td>
-          {ticket.status !== 'active' ? (
-            ticket.status
+          {ticket.ticket_status !== 'active' ? (
+            ticket.ticket_status
           ) : (
             <button
               className="cancel-ticket-btn"

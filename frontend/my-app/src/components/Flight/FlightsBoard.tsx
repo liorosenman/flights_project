@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import FlightRow from "./FlightRow.tsx";
 import { useAppSelector, useAppDispatch } from '../../app/hooks.ts';
 import { getArrivalFlights, getDepartureFlights, getFlightById, getFlightsByAirlineId, getFlightsByParameters, getMyFlights, loadFlights, selectFlightsState } from './flightSlice.tsx'
-import { UserRole } from '../../models/userRole.ts';
+import { UserRole } from '../../models/UserRole.ts';
 import { clearFlightState } from './flightSlice.tsx';
 import FlightFilters from './FlightFilters.tsx'
 import { FlightFilterOptions } from '../../models/FlightFilterOptions.ts';

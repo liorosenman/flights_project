@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../../app/store.ts';
 import { getMyFlightsService, getFlightByIdService} from './flightService.tsx';
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 import {FlightSearchParams} from '../Flight/FlightFilters.tsx'
+import { FlightData } from '../../models/FlightData.ts';
 
 export interface FlightState {
     flights: LinkedFlightData[];

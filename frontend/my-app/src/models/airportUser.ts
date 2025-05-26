@@ -1,4 +1,4 @@
-import { UserRole } from './userRole.ts';
+import { UserRole } from './UserRole.ts';
 
 export interface AirportUser {
   id: number;

@@ -25,6 +25,7 @@ const TicketsList = () => {
           <tr>
             <th>ID</th>
             <th>Flight number</th>
+            <th>Airline</th>
             <th>Origin Country</th>
             <th>Destination Country</th>
             <th>Departure Time</th>

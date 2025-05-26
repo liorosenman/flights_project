@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { jwtDecode } from 'jwt-decode';
 import './styles.css';
-import { UserRole } from '../../models/userRole.ts';
+import { UserRole } from '../../models/UserRole.ts';
 import { clearError } from './loginSlice.tsx';
 
 const LoginComp: React.FC = () => {

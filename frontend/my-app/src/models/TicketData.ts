@@ -1,7 +1,7 @@
 import { Airline } from './airline';
 import { Country } from './country';
 import { Customer } from './customer';
-import { FlightData } from './flightdata';
+import { FlightData } from './FlightData';
 import { FlightStatus } from './FlightStatus';
 
 
