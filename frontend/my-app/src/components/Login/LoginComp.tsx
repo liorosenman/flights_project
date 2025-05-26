@@ -6,6 +6,7 @@ import { jwtDecode } from 'jwt-decode';
 import './styles.css';
 import { UserRole } from '../../models/UserRole.ts';
 import { clearError } from './loginSlice.tsx';
+import '../../App.css';
 
 const LoginComp: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -21,8 +22,8 @@ const LoginComp: React.FC = () => {
       const resultAction = await dispatch(loginUser({ username, password }));
       if (loginUser.fulfilled.match(resultAction)) {
         const token = resultAction.payload?.token;
-        const decoded = jwtDecode<{ role_id: number; username: string }>(token);
-        const { role_id: roleId, username: decodedUsername } = decoded;
+        const decoded = jwtDecode<{ role_id: number; username: string, id:number }>(token);
+        const { role_id: roleId, username: decodedUsername} = decoded;
 
         localStorage.setItem('access_token', token);
         localStorage.setItem('refresh_token', resultAction.payload.refresh);
@@ -92,7 +93,7 @@ const LoginComp: React.FC = () => {
           </div>
 
           {/* Error */}
-          {error && <p className="error-message mt-3">{error || 'Login failed'}</p>}
+          {error && <p className="single-object-error">{error || 'Login failed'}</p>}
         </form>
       </div>
     </div>

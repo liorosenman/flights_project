@@ -1654,3 +1654,33 @@
 2025-05-26 16:18:17,790 - INFO - The customer liorking3 has successfully fetched his bookings.
 2025-05-26 16:18:17,847 - INFO - The customer liorking3 is requesting his bookings.
 2025-05-26 16:18:17,854 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-26 21:51:56,263 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:51:56,313 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:54:35,425 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:54:35,452 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:55:13,347 - INFO - New admin, admin14, was  registered.
+2025-05-26 21:56:09,223 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:09,229 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:15,114 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:23,619 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:56:23,671 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:56:24,691 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:24,697 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:37,468 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:47,293 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:57,839 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:56:57,842 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:24,216 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:57:24,251 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:57:25,056 - INFO - Customers list was requested by admin padmin.
+2025-05-26 21:57:25,087 - INFO - Customers list was requested by admin padmin.
+2025-05-26 21:57:26,548 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:26,554 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:41,185 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:57:41,239 - INFO - Admins list was requested by admin padmin.
+2025-05-26 21:57:41,843 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:41,851 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:46,694 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 21:57:46,698 - WARNING - Function 'get_airlines_details' is being called by a guest.
+2025-05-26 22:01:06,830 - INFO - Admins list was requested by admin padmin.
+2025-05-26 22:01:06,873 - INFO - Admins list was requested by admin padmin.

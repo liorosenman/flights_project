@@ -38,13 +38,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
     e.preventDefault();
     try {
       dispatch(clearFlightState())
-      console.log('AAAAAAAAAAAAAAAA');
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
-      console.log(error);
-      
-      console.log("BBBBBBBBBBBBBBBBB");
-      console.log("CCCCCCCCCCCCCCCC");
-
     } catch (error) {
       console.error("Flight removal failed.", error);
     }
@@ -53,7 +47,6 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   };
 
   const openUpdCalendar = async (e: React.MouseEvent, flightId: number) => {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
     dispatch(clearFlightState());
     await dispatch(getMyFlights({ token }));
     dispatch(setToBeUpdFlightId(flightId))
