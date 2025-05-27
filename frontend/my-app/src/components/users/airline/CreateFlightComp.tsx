@@ -93,7 +93,7 @@ const CreateFlightComp = () => {
         </div>
 
         <button type="submit">Create Flight</button>
-        {loading && <p>Processing...</p>}
+        {loading && <p className='single-object-waiting'>Processing...</p>}
         {error && <p className='single-object-error '>{error}</p>}
         {successMsg && <p className='single-object-confirm'>{successMsg}</p>}
       </form>

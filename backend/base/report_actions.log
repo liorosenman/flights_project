@@ -2162,3 +2162,196 @@
 2025-05-27 19:03:16,388 - INFO - The removal of the customer liorking3 is requested by admin padmin
 2025-05-27 19:03:18,711 - INFO - The removal of the customer client7 is requested by admin padmin
 2025-05-27 19:03:18,774 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:14:59,513 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:14:59,518 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:14:59,580 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:14:59,584 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:15:49,013 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:15:49,037 - INFO - The airline berlin80 has successfully created the flight 8
+2025-05-27 19:15:51,153 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:15:51,156 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:15:51,240 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:15:51,244 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:16:21,001 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:16:21,021 - INFO - The airline berlin80 has successfully created the flight 9
+2025-05-27 19:16:22,569 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:16:22,573 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:16:22,630 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:16:22,633 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:17:17,487 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:17:17,509 - INFO - The airline berlin80 has successfully created the flight 10
+2025-05-27 19:17:19,398 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:17:19,402 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:17:19,467 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:17:19,471 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:19:03,598 - INFO - Airline berlin80 is requesting to remove the flight 10
+2025-05-27 19:19:28,498 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:19:28,503 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:19:53,411 - INFO - Airline berlin80 is requesting to remove the flight 9
+2025-05-27 19:19:53,418 - INFO - Airline berlin80 has successfully canceled the flight 9
+2025-05-27 19:19:53,487 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:19:53,489 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:20:46,855 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:20:46,858 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:20:46,929 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:20:46,932 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:22:26,581 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:22:26,591 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:22:26,677 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:22:26,684 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:22:49,649 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:22:49,655 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:22:49,716 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:22:49,720 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:24:43,258 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:24:43,280 - INFO - The airline berlin80 has successfully created the flight 11
+2025-05-27 19:24:52,191 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:24:52,194 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:24:52,279 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:24:52,283 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:25:07,003 - INFO - Airline berlin80 is requesting to remove the flight 11
+2025-05-27 19:25:29,604 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:25:29,607 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:26:32,467 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:26:32,482 - INFO - The airline berlin80 has successfully created the flight 12
+2025-05-27 19:26:34,551 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:26:34,555 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:26:34,639 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:26:34,644 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:26:41,794 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:26:41,797 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:27:16,975 - INFO - Airline berlin80 is requesting to update flight 12
+2025-05-27 19:27:16,980 - INFO - Airline berlin80 has successfully updated the flight 12
+2025-05-27 19:27:17,072 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:27:17,076 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:27:25,132 - INFO - Airline berlin80 is requesting to remove the flight 8
+2025-05-27 19:27:25,141 - INFO - Airline berlin80 has successfully canceled the flight 8
+2025-05-27 19:27:25,216 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:27:25,219 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:28:59,759 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:28:59,785 - INFO - The airline berlin80 has successfully created the flight 13
+2025-05-27 19:29:03,204 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:29:03,207 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:29:03,273 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:29:03,276 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:30:07,741 - INFO - Airline berlin80 is requesting to remove the flight 12
+2025-05-27 19:30:07,747 - INFO - Airline berlin80 has successfully canceled the flight 12
+2025-05-27 19:30:07,830 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:30:07,833 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:30:21,717 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:30:21,720 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:31:01,086 - INFO - Airline berlin80 is requesting to update flight 13
+2025-05-27 19:31:01,092 - INFO - Airline berlin80 has successfully updated the flight 13
+2025-05-27 19:31:01,194 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:31:01,199 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:31:47,246 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:31:47,283 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:31:49,014 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:31:49,053 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:31:53,059 - INFO - The removal of the customer liorking3 is requested by admin padmin
+2025-05-27 19:33:16,497 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:33:16,533 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:33:21,062 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:33:21,115 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:33:25,750 - INFO - The removal of the customer liorking3 is requested by admin padmin
+2025-05-27 19:33:27,188 - INFO - The removal of the customer client8 is requested by admin padmin
+2025-05-27 19:33:27,238 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:33:46,727 - INFO - The details of the customer liorking3 were requested.
+2025-05-27 19:33:47,844 - INFO - The removal of the customer liorking3 is requested by admin padmin
+2025-05-27 19:33:50,622 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:38:46,943 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:38:46,947 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:38:47,017 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:38:47,020 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:38:56,979 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:38:56,984 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:43:18,017 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:43:18,020 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:43:18,081 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:43:18,084 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:44:33,357 - INFO - Airline berlin80 is requesting to remove the flight 13
+2025-05-27 19:44:33,363 - INFO - Airline berlin80 has successfully canceled the flight 13
+2025-05-27 19:44:33,433 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:44:33,437 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:45:23,415 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:45:23,435 - INFO - The airline berlin80 has successfully created the flight 14
+2025-05-27 19:45:28,387 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:45:28,390 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:45:28,461 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:45:28,463 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:46:06,021 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 19:46:06,038 - INFO - The airline berlin80 has successfully created the flight 15
+2025-05-27 19:46:09,911 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:46:09,914 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:46:09,978 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:46:09,982 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:46:41,669 - INFO - Airline berlin80 is requesting to update flight 15
+2025-05-27 19:46:41,676 - INFO - Airline berlin80 has successfully updated the flight 15
+2025-05-27 19:46:41,759 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:46:41,764 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:46:57,913 - INFO - Airline berlin80 is requesting to remove the flight 14
+2025-05-27 19:46:57,922 - INFO - Airline berlin80 has successfully canceled the flight 14
+2025-05-27 19:46:58,015 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 19:46:58,019 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 19:48:01,619 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:48:01,659 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:48:41,986 - INFO - New admin, admin18, was  registered.
+2025-05-27 19:48:57,837 - INFO - New admin, admin19, was  registered.
+2025-05-27 19:49:13,037 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:49:13,085 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:49:16,672 - INFO - The removal of the admin admin18 is requested by admin padmin
+2025-05-27 19:49:16,736 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:49:18,602 - INFO - The removal of the admin admin19 is requested by admin padmin
+2025-05-27 19:49:18,671 - INFO - Admins list was requested by admin padmin.
+2025-05-27 19:49:58,555 - INFO - The removal of the airline berlin80 is requested by admin padmin
+2025-05-27 19:50:18,360 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:50:18,417 - INFO - Customers list was requested by admin padmin.
+2025-05-27 19:51:01,005 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:51:01,012 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:51:01,077 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:51:01,084 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:51:44,451 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-27 19:51:48,189 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:51:48,195 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:51:48,290 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:51:48,298 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:56:14,019 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-27 19:56:29,705 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:56:29,711 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:56:29,771 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 19:56:29,777 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 19:56:55,991 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-27 20:03:09,354 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-27 20:03:19,608 - INFO - Customer liorking3 has successfully updated his personal details.
+2025-05-27 22:04:31,912 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:04:32,957 - INFO - The airline berlin80 has successfully created the flight 16
+2025-05-27 22:04:56,936 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:04:56,965 - INFO - The airline berlin80 has successfully created the flight 17
+2025-05-27 22:05:00,161 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 22:05:00,172 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 22:05:00,249 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 22:05:00,253 - INFO - Airline berlin80 has successfully fetched its flights.
+2025-05-27 22:05:54,932 - INFO - The customer liorking3 successfully purchased a ticket to flight 16
+2025-05-27 22:05:56,549 - INFO - The customer liorking3 successfully purchased a ticket to flight 17
+2025-05-27 22:09:50,379 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:09:50,392 - INFO - The airline berlin80 has successfully created the flight 1
+2025-05-27 22:10:05,779 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:10:05,790 - INFO - The airline berlin80 has successfully created the flight 2
+2025-05-27 22:10:05,902 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:10:05,912 - INFO - The airline berlin80 has successfully created the flight 3
+2025-05-27 22:10:48,043 - INFO - The customer liorking3 successfully purchased a ticket to flight 2
+2025-05-27 22:11:20,511 - INFO - The customer liorking3 successfully purchased a ticket to flight 1
+2025-05-27 22:13:21,653 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:13:21,662 - INFO - The airline berlin80 has successfully created the flight 4
+2025-05-27 22:13:47,958 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:13:47,968 - INFO - The airline berlin80 has successfully created the flight 5
+2025-05-27 22:15:34,478 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:15:34,487 - INFO - The airline berlin80 has successfully created the flight 6
+2025-05-27 22:16:02,254 - INFO - The customer liorking3 successfully purchased a ticket to flight 6
+2025-05-27 22:16:03,581 - INFO - The customer liorking3 successfully purchased a ticket to flight 4
+2025-05-27 22:18:12,130 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:18:12,144 - INFO - The airline berlin80 has successfully created the flight 7
+2025-05-27 22:19:05,410 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:19:05,428 - INFO - The airline berlin80 has successfully created the flight 8
+2025-05-27 22:19:33,245 - INFO - The customer liorking3 successfully purchased a ticket to flight 8
+2025-05-27 22:19:34,353 - INFO - The customer liorking3 successfully purchased a ticket to flight 7
