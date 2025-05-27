@@ -217,6 +217,12 @@ export const getDepartureFlights = createAsyncThunk<
         state.targetFlightId = null;
         state.generalErr = null;
       },
+      clearTargetsAndMessages: (state) => {
+        state.error = null;
+        state.successMsg = null;
+        state.toBeUpdatedFlight = null;
+        state.targetFlightId = null;
+      },
       clearFlights: (state) => {
         state.flights = []
       },
@@ -373,4 +379,4 @@ export const getDepartureFlights = createAsyncThunk<
 
   export default flightSlice.reducer;
   export const selectFlightsState = (state: RootState) => state.flight
-  export const { clearFlightState, setTargetFlightId, setToBeUpdFlightId, clearFlights} = flightSlice.actions;
+  export const { clearFlightState, clearTargetsAndMessages, setTargetFlightId, setToBeUpdFlightId, clearFlights} = flightSlice.actions;

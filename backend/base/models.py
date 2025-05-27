@@ -90,8 +90,8 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     address = models.CharField(max_length=255)
-    phone_no = models.PositiveIntegerField(unique=True)
-    credit_card_no = models.BigIntegerField(unique=True)
+    phone_no = models.PositiveIntegerField()
+    credit_card_no = models.BigIntegerField()
     airport_user = models.OneToOneField('AirportUser', on_delete=models.CASCADE, related_name='customers')
 
 

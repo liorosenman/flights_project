@@ -1,93 +1,104 @@
 .centered-form {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-weight: 300; /* thin font */
-  }
-  
-  .centered-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 300; /* thin font */
-    padding-left: 2px;
-  }
-  
-  .centered-form input,
-  .centered-form select {
-    width: 100%;
-    padding: 8px 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* circular edges */
-    font-weight: 300;
-    outline: none;
-  }
-  
-  .centered-form button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: #007bff;
-    color: white;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .centered-form button:hover {
-    background-color: #0056b3;
-  }
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+}
 
-  .buy-ticket-btn {
-    width: 100%;
-    height: 100%;
-    background-color: #0d6efd; /* Bootstrap primary blue */
-    color: white;
-    font-weight: 500;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .buy-ticket-btn:hover {
-    background-color: #0b5ed7; /* Slightly darker on hover */
-  }
+.centered-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 300;
+  padding-left: 2px;
+}
 
-  .deactivate-btn {
-    width: 100%;
-    height: 100%;
-    background-color: #dc3545; /* Bootstrap danger red */
-    color: white;
-    font-weight: 500;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .deactivate-btn:hover {
-    background-color: #bb2d3b; /* Slightly darker red on hover */
-  }
+.centered-form input,
+.centered-form select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-weight: 300;
+  outline: none;
+}
 
-  .plus-btn {
-    width: 100%;
-    height: 100%;
-    background-color: #6c757d; /* Bootstrap's secondary grey */
-    color: white;
-    font-weight: 700; /* Bold */
-    font-size: 1.5rem; /* Enlarged font */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .plus-btn:hover {
-    background-color: #5a6268; /* Slightly darker on hover */
-  }
-  
-  
+.centered-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.centered-form button:hover {
+  background-color: #0056b3;
+}
+
+.buy-ticket-btn {
+  width: 100%;
+  height: 100%;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.buy-ticket-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.deactivate-btn {
+  width: 100%;
+  height: 100%;
+  background-color: #dc3545;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.deactivate-btn:hover {
+  background-color: #bb2d3b;
+}
+
+.plus-btn {
+  width: 100%;
+  height: 100%;
+  background-color: #6c757d;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.plus-btn:hover {
+  background-color: #5a6268;
+}
+
+.single-object-error {
+  font-size: 22px;
+  color: red;
+  font-weight: bold;
+}
+
+
+.single-object-confirm {
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
+}

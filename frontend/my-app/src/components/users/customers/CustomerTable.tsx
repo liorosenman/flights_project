@@ -22,13 +22,13 @@ const CustomerTable: React.FC = () => {
     dispatch(setTargetCustomerId(customerId))
     try {
       await dispatch(removeCustomer(customerId)).unwrap();
-      if (customers.length === 1){
+      if (customers.length === 1) {
         await dispatch(getCustomerByUsername(customers[0].username))
-      }else{
+      } else {
         await dispatch(fetchCustomers());
       }
       // await dispatch(fetchCustomers());
-      
+
     } catch (error) {
       console.error("Customer removal failed.", error);
     }
@@ -37,7 +37,7 @@ const CustomerTable: React.FC = () => {
   return (
     <div>
       <h1 className='heading-thin-center'>Customers</h1>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{ width: '90%' }}>
         <thead>
           <tr>
             <th>ID</th>
@@ -67,7 +67,14 @@ const CustomerTable: React.FC = () => {
               </tr>
               {(targetCustomerId === c.id) && (error || successMsg) && (
                 <tr>
-                  <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+                  <td
+                    colSpan={9}
+                    style={{
+                      fontSize: '22px',
+                      color: error ? 'red' : 'green',
+                      fontWeight: 'bold'
+                    }}
+                  >
                     {error || successMsg}
                   </td>
                 </tr>

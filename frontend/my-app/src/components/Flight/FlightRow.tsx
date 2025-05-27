@@ -1,7 +1,7 @@
 // Flight.js
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { addTicket, clearFlights, getMyFlights, loadFlights, removeFlight, selectFlightsState, updateFlight } from './flightSlice.tsx';
+import { addTicket, clearFlights, clearTargetsAndMessages, getMyFlights, loadFlights, removeFlight, selectFlightsState, updateFlight } from './flightSlice.tsx';
 import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
@@ -38,7 +38,7 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   const handleRemoval = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
     try {
-      // dispatch(clearFlightState())
+      dispatch(clearTargetsAndMessages())
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
       await dispatch(getMyFlights({ token })).unwrap();
     } catch (error) {
@@ -49,8 +49,9 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   };
 
   const openUpdCalendar = async (e: React.MouseEvent, flightId: number) => {
-    dispatch(clearFlightState());
-    await dispatch(getMyFlights({ token }));
+    // dispatch(clearFlightState());
+    dispatch(clearTargetsAndMessages())
+    // await dispatch(getMyFlights({ token }));
     dispatch(setToBeUpdFlightId(flightId))
   }
 
@@ -68,8 +69,6 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
       console.error("Flight update failed:", error);
     }
   };
-
-
 
   return (
     <>

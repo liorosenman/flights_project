@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { fetchAdmins, getAdminByUsername, removeAdmin, selectAdminState, setTargetAdminId } from './adminsSlice.tsx';
-import {clearAdminState} from './adminsSlice.tsx'
+import { clearAdminState } from './adminsSlice.tsx'
 import { clearUsersStates } from './UserManagerComp.tsx';
 import '../../../App.css'
 import { selectLoginState } from '../../Login/loginSlice.tsx';
@@ -9,7 +9,7 @@ import { selectLoginState } from '../../Login/loginSlice.tsx';
 const AdminTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { admins, loading, error, successMsg, targetAdminId } = useAppSelector(selectAdminState);
-  
+
   useEffect(() => {
     clearUsersStates(dispatch);
     dispatch(fetchAdmins());
@@ -21,11 +21,12 @@ const AdminTable: React.FC = () => {
     dispatch(setTargetAdminId(adminId))
     try {
       await dispatch(removeAdmin(adminId)).unwrap();
-      if (admins.length === 1){
+      if (admins.length === 1) {
         await dispatch(getAdminByUsername(admins[0].username))
-      }else{
+      } else {
         await dispatch(fetchAdmins());
-    }} catch (error) {
+      }
+    } catch (error) {
       console.error("Admin removal failed.", error);
     }
   };
@@ -33,7 +34,7 @@ const AdminTable: React.FC = () => {
   return (
     <div>
       <h1 className='heading-thin-center'>Admins</h1>
-      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{width:'90%'}}>
+      <table className="table table-bordered table-striped table-hover flight-table bg-white mx-auto text-center" style={{ width: '90%' }}>
         <thead>
           <tr>
             <th>ID</th>
@@ -61,10 +62,15 @@ const AdminTable: React.FC = () => {
               </tr>
               {((targetAdminId === a.id) && (error || successMsg)) && (
                 <tr>
-                  <td colSpan={8} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+                  <td
+                    colSpan={9}
+                    style={{
+                      fontSize: '22px',
+                      color: error ? 'red' : 'green',
+                      fontWeight: 'bold'
+                    }}
+                  >
                     {error || successMsg}
-                      {/* // ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-                      // : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)} */}
                   </td>
                 </tr>
               )}

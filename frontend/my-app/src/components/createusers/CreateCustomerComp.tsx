@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { AppDispatch } from '../../app/store.ts';
 import Menu from '../Menu/menuComp.tsx';
 import '../../App.css';
+import './styles.css'
 
 const CustomerSignupForm = () => {
     const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ const CustomerSignupForm = () => {
                 </div>
             ))}
             <button type="submit">Signup</button>
-            {loading && <p>Signing up...</p>}
+            {loading && <p className='single-object-waiting'>Signing up...</p>}
             {error && <p className='single-object-error'>{error}</p>} 
             {successMessage && <p className='single-object-confirm'>{successMessage}</p>} 
 

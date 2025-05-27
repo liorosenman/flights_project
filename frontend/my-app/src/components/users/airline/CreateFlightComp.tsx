@@ -94,8 +94,8 @@ const CreateFlightComp = () => {
 
         <button type="submit">Create Flight</button>
         {loading && <p>Processing...</p>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
+        {error && <p className='single-object-error '>{error}</p>}
+        {successMsg && <p className='single-object-confirm'>{successMsg}</p>}
       </form>
     </div>
 

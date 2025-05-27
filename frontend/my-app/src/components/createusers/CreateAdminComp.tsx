@@ -7,6 +7,7 @@ import { Country } from '../../models/country.ts';
 import { AppDispatch } from '../../app/store.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
 import  {clearRegisterResponses} from '../createusers/createUserSlicer.tsx';
+import './styles.css'
 
 const AdminForm = () => {
     const [formData, setFormData] = useState({
@@ -97,7 +98,7 @@ const AdminForm = () => {
             </div>
 
             <button type="submit">Submit</button>
-            {loading && <p>Signing up...</p>}
+            {loading && <p className='single-object-waiting'>Signing up...</p>}
             {error && <p className='single-object-error '>{error}</p>}
             {successMessage && <p className='single-object-confirm'>{successMessage}</p>}
         </form>

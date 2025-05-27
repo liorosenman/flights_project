@@ -1,23 +1,40 @@
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    width: 150px;
-    padding-left: 10px;
-    font-weight: bold;
-  }
-  
-  .form-group input {
-    width: 25%;
-    padding: 0.5rem;
-  }
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
-  .update-btn {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.2rem;
-    width: 25%;
-  }
-  
+.form-group label {
+  width: 150px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 25%;
+  padding: 0.5rem;
+}
+
+.update-btn {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  width: 25%;
+}
+
+.single-object-error {
+  font-size: 22px;
+  color: red;
+  font-weight: bold;
+}
+
+ד .single-object-confirm {
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
+}
+
+.single-object-waiting {
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+}

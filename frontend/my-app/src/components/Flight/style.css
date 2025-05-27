@@ -23,14 +23,13 @@
   background-color: #0056b3;
 }
 
-.fail {
+.single-object-error {
   font-size: 22px; 
   color: red;
   font-weight: bold;
 }
-
-
-.confirm {
+ד
+.single-object-confirm {
   font-size: 22px;
   color: green;
   font-weight: bold;

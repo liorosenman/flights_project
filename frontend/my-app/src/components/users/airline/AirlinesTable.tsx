@@ -63,7 +63,14 @@ const AirlinesTable: React.FC = () => {
               </tr>
               {(targetAirlineId === a.id) && (error || successMsg) && (
                 <tr>
-                  <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+                  <td
+                    colSpan={9}
+                    style={{
+                      fontSize: '22px',
+                      color: error ? 'red' : 'green',
+                      fontWeight: 'bold'
+                    }}
+                  >
                     {error || successMsg}
                   </td>
                 </tr>

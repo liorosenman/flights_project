@@ -37,7 +37,8 @@
   background-color: #6c757d;
 }
 
-.error-message {
+.single-object-error {
+  font-size: 22px; 
   color: red;
-  margin-top: 1rem;
+  font-weight: bold;
 }

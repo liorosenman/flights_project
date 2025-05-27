@@ -52,7 +52,7 @@ def conditions_for_cancel_a_ticket(): # Ticket can be canceled under these condi
                 )
             if not ticket.status == 'active':
                 return Response({"message": "Canceled ticket or already tookoff flight"}
-                    , status=status.HTTP_200_OK)
+                    , status=status.HTTP_400_BAD_REQUEST)
             return func(request, id, *args, **kwargs)
         return wrapper
     return decorator

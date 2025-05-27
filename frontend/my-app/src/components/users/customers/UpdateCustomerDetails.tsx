@@ -81,9 +81,9 @@ useEffect(() => {
                 <button className="btn btn-light update-btn" type="submit" style={{ fontSize: '1.2rem', padding: '0.6rem 1.2rem' }}
                 >Update
                 </button>
-                {loading && <p>Loading</p>}
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
+                {loading && <p className='single-object-waiting'>Loading</p>}
+                {error && <p className='single-object-error'>{error}</p>}
+                {successMsg && <p className='single-object-confirm'>{successMsg}</p>}
             </form>
 
         </div>

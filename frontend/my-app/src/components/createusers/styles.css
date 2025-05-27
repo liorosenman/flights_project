@@ -1,0 +1,18 @@
+.single-object-error {
+  font-size: 22px; 
+  color: red;
+  font-weight: bold;
+}
+
+
+.single-object-confirm {
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
+}
+
+.single-object-waiting {
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+}

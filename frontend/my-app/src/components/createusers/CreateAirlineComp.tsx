@@ -6,6 +6,7 @@ import { fetchCountries } from '../countries/countrySlicer.tsx';
 import { Country } from '../../models/country.ts';
 import { AppDispatch } from '../../app/store.ts';
 import SelectCountryComp from '../countries/SelectCountryComp.tsx';
+import './styles.css'
 
 const AirlineForm = () => {
     const [formData, setFormData] = useState({
@@ -91,7 +92,7 @@ const AirlineForm = () => {
 
             <button type="submit">Submit</button>
             {countryError && <p style={{ color: 'red' }}>Country Error: {countryError}</p>}
-            {loading && <p>Signing up...</p>}
+            {loading && <p className='single-object-waiting'>Signing up...</p>}
             {error && <p className='single-object-error'>{error}</p>}
             {successMessage && <p className='single-object-confirm'>{successMessage}</p>}
         </form>

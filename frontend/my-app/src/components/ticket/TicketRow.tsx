@@ -13,14 +13,15 @@ const TicketRow = ({ ticket }) => {
 
   const handleRemoval = async (e: React.MouseEvent, ticketId: number) => {
     e.preventDefault();
-    dispatch(clearTicketsState())
+    // dispatch(clearTicketsState())
     try {
       await dispatch(cancelTicket(ticketId)).unwrap();
+      await dispatch(getMyTickets({ token }));
     } catch (error) {
       console.error("Ticket removal failed.");
 
     }
-    await dispatch(getMyTickets({ token }));
+    // await dispatch(getMyTickets({ token }));
   };
 
   return (
@@ -48,7 +49,14 @@ const TicketRow = ({ ticket }) => {
 
       {((targetTicketId === ticket.ticket_id) && (error || SuccessMessage)) && (
         <tr>
-          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+            <td
+            colSpan={9}
+            style={{
+              fontSize: '22px',
+              color: error ? 'red' : 'green',
+              fontWeight: 'bold'
+            }}
+          >
             {error || SuccessMessage}
           </td>
         </tr>
