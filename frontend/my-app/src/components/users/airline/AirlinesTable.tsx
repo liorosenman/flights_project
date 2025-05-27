@@ -4,7 +4,7 @@ import { fetchAirlines, getAirlineByUsername, removeAirline, setTargetAirlineId 
 import { clearAirlineState } from './airlineSlicer.tsx'
 import { selectAirlineState } from './airlineSlicer.tsx';
 import { clearUsersStates } from '../admins/UserManagerComp.tsx';
-import '../../../App.css'
+import '../../../App.css';
 
 const AirlinesTable: React.FC = () => {
   const dispatch = useAppDispatch();

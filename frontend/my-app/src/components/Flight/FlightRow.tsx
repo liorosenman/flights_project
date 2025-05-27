@@ -6,6 +6,7 @@ import { formatDateTime } from '../../utils/DateTimeFormat.ts';
 import { setToBeUpdFlightId, clearFlightState } from './flightSlice.tsx'
 import { LinkedFlightData } from '../../models/LinkedFlightData.ts';
 import './style.css';
+import '../../App.css';
 
 interface FlightRowProps {
   flight: LinkedFlightData;
@@ -37,13 +38,14 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
   const handleRemoval = async (e: React.MouseEvent, flightId: number) => {
     e.preventDefault();
     try {
-      dispatch(clearFlightState())
+      // dispatch(clearFlightState())
       await dispatch(removeFlight({ flight_id: flightId })).unwrap();
+      await dispatch(getMyFlights({ token })).unwrap();
     } catch (error) {
       console.error("Flight removal failed.", error);
     }
-    
-    await dispatch(getMyFlights({ token })).unwrap();
+
+    // await dispatch(getMyFlights({ token })).unwrap();
   };
 
   const openUpdCalendar = async (e: React.MouseEvent, flightId: number) => {
@@ -144,10 +146,15 @@ const FlightRow: React.FC<FlightRowProps> = ({ flight, onRefilter }) => {
 
       {(targetFlightId === flight.flight_id || toBeUpdatedFlight === flight.flight_id) && (error || successMsg) && (
         <tr>
-          <td colSpan={9} style={{ textAlign: 'center', color: error ? 'red' : 'green' }}>
+          <td
+            colSpan={9}
+            style={{
+              fontSize: '22px',
+              color: error ? 'red' : 'green',
+              fontWeight: 'bold'
+            }}
+          >
             {error || successMsg}
-            {/* // ? (typeof error === 'object' && error !== null ? (error as any).message : error)
-              // : (typeof successMsg === 'object' && successMsg !== null ? (successMsg as any).message : successMsg)} */}
           </td>
         </tr>
       )}

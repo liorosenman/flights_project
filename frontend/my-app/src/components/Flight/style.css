@@ -22,3 +22,16 @@
 .update-button:hover {
   background-color: #0056b3;
 }
+
+.fail {
+  font-size: 22px; 
+  color: red;
+  font-weight: bold;
+}
+
+
+.confirm {
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
+}

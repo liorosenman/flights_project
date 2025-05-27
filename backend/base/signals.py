@@ -51,7 +51,8 @@ def create_default_countries(sender, **kwargs):
                 print(f"⚠️ Directory {images_path} does not exist.")
 
 
-    
+@receiver(post_migrate)
+def create_prime_admin(sender, **kwargs):
     if Admin.objects.exists():
         return 
     user_role = UserRole.objects.get(id = Roles.ADMINISTRATOR.value)
