@@ -48,7 +48,7 @@ export const getMyFlights = createAsyncThunk(
       const data = await getMyFlightsService(token);
       return data.flights;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.error || 'Failed to retrieve flights.');
+      return rejectWithValue(error.response?.data?.message || 'Failed to retrieve flights.');
     }
   }
 );

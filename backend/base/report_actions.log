@@ -2355,3 +2355,255 @@
 2025-05-27 22:19:05,428 - INFO - The airline berlin80 has successfully created the flight 8
 2025-05-27 22:19:33,245 - INFO - The customer liorking3 successfully purchased a ticket to flight 8
 2025-05-27 22:19:34,353 - INFO - The customer liorking3 successfully purchased a ticket to flight 7
+2025-05-27 22:21:11,245 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:21:11,567 - INFO - The airline berlin80 has successfully created the flight 9
+2025-05-27 22:22:10,100 - INFO - The customer liorking3 successfully purchased a ticket to flight 9
+2025-05-27 22:22:22,097 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 22:22:22,103 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 22:22:22,165 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 22:22:22,170 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 22:22:37,810 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 22:22:37,816 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 22:22:37,865 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 22:22:37,871 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 22:22:40,214 - INFO - The customer liorking3 successfully canceled the ticket 7 to flight 9
+2025-05-27 22:22:40,289 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 22:22:40,298 - INFO - The customer liorking3 has successfully fetched his bookings.
+2025-05-27 22:22:46,242 - INFO - The customer liorking3 successfully purchased a ticket to flight 9
+2025-05-27 22:24:57,426 - INFO - The airline berlin80 is requesting to create a flight.
+2025-05-27 22:24:57,460 - INFO - The airline berlin80 has successfully created the flight 10
+2025-05-27 22:34:10,830 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:10,867 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:18,414 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:18,455 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:49,543 - INFO - New admin, admin20, was  registered.
+2025-05-27 22:34:51,999 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:52,055 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:34:56,393 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-27 22:34:58,531 - INFO - The removal of the admin admin20 is requested by admin padmin
+2025-05-27 22:34:58,590 - INFO - Admins list was requested by admin padmin.
+2025-05-27 22:35:01,703 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-27 23:11:02,179 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:11:02,220 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:11:21,543 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:11:21,579 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:12:24,502 - INFO - New airline, frank80, was  registered.
+2025-05-27 23:13:06,310 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:13:06,346 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:13:46,568 - INFO - New admin, admin21, was  registered.
+2025-05-27 23:14:02,946 - INFO - Admins list was requested by admin admin21.
+2025-05-27 23:14:02,986 - INFO - Admins list was requested by admin admin21.
+2025-05-27 23:14:11,340 - INFO - The removal of the admin admin21 is requested by admin admin21
+2025-05-27 23:14:43,476 - INFO - Airline frank80 is requesting to fetch the details of its flights.
+2025-05-27 23:14:43,542 - INFO - Airline frank80 is requesting to fetch the details of its flights.
+2025-05-27 23:15:41,016 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:15:41,051 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:16:14,516 - INFO - The removal of the admin admin21 is requested by admin padmin
+2025-05-27 23:16:14,564 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:16:19,598 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:16:19,641 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:16:22,062 - INFO - The removal of the customer dima77 is requested by admin padmin
+2025-05-27 23:16:22,103 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:16:27,581 - INFO - The removal of the airline frank80 is requested by admin padmin
+2025-05-27 23:18:56,467 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 23:18:56,505 - INFO - The customer liorking3 is requesting his bookings.
+2025-05-27 23:19:21,923 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:19:21,978 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:22:09,090 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:22:09,170 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:25:21,934 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:25:21,975 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:25:23,552 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:25:23,609 - INFO - Airline berlin80 is requesting to fetch the details of its flights.
+2025-05-27 23:26:51,480 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:26:51,525 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:26:53,577 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:26:53,601 - INFO - Customers list was requested by admin padmin.
+2025-05-27 23:27:42,005 - INFO - Admins list was requested by admin padmin.
+2025-05-27 23:27:42,033 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:07:41,430 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:07:41,476 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:07:46,140 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:07:46,177 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:07:48,224 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:07:48,281 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:07:54,243 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:07:54,293 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:08:10,562 - INFO - The details of the customer padmin were requested.
+2025-05-28 17:08:18,966 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:08:19,009 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:10:08,114 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:10:08,157 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:10:12,097 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:10:12,780 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:11:09,394 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:11:09,442 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:50:20,504 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:50:20,552 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:50:23,434 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-28 17:50:26,740 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:50:26,781 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:50:44,404 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:50:44,453 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:52:35,955 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:52:36,004 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:52:52,718 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:52:52,786 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:28,008 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:28,056 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:46,437 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:46,507 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:50,778 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:50,825 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:55,305 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:54:55,379 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:55:11,149 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:55:11,186 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:55:45,920 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:55:45,974 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:55:50,700 - INFO - The details of the admin adm were requested by admin padmin.
+2025-05-28 17:56:26,393 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:56:26,434 - INFO - Admins list was requested by admin padmin.
+2025-05-28 17:56:28,185 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:56:28,223 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:32,661 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:32,737 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:37,516 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:37,566 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:39,345 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:39,404 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:48,413 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:57:48,472 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:08,620 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:08,668 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:10,522 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:10,576 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:13,040 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:13,102 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:16,711 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:16,755 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:23,509 - INFO - Customers list was requested by admin padmin.
+2025-05-28 17:58:23,548 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:01:51,354 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:01:51,393 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:25,523 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:25,599 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:37,946 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:03:37,993 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:03:40,550 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:40,596 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:55,535 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:03:55,588 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:24,121 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:24,149 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:29,566 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:29,635 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:31,866 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:31,934 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:36,153 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:36,223 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:38,581 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:38,628 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:55,153 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:05:55,194 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:06:25,233 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:06:25,281 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:06:46,681 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:06:46,728 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:09:46,129 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:09:46,177 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:09:47,719 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:09:47,769 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:12:07,543 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:12:07,600 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:12:10,155 - INFO - The details of the customer a were requested.
+2025-05-28 18:12:14,111 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:12:25,463 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:12:25,524 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:12:27,214 - WARNING - A request was made to remove prime admin by admin padmin 
+2025-05-28 18:12:33,807 - INFO - The details of the admin padmin were requested by admin padmin.
+2025-05-28 18:13:31,104 - INFO - New admin, admin1, was  registered.
+2025-05-28 18:13:33,516 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:13:33,557 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:14:38,461 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:14:38,516 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:14:42,442 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:14:42,504 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:15:22,837 - INFO - New airline, toronto80, was  registered.
+2025-05-28 18:15:47,338 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:15:47,388 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:15:56,872 - INFO - The details of the customer customer1 were requested.
+2025-05-28 18:15:59,145 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:15:59,199 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:16:03,857 - INFO - The details of the admin admin1 were requested by admin padmin.
+2025-05-28 18:16:20,040 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:16:20,092 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:16:24,929 - INFO - The removal of the admin admin1 is requested by admin padmin
+2025-05-28 18:16:25,010 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:16:35,638 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:16:35,673 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:16:38,057 - INFO - The removal of the customer customer1 is requested by admin padmin
+2025-05-28 18:16:38,108 - INFO - The details of the customer customer1 were requested.
+2025-05-28 18:16:46,091 - INFO - The removal of the airline toronto80 is requested by admin padmin
+2025-05-28 18:17:22,320 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:17:22,365 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:17:36,113 - INFO - The details of the admin admin1 were requested by admin padmin.
+2025-05-28 18:17:37,794 - INFO - Admins list was requested by admin padmin.
+2025-05-28 18:17:39,442 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:17:39,494 - INFO - Customers list was requested by admin padmin.
+2025-05-28 18:17:47,090 - INFO - The details of the customer customer1 were requested.
+2025-05-28 18:22:06,034 - INFO - New airline, newyork80, was  registered.
+2025-05-28 18:23:19,213 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-28 18:23:19,237 - INFO - The airline newyork80 has successfully created the flight 1
+2025-05-28 18:23:21,848 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:23:21,861 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:23:21,923 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:23:21,926 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:23:41,277 - INFO - Airline newyork80 is requesting to update flight 1
+2025-05-28 18:23:41,295 - INFO - Airline newyork80 has successfully updated the flight 1
+2025-05-28 18:23:41,367 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:23:41,370 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:23:54,022 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:23:54,026 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:23:54,089 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:23:54,092 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:24:00,652 - INFO - Airline newyork80 is requesting to remove the flight 1
+2025-05-28 18:24:00,660 - INFO - Airline newyork80 has successfully canceled the flight 1
+2025-05-28 18:24:00,717 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:24:00,721 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:41:10,441 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-28 18:41:10,459 - INFO - The airline newyork80 has successfully created the flight 2
+2025-05-28 18:41:13,600 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:41:13,603 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:41:13,663 - INFO - Airline newyork80 is requesting to fetch the details of its flights.
+2025-05-28 18:41:13,666 - INFO - Airline newyork80 has successfully fetched its flights.
+2025-05-28 18:53:11,081 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-28 18:53:11,113 - INFO - The airline newyork80 has successfully created the flight 3
+2025-05-28 19:01:30,160 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:30,222 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:37,832 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:37,883 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:42,448 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:42,499 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:01:57,955 - INFO - The customer customer2 successfully purchased a ticket to flight 2
+2025-05-28 19:01:59,670 - INFO - The customer customer2 successfully purchased a ticket to flight 3
+2025-05-28 19:04:17,750 - INFO - Customer customer2 has successfully updated his personal details.
+2025-05-28 19:04:19,816 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:04:19,821 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:04:19,874 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:04:19,880 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:04:46,940 - INFO - Customer customer2 has successfully updated his personal details.
+2025-05-28 19:05:08,320 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:08,326 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:05:08,379 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:08,384 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:05:15,500 - INFO - The customer customer2 successfully canceled the ticket 1 to flight 2
+2025-05-28 19:05:15,539 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:15,544 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:05:16,412 - INFO - The customer customer2 successfully canceled the ticket 2 to flight 3
+2025-05-28 19:05:16,481 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:16,489 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:05:24,747 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:24,762 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-28 19:05:24,832 - INFO - The customer customer2 is requesting his bookings.
+2025-05-28 19:05:24,838 - INFO - The customer customer2 has successfully fetched his bookings.

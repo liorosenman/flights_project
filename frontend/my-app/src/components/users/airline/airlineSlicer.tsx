@@ -48,7 +48,7 @@ export const fetchAirlines = createAsyncThunk(
       const data = await getAllAirlinesService(); // no token needed
       return data;
     } catch (err: any) {
-      return rejectWithValue(err.response?.data?.message || 'Failed to fetch airlines');
+      return rejectWithValue(err.response?.data?.error || 'Failed to fetch airlines');
     }
   }
 );
@@ -133,7 +133,8 @@ const AirlineSlicer = createSlice({
     builder
       .addCase(fetchAirlines.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string;
+        state.error = null;
+        state.filterError = action.payload as string;
       })
       .addCase(fetchAirlines.fulfilled, (state, action) => {
         state.loading = false;

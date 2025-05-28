@@ -29,16 +29,19 @@ const initialState: CustomerState = {
       const token = (getState() as RootState).login.token;
       if (!token) return rejectWithValue('No token');
       try {
-        return await getAllCustomersService(token);
+        const response = await getAllCustomersService(token);
+        console.log(response);
+        return response;
       } catch (err: any) {
-        return rejectWithValue(err.error);
+        console.log(err);
+        return rejectWithValue(err.response.data.error);
       }
     }
   );
 
   export const removeCustomer = createAsyncThunk<
-  { message: string },  // return type
-  number,                               // input: customer ID
+  { message: string }, 
+  number,                              
   { state: RootState; rejectValue: string }
 >(
   'customer/removeCustomer',
@@ -48,8 +51,6 @@ const initialState: CustomerState = {
 
     try {
       const result = await removeCustomerService(customerId, token);
-      console.log(result);
-      
       return result;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.error || 'Customer removal failed.');
@@ -142,6 +143,8 @@ export const getCustomerByUserId = createAsyncThunk<
           state.loading = false;
           state.filterError = action.payload as string;
           state.error = null;
+          console.log(state.filterError);
+          
         })
         .addCase(removeCustomer.pending, (state) => {
           state.loading = true;

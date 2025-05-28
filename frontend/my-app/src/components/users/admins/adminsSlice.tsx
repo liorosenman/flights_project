@@ -4,7 +4,7 @@ import { getAdminByUsernameService, getAllAdminsService, removeAdminService } fr
 import { LinkedAdmin } from '../../../models/LinkedAdmin.ts';
 import { logout } from '../../Login/loginSlice.tsx';
 
-interface CustomerState {
+interface AdminState {
   admins: LinkedAdmin[];
   loading: boolean;
   error: string | null;
@@ -13,7 +13,7 @@ interface CustomerState {
   filterError: string | null;
 }
 
-const initialState: CustomerState = {
+const initialState: AdminState = {
   admins: [],
   loading: false,
   error: null,

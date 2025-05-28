@@ -12,7 +12,7 @@ from django.contrib.auth.hashers import make_password
 
 
 @receiver(post_migrate)
-def create_default_roles(sender, **kwargs):
+def create_default_roles_and_prime_admin(sender, **kwargs):
     if sender.name != "base":
         return
 
@@ -24,7 +24,24 @@ def create_default_roles(sender, **kwargs):
             for role in RolesEnum:
                 UserRole.objects.get_or_create(role_name=role.value)
             print("Default roles created.")
-
+    if Admin.objects.exists():
+        return 
+    user_role = UserRole.objects.get(id = Roles.ADMINISTRATOR.value)
+    if not AirportUser.objects.filter(username='padmin').exists():
+        airport_user = AirportUser.objects.create(
+            username='padmin',
+            email='padmin@admin.com',
+            password=make_password('prime123'),
+            is_staff=True,
+            is_superuser=True,
+            is_active=True,
+            role_name = user_role
+        )
+        Admin.objects.create(
+            first_name='primea',
+            last_name='padmin',
+            airport_user=airport_user
+        )
 
 @receiver(post_migrate)
 def create_default_countries(sender, **kwargs):
@@ -51,26 +68,9 @@ def create_default_countries(sender, **kwargs):
                 print(f"⚠️ Directory {images_path} does not exist.")
 
 
-@receiver(post_migrate)
-def create_prime_admin(sender, **kwargs):
-    if Admin.objects.exists():
-        return 
-    user_role = UserRole.objects.get(id = Roles.ADMINISTRATOR.value)
-    if not AirportUser.objects.filter(username='padmin').exists():
-        airport_user = AirportUser.objects.create(
-            username='padmin',
-            email='padmin@admin.com',
-            password=make_password('prime123'),
-            is_staff=True,
-            is_superuser=True,
-            is_active=True,
-            role_name = user_role
-        )
-        Admin.objects.create(
-            first_name='primea',
-            last_name='padmin',
-            airport_user=airport_user
-        )
+# @receiver(post_migrate)
+# def create_prime_admin(sender, **kwargs):
+
 
 def all_required_tables_exist(app_label):
     expected_tables = {

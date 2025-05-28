@@ -56,6 +56,11 @@ def get_customers_details(request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_customers_details()")
             rows = cursor.fetchall()
+            if not rows:
+                return Response(
+                    {"error": "No customers found."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
             columns = [col[0] for col in cursor.description]
             customers = [dict(zip(columns, row)) for row in rows]
         return Response(customers, status=status.HTTP_200_OK)
@@ -198,6 +203,11 @@ def get_airlines_details(request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM get_airlines_details()")
             rows = cursor.fetchall()
+            if not rows:
+                return Response(
+                    {"error": "No airlines found."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
             columns = [col[0] for col in cursor.description]
             airlines = [dict(zip(columns, row)) for row in rows]
 

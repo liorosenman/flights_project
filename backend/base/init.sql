@@ -38,7 +38,7 @@ RETURNS TABLE (
     credit_card_no INTEGER,
     email VARCHAR,
     airport_id BIGINT,
-    status BOOLEAN,
+    status BOOLEAN
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -52,7 +52,7 @@ BEGIN
         c.credit_card_no::INTEGER AS credit_card_no,
         u.email::VARCHAR AS email,
         u.id::BIGINT AS airport_id,
-        u.is_active::BOOLEAN AS status,
+        u.is_active::BOOLEAN AS status
     FROM base_customer AS c
     JOIN base_airportuser AS u ON c.airport_user_id = u.id
     WHERE u.username = input_username AND u.role_name_id = 2;
@@ -66,7 +66,7 @@ RETURNS TABLE (
     first_name VARCHAR,
     last_name VARCHAR,
     address VARCHAR,
-    phone_no INTEGER,,
+    phone_no INTEGER,
     credit_card_no INTEGER,
     email VARCHAR,
     airport_id BIGINT,
@@ -84,10 +84,10 @@ BEGIN
         c.credit_card_no::INTEGER AS credit_card_no,
         u.email::VARCHAR AS email,
         u.id::BIGINT AS airport_id,
-        u.is_active::BOOLEAN AS status,
+        u.is_active::BOOLEAN AS status
     FROM base_customer AS c
     JOIN base_airportuser AS u ON c.airport_user_id = u.id
-    WHERE u.id = user_id
+    WHERE u.id = user_id;
 END;
 $$ LANGUAGE plpgsql;
 --##########################################################################
@@ -114,21 +114,6 @@ BEGIN
     WHERE u.username = input_username;
 END;
 $$ LANGUAGE plpgsql;
-
-
--- ####################################################################################
-CREATE OR REPLACE FUNCTION get_active_tickets_of_an_airline(id BIGINT)
-RETURNS TABLE (
-ticket_id BIGINT,
-) AS $$
-BEGIN
-    RETURN QUERY
-    SELECT
-        t.id AS ticket_id
-    FROM
-        ticket
-
-
 
 
 
@@ -334,8 +319,6 @@ $$ LANGUAGE plpgsql;
 
 
 -- ####################################################################################
-
-
 CREATE OR REPLACE FUNCTION deactivate_expired_flights()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -412,7 +395,6 @@ BEGIN
     JOIN base_country as co ON f.origin_country_id_id = co.id
     JOIN base_country as cd ON f.destination_country_id_id = cd.id
     WHERE f.airline_company_id_id = airline_id;
-
     END;
 $$ LANGUAGE plpgsql;   
 
@@ -438,7 +420,7 @@ $$ LANGUAGE plpgsql;
 -- ####################################################################################
 -- Probably unneccessary
 CREATE OR REPLACE FUNCTION get_active_customer_tickets(airline_id BIGINT)
-RETURNS TABLE
+RETURNS TABLE(
 ticket_id BIGINT
 
 ) AS $$
@@ -449,7 +431,7 @@ BEGIN
     FROM base_ticket as t
     JOIN base_flight as f ON t.flight_id_id = f.id
     JOIN base_airline as al ON f.airline_company_id_id = al.id
-    WHERE al.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'))
+    WHERE al.id = airline_id AND (f.flight = 'tookoff' OR (f.status = 'active' AND t.status = 'active'));
 
     END;
 $$ LANGUAGE plpgsql; 

@@ -9,7 +9,7 @@ interface Props {
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectCountryComp: React.FC<Props> = ({ value, onChange }) => {
+const SelectCountryComp: React.FC<Props> = ({ label, value, onChange }) => {
   const dispatch = useAppDispatch();
   const countryList = useAppSelector((state) => state.country.countries);
   const loading = useAppSelector((state) => state.country.loading);
@@ -20,8 +20,8 @@ const SelectCountryComp: React.FC<Props> = ({ value, onChange }) => {
 
   return (
     <div>
-      <label>Country:</label>
-      <select name="country_id" value={value} onChange={onChange} className="form-select" required>
+      <label htmlFor="country_id">{label}</label>
+      <select id="country_id" name="country_id" value={value} onChange={onChange} className="form-select" required>
         <option value="">Select Country</option>
         {loading && <option>Loading...</option>}
         {countryList.map((country) => (
