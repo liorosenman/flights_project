@@ -90,66 +90,7 @@ BEGIN
     WHERE u.id = user_id;
 END;
 $$ LANGUAGE plpgsql;
---##########################################################################
-CREATE OR REPLACE FUNCTION get_admin_data_by_username(input_username TEXT)
-RETURNS TABLE (
-    id BIGINT,
-    username VARCHAR,
-    first_name VARCHAR,
-    last_name VARCHAR,
-    email VARCHAR,
-    airport_id BIGINT
-) AS $$
-BEGIN
-    RETURN QUERY
-    SELECT
-        al.id::BIGINT AS AdminID,
-        u.username::VARCHAR AS username,
-        al.first_name::VARCHAR AS first_name,
-        al.last_name::VARCHAR AS last_name,
-        u.email::VARCHAR AS email,
-        u.id::BIGINT AS airport_id
-    FROM base_admin AS al
-    JOIN base_airportuser AS u ON al.airport_user_id = u.id
-    WHERE u.username = input_username;
-END;
-$$ LANGUAGE plpgsql;
 
-
-
--- ####################################################################################
-CREATE OR REPLACE FUNCTION get_flights_by_airline_id(airline_id BIGINT)
-RETURNS TABLE (
-flight_id BIGINT,
-airline_name TEXT,
-origin_country_name TEXT,
-destination_country_name TEXT,
-departure_time TIMESTAMP,
-landing_time TIMESTAMP,
-remaining_tickets INTEGER
-) AS $$
-BEGIN
-    RETURN QUERY
-    SELECT
-    f.id::BIGINT AS flight_id,
-    al.name::TEXT AS airline_name,
-    co.name::TEXT AS origin_country_name,
-    cd.name::TEXT AS destination_country_name,
-    f.departure_time::TIMESTAMP AS departure_time,
-    f.landing_time::TIMESTAMP AS landing_time,
-    f.remaining_tickets::INTEGER AS remaining_tickets
-
-    FROM base_flight AS f
-    JOIN base_country AS co
-    ON f.origin_country_id_id = co.id
-    JOIN base_country AS cd
-    ON f.destination_country_id_id = cd.id
-    JOIN base_airline AS al
-    ON f.airline_company_id_id = al.id
-    WHERE f.airline_company_id_id = airline_id
-    ORDER BY f.departure_time;
-END;
-$$ LANGUAGE plpgsql;
 -- ####################################################################################
 CREATE OR REPLACE FUNCTION get_tickets_by_customer_id(customer_id BIGINT)
 RETURNS TABLE (
@@ -317,22 +258,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
--- ####################################################################################
-CREATE OR REPLACE FUNCTION deactivate_expired_flights()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.departure_time <= CURRENT_TIMESTAMP THEN
-        NEW.is_active = FALSE;
-    END IF;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER IF NOT EXISTS check_flight_status
-BEFORE INSERT OR UPDATE ON flight
-FOR EACH ROW
-EXECUTE FUNCTION deactivate_expired_flights();
 
 -- ####################################################################################
 

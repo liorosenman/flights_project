@@ -2607,3 +2607,33 @@
 2025-05-28 19:05:24,762 - INFO - The customer customer2 has successfully fetched his bookings.
 2025-05-28 19:05:24,832 - INFO - The customer customer2 is requesting his bookings.
 2025-05-28 19:05:24,838 - INFO - The customer customer2 has successfully fetched his bookings.
+2025-05-29 11:19:10,582 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:19:10,643 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:19:20,270 - INFO - Customers list was requested by admin padmin.
+2025-05-29 11:19:20,318 - INFO - Customers list was requested by admin padmin.
+2025-05-29 11:20:53,365 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-29 11:20:54,311 - INFO - The airline newyork80 has successfully created the flight 4
+2025-05-29 11:23:16,011 - INFO - The airline newyork80 is requesting to create a flight.
+2025-05-29 11:23:16,032 - INFO - The airline newyork80 has successfully created the flight 5
+2025-05-29 11:23:57,911 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:23:57,969 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:24:18,975 - INFO - New airline, jerus80, was  registered.
+2025-05-29 11:25:24,141 - INFO - The airline jerus80 is requesting to create a flight.
+2025-05-29 11:25:24,157 - INFO - The airline jerus80 has successfully created the flight 6
+2025-05-29 11:25:59,515 - INFO - The customer customer2 successfully purchased a ticket to flight 4
+2025-05-29 11:26:01,195 - INFO - The customer customer2 successfully purchased a ticket to flight 5
+2025-05-29 11:27:42,365 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:27:42,413 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:28:03,193 - INFO - The details of the admin admin1 were requested by admin padmin.
+2025-05-29 11:28:30,217 - INFO - New admin, admin3, was  registered.
+2025-05-29 11:28:32,917 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:28:32,951 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:29:03,787 - INFO - New admin, admin4, was  registered.
+2025-05-29 11:29:12,384 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:29:12,419 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:29:20,747 - INFO - The details of the admin admin4 were requested by admin padmin.
+2025-05-29 11:29:27,076 - INFO - The details of the admin admin1 were requested by admin padmin.
+2025-05-29 11:29:35,859 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:29:39,391 - INFO - The details of the admin admin3 were requested by admin padmin.
+2025-05-29 11:29:40,637 - INFO - The removal of the admin admin3 is requested by admin padmin
+2025-05-29 11:29:40,691 - INFO - The details of the admin admin3 were requested by admin padmin.
