@@ -50,7 +50,7 @@ def airline_register(request):
     
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
-def get_customers_details(request):
+def get_customers_details(request): # List of all customers
     logger.info(f"Customers list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
@@ -71,10 +71,9 @@ def get_customers_details(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-# Managing for admin, load details to update for customer.
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
-def get_customer_by_username(request, username):
+def get_customer_by_username(request, username): # Search for a specific customer by username.
     logger.info(f"The details of the customer {username} were requested.")
     try:
         with connection.cursor() as cursor:
@@ -100,6 +99,7 @@ def get_customer_by_username(request, username):
 @role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_airline(request, id):
+    # The admin can remove an airline whose all flights' status is either 'canceled', 'landed' or 'active' without 'active' tickets.
     airline = get_object_or_404(Airline, id = id)
     airport_user = AirportUser.objects.get(id = airline.airport_user_id)
     logger.info(f"The removal of the airline {airport_user.username} is requested by admin {request.user.username}")
@@ -130,6 +130,7 @@ def remove_airline(request, id):
 @role_required(Roles.ADMINISTRATOR.value)
 @decorators.update_flights_status()
 def remove_customer(request, id):
+    # A customer can be removed if he doesn't have tickets that are either 'active' or 'took-off's
     customer = get_object_or_404(Customer, id = id)
     airport_user = AirportUser.objects.get(id = customer.airport_user_id)
     logger.info(f"The removal of the customer {airport_user.username} is requested by admin {request.user.username}")
@@ -152,6 +153,7 @@ def remove_customer(request, id):
 @api_view(['PUT'])
 @role_required(Roles.ADMINISTRATOR.value)
 def remove_admin(request, id):
+    # Prime admin (id=1) cannot be removed. Admin cannot remove himself.
     if (id == 1):
           logger.warning(f"A request was made to remove prime admin by admin {request.user.username} ")
           return Response({"error": "Prime admin must not be removed!"}, status=status.HTTP_403_FORBIDDEN)
@@ -179,6 +181,7 @@ def remove_admin(request, id):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_admins_details(request):
+    # List of all admins.
     logger.info(f"Admins list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
@@ -198,6 +201,7 @@ def get_admins_details(request):
 @api_view(['GET'])
 # @role_required(Roles.ADMINISTRATOR.value)
 def get_airlines_details(request):
+    # List of all airlines.
     # logger.info(f"Airlines list was requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
@@ -223,6 +227,7 @@ def get_airlines_details(request):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_admin_by_username(request, username):
+    # Search for a specific admin by username.
     logger.info(f"The details of the admin {username} were requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:
@@ -246,6 +251,7 @@ def get_admin_by_username(request, username):
 @api_view(['GET'])
 @role_required(Roles.ADMINISTRATOR.value)
 def get_airline_by_username(request, username):
+       # Search for a specific airline by username.
     logger.info(f"The details of the airline {username} were requested by admin {request.user.username}.")
     try:
         with connection.cursor() as cursor:

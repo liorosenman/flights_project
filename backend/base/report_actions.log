@@ -2637,3 +2637,28 @@
 2025-05-29 11:29:39,391 - INFO - The details of the admin admin3 were requested by admin padmin.
 2025-05-29 11:29:40,637 - INFO - The removal of the admin admin3 is requested by admin padmin
 2025-05-29 11:29:40,691 - INFO - The details of the admin admin3 were requested by admin padmin.
+2025-05-29 11:32:39,065 - INFO - The customer customer2 successfully purchased a ticket to flight 6
+2025-05-29 11:33:01,129 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:33:01,184 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:33:08,778 - INFO - The details of the admin admin3 were requested by admin padmin.
+2025-05-29 11:33:48,578 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:33:48,611 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:34:10,262 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:34:10,305 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:34:17,380 - INFO - Customers list was requested by admin padmin.
+2025-05-29 11:34:17,409 - INFO - Customers list was requested by admin padmin.
+2025-05-29 11:34:24,235 - INFO - The removal of the airline jerus80 is requested by admin padmin
+2025-05-29 11:35:09,241 - INFO - New airline, hels80, was  registered.
+2025-05-29 11:35:40,974 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:35:41,001 - INFO - Admins list was requested by admin padmin.
+2025-05-29 11:35:52,804 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:35:52,846 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:36:06,881 - INFO - The removal of the airline hels80 is requested by admin admin4
+2025-05-29 11:46:08,509 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:46:08,560 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:46:35,659 - INFO - New airline, frank80, was  registered.
+2025-05-29 11:47:16,699 - INFO - The airline frank80 is requesting to create a flight.
+2025-05-29 11:47:16,732 - INFO - The airline frank80 has successfully created the flight 7
+2025-05-29 11:48:34,204 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:48:34,243 - INFO - Admins list was requested by admin admin4.
+2025-05-29 11:48:39,741 - INFO - The removal of the airline frank80 is requested by admin admin4

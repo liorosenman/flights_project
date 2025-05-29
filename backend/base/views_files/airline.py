@@ -50,7 +50,7 @@ def add_flight(request):
 @role_required(Roles.AIRLINE.value)
 @airline_flight_auth()
 @decorators.update_flights_status()
-def update_flight(request, id):
+def update_flight(request, id): # Setting a new departure_time and calculating the new landing_time.
     flight = get_object_or_404(Flight, id = id)
     logger.info(f"Airline {request.user.username} is requesting to update flight {id}")
     if not flight.status == 'active':
@@ -98,7 +98,7 @@ def update_flight(request, id):
 @role_required(Roles.AIRLINE.value)
 @airline_flight_auth()
 @decorators.update_flights_status()
-def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff.
+def remove_flight(request, id): # Remove flight = deactivate manually a flight that is before takeoff, with no 'active' tickets.
    flight = get_object_or_404(Flight, id = id)
    logger.info(f"Airline {request.user.username} is requesting to remove the flight {id}")
    if not flight.status == 'active':
@@ -123,7 +123,7 @@ def remove_flight(request, id): # Remove flight = deactivate manually a flight t
 @api_view(['GET'])
 @role_required(Roles.AIRLINE.value)
 @decorators.update_flights_status()
-def get_my_flights(request):
+def get_my_flights(request): # List of all flights of a specific airline.
     the_airline_id = Airline.objects.get(airport_user=request.user).id
     logger.info(f"Airline {request.user.username} is requesting to fetch the details of its flights.")
     try:

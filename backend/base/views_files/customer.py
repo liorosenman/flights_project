@@ -39,7 +39,7 @@ def add_ticket(request):
 @role_required(Roles.CUSTOMER.value)
 @decorators.update_flights_status()
 @decorators.conditions_for_cancel_a_ticket()
-def remove_ticket(request, id):
+def remove_ticket(request, id): # Remove an 'active' ticket.
     ticket = get_object_or_404(Ticket, id = id)
     ticket.status = 'canceled'
     flight = Flight.objects.get(id = ticket.flight_id_id)
@@ -71,7 +71,7 @@ def update_customer(request):
 @api_view([('GET')])
 @role_required(Roles.CUSTOMER.value)
 @decorators.update_flights_status()
-def get_my_tickets(request):
+def get_my_tickets(request): # List of all tickets of a specific customer"
     logger.info(f"The customer {request.user.username} is requesting his bookings.")
     the_customer_id = Customer.objects.get(airport_user=request.user).id
     try:
@@ -100,7 +100,7 @@ def get_my_tickets(request):
 @api_view(['GET'])
 @role_required(Roles.CUSTOMER.value)
 def get_customer_by_user_id(request):
-    # logger.info(f"The details of the customer {username} were requested.")
+    # Load customer's details for update-details form.
     try:
         target_id = request.user.id
         with connection.cursor() as cursor:
